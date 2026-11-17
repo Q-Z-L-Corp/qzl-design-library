@@ -1,7 +1,7 @@
 {
   "name": "@qzl/react-native",
   "version": "0.1.0",
-  "description": "Native React Native components built on the QZL design system.",
+  "description": "React Native components for QZL Design Library.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",

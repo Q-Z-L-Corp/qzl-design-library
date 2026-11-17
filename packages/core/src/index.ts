@@ -1,21 +1,77 @@
+/** Supported application theme modes. */
 export type ThemeMode = 'light' | 'dark';
 
+/** Values exposed by the shared theme context. */
 export interface ThemeContextValue {
+  /** Current theme mode. */
   mode: ThemeMode;
+  /** Switches the current theme mode. */
   toggleMode: () => void;
 }
 
+/** A block produced by {@link parseMarkdown}. */
 export type MarkdownBlock =
-  | { type: 'heading'; level: 1 | 2 | 3; text: string }
-  | { type: 'paragraph'; text: string }
-  | { type: 'list'; items: string[] }
-  | { type: 'quote'; text: string }
-  | { type: 'code'; language: string; text: string };
+  | {
+      /** A Markdown heading with a supported level. */
+      type: 'heading';
+      /** Heading depth, limited to levels one through three. */
+      level: 1 | 2 | 3;
+      /** Heading content without the Markdown prefix. */
+      text: string;
+    }
+  | {
+      /** A plain text paragraph. */
+      type: 'paragraph';
+      /** Paragraph content with source line breaks preserved. */
+      text: string;
+    }
+  | {
+      /** A list containing unordered Markdown items. */
+      type: 'list';
+      /** List item content without the bullet marker. */
+      items: string[];
+    }
+  | {
+      /** A block quote. */
+      type: 'quote';
+      /** Quote content with source line breaks preserved. */
+      text: string;
+    }
+  | {
+      /** A fenced code block. */
+      type: 'code';
+      /** Language identifier from the opening fence, or an empty string. */
+      language: string;
+      /** Code content without the fences. */
+      text: string;
+    };
 
+/**
+ * Constrains a number to an inclusive range.
+ * @param value - Number to constrain.
+ * @param min - Inclusive lower bound.
+ * @param max - Inclusive upper bound.
+ * @returns The value clamped between `min` and `max`.
+ * @example
+ * ```ts
+ * clamp(12, 0, 10); // 10
+ * ```
+ */
 export function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
 }
 
+/**
+ * Parses the supported Markdown subset into typed content blocks.
+ *
+ * Supports headings one through three, paragraphs, unordered lists, block quotes, and fenced code blocks.
+ * @param source - Markdown source text.
+ * @returns The parsed blocks in source order.
+ * @example
+ * ```ts
+ * parseMarkdown('# Hello\n\nA paragraph');
+ * ```
+ */
 export function parseMarkdown(source: string): MarkdownBlock[] {
   const lines = source.replace(/\r\n?/g, '\n').split('\n');
   const blocks: MarkdownBlock[] = [];
@@ -87,10 +143,30 @@ export function parseMarkdown(source: string): MarkdownBlock[] {
   return blocks;
 }
 
+/**
+ * Joins truthy class names with a single space.
+ * @param classes - Class names and conditional values to combine.
+ * @returns A space-separated class name string.
+ * @example
+ * ```ts
+ * mergeClasses('button', isActive && 'button-active');
+ * ```
+ */
 export function mergeClasses(...classes: Array<string | false | null | undefined>): string {
   return classes.filter(Boolean).join(' ');
 }
 
+/**
+ * Resolves the preferred theme mode from saved preference and system settings.
+ *
+ * During server rendering, returns `light`; in a browser, a valid saved preference takes precedence over the system preference.
+ * @returns The preferred theme mode.
+ * @default light during server rendering or when no preference is available.
+ * @example
+ * ```ts
+ * const mode = getThemeModePreference();
+ * ```
+ */
 export function getThemeModePreference(): ThemeMode {
   if (typeof window === 'undefined') return 'light';
   const saved = window.localStorage.getItem('qzl-theme-mode');

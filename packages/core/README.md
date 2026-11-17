@@ -1,6 +1,8 @@
 # @qzl/core
 
-Platform-neutral helpers shared by QZL component packages.
+Shared helpers used by the QZL Design Library component packages.
+
+This supporting package has not been published yet. Application developers typically install `@qzl/react` or `@qzl/react-native` instead.
 
 ```sh
 pnpm add @qzl/core

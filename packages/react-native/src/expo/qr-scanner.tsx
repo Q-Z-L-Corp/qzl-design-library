@@ -4,13 +4,28 @@ import { Pressable, Text, View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** Props for the Expo Camera QR scanner subpath export. */
 export interface QrScannerProps {
+  /**
+   * Called once a QR barcode is read; the scanner is stopped before invocation.
+   * @param value Decoded QR data returned by Expo Camera.
+   */
   onScan: (value: string) => void;
+  /** Accessible label for the camera preview. @default 'QR code scanner' */
   label?: string;
+  /** Palette used for the scanner controls and status text. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the scanner wrapper. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Starts Expo Camera only after the user presses the scan button, requesting permission when needed.
+ * The React Native camera preview is restricted to QR codes; decoded content is passed to the app without opening it.
+ *
+ * @example
+ * <QrScanner onScan={(value) => setScannedCode(value)} />
+ */
 export function QrScanner({ onScan, label = 'QR code scanner', theme = 'light', style }: QrScannerProps) {
   const [permission, requestPermission] = useCameraPermissions();
   const [scanning, setScanning] = useState(false);

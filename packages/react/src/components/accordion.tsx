@@ -1,13 +1,32 @@
 import React, { useId, useState } from 'react';
 import { mergeClasses } from '@qzl/core';
 
+/** Props for the controlled or uncontrolled {@link Accordion}. */
 export interface AccordionProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
+  /** Content displayed in the accordion trigger. */
   title: React.ReactNode;
+  /** Controls expanded state when provided. */
   open?: boolean;
+  /**
+   * Initial expanded state when `open` is not provided.
+   * @default false
+   */
   defaultOpen?: boolean;
+  /**
+   * Called whenever the trigger requests a new expanded state.
+   * @param open Requested expanded state.
+   */
   onOpenChange?: (open: boolean) => void;
 }
 
+/**
+ * Renders a disclosure control and its associated region.
+ *
+ * @example
+ * ```tsx
+ * <Accordion title="Details" defaultOpen={false}>Additional information.</Accordion>
+ * ```
+ */
 export function Accordion({
   title,
   open,

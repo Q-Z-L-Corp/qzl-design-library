@@ -50,6 +50,10 @@ import {
 } from '@qzl/react';
 import { getThemeCssVariables, qzlTokens, type ThemeName } from '@qzl/tokens';
 import type { ButtonSize, ButtonVariant } from '@qzl/react';
+import { componentRegistry } from './generated/component-registry';
+import { ComponentDocumentationPage } from './component-documentation';
+import { publicApiDocumentation } from './generated/public-api-docs';
+import { PublicApiDocumentationPage } from './public-api-documentation';
 
 type DocPage =
   | 'overview'
@@ -69,6 +73,7 @@ type DocPage =
   | 'catalog'
   | 'notifications'
   | 'playground'
+  | 'api-reference'
   | 'dashboard'
   | 'safety';
 
@@ -76,7 +81,7 @@ const navigation: { label: string; items: { id: DocPage; label: string }[] }[] =
   { label: 'Start here', items: [{ id: 'overview', label: 'Overview' }, { id: 'getting-started', label: 'Getting started' }] },
   { label: 'Foundations', items: [{ id: 'colors', label: 'Color system' }, { id: 'type-spacing', label: 'Type & spacing' }] },
   {
-    label: 'Components',
+    label: 'Guided component examples',
     items: [
       { id: 'buttons', label: 'Button' },
       { id: 'inputs', label: 'Input & textarea' },
@@ -93,7 +98,7 @@ const navigation: { label: string; items: { id: DocPage; label: string }[] }[] =
     ]
   },
   { label: 'Patterns', items: [{ id: 'dashboard', label: 'Analytics dashboard' }, { id: 'safety', label: 'Safety preview' }] },
-  { label: 'Explore', items: [{ id: 'playground', label: 'Playground' }] }
+  { label: 'Explore', items: [{ id: 'playground', label: 'Playground' }, { id: 'api-reference', label: 'Public API reference' }] }
 ];
 
 const buttonVariants: ButtonVariant[] = ['primary', 'secondary', 'ghost', 'danger'];
@@ -123,6 +128,22 @@ function CodeSample({ code, onCopy }: { code: string; onCopy: (value: string) =>
   );
 }
 
+function getPublicApiSearchText(api: (typeof publicApiDocumentation.packages)[number]['publicApi'][number]) {
+  return [
+    api.packageName,
+    api.name,
+    api.description,
+    api.signature,
+    ...api.parameters.flatMap((parameter) => [parameter.name, parameter.type, parameter.description]),
+    ...api.members.flatMap((member) => [
+      member.name,
+      member.type,
+      member.description,
+      ...member.callbackParameters.flatMap((parameter) => [parameter.name, parameter.type, parameter.description])
+    ])
+  ].join(' ').toLowerCase();
+}
+
 function PreviewSection({ children, label = 'Interactive preview', overflowVisible = false }: { children: ReactNode; label?: string; overflowVisible?: boolean }) {
   return (
     <div className={overflowVisible ? 'docs-preview docs-preview--overflow-visible' : 'docs-preview'}>
@@ -134,6 +155,7 @@ function PreviewSection({ children, label = 'Interactive preview', overflowVisib
 
 export default function DocsApp() {
   const [activePage, setActivePage] = useState<DocPage>('overview');
+  const [activeComponent, setActiveComponent] = useState<string | null>(null);
   const [search, setSearch] = useState('');
   const [theme, setTheme] = useState<ThemeName>('light');
   const [themeReady, setThemeReady] = useState(false);
@@ -147,15 +169,30 @@ export default function DocsApp() {
     setThemeReady(true);
 
     const syncHash = () => {
-      const page = window.location.hash.slice(1) as DocPage;
-      if (navigation.some((group) => group.items.some((item) => item.id === page))) setActivePage(page);
+      const route = window.location.hash.slice(1);
+      if (route.startsWith('component/')) {
+        const slug = route.slice('component/'.length);
+        if (componentRegistry.components.some((component) => component.slug === slug)) {
+          setActiveComponent(slug);
+          return;
+        }
+      }
+      if (navigation.some((group) => group.items.some((item) => item.id === route))) {
+        setActiveComponent(null);
+        setActivePage(route as DocPage);
+      }
     };
     syncHash();
     window.addEventListener('hashchange', syncHash);
     const onKeyDown = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
         event.preventDefault();
-        searchRef.current?.focus();
+        if (window.matchMedia('(max-width: 760px)').matches) {
+          setMobileNavOpen(true);
+          window.setTimeout(() => searchRef.current?.focus(), 0);
+        } else {
+          searchRef.current?.focus();
+        }
       }
       if (event.key === 'Escape') {
         setSearch('');
@@ -177,9 +214,28 @@ export default function DocsApp() {
   const visibleNavigation = useMemo(() => {
     const normalized = search.trim().toLowerCase();
     if (!normalized) return navigation;
-    return navigation
+    const filtered = navigation
       .map((group) => ({ ...group, items: group.items.filter((item) => item.label.toLowerCase().includes(normalized) || group.label.toLowerCase().includes(normalized)) }))
       .filter((group) => group.items.length > 0);
+    const publicApiMatch = publicApiDocumentation.packages.some((pkg) =>
+      pkg.publicApi.some((api) => api.kind !== 'component' && getPublicApiSearchText(api).includes(normalized))
+    );
+    if (publicApiMatch && !filtered.some((group) => group.items.some((item) => item.id === 'api-reference'))) {
+      filtered.push({ label: 'Public API', items: [{ id: 'api-reference', label: 'Public API reference' }] });
+    }
+    return filtered;
+  }, [search]);
+  const visibleComponentGroups = useMemo(() => {
+    const normalized = search.trim().toLowerCase();
+    return componentRegistry.categories.map((category) => ({
+      category,
+      components: componentRegistry.components.filter((component) => {
+        if (component.category !== category) return false;
+        if (!normalized) return true;
+        const props = Object.values(component.platforms).flatMap((api) => api?.props.map((property) => `${property.name} ${property.type}`) ?? []);
+        return [component.name, component.description, component.category, ...props].join(' ').toLowerCase().includes(normalized);
+      })
+    })).filter((group) => group.components.length > 0);
   }, [search]);
 
   async function copyToClipboard(value: string) {
@@ -193,12 +249,24 @@ export default function DocsApp() {
   }
 
   function navigateTo(page: DocPage) {
+    setActiveComponent(null);
     setActivePage(page);
     setMobileNavOpen(false);
     window.location.hash = page;
   }
 
+  function navigateToComponent(slug: string) {
+    setActiveComponent(slug);
+    setMobileNavOpen(false);
+    window.location.hash = `component/${slug}`;
+  }
+
   function renderContent() {
+    const component = componentRegistry.components.find((item) => item.slug === activeComponent);
+    if (component) {
+      return <ComponentDocumentationPage key={component.slug} component={component} onCopy={copyToClipboard} onNavigate={navigateToComponent} />;
+    }
+
     switch (activePage) {
       case 'getting-started':
         return <GettingStarted onCopy={copyToClipboard} />;
@@ -232,6 +300,8 @@ export default function DocsApp() {
         return <NotificationsPage />;
       case 'playground':
         return <PlaygroundPage />;
+      case 'api-reference':
+        return <PublicApiDocumentationPage records={publicApiDocumentation.packages.flatMap((pkg) => pkg.publicApi)} query={search} />;
       case 'dashboard':
         return <DashboardExample />;
       case 'safety':
@@ -248,10 +318,10 @@ export default function DocsApp() {
       <header className="docs-header">
         <button type="button" className="docs-brand" onClick={() => navigateTo('overview')} aria-label="QZL Design Library home">
           <span className="docs-brand__mark">q</span>
-          <span className="docs-brand__text"><strong>QZL</strong><small>Design Library</small></span>
+          <span className="docs-brand__text"><strong>QZL Design</strong><small>Design system</small></span>
         </button>
         <div className="docs-header__right">
-          <span className="docs-version">v0.1 · 45 web components</span>
+          <span className="docs-version">v0.1 · 45 Web · 44 React Native</span>
           <button className="docs-theme-button" type="button" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`} aria-pressed={theme === 'dark'}>
             <span aria-hidden="true">{theme === 'light' ? '◐' : '☼'}</span><span>{theme === 'light' ? 'Dark' : 'Light'}</span>
           </button>
@@ -265,11 +335,12 @@ export default function DocsApp() {
         <aside className={`docs-sidebar ${mobileNavOpen ? 'docs-sidebar--open' : ''}`}>
           <label className="docs-search">
             <span aria-hidden="true">⌕</span>
-            <input ref={searchRef} value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search documentation" aria-label="Search documentation" />
-            <kbd>⌘ K</kbd>
+            <input ref={searchRef} value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search components & APIs" aria-label="Search documentation" />
+            <kbd>⌘K / Ctrl+K</kbd>
           </label>
           <nav aria-label="Documentation navigation" className="docs-navigation">
-            {visibleNavigation.length === 0 ? <p className="docs-no-results">No matching pages.</p> : visibleNavigation.map((group) => (
+            {visibleNavigation.length === 0 && visibleComponentGroups.length === 0 && <p className="docs-no-results">No matching pages or components.</p>}
+            {visibleNavigation.map((group) => (
               <div className="docs-nav-group" key={group.label}>
                 <h2>{group.label}</h2>
                 {group.items.map((item) => (
@@ -279,6 +350,7 @@ export default function DocsApp() {
                     className={activePage === item.id ? 'docs-nav-link docs-nav-link--active' : 'docs-nav-link'}
                     aria-current={activePage === item.id ? 'page' : undefined}
                     onClick={() => {
+                      setActiveComponent(null);
                       setActivePage(item.id);
                       setMobileNavOpen(false);
                     }}
@@ -289,20 +361,44 @@ export default function DocsApp() {
                 ))}
               </div>
             ))}
+            {visibleComponentGroups.length > 0 && (
+              <div className="docs-nav-group docs-nav-components">
+                <h2>Components</h2>
+                {visibleComponentGroups.map((group) => (
+                  <section className="docs-nav-category" key={group.category}>
+                    <h3>{group.category}</h3>
+                    {group.components.map((component) => (
+                      <a
+                        key={component.slug}
+                        href={`#component/${component.slug}`}
+                        className={activeComponent === component.slug ? 'docs-nav-link docs-nav-link--active' : 'docs-nav-link'}
+                        aria-current={activeComponent === component.slug ? 'page' : undefined}
+                        onClick={(event) => {
+                          event.preventDefault();
+                          navigateToComponent(component.slug);
+                        }}
+                      >
+                        <span>{component.name}</span><span className={`docs-nav-status docs-nav-status--${component.status}`}>{component.status}</span>
+                      </a>
+                    ))}
+                  </section>
+                ))}
+              </div>
+            )}
           </nav>
           <div className="docs-sidebar-note">
             <span className="docs-sidebar-note__icon" aria-hidden="true">✦</span>
-            <strong>Built for every surface</strong>
-            <p>Shared foundations. Native-feeling components.</p>
+            <strong>One design system</strong>
+            <p>Shared tokens and themes for Web and React Native.</p>
           </div>
-          <div className="docs-sidebar-footer">Q.Z.L Corp. <span>•</span> MIT license</div>
+          <div className="docs-sidebar-footer">Open source <span>•</span> MIT License</div>
         </aside>
 
         <main className="docs-main">
           <div className="docs-content">{renderContent()}</div>
           <footer className="docs-footer">
-            <span>QZL Design Library</span>
-            <span>Thoughtful interfaces, safer experiences.</span>
+            <span>QZL Design</span>
+            <span>Developed by Q.Z.L Corp. · MIT License</span>
           </footer>
         </main>
       </div>
@@ -317,42 +413,42 @@ function OverviewPage({ onNavigate }: { onNavigate: (page: DocPage) => void }) {
       <div className="docs-breadcrumb">QZL Design Library <span>/</span> Overview</div>
       <section className="docs-home-hero">
         <div className="docs-home-hero__copy">
-          <Badge variant="primary">Design for trust</Badge>
-          <h1>One clear design language.<br /><span>Every platform.</span></h1>
-          <p>QZL is a thoughtfully engineered foundation for accessible, secure, and expressive digital products. Explore the tokens and components that bring it to life.</p>
+          <Badge variant="primary">Open-source design system</Badge>
+          <h1>Shared foundations.<br /><span>Web and React Native.</span></h1>
+          <p>QZL Design Library is an open-source design system for building consistent, accessible, and expressive interfaces with React for Web and React Native. It provides shared design tokens and themes, reusable components, accessibility guidance, security-conscious input patterns, customization examples, and API documentation.</p>
           <div className="docs-actions">
             <Button size="lg" onClick={() => onNavigate('getting-started')}>Start building <span aria-hidden="true">→</span></Button>
             <Button variant="secondary" size="lg" onClick={() => onNavigate('buttons')}>Explore components</Button>
           </div>
-          <div className="docs-platforms"><span className="docs-platform-dot" /> Web-ready <span className="docs-platform-separator">·</span> React Native foundations <span className="docs-platform-separator">·</span> Accessibility-minded</div>
+          <div className="docs-platforms"><span className="docs-platform-dot" /> Web components <span className="docs-platform-separator">·</span> React Native components <span className="docs-platform-separator">·</span> Shared design tokens</div>
         </div>
-        <div className="docs-home-hero__visual" aria-label="Preview of QZL interface components">
+        <div className="docs-home-hero__visual" aria-label="Preview of QZL Design Library components">
           <div className="docs-preview-orbit docs-preview-orbit--one" />
           <div className="docs-preview-orbit docs-preview-orbit--two" />
           <Card className="docs-hero-card docs-hero-card--main">
-            <div className="docs-mini-window"><span /><span /><span /><small>qzl.workspace</small></div>
-            <div className="docs-mini-heading"><span>Good morning, Alex</span><Badge variant="success">Protected</Badge></div>
-            <div className="docs-mini-stat"><strong>2,481</strong><span>active links <b>↗ 12.8%</b></span></div>
+            <div className="docs-mini-window"><span /><span /><span /><small>qzl.design</small></div>
+            <div className="docs-mini-heading"><span>Component library</span><Badge variant="success">API documented</Badge></div>
+            <div className="docs-mini-stat"><strong>45</strong><span>Web components <b>44 React Native</b></span></div>
             <div className="docs-mini-chart"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
-            <div className="docs-mini-footer"><span>Link performance</span><span>Last 7 days</span></div>
+            <div className="docs-mini-footer"><span>Shared foundations</span><span>Tokens · Themes</span></div>
           </Card>
-          <div className="docs-floating-tag docs-floating-tag--safe"><span>✓</span> Link verified</div>
-          <div className="docs-floating-tag docs-floating-tag--ai"><span>✦</span> AI insights</div>
+          <div className="docs-floating-tag docs-floating-tag--safe"><span>✓</span> API reference</div>
+          <div className="docs-floating-tag docs-floating-tag--ai"><span>✦</span> Theme tokens</div>
         </div>
       </section>
       <section className="docs-overview-grid">
         <button className="docs-overview-card" onClick={() => onNavigate('colors')}>
           <span className="docs-overview-icon docs-overview-icon--colors" aria-hidden="true">◈</span>
           <span className="docs-overview-meta">FOUNDATIONS</span>
-          <strong>A system of meaning</strong>
-          <p>Color, type, shape, and motion—built as shared, portable tokens.</p>
+          <strong>Shared design foundations</strong>
+          <p>Color, type, spacing, shape, and motion values for consistent interfaces.</p>
           <span className="docs-card-link">Explore foundations <b>→</b></span>
         </button>
         <button className="docs-overview-card" onClick={() => onNavigate('buttons')}>
           <span className="docs-overview-icon docs-overview-icon--components" aria-hidden="true">▦</span>
           <span className="docs-overview-meta">COMPONENTS</span>
-          <strong>Useful by default</strong>
-          <p>Accessible React components with clear APIs and real interactive demos.</p>
+          <strong>Components for both platforms</strong>
+          <p>Web and React Native components with documented APIs and interactive Web previews.</p>
           <span className="docs-card-link">Browse components <b>→</b></span>
         </button>
         <button className="docs-overview-card" onClick={() => onNavigate('playground')}>
@@ -364,8 +460,8 @@ function OverviewPage({ onNavigate }: { onNavigate: (page: DocPage) => void }) {
         </button>
       </section>
       <section className="docs-section docs-why">
-        <div><div className="docs-eyebrow">Our point of view</div><h2>Trust should be visible.</h2></div>
-        <p>Our values show up in the details: understandable states, honest feedback, privacy-aware patterns, and interfaces that put people in control.</p>
+        <div><div className="docs-eyebrow">Design principles</div><h2>Clarity and user control.</h2></div>
+        <p>Use understandable states, useful feedback, privacy-aware patterns, and interactions that leave decisions with the people using them.</p>
       </section>
     </>
   );
@@ -375,32 +471,46 @@ function GettingStarted({ onCopy }: { onCopy: (value: string) => void }) {
   const snippet = `import { Button, Card, Input } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Card>\n      <Input aria-label=\"Project name\" placeholder=\"Name your project\" />\n      <Button>Continue</Button>\n    </Card>\n  );\n}`;
   return (
     <>
-      <PageTitle eyebrow="START HERE" title="Getting started" description="Install the packages you need and start composing interfaces with the QZL design language." />
-      <div className="docs-callout"><span>✦</span><p><strong>Packages are not published yet.</strong> This repository is the source workspace. The install example below shows the intended API after a release; use the local example apps while developing.</p></div>
+      <PageTitle eyebrow="START HERE" title="Getting started" description="Choose a platform package, add its styles or peer dependencies, and build with shared design tokens and themes." />
+      <div className="docs-callout"><span>i</span><p><strong>Packages are not published yet.</strong> The commands below are for use after the first release. For local development, clone the repository and use its workspace commands.</p></div>
       <div className="docs-section">
-        <h2>Install the web package</h2>
-        <p>Add the QZL packages to your workspace. Peer dependencies React and React DOM should be provided by your application.</p>
-        <CodeSample code="pnpm add @qzl/react @qzl/tokens" onCopy={onCopy} />
+        <h2>Install for Web</h2>
+        <p>Install the React package in an application using React 18.3.1 or 19 with a matching React DOM version. Its supporting packages are installed as dependencies; add <code>@qzl/tokens</code> directly only if your application imports token APIs.</p>
+        <CodeSample code="pnpm add @qzl/react" onCopy={onCopy} />
       </div>
       <div className="docs-section">
-        <h2>Use a component</h2>
-        <p>Import the component stylesheet once at the application root, then import components where you need them.</p>
+        <h2>Use a Web component</h2>
+        <p>Import the stylesheet once from your application entry point, then import components where you need them.</p>
         <CodeSample code={snippet} onCopy={onCopy} />
       </div>
       <div className="docs-section">
-        <h2>Run the native example</h2>
-        <p>From the repository root, start the Expo app to preview the native-first components in an iOS or Android simulator.</p>
-        <CodeSample code="pnpm --filter @qzl/example-native start" onCopy={onCopy} />
+        <h2>Install for React Native</h2>
+        <p>Install the package in an existing application using React 19 and React Native 0.78 or later. The slider package is a required peer dependency; <code>expo-camera</code> is needed only for the optional Expo QR scanner.</p>
+        <CodeSample code="pnpm add @qzl/react-native @react-native-community/slider" onCopy={onCopy} />
+      </div>
+      <div className="docs-section">
+        <h2>Customize themes</h2>
+        <p>Use <code>@qzl/tokens</code> when you need shared values directly. Apply <code>getThemeCssVariables</code> to a Web ancestor; for React Native, use values from <code>themes</code> in component styles.</p>
+        <h3>Web</h3>
+        <CodeSample code={`import { getThemeCssVariables } from '@qzl/tokens';\nimport type { CSSProperties } from 'react';\n\nconst darkThemeStyle = getThemeCssVariables('dark') as CSSProperties;\n\n<div style={darkThemeStyle}>Web content</div>`} onCopy={onCopy} />
+        <h3>React Native</h3>
+        <CodeSample code={`import { themes } from '@qzl/tokens';\nimport { Text, View } from 'react-native';\n\nconst palette = themes.dark;\n\n<View style={{ backgroundColor: palette.surface }}>\n  <Text style={{ color: palette.text }}>React Native content</Text>\n</View>`} onCopy={onCopy} />
+      </div>
+      <div className="docs-section">
+        <h2>Run the React Native example</h2>
+        <p>From the repository root, start the Expo example to preview the React Native components on iOS or Android.</p>
+        <CodeSample code="pnpm start:native" onCopy={onCopy} />
       </div>
       <div className="docs-section docs-platform-table">
         <h2>Package map</h2>
-        <div className="docs-package-row"><strong>@qzl/tokens</strong><span>Cross-platform palette, typography, spacing, shape, motion, and theme values</span><Badge variant="success">Ready</Badge></div>
-        <div className="docs-package-row"><strong>@qzl/react</strong><span>45 accessible web components and semantic stylesheet</span><Badge variant="success">45 components</Badge></div>
-        <div className="docs-package-row"><strong>@qzl/react-native</strong><span>44 matching native components; optional Expo QR scanner entry</span><Badge variant="success">44 components</Badge></div>
+        <div className="docs-package-row"><strong>@qzl/react</strong><span>45 Web components and the package stylesheet</span><Badge variant="success">Web</Badge></div>
+        <div className="docs-package-row"><strong>@qzl/react-native</strong><span>44 React Native components and an optional Expo QR scanner entry</span><Badge variant="success">React Native</Badge></div>
+        <div className="docs-package-row"><strong>@qzl/tokens</strong><span>Shared design tokens and light and dark theme values</span><Badge>Supporting package</Badge></div>
+        <div className="docs-package-row"><strong>@qzl/core</strong><span>Shared helpers used by the component packages</span><Badge>Supporting package</Badge></div>
       </div>
       <div className="docs-section">
         <h2>Platform differences</h2>
-        <p>Tokens and component intent are shared across 44 common components. Native implementations use platform controls and accessibility APIs. QR scanning is an optional Expo entry that requests camera permission only after a person starts a scan; it never opens scanned links automatically. Browser-only behavior remains in the web package.</p>
+        <p>Forty-four components are available for both Web and React Native, with platform-specific implementations and props. The Web package also includes a browser QR scanner; React Native camera scanning is a separate optional Expo entry. Both request camera access only after a person starts a scan and return scanned content without opening it automatically. The React Native file-upload component delegates document-picker integration to the host app.</p>
       </div>
     </>
   );
@@ -410,13 +520,13 @@ function ColorsPage({ onCopy }: { onCopy: (value: string) => void }) {
   const colorGroups = Object.entries(qzlTokens.colors);
   return (
     <>
-      <PageTitle eyebrow="FOUNDATIONS / COLOR" title="Color system" description="A calm, cool neutral canvas with confident blue, intelligence-led violet, and clear semantic feedback." />
+      <PageTitle eyebrow="FOUNDATIONS / COLOR" title="Color system" description="Shared color tokens define neutral surfaces, brand colors, and semantic feedback roles." />
       <div className="docs-callout"><span>↗</span><p>Choose colors for meaning and contrast—not decoration. Click a swatch to copy its token value.</p></div>
       {colorGroups.map(([group, value]) => {
         const colors = typeof value === 'string' ? [[group, value] as [string, string]] : Object.entries(value).map(([name, color]) => [name, String(color)] as [string, string]);
         return (
           <section className="docs-section docs-color-group" key={group}>
-            <div className="docs-section-heading"><div><h2>{group === 'brand' ? 'Brand blue' : group[0].toUpperCase() + group.slice(1)}</h2><p>{group === 'neutral' ? 'Quiet surfaces and legible text.' : 'A purposeful part of the QZL palette.'}</p></div><span>{colors.length} tokens</span></div>
+            <div className="docs-section-heading"><div><h2>{group === 'brand' ? 'Brand colors' : group[0].toUpperCase() + group.slice(1)}</h2><p>{group === 'neutral' ? 'Surface and text colors for interface hierarchy.' : 'Shared design token values for consistent use.'}</p></div><span>{colors.length} tokens</span></div>
             <div className="docs-swatches">
               {colors.map(([name, color]) => (
                 <button className="docs-swatch" key={`${group}-${name}`} onClick={() => onCopy(color)} title={`Copy ${color}`} aria-label={`Copy ${group} ${name}, ${color}`}>
@@ -430,7 +540,9 @@ function ColorsPage({ onCopy }: { onCopy: (value: string) => void }) {
       })}
       <section className="docs-section">
         <h2>Semantic themes</h2>
-        <div className="docs-theme-note"><div className="docs-theme-sample docs-theme-sample--light"><span>Aa</span><small>Light surface</small></div><div className="docs-theme-sample docs-theme-sample--dark"><span>◐</span><small>Dark surface</small></div><p>Use semantic roles like <code>primary</code>, <code>border</code>, and <code>textMuted</code> so themes can change without rewriting component logic.</p></div>
+        <div className="docs-theme-note"><div className="docs-theme-sample docs-theme-sample--light"><span>Aa</span><small>Light surface</small></div><div className="docs-theme-sample docs-theme-sample--dark"><span>◐</span><small>Dark surface</small></div><p>Use semantic roles such as <code>primary</code>, <code>border</code>, and <code>textMuted</code> so theme values can change without rewriting component logic.</p></div>
+        <p>Use semantic roles for component styling and the exported theme values when configuring a Web ancestor or React Native styles.</p>
+        <CodeSample code={`import { qzlTokens, themes } from '@qzl/tokens';\n\nconst brandBlue = qzlTokens.colors.brand[500];\nconst sectionSpacing = qzlTokens.spacing.section;\nconst darkSurface = themes.dark.surface;`} onCopy={onCopy} />
       </section>
     </>
   );
@@ -443,7 +555,7 @@ function TypeSpacingPage() {
       <section className="docs-section docs-type-samples">
         <h2>Typography scale</h2>
         {Object.entries(qzlTokens.typography.sizes).map(([size, value]) => (
-          <div className="docs-type-row" key={size}><span>{size}<small>{value}</small></span><strong style={{ fontSize: value, lineHeight: 1.25 }}>Design is how it works.</strong></div>
+          <div className="docs-type-row" key={size}><span>{size}<small>{value}</small></span><strong style={{ fontSize: value, lineHeight: 1.25 }}>Readable interfaces start with clear hierarchy.</strong></div>
         ))}
       </section>
       <section className="docs-section">
@@ -471,7 +583,7 @@ function ButtonsPage({ onCopy }: { onCopy: (value: string) => void }) {
   return (
     <>
       <PageTitle eyebrow="COMPONENTS / BUTTON" title="Button" description="Buttons make actions clear. Use the strongest style only for the most important action on a screen." />
-      <div className="docs-component-meta"><Badge>React</Badge><Badge variant="success">React Native</Badge><span>Native button semantics · loading and disabled states</span></div>
+      <div className="docs-component-meta"><Badge>Web</Badge><Badge variant="success">React Native</Badge><span>Button semantics · disabled state</span></div>
       <PreviewSection>
         <div className="docs-button-demo"><Button variant={variant} size={size} disabled={disabled} onClick={() => setClicks(clicks + 1)}>Continue</Button><span>Action activated {clicks} {clicks === 1 ? 'time' : 'times'}</span></div>
         <div className="docs-controls">
@@ -484,7 +596,7 @@ function ButtonsPage({ onCopy }: { onCopy: (value: string) => void }) {
         <h2>Variants</h2><div className="docs-variant-row">{buttonVariants.map((item) => <div key={item}><Button variant={item}>{item[0].toUpperCase() + item.slice(1)}</Button><small>{item}</small></div>)}</div>
       </section>
       <section className="docs-section"><h2>Usage</h2><CodeSample code={code} onCopy={onCopy} /></section>
-      <section className="docs-section docs-guidance"><h2>Accessibility</h2><p>Use a native button for actions, keep a visible focus indicator, and provide an explicit accessible name for icon-only buttons. Set <code>type="submit"</code> only inside a form when submission is intended.</p></section>
+      <section className="docs-section docs-guidance"><h2>Accessibility</h2><p>Use an HTML button for actions, keep a visible focus indicator, and provide an explicit accessible name for icon-only buttons. Set <code>type="submit"</code> only inside a form when submission is intended.</p></section>
     </>
   );
 }
@@ -620,7 +732,7 @@ function OverlaysPage() {
           </Dialog>
         </div>
       </PreviewSection>
-      <section className="docs-section docs-guidance"><h2>Accessibility</h2><p>The dialog uses the native modal dialog element, names its title and description, closes on Escape, and returns focus according to browser behavior. Tooltips are associated with their trigger and also appear when it receives keyboard focus.</p></section>
+      <section className="docs-section docs-guidance"><h2>Accessibility</h2><p>The dialog renders an HTML <code>&lt;dialog&gt;</code> element, associates it with its title and description, and closes on Escape. Browser behavior manages focus when the modal opens and closes. Tooltips are associated with their trigger and also appear when it receives keyboard focus.</p></section>
     </>
   );
 }
@@ -644,7 +756,7 @@ function NavigationPage() {
           <div className="docs-field-note">Showing page <strong>{page}</strong> of 8</div>
         </div>
       </PreviewSection>
-      <section className="docs-section docs-guidance"><h2>Interaction guidance</h2><p>Use breadcrumbs for hierarchy, navigation links for destinations, and disclosure menus for actions. The native menu uses a touch-friendly disclosure instead of a browser-only popup.</p></section>
+      <section className="docs-section docs-guidance"><h2>Interaction guidance</h2><p>Use breadcrumbs for hierarchy, navigation links for destinations, and disclosure menus for actions. On Web, the menu uses an HTML disclosure; React Native presents a touch-friendly disclosure list.</p></section>
     </>
   );
 }
@@ -653,9 +765,9 @@ function DataPage() {
   const [metric, setMetric] = useState('clicks');
   const [threshold, setThreshold] = useState(72);
   const rows = [
-    { destination: 'qz-l.com/spring', clicks: 1248, status: 'Healthy' },
-    { destination: 'qz-l.com/guide', clicks: 852, status: 'Review' },
-    { destination: 'qz-l.com/start', clicks: 2041, status: 'Healthy' }
+    { destination: 'example.com/spring', clicks: 1248, status: 'Healthy' },
+    { destination: 'example.com/guide', clicks: 852, status: 'Review' },
+    { destination: 'example.com/start', clicks: 2041, status: 'Healthy' }
   ];
   const columns = [
     { key: 'destination', header: 'Destination', render: (row: typeof rows[number]) => row.destination, sortValue: (row: typeof rows[number]) => row.destination },
@@ -665,6 +777,7 @@ function DataPage() {
   return (
     <>
       <PageTitle eyebrow="COMPONENTS / DATA" title="Tables & charts" description="Make comparisons understandable and keep the underlying values available beyond visual marks." />
+      <div className="docs-callout"><span>i</span><p>The values in this preview are sample data; no live service is connected.</p></div>
       <PreviewSection>
         <div className="docs-feedback-stack">
           <RadioGroup
@@ -680,7 +793,7 @@ function DataPage() {
           <Progress label="Campaign completion progress" value={threshold} />
         </div>
       </PreviewSection>
-      <section className="docs-section docs-guidance"><h2>Accessibility</h2><p>Tables retain native headers and sort state. Charts expose each label and value as text; color is never the only way to distinguish data.</p></section>
+      <section className="docs-section docs-guidance"><h2>Accessibility</h2><p>Tables retain semantic headers and sort state. Charts expose each label and value as text; color is never the only way to distinguish data.</p></section>
     </>
   );
 }
@@ -724,7 +837,7 @@ function CatalogExtensionsPage() {
 
   return (
     <>
-      <PageTitle eyebrow="COMPONENTS / CATALOG" title="More components" description="Explore the additional interaction and content patterns that complete the reference component catalog across web and native." />
+      <PageTitle eyebrow="COMPONENTS / CATALOG" title="More components" description="Explore additional interaction and content components available for Web and React Native." />
       <PreviewSection label="Content & status">
         <div className="docs-catalog-stack">
           <Typography variant="heading-2">A clear section heading</Typography>
@@ -787,8 +900,8 @@ function CatalogExtensionsPage() {
         </div>
       </PreviewSection>
       <section className="docs-section docs-guidance">
-        <h2>Native integration note</h2>
-        <p>React Native shares the file-upload control’s selection state and interaction intent, but delegates opening the platform document picker to your app through its callback. This keeps picker dependencies optional and lets each app choose its native file-provider integration.</p>
+        <h2>React Native integration</h2>
+        <p>The React Native file-upload component shares the Web component’s selection state and interaction intent, but delegates document-picker access to your application through its callback. This keeps picker dependencies optional and lets each app choose its platform integration.</p>
       </section>
     </>
   );
@@ -818,7 +931,7 @@ function PlaygroundPage() {
   const [showCard, setShowCard] = useState(true);
   return (
     <>
-      <PageTitle eyebrow="EXPLORE / PLAYGROUND" title="Playground" description="Change a few component properties and see the design respond in real time." />
+      <PageTitle eyebrow="EXPLORE / PLAYGROUND" title="Playground" description="Change component props and see the preview update in real time." />
       <div className="docs-playground">
         <section className="docs-playground__controls">
           <div className="docs-eyebrow">CONTROLS</div>
@@ -829,7 +942,7 @@ function PlaygroundPage() {
         </section>
         <section className="docs-playground__canvas">
           <div className="docs-preview__bar"><span>CANVAS</span><Badge variant="neutral">Live</Badge></div>
-          {showCard ? <Card className="docs-playground-card" style={{ borderRadius: radius }}><Badge variant="primary">GET STARTED</Badge><h2>Your next idea starts here.</h2><p>Use QZL to create something clear, useful, and trustworthy.</p><Button variant={variant}>{label || 'Button label'}</Button></Card> : <div className="docs-playground-card docs-playground-card--bare"><Badge variant="primary">GET STARTED</Badge><h2>Your next idea starts here.</h2><p>Card surface hidden.</p><Button variant={variant}>{label || 'Button label'}</Button></div>}
+          {showCard ? <Card className="docs-playground-card" style={{ borderRadius: radius }}><Badge variant="primary">GET STARTED</Badge><h2>Your next idea starts here.</h2><p>Use QZL Design to create clear, useful interfaces.</p><Button variant={variant}>{label || 'Button label'}</Button></Card> : <div className="docs-playground-card docs-playground-card--bare"><Badge variant="primary">GET STARTED</Badge><h2>Your next idea starts here.</h2><p>Card surface hidden.</p><Button variant={variant}>{label || 'Button label'}</Button></div>}
         </section>
       </div>
     </>
@@ -840,7 +953,7 @@ function DashboardExample() {
   const [range, setRange] = useState('7 days');
   return (
     <>
-      <PageTitle eyebrow="PATTERNS / ANALYTICS" title="Analytics dashboard" description="A composed example showing how QZL surfaces data without losing hierarchy, context, or control." />
+      <PageTitle eyebrow="PATTERNS / ANALYTICS" title="Analytics dashboard" description="An illustrative composition using sample data to demonstrate hierarchy, context, and controls." />
       <PreviewSection label="Product pattern · analytics overview">
         <div className="docs-dashboard">
           <div className="docs-dashboard__top"><div><span className="docs-eyebrow">LINK PERFORMANCE</span><h2>Good morning, Alex</h2><p>A clear view of how your shared links are doing.</p></div><select aria-label="Date range" value={range} onChange={(event) => setRange(event.target.value)}><option>7 days</option><option>30 days</option><option>90 days</option></select></div>
@@ -853,7 +966,7 @@ function DashboardExample() {
 }
 
 function SafetyExample() {
-  const [url, setUrl] = useState('https://qz-l.com/safe-example');
+  const [url, setUrl] = useState('https://example.com/safe-example');
   const parsedUrl = useMemo(() => {
     try {
       const parsed = new URL(url);
@@ -873,7 +986,7 @@ function SafetyExample() {
           <label htmlFor="safety-url">Short link<input id="safety-url" className="qzl-input" value={url} onChange={(event) => setUrl(event.target.value)} /></label>
           {parsedUrl ? <Card className="docs-destination-card"><div className="docs-destination-icon">◎</div><div><span>THIS LINK LEADS TO</span><strong>{parsedUrl.hostname}</strong><small>{parsedUrl.pathname || '/'}</small></div><Badge variant="success">HTTPS</Badge></Card> : <Alert variant="danger">Enter a valid HTTP or HTTPS address to preview its destination.</Alert>}
           <Alert variant="info">Always check that the displayed destination matches what you expect before opening a link.</Alert>
-          <Button variant="secondary" disabled={!parsedUrl} onClick={() => setUrl('https://qz-l.com/safe-example')}>Reset example</Button>
+          <Button variant="secondary" disabled={!parsedUrl} onClick={() => setUrl('https://example.com/safe-example')}>Reset example</Button>
         </div>
       </PreviewSection>
     </>

@@ -1,4 +1,15 @@
+/**
+ * Shared theme-related exports from `@qzl/tokens`:
+ * - `qzlTokens` exposes the shared design-token values.
+ * - `reactNativeTheme` exposes palettes selected by native components through their `theme` prop.
+ * - `getThemeCssVariables` is the token package's CSS-variable helper; native components use the
+ *   theme palette directly instead.
+ */
 export { qzlTokens, themes as reactNativeTheme, getThemeCssVariables } from '@qzl/tokens';
+/**
+ * Public theme types from the shared token package: `ReactNativeThemeName` names the available
+ * palettes, and `ThemeTokens` describes one palette.
+ */
 export type { ThemeName as ReactNativeThemeName, ThemeTokens } from '@qzl/tokens';
 export * from './components/accordion.js';
 export * from './components/alert.js';

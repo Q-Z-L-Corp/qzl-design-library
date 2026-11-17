@@ -3,18 +3,32 @@ import { Pressable, Text, View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** One label in a breadcrumb trail. */
 export interface BreadcrumbItem {
+  /** Text shown for this location. */
   label: string;
+  /** Optional press action; ignored for the final (current) item. */
   onPress?: () => void;
 }
 
+/** Props for a wrapping breadcrumb trail. */
 export interface BreadcrumbsProps {
+  /** Breadcrumbs in display order; the final item is marked as current. */
   items: BreadcrumbItem[];
+  /** Accessible label for the list. @default 'Breadcrumb' */
   label?: string;
+  /** Palette used for current, linked, and separator text. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the list container. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Displays a React Native breadcrumb list; non-current items are actionable only when they have an `onPress` callback.
+ *
+ * @example
+ * <Breadcrumbs items={[{ label: 'Home', onPress: goHome }, { label: 'Library' }]} />
+ */
 export function Breadcrumbs({ items, label = 'Breadcrumb', theme = 'light', style }: BreadcrumbsProps) {
   const colors = themes[theme];
   return (

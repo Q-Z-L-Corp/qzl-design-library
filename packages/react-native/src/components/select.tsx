@@ -3,22 +3,43 @@ import { Pressable, Text, View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** One option in the locally expanded select list. */
 export interface SelectOption {
+  /** Value reported to the controlled change callback. */
   value: string;
+  /** Text shown for the option. */
   label: string;
+  /** Prevents selecting this option. */
   disabled?: boolean;
 }
 
+/** Props for a controlled React Native disclosure list used for selection. */
 export interface SelectProps {
+  /** Visible label and accessibility label for the trigger. */
   label: string;
+  /** Choices shown when the trigger is expanded. */
   options: SelectOption[];
+  /** Currently selected option value. */
   value: string;
+  /**
+   * Called with the chosen option's value before the option list closes.
+   * @param value Value belonging to the selected option.
+   */
   onValueChange: (value: string) => void;
+  /** Trigger text used when `value` does not match an option. @default 'Choose an option' */
   placeholder?: string;
+  /** Palette used for the trigger and option list. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the outer wrapper. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Toggles a React Native list of radio-style choices; it is not a platform picker control.
+ *
+ * @example
+ * <Select label="Country" options={countries} value={country} onValueChange={setCountry} />
+ */
 export function Select({ label, options, value, onValueChange, placeholder = 'Choose an option', theme = 'light', style }: SelectProps) {
   const [open, setOpen] = useState(false);
   const colors = themes[theme];

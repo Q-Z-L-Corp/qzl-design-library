@@ -1,13 +1,29 @@
 import React from 'react';
 import { mergeClasses } from '@qzl/core';
 
+/** Props for {@link Toast}, in addition to div attributes. */
 export interface ToastProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Short notification heading. */
   title: string;
+  /** Optional explanatory content shown below the heading. */
   description?: React.ReactNode;
+  /**
+   * Notification category, which also determines its live-region urgency.
+   * @default 'info'
+   */
   variant?: 'info' | 'success' | 'warning' | 'danger';
+  /** When supplied, renders a dismiss button that invokes this callback. */
   onDismiss?: () => void;
 }
 
+/**
+ * Renders a live notification and an optional dismiss control.
+ *
+ * @example
+ * ```tsx
+ * <Toast title="Saved" description="Your changes are up to date." onDismiss={dismiss} />
+ * ```
+ */
 export function Toast({ title, description, variant = 'info', onDismiss, className, ...props }: ToastProps) {
   return (
     <div

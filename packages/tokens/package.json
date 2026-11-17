@@ -1,7 +1,7 @@
 {
   "name": "@qzl/tokens",
   "version": "0.1.0",
-  "description": "Cross-platform design tokens and semantic themes for QZL products.",
+  "description": "Shared design tokens and semantic themes for QZL Design Library.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",

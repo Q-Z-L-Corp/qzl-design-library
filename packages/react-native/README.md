@@ -1,14 +1,16 @@
 # @qzl/react-native
 
-Native React Native components sharing QZL design tokens and interaction intent.
+React Native components that use shared design tokens and follow the same interaction intent where platform conventions allow.
 
-The 44-component catalog includes matching implementations for the web library's reference patterns, including sheets, carousel, divider, helper text, indicators, pips, popovers, segmented buttons, selectable cards, ratings, stepped progress, stepper, tags, and typography.
+The catalog provides React Native counterparts for the 44 components also available on Web.
+
+This package has not been published yet. Use the install command after the first release. Your application must provide React 19 and React Native 0.78 or later.
 
 ```sh
-pnpm add @qzl/react-native @qzl/tokens @react-native-community/slider
+pnpm add @qzl/react-native @react-native-community/slider
 ```
 
-Components use native `View`, `Text`, `Pressable`, `TextInput`, and platform accessibility APIs. Platform-specific APIs intentionally differ from the web package where needed.
+Components use React Native `View`, `Text`, `Pressable`, `TextInput`, and accessibility APIs. Props and behavior intentionally differ from the Web package where platform conventions require it. Install `@qzl/tokens` directly when your application imports its APIs.
 
 `FileUploadInput` delegates opening a document picker to the host app through `onPress`; provide the platform picker and pass selected names with `selectedFiles`. This avoids requiring a specific picker library.
 

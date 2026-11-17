@@ -3,19 +3,36 @@ import { Pressable, Text, View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** One action in a dropdown menu. */
 export interface DropdownMenuItem {
+  /** Text shown in the menu item. */
   label: string;
+  /**
+   * Action invoked after this item is selected; the menu closes first.
+   */
   onSelect: () => void;
+  /** Prevents selecting this item. */
   disabled?: boolean;
 }
 
+/** Props for a locally opened dropdown list. */
 export interface DropdownMenuProps {
+  /** Text shown on the trigger and used as its React Native button accessibility label. */
   label: string;
+  /** Menu items displayed when the trigger is pressed. */
   items: DropdownMenuItem[];
+  /** Palette used for trigger and menu surfaces. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the wrapper. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Toggles a React Native list of actions; selecting an enabled item closes the list before calling it.
+ *
+ * @example
+ * <DropdownMenu label="More" items={[{ label: 'Refresh', onSelect: refresh }]} />
+ */
 export function DropdownMenu({ label, items, theme = 'light', style }: DropdownMenuProps) {
   const [open, setOpen] = useState(false);
   const colors = themes[theme];

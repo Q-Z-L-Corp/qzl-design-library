@@ -1,9 +1,12 @@
 # @qzl/react
 
-Accessible React components for web applications using the QZL design system.
+Reusable React components for Web applications, with documented APIs and accessibility semantics.
+
+This package has not been published yet. Use the install command after the first release.
+The host application must provide React and React DOM 18.3.1 or 19.
 
 ```sh
-pnpm add @qzl/react @qzl/tokens
+pnpm add @qzl/react
 ```
 
 Import the stylesheet once from your application root:
@@ -22,11 +25,11 @@ export function ProjectCard() {
 }
 ```
 
-The 45-component catalog includes actions, form controls, navigation, overlays, notifications, data tables/charts, progress/loading, and the reference-matched patterns `BottomSheet`, `Carousel`, `Divider`, `FileUploadInput`, `HelperText`, `Indicator`, `Pips`, `Popover`, `SegmentedButtons`, `SelectCard`, `SideSheet`, `StarRating`, `SteppedProgressBar`, `Stepper`, `Tag`, and `Typography`. It also includes Markdown editing and an opt-in browser QR scanner. The QR scanner requires a secure browser context, camera access granted by the user, and `BarcodeDetector` support. It returns scanned content to the caller and never navigates automatically.
+The 45-component catalog includes actions, form controls, navigation, overlays, notifications, data tables and charts, progress and loading states, and content components such as `BottomSheet`, `Carousel`, `FileUploadInput`, `SelectCard`, `Stepper`, and `Typography`. It also includes Markdown editing and an opt-in browser QR scanner. The QR scanner requires a secure browser context, camera access granted by the user, and `BarcodeDetector` support. It returns scanned content to the caller and never navigates automatically.
 
 ## Styling and themes
 
-The stylesheet uses semantic CSS variables (`--qzl-*`). Define those variables on an ancestor or use the matching values from `@qzl/tokens` with `getThemeCssVariables`.
+The stylesheet uses semantic CSS variables (`--qzl-*`). Define those variables on an ancestor or use `getThemeCssVariables` from `@qzl/tokens` to obtain theme values. Install `@qzl/tokens` directly when your application imports its APIs.
 
 ## License
 

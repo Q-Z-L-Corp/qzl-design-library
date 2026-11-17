@@ -3,13 +3,24 @@ import { Modal, Pressable, ScrollView, Text, View } from 'react-native';
 import type { StyleProp, TextProps, TextStyle, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** Props for a horizontal or vertical divider. */
 export interface DividerProps {
+  /** Divider axis; horizontal dividers span the available width, vertical dividers are 24 points tall. @default 'horizontal' */
   orientation?: 'horizontal' | 'vertical';
+  /** Uses the `none` accessibility role instead of exposing a separator. @default false */
   decorative?: boolean;
+  /** Palette used for the separator color. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the divider view. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Renders a themed line and exposes it with the separator accessibility role unless decorative.
+ *
+ * @example
+ * <Divider orientation="horizontal" />
+ */
 export function Divider({ orientation = 'horizontal', decorative = false, theme = 'light', style }: DividerProps) {
   const colors = themes[theme];
   return (
@@ -25,13 +36,24 @@ export function Divider({ orientation = 'horizontal', decorative = false, theme 
   );
 }
 
+/** Props for compact supporting or error text. */
 export interface HelperTextProps {
+  /** Text or nested content shown to the user. */
   children: React.ReactNode;
+  /** Uses danger coloring and a polite alert announcement. @default false */
   error?: boolean;
+  /** Palette used for normal helper text. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the React Native `Text` element. */
   style?: StyleProp<TextStyle>;
 }
 
+/**
+ * Displays supporting text; error messages use a polite accessibility live region.
+ *
+ * @example
+ * <HelperText error>Enter a valid email address.</HelperText>
+ */
 export function HelperText({ children, error = false, theme = 'light', style }: HelperTextProps) {
   const colors = themes[theme];
   return (
@@ -41,15 +63,27 @@ export function HelperText({ children, error = false, theme = 'light', style }: 
   );
 }
 
+/** Semantic color states supported by {@link Indicator} and {@link Tag}. */
 export type IndicatorStatus = 'neutral' | 'info' | 'success' | 'warning' | 'danger';
 
+/** Props for a labeled status indicator. */
 export interface IndicatorProps {
+  /** Visible text and accessibility label. */
   label: string;
+  /** Status color. @default 'neutral' */
   status?: IndicatorStatus;
+  /** Palette used to resolve the status color. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the indicator row. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Pairs a status-colored marker with text; the marker itself is hidden from accessibility.
+ *
+ * @example
+ * <Indicator label="Synced" status="success" />
+ */
 export function Indicator({ label, status = 'neutral', theme = 'light', style }: IndicatorProps) {
   const colors = themes[theme];
   const color = {
@@ -67,15 +101,28 @@ export function Indicator({ label, status = 'neutral', theme = 'light', style }:
   );
 }
 
+/** Props for a compact label that can optionally be removed. */
 export interface TagProps {
+  /** Tag content. */
   children: React.ReactNode;
+  /** Optional action invoked by the remove button. */
   onRemove?: () => void;
+  /** Accessible label for the remove button. @default 'Remove tag' */
   removeLabel?: string;
+  /** Semantic color and surface treatment. @default 'neutral' */
   variant?: IndicatorStatus;
+  /** Palette used for tag colors. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the outer tag container. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Displays a compact status tag with an optional React Native remove button.
+ *
+ * @example
+ * <Tag variant="info" onRemove={removeFilter}>Unreviewed</Tag>
+ */
 export function Tag({ children, onRemove, removeLabel = 'Remove tag', variant = 'neutral', theme = 'light', style }: TagProps) {
   const colors = themes[theme];
   const color = {
@@ -104,10 +151,14 @@ export function Tag({ children, onRemove, removeLabel = 'Remove tag', variant = 
   );
 }
 
+/** Text style presets supported by {@link Typography}. */
 export type TypographyVariant = 'display' | 'heading-1' | 'heading-2' | 'heading-3' | 'body' | 'body-small' | 'caption';
 
+/** Props for themed text with semantic heading roles for heading presets. */
 export interface TypographyProps extends TextProps {
+  /** Font-size and weight preset. @default 'body' */
   variant?: TypographyVariant;
+  /** Palette used for text color. @default 'light' */
   theme?: ThemeName;
 }
 
@@ -121,6 +172,12 @@ const typographyStyles: Record<TypographyVariant, TextStyle> = {
   caption: { fontSize: 11, lineHeight: 16 }
 };
 
+/**
+ * Applies a named type scale; heading variants default to the header accessibility role.
+ *
+ * @example
+ * <Typography variant="heading-2">Account</Typography>
+ */
 export function Typography({ variant = 'body', theme = 'light', accessibilityRole, style, ...props }: TypographyProps) {
   const colors = themes[theme];
   const isHeading = variant.startsWith('heading') || variant === 'display';
@@ -133,15 +190,32 @@ export function Typography({ variant = 'body', theme = 'light', accessibilityRol
   );
 }
 
+/** Props for a row of selectable or display-only pagination pips. */
 export interface PipsProps {
+  /** Number of pips; must be a positive integer. */
   count: number;
+  /** Zero-based index of the selected pip; must be less than `count`. */
   index: number;
+  /**
+   * Enables the pips and reports the selected zero-based index when pressed.
+   * When omitted, pips are disabled.
+   * @param index Zero-based index of the pressed pip.
+   */
   onIndexChange?: (index: number) => void;
+  /** Accessible label prefix for the pip list and each pip. @default 'Choose item' */
   label?: string;
+  /** Palette used for selected and unselected pips. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the pip list. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Renders React Native button pips, or disabled visual pips when no change callback is supplied.
+ *
+ * @example
+ * <Pips count={4} index={selectedIndex} onIndexChange={setSelectedIndex} />
+ */
 export function Pips({ count, index, onIndexChange, label = 'Choose item', theme = 'light', style }: PipsProps) {
   if (!Number.isInteger(count) || count < 1) throw new RangeError('Pips count must be a positive integer.');
   if (!Number.isInteger(index) || index < 0 || index >= count) throw new RangeError('Pips index must be within count.');
@@ -166,16 +240,33 @@ export function Pips({ count, index, onIndexChange, label = 'Choose item', theme
   );
 }
 
+/** Props for a controlled or locally managed slide selector. */
 export interface CarouselProps {
+  /** Non-empty slide contents in display order. */
   slides: React.ReactNode[];
+  /** Controlled zero-based slide index; controls local state when supplied. */
   index?: number;
+  /** Initial zero-based slide index when `index` is omitted. @default 0 */
   defaultIndex?: number;
+  /** Accessible label for the carousel container. @default 'Carousel' */
   label?: string;
+  /**
+   * Called with the requested zero-based slide index after navigation.
+   * @param index The new slide index.
+   */
   onIndexChange?: (index: number) => void;
+  /** Palette used for navigation controls and pips. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the outer carousel container. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Shows one slide at a time with previous/next buttons and selectable React Native pips.
+ *
+ * @example
+ * <Carousel slides={[<Text key="one">First</Text>, <Text key="two">Second</Text>]} />
+ */
 export function Carousel({ slides, index, defaultIndex = 0, label = 'Carousel', onIndexChange, theme = 'light', style }: CarouselProps) {
   const [uncontrolledIndex, setUncontrolledIndex] = useState(defaultIndex);
   const currentIndex = index ?? uncontrolledIndex;
@@ -207,21 +298,41 @@ export function Carousel({ slides, index, defaultIndex = 0, label = 'Carousel', 
   );
 }
 
+/** One option in a segmented button group. */
 export interface SegmentedButtonOption {
+  /** Value emitted when this option is pressed. */
   value: string;
+  /** Visible option text and accessibility label. */
   label: string;
+  /** Prevents selecting this option. */
   disabled?: boolean;
 }
 
+/** Props for a controlled segmented radio group. */
 export interface SegmentedButtonsProps {
+  /** Options rendered from left to right. */
   options: SegmentedButtonOption[];
+  /** Currently selected option value. */
   value: string;
+  /**
+   * Called with the selected option's value.
+   * @param value Value belonging to the pressed option.
+   */
   onValueChange: (value: string) => void;
+  /** Accessible label for the radio group. */
   label: string;
+  /** Palette used for selected and unselected options. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the radio-group container. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Renders a compact React Native radio group styled as adjoining segmented buttons.
+ *
+ * @example
+ * <SegmentedButtons label="View" options={[{ value: 'list', label: 'List' }]} value={view} onValueChange={setView} />
+ */
 export function SegmentedButtons({ options, value, onValueChange, label, theme = 'light', style }: SegmentedButtonsProps) {
   const colors = themes[theme];
   return (
@@ -235,22 +346,43 @@ export function SegmentedButtons({ options, value, onValueChange, label, theme =
   );
 }
 
+/** One selectable card option. */
 export interface SelectCardOption {
+  /** Value emitted when this card is pressed. */
   value: string;
+  /** Main visible heading for the option. */
   title: string;
+  /** Optional supporting text, also included in the accessibility label. */
   description?: string;
+  /** Prevents selecting this option. */
   disabled?: boolean;
 }
 
+/** Props for a controlled vertical group of selectable cards. */
 export interface SelectCardProps {
+  /** Options rendered in input order. */
   options: SelectCardOption[];
+  /** Currently selected option value. */
   value: string;
+  /**
+   * Called with the pressed option's value.
+   * @param value Value belonging to the selected card.
+   */
   onValueChange: (value: string) => void;
+  /** Accessible label for the radio group. */
   label: string;
+  /** Palette used for selected and unselected cards. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the group container. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Presents each choice as a React Native radio button with a bordered card layout.
+ *
+ * @example
+ * <SelectCard label="Delivery" options={[{ value: 'standard', title: 'Standard' }]} value={method} onValueChange={setMethod} />
+ */
 export function SelectCard({ options, value, onValueChange, label, theme = 'light', style }: SelectCardProps) {
   const colors = themes[theme];
   return (
@@ -268,15 +400,32 @@ export function SelectCard({ options, value, onValueChange, label, theme = 'ligh
   );
 }
 
+/** Props for a selectable or display-only integer star rating. */
 export interface StarRatingProps {
+  /** Current integer rating from zero through `max`. */
   value: number;
+  /**
+   * Enables rating controls and reports the selected one-based score.
+   * When omitted, stars are display-only.
+   * @param value Selected rating from 1 through `max`.
+   */
   onValueChange?: (value: number) => void;
+  /** Number of stars; must be a positive integer. @default 5 */
   max?: number;
+  /** Accessible label prefix. @default 'Rating' */
   label?: string;
+  /** Palette used for filled and empty stars. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the rating row. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Displays an integer star rating; when interactive, each star is a React Native radio button.
+ *
+ * @example
+ * <StarRating value={rating} onValueChange={setRating} />
+ */
 export function StarRating({ value, onValueChange, max = 5, label = 'Rating', theme = 'light', style }: StarRatingProps) {
   if (!Number.isInteger(max) || max < 1) throw new RangeError('Star rating max must be a positive integer.');
   if (!Number.isInteger(value) || value < 0 || value > max) throw new RangeError('Star rating value must be within max.');
@@ -296,18 +445,33 @@ export function StarRating({ value, onValueChange, max = 5, label = 'Rating', th
   );
 }
 
+/** Label for a step in a stepped progress display. */
 export interface ProgressStep {
+  /** Text identifying this step. */
   label: string;
 }
 
+/** Props for a non-interactive stepped progress bar. */
 export interface SteppedProgressBarProps {
+  /** Steps shown in order; must contain at least one step. */
   steps: ProgressStep[];
+  /** Zero-based current step index; must be within `steps`. */
   activeStep: number;
+  /** Accessible label for the progress list. @default 'Progress' */
   label?: string;
+  /** Palette used to distinguish completed/current and future steps. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the component's outer container. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Shows completed/current segments and step labels without navigation controls.
+ * Its accessible label defaults to `Progress`.
+ *
+ * @example
+ * <SteppedProgressBar steps={[{ label: 'Details' }, { label: 'Review' }]} activeStep={0} />
+ */
 export function SteppedProgressBar({ steps, activeStep, label = 'Progress', theme = 'light', style }: SteppedProgressBarProps) {
   if (steps.length === 0 || !Number.isInteger(activeStep) || activeStep < 0 || activeStep >= steps.length) throw new RangeError('Stepped progress requires a valid active step.');
   const colors = themes[theme];
@@ -327,10 +491,27 @@ export function SteppedProgressBar({ steps, activeStep, label = 'Progress', them
   );
 }
 
+/**
+ * Props for the stepped progress display with back/continue actions.
+ */
 export interface StepperProps extends SteppedProgressBarProps {
+  /** Accessible label; the progress list appends ` progress`. @default 'Setup steps' */
+  label?: string;
+  /**
+   * Called with the adjacent zero-based step index after Back or Continue is pressed.
+   * The component disables those actions at the first and last steps.
+   * @param index Requested zero-based step index.
+   */
   onStepChange: (index: number) => void;
 }
 
+/**
+ * Combines a stepped progress display with React Native Back and Continue buttons.
+ * Its default label is `Setup steps`, with ` progress` appended for the progress list.
+ *
+ * @example
+ * <Stepper steps={steps} activeStep={step} onStepChange={setStep} />
+ */
 export function Stepper({ steps, activeStep, onStepChange, label = 'Setup steps', theme = 'light', style }: StepperProps) {
   const colors = themes[theme];
   if (steps.length === 0 || !Number.isInteger(activeStep) || activeStep < 0 || activeStep >= steps.length) throw new RangeError('Stepper requires a valid active step.');
@@ -349,16 +530,30 @@ export function Stepper({ steps, activeStep, onStepChange, label = 'Setup steps'
   );
 }
 
+/** Props for a pressable file-selection affordance. */
 export interface FileUploadInputProps {
+  /** Visible button text and accessibility label. */
   label: string;
+  /** Invoked on press; the application must perform any platform-specific file selection. */
   onPress: () => void;
+  /** Selected file names displayed below the button. @default [] */
   selectedFiles?: string[];
+  /** Optional supporting text shown below the button. */
   helperText?: string;
+  /** Disables the pressable. @default false */
   disabled?: boolean;
+  /** Palette used for button and file-name text. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the wrapper. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Renders a React Native button and selected-file labels; it does not open a file picker itself.
+ *
+ * @example
+ * <FileUploadInput label="Choose documents" onPress={openDocumentPicker} selectedFiles={fileNames} />
+ */
 export function FileUploadInput({ label, onPress, selectedFiles = [], helperText, disabled = false, theme = 'light', style }: FileUploadInputProps) {
   const colors = themes[theme];
   return (
@@ -372,14 +567,26 @@ export function FileUploadInput({ label, onPress, selectedFiles = [], helperText
   );
 }
 
+/** Props for an inline disclosure panel. */
 export interface PopoverProps {
+  /** Text shown on the pressable trigger and used as its accessibility label. */
   trigger: string;
+  /** Content displayed while the disclosure is open. */
   children: React.ReactNode;
+  /** Accessible label for the open summary panel. @default 'More information' */
   label?: string;
+  /** Palette used for the trigger and panel. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the wrapper. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Toggles an inline labeled summary panel from a React Native button; it is not a floating modal.
+ *
+ * @example
+ * <Popover trigger="Details"><Text>Additional information.</Text></Popover>
+ */
 export function Popover({ trigger, children, label = 'More information', theme = 'light', style }: PopoverProps) {
   const [open, setOpen] = useState(false);
   const colors = themes[theme];
@@ -393,13 +600,24 @@ export function Popover({ trigger, children, label = 'More information', theme =
   );
 }
 
+/** Shared controlled props for the modal bottom and side sheets. */
 export interface SheetProps {
+  /** Controls React Native modal visibility. */
   open: boolean;
+  /**
+   * Called when the React Native modal requests closure, the close button is pressed, or the backdrop is pressed.
+   * @param open Whether the sheet should be open.
+   */
   onOpenChange: (open: boolean) => void;
+  /** Heading displayed in the panel. */
   title: string;
+  /** Optional supporting text displayed below the heading. */
   description?: string;
+  /** Sheet body content. */
   children: React.ReactNode;
+  /** Palette used for the panel and text. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the modal panel. */
   contentStyle?: StyleProp<ViewStyle>;
 }
 
@@ -432,10 +650,24 @@ function Sheet({ open, onOpenChange, title, description, children, theme = 'ligh
   );
 }
 
+/**
+ * Presents a slide-animated React Native modal panel attached to the bottom edge.
+ * The hardware/back close request and backdrop press call `onOpenChange(false)`.
+ *
+ * @example
+ * <BottomSheet open={open} onOpenChange={setOpen} title="Filters"><Text>Filter options</Text></BottomSheet>
+ */
 export function BottomSheet(props: SheetProps) {
   return <Sheet {...props} position="bottom" />;
 }
 
+/**
+ * Presents a slide-animated React Native modal panel attached to the right edge.
+ * The hardware/back close request and backdrop press call `onOpenChange(false)`.
+ *
+ * @example
+ * <SideSheet open={open} onOpenChange={setOpen} title="Details"><Text>Item details</Text></SideSheet>
+ */
 export function SideSheet(props: SheetProps) {
   return <Sheet {...props} position="side" />;
 }

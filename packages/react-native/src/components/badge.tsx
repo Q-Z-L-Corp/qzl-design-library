@@ -3,11 +3,20 @@ import { Text } from 'react-native';
 import type { TextProps } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** Props for a compact themed text badge. */
 export interface BadgeProps extends TextProps {
+  /** Semantic color and background treatment. @default 'primary' */
   variant?: 'primary' | 'neutral' | 'success' | 'warning' | 'danger';
+  /** Palette used to resolve the badge colors. @default 'light' */
   theme?: ThemeName;
 }
 
+/**
+ * Renders a non-interactive badge using a themed React Native `Text` element.
+ *
+ * @example
+ * <Badge variant="success">Available</Badge>
+ */
 export function Badge({ variant = 'primary', theme = 'light', style, ...props }: BadgeProps) {
   const colors = themes[theme];
   const foreground = {

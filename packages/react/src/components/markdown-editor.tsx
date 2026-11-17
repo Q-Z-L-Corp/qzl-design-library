@@ -2,10 +2,21 @@ import React from 'react';
 import { mergeClasses, parseMarkdown } from '@qzl/core';
 import type { MarkdownBlock } from '@qzl/core';
 
+/** Props for the controlled {@link MarkdownEditor}. */
 export interface MarkdownEditorProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'value' | 'onChange'> {
+  /** Visible label associated with the editing textarea. */
   label: string;
+  /** Current markdown source text. */
   value: string;
+  /**
+   * Called whenever the textarea's source text changes.
+   * @param value Updated markdown source.
+   */
   onValueChange: (value: string) => void;
+  /**
+   * Show a rendered preview of the parsed source beneath the editor.
+   * @default false
+   */
   preview?: boolean;
 }
 
@@ -26,6 +37,14 @@ function MarkdownPreview({ blocks }: { blocks: MarkdownBlock[] }) {
   );
 }
 
+/**
+ * Renders a controlled markdown textarea with spell checking enabled and, optionally, a parsed preview.
+ *
+ * @example
+ * ```tsx
+ * <MarkdownEditor label="Description" value={text} onValueChange={setText} preview />
+ * ```
+ */
 export function MarkdownEditor({ label, value, onValueChange, preview = false, className, ...props }: MarkdownEditorProps) {
   const blocks = parseMarkdown(value);
 

@@ -17,12 +17,34 @@ type BarcodeWindow = typeof globalThis & {
   BarcodeDetector?: BarcodeDetectorConstructor;
 };
 
+/** Props for {@link QrScanner}, in addition to div attributes. */
 export interface QrScannerProps extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * Called once a QR code value is detected.
+   * @param value Decoded raw value from the QR code.
+   */
   onScan: (value: string) => void;
+  /**
+   * Called when camera setup or QR detection fails.
+   * @param error Error describing the failure.
+   */
   onScanError?: (error: Error) => void;
+  /**
+   * Accessible name used for the camera preview.
+   * @default 'QR code scanner'
+   */
   label?: string;
 }
 
+/**
+ * Renders an opt-in camera scanner using the browser BarcodeDetector API for QR codes.
+ * Camera access begins only after the user activates the start control.
+ *
+ * @example
+ * ```tsx
+ * <QrScanner onScan={(value) => setScannedValue(value)} onScanError={reportError} />
+ * ```
+ */
 export function QrScanner({ onScan, onScanError, label = 'QR code scanner', className, ...props }: QrScannerProps) {
   const [scanning, setScanning] = useState(false);
   const [message, setMessage] = useState('');

@@ -5,13 +5,24 @@ import { parseMarkdown } from '@qzl/core';
 import type { MarkdownBlock } from '@qzl/core';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** Props for a controlled multiline Markdown input with an optional rendered preview. */
 export interface MarkdownEditorProps extends Omit<TextInputProps, 'value' | 'onChangeText' | 'multiline'> {
+  /** Visible label and accessibility label for the text input. */
   label: string;
+  /** Current Markdown source string. */
   value: string;
+  /**
+   * Called whenever the React Native text input changes.
+   * @param value Updated Markdown source string.
+   */
   onValueChange: (value: string) => void;
+  /** Shows a lightweight React Native text rendering of parsed Markdown blocks. @default false */
   preview?: boolean;
+  /** Palette used for the input and preview. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the wrapper containing the label, input, and optional preview. */
   style?: StyleProp<ViewStyle>;
+  /** Additional style applied to the React Native text input. */
   inputStyle?: StyleProp<TextStyle>;
 }
 
@@ -34,6 +45,12 @@ function MarkdownPreview({ blocks, theme }: { blocks: MarkdownBlock[]; theme: Th
   );
 }
 
+/**
+ * Provides a controlled multiline React Native editor and an optional parsed-text preview.
+ *
+ * @example
+ * <MarkdownEditor label="Notes" value={notes} onValueChange={setNotes} preview />
+ */
 export function MarkdownEditor({ label, value, onValueChange, preview = false, theme = 'light', style, inputStyle, ...props }: MarkdownEditorProps) {
   const colors = themes[theme];
   const blocks = parseMarkdown(value);

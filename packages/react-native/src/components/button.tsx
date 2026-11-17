@@ -3,16 +3,30 @@ import { ActivityIndicator, Pressable, Text } from 'react-native';
 import type { PressableProps, StyleProp, TextStyle, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** Props for the themed React Native pressable button. */
 export interface ButtonProps extends Omit<PressableProps, 'children' | 'style'> {
+  /** Button text; replaced by an activity indicator while loading. */
   title: string;
+  /** Visual treatment of the button. @default 'primary' */
   variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
+  /** Preset control height and text size. @default 'md' */
   size?: 'sm' | 'md' | 'lg';
+  /** Shows an activity indicator and disables pressing. @default false */
   loading?: boolean;
+  /** Palette used for button colors. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the pressable. */
   style?: StyleProp<ViewStyle>;
+  /** Additional style applied to the title. */
   textStyle?: StyleProp<TextStyle>;
 }
 
+/**
+ * Renders a React Native pressable button with disabled and busy accessibility states.
+ *
+ * @example
+ * <Button title="Save changes" onPress={saveChanges} />
+ */
 export function Button({
   title,
   variant = 'primary',

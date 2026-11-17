@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "generate:component-registry": "node scripts/generate-component-registry.mjs",
+    "dev": "pnpm generate:component-registry && next dev",
+    "build": "pnpm generate:component-registry && next build",
     "start": "next start",
-    "lint": "eslint app"
+    "check:api-docs": "pnpm generate:component-registry && node --test test/api-doc-coverage.test.mjs",
+    "test": "pnpm generate:component-registry && node --test",
+    "lint": "eslint app scripts test"
   },
   "dependencies": {
     "@qzl/core": "workspace:*",

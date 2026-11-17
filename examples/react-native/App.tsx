@@ -30,8 +30,8 @@ import { QrScanner } from '@qzl/react-native/expo/qr-scanner';
 import { themes, type ThemeName } from '@qzl/tokens';
 
 const linkRows = [
-  { destination: 'qz-l.com/spring', clicks: 1248 },
-  { destination: 'qz-l.com/guide', clicks: 852 }
+  { destination: 'example.com/spring', clicks: 1248 },
+  { destination: 'example.com/guide', clicks: 852 }
 ];
 
 const linkColumns = [
@@ -79,7 +79,7 @@ export default function App() {
           <Badge theme={theme} variant="success">Protected</Badge>
         </View>
         <Text style={[styles.description, { color: colors.textMuted }]}>
-          Shared tokens, native controls, and accessible interactions.
+          Shared tokens, React Native controls, and accessible interactions.
         </Text>
         <Text style={[styles.label, { color: colors.text }]}>Workspace name</Text>
         <Input
@@ -127,7 +127,7 @@ export default function App() {
         </Card>
         <Card theme={theme} style={styles.card}>
           <Typography variant="heading-2" theme={theme}>More component patterns</Typography>
-          <Typography variant="body" theme={theme}>Shared patterns adapt to native controls and platform accessibility.</Typography>
+          <Typography variant="body" theme={theme}>Shared patterns adapt to React Native controls and platform accessibility.</Typography>
           <Divider theme={theme} />
           <HelperText theme={theme}>This helper text stays close to the content it describes.</HelperText>
           <Indicator label="All systems operational" status="success" theme={theme} />

@@ -3,20 +3,44 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** Describes a table column and the functions used to render or sort its cells. */
 export interface DataTableColumn<Row> {
+  /** Stable identifier used for React keys and sort state. */
   key: string;
+  /** Text shown in the column header. */
   header: string;
+  /**
+   * Renders a cell for a row in the current display order.
+   * @param row Data item displayed in the cell.
+   * @param index Zero-based index of the row in the displayed sequence.
+   */
   render: (row: Row, index: number) => React.ReactNode;
+  /**
+   * Returns a comparable value for sorting; omitting it makes the header non-sortable.
+   * @param row Data item whose sort value is requested.
+   */
   sortValue?: (row: Row) => string | number;
 }
 
+/** Props for a horizontally scrollable, locally sortable React Native table. */
 export interface DataTableProps<Row> {
+  /** Column definitions in display order. */
   columns: DataTableColumn<Row>[];
+  /** Row data in the original order; sorting does not mutate this array. */
   rows: Row[];
+  /**
+   * Supplies a stable key for each row.
+   * @param row Row data for which to create a key.
+   * @param index Zero-based index in the current displayed sequence.
+   */
   getRowKey: (row: Row, index: number) => string | number;
+  /** Accessible label for the horizontal scroll container. */
   caption: string;
+  /** Text shown when there are no rows. @default 'No results found.' */
   emptyMessage?: string;
+  /** Palette used for table text, borders, and header surface. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the horizontal scroll view. */
   style?: StyleProp<ViewStyle>;
 }
 
@@ -25,6 +49,17 @@ interface SortState {
   direction: 'ascending' | 'descending';
 }
 
+/**
+ * Renders a horizontally scrollable table with stable local sorting for sortable columns.
+ *
+ * @example
+ * <DataTable
+ *   caption="People"
+ *   columns={[{ key: 'name', header: 'Name', render: (row) => row.name, sortValue: (row) => row.name }]}
+ *   rows={[{ name: 'Ada' }]}
+ *   getRowKey={(row) => row.name}
+ * />
+ */
 export function DataTable<Row>({ columns, rows, getRowKey, caption, emptyMessage = 'No results found.', theme = 'light', style }: DataTableProps<Row>) {
   const [sort, setSort] = useState<SortState | null>(null);
   const colors = themes[theme];

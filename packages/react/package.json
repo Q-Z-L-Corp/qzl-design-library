@@ -1,7 +1,7 @@
 {
   "name": "@qzl/react",
   "version": "0.1.0",
-  "description": "Accessible React components built on the QZL design system.",
+  "description": "React components for Web applications in QZL Design Library.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",

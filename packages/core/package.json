@@ -1,7 +1,7 @@
 {
   "name": "@qzl/core",
   "version": "0.1.0",
-  "description": "Platform-neutral helpers for QZL component packages.",
+  "description": "Shared helpers for QZL Design Library component packages.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",

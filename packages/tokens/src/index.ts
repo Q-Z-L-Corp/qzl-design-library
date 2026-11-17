@@ -1,3 +1,12 @@
+/**
+ * Platform-neutral design tokens for color, spacing, typography, shape, motion, and layering.
+ * @example
+ * ```ts
+ * import { qzlTokens } from '@qzl/tokens';
+ *
+ * const cardRadius = qzlTokens.radius.md;
+ * ```
+ */
 export const qzlTokens = {
   colors: {
     brand: {
@@ -127,6 +136,15 @@ export const qzlTokens = {
   }
 };
 
+/**
+ * Named light and dark semantic color themes.
+ * @example
+ * ```ts
+ * import { themes } from '@qzl/tokens';
+ *
+ * const pageBackground = themes.light.background;
+ * ```
+ */
 export const themes = {
   light: {
     background: '#f4f7fb',
@@ -180,37 +198,73 @@ export const themes = {
   }
 };
 
+/** Names of the built-in semantic themes. */
 export type ThemeName = keyof typeof themes;
+/** Semantic color values available in each built-in theme. */
 export type ThemeTokens = (typeof themes)[ThemeName];
 
+/** Type of the exported platform-neutral design token collection. */
 export type QzlTokenSet = typeof qzlTokens;
 
+/** CSS custom properties generated from a semantic theme. */
 export interface ThemeCssVariables {
+  /** Default page background color. */
   '--qzl-background': string;
+  /** Stronger page background color used to distinguish sections. */
   '--qzl-background-strong': string;
+  /** Default component surface color. */
   '--qzl-surface': string;
+  /** Muted component surface color. */
   '--qzl-surface-muted': string;
+  /** Inverse component surface color. */
   '--qzl-surface-inverse': string;
+  /** Default border color. */
   '--qzl-border': string;
+  /** Primary text color. */
   '--qzl-text': string;
+  /** Muted text color. */
   '--qzl-text-muted': string;
+  /** Soft secondary text color. */
   '--qzl-text-soft': string;
+  /** Primary action and emphasis color. */
   '--qzl-primary': string;
+  /** Text color intended for a primary-colored surface. */
   '--qzl-primary-foreground': string;
+  /** Subtle primary-colored surface. */
   '--qzl-primary-subtle': string;
+  /** Border color for primary-colored controls. */
   '--qzl-primary-border': string;
+  /** Accent color for secondary emphasis. */
   '--qzl-accent': string;
+  /** Success status color. */
   '--qzl-success': string;
+  /** Subtle success status surface. */
   '--qzl-success-subtle': string;
+  /** Success status border color. */
   '--qzl-success-border': string;
+  /** Warning status color. */
   '--qzl-warning': string;
+  /** Subtle warning status surface. */
   '--qzl-warning-subtle': string;
+  /** Warning status border color. */
   '--qzl-warning-border': string;
+  /** Danger status color. */
   '--qzl-danger': string;
+  /** Subtle danger status surface. */
   '--qzl-danger-subtle': string;
+  /** Danger status border color. */
   '--qzl-danger-border': string;
 }
 
+/**
+ * Converts a semantic theme into CSS custom properties.
+ * @param mode - Theme whose colors should be converted.
+ * @returns CSS custom properties for the selected theme.
+ * @example
+ * ```ts
+ * const variables = getThemeCssVariables('dark');
+ * ```
+ */
 export function getThemeCssVariables(mode: ThemeName): ThemeCssVariables {
   const theme = themes[mode];
 

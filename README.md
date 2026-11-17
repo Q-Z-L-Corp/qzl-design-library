@@ -1,17 +1,17 @@
 # QZL Design Library
 
-An original, accessible design system for Q.Z.L Corp. Shared semantic tokens and platform-specific components support React on the web and React Native on iOS and Android.
+QZL Design Library is an open-source design system for building consistent, accessible, and expressive interfaces across Web and React Native. It provides shared design tokens, themes, reusable components, and API documentation. Developed by Q.Z.L Corp.
 
 ## Monorepo
 
 - `packages/tokens` — cross-platform design tokens and light/dark themes
 - `packages/core` — platform-neutral helpers and safe Markdown block parsing
-- `packages/react` — 45 web components and `@qzl/react/styles.css`
-- `packages/react-native` — 44 corresponding native components
+- `packages/react` — 45 Web components and `@qzl/react/styles.css`
+- `packages/react-native` — 44 corresponding React Native components
 - `apps/docs` — interactive documentation and component playground
 - `examples/react-native` — Expo example for iOS and Android
 
-The catalogs cover the reference library's 36 core component patterns, plus QZL-specific components for actions, input, selection, navigation, overlays, notifications, content surfaces, progress, tables/charts, and Markdown editing. The React Native file-upload control delegates document-picker integration to the host app. QR scanning is an optional browser component and a separate Expo entry. The scanner requests camera access only after a deliberate start action and never opens scanned content automatically.
+Forty-four components are available for both Web and React Native. The catalog also includes a Web QR scanner and a separate optional Expo camera entry for React Native. The React Native file-upload component delegates document-picker integration to the host app. Both scanners request camera access only after a deliberate start action and return scanned content without opening it automatically.
 
 ## Local development
 
@@ -22,13 +22,25 @@ pnpm install
 pnpm dev
 ```
 
-`pnpm dev` builds the public package outputs before starting the docs server at `http://localhost:3000`. To run the native example:
+`pnpm dev` builds the package outputs before starting the docs server at `http://localhost:3000`. To run the React Native example:
 
 ```sh
 pnpm start:native
 ```
 
 The Expo example includes `expo-camera` with camera-only permission configuration. Review platform permissions and test on target devices before production use.
+
+## Component documentation engine
+
+The docs app discovers components from the Web and React Native package entry points and extracts their TypeScript props, local type definitions, defaults, and literal choices. Each component page includes platform-specific examples, an interactive Web preview, API tables, a status badge, and customization examples. Search covers component APIs and guides (`⌘K`/`Ctrl+K`; `Escape` clears search), and generated examples are type-checked against both packages in the docs test suite.
+
+Regenerate the registry after changing package exports or component APIs:
+
+```sh
+pnpm --filter docs generate:component-registry
+```
+
+The JSON and TypeScript registry live in `apps/docs/app/generated/`; the generated coverage report is `apps/docs/docs-coverage.md`. Treat these as generated files. Component summaries, categories, and preview availability are maintained in `apps/docs/scripts/generate-component-registry.mjs`. Status badges are conservatively set to Beta until the project defines a release-status policy. Accessibility and related-component guidance remain marked incomplete in the report until verified.
 
 ## Build, tests, and lint
 
@@ -38,17 +50,19 @@ pnpm test
 pnpm lint
 ```
 
-Tests use Node's test runner for core/token utilities, Vitest and Testing Library for web behavior, and Jest/React Native Testing Library for native components.
+Tests use Node's test runner for core and token utilities, Vitest and Testing Library for Web behavior, and Jest with React Native Testing Library for React Native components.
 
 ## Package use
 
-After publication:
+The packages have not been published yet. After release, install the package for your platform:
 
 ```sh
-pnpm add @qzl/react @qzl/tokens
+pnpm add @qzl/react
+# or, in a React Native application:
+pnpm add @qzl/react-native @react-native-community/slider
 ```
 
-Import `@qzl/react/styles.css` once in the application root. The React Native package uses native controls and does not import web CSS. Expo-only camera scanning is available from `@qzl/react-native/expo/qr-scanner` and requires `expo-camera`; all other native components do not depend on Expo.
+For Web, `@qzl/react` supports React 18.3.1 or 19 with a matching React DOM version; import `@qzl/react/styles.css` once in the application entry point. `@qzl/react-native` supports React 19 and React Native 0.78 or later, and requires `@react-native-community/slider`. React Native components use platform controls and do not import Web styles. Expo camera scanning is available from `@qzl/react-native/expo/qr-scanner` and requires `expo-camera`; the other React Native components do not depend on Expo. Install `@qzl/tokens` directly only when your application imports its token APIs.
 
 All packages emit ESM JavaScript and TypeScript declarations to `dist/`. Package tarballs include their runtime files, styles where applicable, README, and MIT license.
 

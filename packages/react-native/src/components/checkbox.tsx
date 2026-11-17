@@ -3,14 +3,29 @@ import { Pressable, Text, View } from 'react-native';
 import type { PressableProps, StyleProp, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** Props for a controlled React Native checkbox row. */
 export interface CheckboxProps extends Omit<PressableProps, 'children' | 'style'> {
+  /** Whether the checkbox is currently selected. */
   checked: boolean;
+  /**
+   * Called when the user presses the row with the next checked state.
+   * @param checked The requested checked state.
+   */
   onCheckedChange: (checked: boolean) => void;
+  /** Visible label and accessibility label. */
   label: string;
+  /** Palette used for the check mark and control. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the pressable row. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Renders a labeled, controlled checkbox using React Native press and accessibility semantics.
+ *
+ * @example
+ * <Checkbox label="Remember me" checked={remember} onCheckedChange={setRemember} />
+ */
 export function Checkbox({ checked, onCheckedChange, onPress, label, theme = 'light', disabled, style, ...props }: CheckboxProps) {
   const colors = themes[theme];
   return (

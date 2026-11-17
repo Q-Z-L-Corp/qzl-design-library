@@ -1,6 +1,6 @@
 # Publishing
 
-The `@qzl/*` packages are configured for public npm publication, but have not been published. Publishing requires a real GitHub repository, an npm organization/scope with the required package permissions, and a configured `NPM_TOKEN`.
+The consumer-facing UI packages are `@qzl/react` and `@qzl/react-native`. They depend on the supporting `@qzl/core` and `@qzl/tokens` packages. None of the four packages has been published yet. Publishing requires a canonical GitHub repository, an npm organization/scope with the required package permissions, and a configured `NPM_TOKEN`.
 
 ## Before the first release
 

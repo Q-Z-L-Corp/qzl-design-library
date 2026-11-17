@@ -12,4 +12,4 @@ Everyone participating in project discussions or contributions is expected to:
 
 Harassment, discrimination, intimidation, and deliberate disruption are not acceptable. Project maintainers may remove content or restrict participation when needed to protect the community.
 
-To report a concern, contact the project maintainers privately through the repository's published contact channel.
+Before public release, the project maintainers should add a private contact address or reporting channel here so concerns can be reported confidentially.

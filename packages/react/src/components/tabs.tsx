@@ -1,17 +1,36 @@
 import React, { useId, useRef } from 'react';
 
+/** Label and identifier for one tab button. */
 export interface TabItem {
+  /** Value identifying this tab in controlled state. */
   value: string;
+  /** Visible tab label. */
   label: string;
 }
 
+/** Props for the controlled tab-list component {@link Tabs}. */
 export interface TabsProps {
+  /** Tabs to render, in display and keyboard-navigation order. */
   items: TabItem[];
+  /** Value of the selected tab. */
   value: string;
+  /**
+   * Called when a tab is activated by click or tab-list keyboard navigation.
+   * @param value Value of the newly selected tab.
+   */
   onValueChange: (value: string) => void;
+  /** ID of the associated tab panel, assigned to each tab's `aria-controls`. */
   panelId?: string;
 }
 
+/**
+ * Renders an accessible, controlled tab list with arrow, Home, and End navigation.
+ *
+ * @example
+ * ```tsx
+ * <Tabs items={tabs} value={activeTab} onValueChange={setActiveTab} panelId="settings-panel" />
+ * ```
+ */
 export function Tabs({ items, value, onValueChange, panelId }: TabsProps) {
   const listId = useId();
   const listRef = useRef<HTMLDivElement>(null);

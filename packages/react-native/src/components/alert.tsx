@@ -3,13 +3,24 @@ import { Text, View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** Props for a non-interactive, themed status message. */
 export interface AlertProps {
+  /** Message content displayed in the alert. */
   children: React.ReactNode;
+  /** Semantic color and React Native accessibility role. @default 'info' */
   variant?: 'info' | 'success' | 'warning' | 'danger';
+  /** Palette used for the message. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the outer container. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Displays a themed status message; danger alerts use the React Native alert role.
+ *
+ * @example
+ * <Alert variant="warning">Check the required fields before continuing.</Alert>
+ */
 export function Alert({ children, variant = 'info', theme = 'light', style }: AlertProps) {
   const colors = themes[theme];
   const palette = {

@@ -3,19 +3,37 @@ import { Pressable, Text, View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** One tab label and value. */
 export interface TabItem {
+  /** Value emitted when the tab is pressed. */
   value: string;
+  /** Visible text and tab content. */
   label: string;
 }
 
+/** Props for a controlled React Native tab list. */
 export interface TabsProps {
+  /** Tabs rendered in input order. */
   items: TabItem[];
+  /** Value of the selected tab. */
   value: string;
+  /**
+   * Called with the value of the pressed tab.
+   * @param value Value belonging to the selected tab.
+   */
   onValueChange: (value: string) => void;
+  /** Palette used for selected and unselected tabs. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the tab-list container. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Renders React Native pressable tabs and exposes the selected state to accessibility services.
+ *
+ * @example
+ * <Tabs items={[{ value: 'details', label: 'Details' }]} value={tab} onValueChange={setTab} />
+ */
 export function Tabs({ items, value, onValueChange, theme = 'light', style }: TabsProps) {
   const colors = themes[theme];
   return (

@@ -3,19 +3,34 @@ import { Pressable, Text, View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** One selectable entry in a navigation menu. */
 export interface NavigationMenuItem {
+  /** Visible title and button text. */
   label: string;
+  /** Action invoked when the entry is pressed. */
   onPress: () => void;
+  /** Marks this entry as selected in accessibility state and styling. */
   current?: boolean;
 }
 
+/** Props for a labeled list of navigation actions. */
 export interface NavigationMenuProps {
+  /** Entries rendered in order. */
   items: NavigationMenuItem[];
+  /** Accessible label for the list. */
   label: string;
+  /** Palette used for selected and unselected entries. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the list container. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Renders navigation choices as React Native pressable rows; this component does not perform routing.
+ *
+ * @example
+ * <NavigationMenu label="Settings" items={[{ label: 'Profile', current: true, onPress: showProfile }]} />
+ */
 export function NavigationMenu({ items, label, theme = 'light', style }: NavigationMenuProps) {
   const colors = themes[theme];
   return (

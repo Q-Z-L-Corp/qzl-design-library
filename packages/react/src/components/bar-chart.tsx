@@ -1,18 +1,39 @@
 import React from 'react';
 import { mergeClasses } from '@qzl/core';
 
+/** One labeled numeric value rendered as a bar by {@link BarChart}. */
 export interface BarChartDatum {
+  /** Category label shown beside the bar. */
   label: string;
+  /** Finite numeric value determining bar size and direction. */
   value: number;
+  /** Optional CSS color applied to this datum's bar. */
   color?: string;
 }
 
+/** Props for {@link BarChart}, in addition to figure attributes. */
 export interface BarChartProps extends React.HTMLAttributes<HTMLElement> {
+  /** Figure caption displayed above the chart. */
   title: string;
+  /** Values to render, one bar per datum. */
   data: BarChartDatum[];
+  /**
+   * Formats each numeric value for display alongside its bar.
+   * @param value Datum value.
+   * @returns Text displayed for that value.
+   * @default String
+   */
   formatValue?: (value: number) => string;
 }
 
+/**
+ * Renders a figure containing a labeled bar for each finite value, including values below zero.
+ *
+ * @example
+ * ```tsx
+ * <BarChart title="Monthly signups" data={[{ label: 'Jan', value: 24 }]} />
+ * ```
+ */
 export function BarChart({ title, data, formatValue = String, className, ...props }: BarChartProps) {
   if (data.some((datum) => !Number.isFinite(datum.value))) throw new RangeError('Bar chart values must be finite numbers.');
   const min = Math.min(0, ...data.map((datum) => datum.value));

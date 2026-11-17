@@ -3,22 +3,43 @@ import { Pressable, Text, View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** One labeled choice in a radio group. */
 export interface RadioOption {
+  /** Value emitted when this choice is pressed. */
   value: string;
+  /** Visible title and fallback accessibility label. */
   label: string;
+  /** Optional supporting text, also included in the accessibility label. */
   description?: string;
+  /** Prevents selecting this choice. */
   disabled?: boolean;
 }
 
+/** Props for a controlled, labeled set of radio choices. */
 export interface RadioGroupProps {
+  /** Accessible label for the group. */
   label: string;
+  /** Choices rendered in input order. */
   options: RadioOption[];
+  /** Currently selected option value. */
   value: string;
+  /**
+   * Called with the pressed option's value.
+   * @param value Value belonging to the selected option.
+   */
   onValueChange: (value: string) => void;
+  /** Palette used for selected and unselected controls. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the group container. */
   style?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Renders React Native radio controls with checked and disabled accessibility states.
+ *
+ * @example
+ * <RadioGroup label="Plan" options={[{ value: 'basic', label: 'Basic' }]} value={plan} onValueChange={setPlan} />
+ */
 export function RadioGroup({ label, options, value, onValueChange, theme = 'light', style }: RadioGroupProps) {
   const colors = themes[theme];
   return (

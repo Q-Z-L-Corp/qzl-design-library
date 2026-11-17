@@ -3,16 +3,37 @@ import { Modal, Pressable, Text, View } from 'react-native';
 import type { ModalProps, StyleProp, ViewStyle } from 'react-native';
 import { themes, type ThemeName } from '@qzl/tokens';
 
+/** Props for a controlled React Native modal dialog. */
 export interface DialogProps extends Omit<ModalProps, 'visible' | 'onRequestClose' | 'children'> {
+  /** Controls whether the React Native modal is visible. */
   open: boolean;
+  /**
+   * Requests a visibility change, including platform close requests and the close button.
+   * @param open Whether the dialog should be open.
+   */
   onOpenChange: (open: boolean) => void;
+  /** Heading displayed in the modal. */
   title: string;
+  /** Optional supporting text displayed below the heading. */
   description?: string;
+  /** Dialog body rendered inside the modal. */
   children: React.ReactNode;
+  /** Palette used for modal surface and text. @default 'light' */
   theme?: ThemeName;
+  /** Style applied to the dialog content panel. */
   contentStyle?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Presents content in a React Native modal, defaulting to a transparent fade transition, and reports
+ * close requests through `onOpenChange` (including platform close requests such as
+ * Android hardware back).
+ *
+ * @example
+ * <Dialog open={open} onOpenChange={setOpen} title="Delete item">
+ *   <Text>This action cannot be undone.</Text>
+ * </Dialog>
+ */
 export function Dialog({ open, onOpenChange, title, description, children, theme = 'light', contentStyle, ...props }: DialogProps) {
   const colors = themes[theme];
   return (

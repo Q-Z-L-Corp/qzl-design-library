@@ -1,0 +1,6598 @@
+export interface PublicApiParameter {
+  name: string;
+  type: string;
+  description: string;
+  documented: boolean;
+}
+
+export interface PublicApiMember {
+  name: string;
+  type: string;
+  optional: boolean;
+  description: string;
+  callbackParameters: PublicApiParameter[];
+}
+
+export interface PublicApiRecord {
+  packageName: string;
+  platform: string;
+  name: string;
+  kind: string;
+  signature: string;
+  sourcePath: string;
+  description: string;
+  examples: string[];
+  members: PublicApiMember[];
+  parameters: PublicApiParameter[];
+}
+
+export interface PublicApiPackage {
+  packageName: string;
+  publicApi: PublicApiRecord[];
+}
+
+export interface PublicApiDocumentation {
+  coverage: { total: number; documented: number; failures: string[] };
+  packages: PublicApiPackage[];
+}
+
+export const publicApiDocumentation: PublicApiDocumentation = {
+  "coverage": {
+    "total": 1459,
+    "documented": 1459,
+    "failures": []
+  },
+  "packages": [
+    {
+      "packageName": "@qzl/react",
+      "publicApi": [
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Accordion",
+          "kind": "component",
+          "signature": "({ title, open, defaultOpen, onOpenChange, className, children, ...props }: AccordionProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/accordion.tsx",
+          "description": "Renders a disclosure control and its associated region.",
+          "examples": [
+            "```tsx\n<Accordion title=\"Details\" defaultOpen={false}>Additional information.</Accordion>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "AccordionProps",
+          "kind": "interface",
+          "signature": "interface AccordionProps",
+          "sourcePath": "packages/react/src/components/accordion.tsx",
+          "description": "Props for the controlled or uncontrolled {@link Accordion}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Content displayed in the accordion trigger.",
+              "callbackParameters": []
+            },
+            {
+              "name": "open",
+              "type": "boolean",
+              "optional": true,
+              "description": "Controls expanded state when provided.",
+              "callbackParameters": []
+            },
+            {
+              "name": "defaultOpen",
+              "type": "boolean",
+              "optional": true,
+              "description": "Initial expanded state when `open` is not provided.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onOpenChange",
+              "type": "(open: boolean) => void",
+              "optional": true,
+              "description": "Called whenever the trigger requests a new expanded state.",
+              "callbackParameters": [
+                {
+                  "name": "open",
+                  "type": "boolean",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Avatar",
+          "kind": "component",
+          "signature": "({ name, src, size, className, ...props }: AvatarProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/avatar.tsx",
+          "description": "Displays a named image, falling back to up to two initials when no image is available.",
+          "examples": [
+            "```tsx\n<Avatar name=\"Ada Lovelace\" src=\"/ada.png\" />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "AvatarProps",
+          "kind": "interface",
+          "signature": "interface AvatarProps",
+          "sourcePath": "packages/react/src/components/avatar.tsx",
+          "description": "Props for {@link Avatar}, in addition to span attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "name",
+              "type": "string",
+              "optional": false,
+              "description": "Name announced for the avatar and used to derive fallback initials.",
+              "callbackParameters": []
+            },
+            {
+              "name": "src",
+              "type": "string",
+              "optional": true,
+              "description": "Image URL; when loading fails, initials are shown instead.",
+              "callbackParameters": []
+            },
+            {
+              "name": "size",
+              "type": "'sm' | 'md' | 'lg'",
+              "optional": true,
+              "description": "Preset avatar dimensions.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "BarChart",
+          "kind": "component",
+          "signature": "({ title, data, formatValue, className, ...props }: BarChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/bar-chart.tsx",
+          "description": "Renders a figure containing a labeled bar for each finite value, including values below zero.",
+          "examples": [
+            "```tsx\n<BarChart title=\"Monthly signups\" data={[{ label: 'Jan', value: 24 }]} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "BarChartDatum",
+          "kind": "interface",
+          "signature": "interface BarChartDatum",
+          "sourcePath": "packages/react/src/components/bar-chart.tsx",
+          "description": "One labeled numeric value rendered as a bar by {@link BarChart}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Category label shown beside the bar.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "number",
+              "optional": false,
+              "description": "Finite numeric value determining bar size and direction.",
+              "callbackParameters": []
+            },
+            {
+              "name": "color",
+              "type": "string",
+              "optional": true,
+              "description": "Optional CSS color applied to this datum's bar.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "BarChartProps",
+          "kind": "interface",
+          "signature": "interface BarChartProps",
+          "sourcePath": "packages/react/src/components/bar-chart.tsx",
+          "description": "Props for {@link BarChart}, in addition to figure attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Figure caption displayed above the chart.",
+              "callbackParameters": []
+            },
+            {
+              "name": "data",
+              "type": "BarChartDatum[]",
+              "optional": false,
+              "description": "Values to render, one bar per datum.",
+              "callbackParameters": []
+            },
+            {
+              "name": "formatValue",
+              "type": "(value: number) => string",
+              "optional": true,
+              "description": "Formats each numeric value for display alongside its bar.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Breadcrumbs",
+          "kind": "component",
+          "signature": "({ items, label, className, ...props }: BreadcrumbsProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/breadcrumbs.tsx",
+          "description": "Renders an ordered breadcrumb trail; the final item is current unless overridden.",
+          "examples": [
+            "```tsx\n<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Settings' }]} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "BreadcrumbItem",
+          "kind": "interface",
+          "signature": "interface BreadcrumbItem",
+          "sourcePath": "packages/react/src/components/breadcrumbs.tsx",
+          "description": "One entry in a {@link Breadcrumbs} trail.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Visible breadcrumb label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "href",
+              "type": "string",
+              "optional": true,
+              "description": "Destination for a non-current breadcrumb.",
+              "callbackParameters": []
+            },
+            {
+              "name": "current",
+              "type": "boolean",
+              "optional": true,
+              "description": "Mark this entry as the current page; if omitted, the final item is current.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "BreadcrumbsProps",
+          "kind": "interface",
+          "signature": "interface BreadcrumbsProps",
+          "sourcePath": "packages/react/src/components/breadcrumbs.tsx",
+          "description": "Props for {@link Breadcrumbs}, in addition to nav attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "items",
+              "type": "BreadcrumbItem[]",
+              "optional": false,
+              "description": "Breadcrumb entries in trail order.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible name of the navigation landmark.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Button",
+          "kind": "component",
+          "signature": "({ className, variant, size, fullWidth, type, ...props }: ButtonProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/button.tsx",
+          "description": "Renders a styled HTML button with variant, size, and width options. Its `type`\ndefaults to `button`.",
+          "examples": [
+            "```tsx\n<Button variant=\"primary\" onClick={save}>Save</Button>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "ButtonVariant",
+          "kind": "type",
+          "signature": "'primary' | 'secondary' | 'ghost' | 'danger'",
+          "sourcePath": "packages/react/src/components/button.tsx",
+          "description": "Visual treatment applied to a {@link Button}.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "ButtonSize",
+          "kind": "type",
+          "signature": "'sm' | 'md' | 'lg'",
+          "sourcePath": "packages/react/src/components/button.tsx",
+          "description": "Supported button size presets.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "ButtonProps",
+          "kind": "interface",
+          "signature": "interface ButtonProps",
+          "sourcePath": "packages/react/src/components/button.tsx",
+          "description": "Props for {@link Button}, in addition to HTML button attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "variant",
+              "type": "ButtonVariant",
+              "optional": true,
+              "description": "Visual treatment of the button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "size",
+              "type": "ButtonSize",
+              "optional": true,
+              "description": "Preset size of the button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "fullWidth",
+              "type": "boolean",
+              "optional": true,
+              "description": "Stretch the button to fill the width of its container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Card",
+          "kind": "component",
+          "signature": "({ className, elevated, ...props }: CardProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/card.tsx",
+          "description": "Renders a content container with optional elevated styling.",
+          "examples": [
+            "```tsx\n<Card><h2>Account</h2><p>Profile settings</p></Card>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "CardProps",
+          "kind": "interface",
+          "signature": "interface CardProps",
+          "sourcePath": "packages/react/src/components/card.tsx",
+          "description": "Props for {@link Card}, in addition to div attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "elevated",
+              "type": "boolean",
+              "optional": true,
+              "description": "Add the elevated card treatment.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "DataTable",
+          "kind": "component",
+          "signature": "<Row>({ columns, rows, getRowKey, caption, emptyMessage, className, ...props }: DataTableProps<Row>) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/data-table.tsx",
+          "description": "Renders a table with optional client-side sorting for columns that define `sortValue`.",
+          "examples": [
+            "```tsx\n<DataTable caption=\"People\" columns={columns} rows={people} getRowKey={(person) => person.id} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "DataTableColumn",
+          "kind": "interface",
+          "signature": "interface DataTableColumn",
+          "sourcePath": "packages/react/src/components/data-table.tsx",
+          "description": "Column definition used by the generic {@link DataTable}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "key",
+              "type": "string",
+              "optional": false,
+              "description": "Stable identifier used for rendering and sort state.",
+              "callbackParameters": []
+            },
+            {
+              "name": "header",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Header content displayed for this column.",
+              "callbackParameters": []
+            },
+            {
+              "name": "render",
+              "type": "(row: Row, index: number) => React.ReactNode",
+              "optional": false,
+              "description": "Produces a cell's content.",
+              "callbackParameters": [
+                {
+                  "name": "row",
+                  "type": "Row",
+                  "description": "",
+                  "documented": true
+                },
+                {
+                  "name": "index",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "sortValue",
+              "type": "(row: Row) => string | number",
+              "optional": true,
+              "description": "Produces the sortable value for a row. Columns without this function are not interactive.",
+              "callbackParameters": [
+                {
+                  "name": "row",
+                  "type": "Row",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "DataTableProps",
+          "kind": "interface",
+          "signature": "interface DataTableProps",
+          "sourcePath": "packages/react/src/components/data-table.tsx",
+          "description": "Props for a generic {@link DataTable}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "columns",
+              "type": "DataTableColumn<Row>[]",
+              "optional": false,
+              "description": "Column definitions in display order.",
+              "callbackParameters": []
+            },
+            {
+              "name": "rows",
+              "type": "Row[]",
+              "optional": false,
+              "description": "Data records to render.",
+              "callbackParameters": []
+            },
+            {
+              "name": "getRowKey",
+              "type": "(row: Row, index: number) => React.Key",
+              "optional": false,
+              "description": "Produces the React key for each record.",
+              "callbackParameters": [
+                {
+                  "name": "row",
+                  "type": "Row",
+                  "description": "",
+                  "documented": true
+                },
+                {
+                  "name": "index",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "caption",
+              "type": "string",
+              "optional": false,
+              "description": "Visible table caption describing the data.",
+              "callbackParameters": []
+            },
+            {
+              "name": "emptyMessage",
+              "type": "React.ReactNode",
+              "optional": true,
+              "description": "Cell content shown when `rows` is empty.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "DropdownMenu",
+          "kind": "component",
+          "signature": "({ label, items, className, ...props }: DropdownMenuProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/dropdown-menu.tsx",
+          "description": "Renders an HTML disclosure menu; selecting an enabled item invokes its callback and closes it.",
+          "examples": [
+            "```tsx\n<DropdownMenu label=\"Actions\" items={[{ label: 'Refresh', onSelect: refresh }]} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "DropdownMenuItem",
+          "kind": "interface",
+          "signature": "interface DropdownMenuItem",
+          "sourcePath": "packages/react/src/components/dropdown-menu.tsx",
+          "description": "One action rendered in a {@link DropdownMenu}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Visible action label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onSelect",
+              "type": "() => void",
+              "optional": false,
+              "description": "Called when the enabled menu action is selected; the containing details element is then closed.",
+              "callbackParameters": []
+            },
+            {
+              "name": "disabled",
+              "type": "boolean",
+              "optional": true,
+              "description": "Disables the action button.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "DropdownMenuProps",
+          "kind": "interface",
+          "signature": "interface DropdownMenuProps",
+          "sourcePath": "packages/react/src/components/dropdown-menu.tsx",
+          "description": "Props for the HTML details-based {@link DropdownMenu}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible summary that opens and closes the menu.",
+              "callbackParameters": []
+            },
+            {
+              "name": "items",
+              "type": "DropdownMenuItem[]",
+              "optional": false,
+              "description": "Actions displayed while the details element is open.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Input",
+          "kind": "component",
+          "signature": "({ className, error, ...props }: InputProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/input.tsx",
+          "description": "Renders an HTML input with the library's input styling.",
+          "examples": [
+            "```tsx\n<Input aria-label=\"Email\" type=\"email\" error={hasError} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "InputProps",
+          "kind": "interface",
+          "signature": "interface InputProps",
+          "sourcePath": "packages/react/src/components/input.tsx",
+          "description": "Props for {@link Input}, in addition to HTML input attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "error",
+              "type": "boolean",
+              "optional": true,
+              "description": "Apply the component's error styling; this does not set browser form-validation state.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Badge",
+          "kind": "component",
+          "signature": "({ className, variant, ...props }: BadgeProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/badge.tsx",
+          "description": "Renders a short status or category label.",
+          "examples": [
+            "```tsx\n<Badge variant=\"success\">Published</Badge>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "BadgeProps",
+          "kind": "interface",
+          "signature": "interface BadgeProps",
+          "sourcePath": "packages/react/src/components/badge.tsx",
+          "description": "Props for {@link Badge}, in addition to span attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "variant",
+              "type": "'primary' | 'neutral' | 'success' | 'warning' | 'danger'",
+              "optional": true,
+              "description": "Color treatment for the badge.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Alert",
+          "kind": "component",
+          "signature": "({ className, variant, ...props }: AlertProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/alert.tsx",
+          "description": "Renders a styled alert container; supply its contents and semantics as needed.",
+          "examples": [
+            "```tsx\n<Alert variant=\"warning\">Changes have not been saved.</Alert>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "AlertProps",
+          "kind": "interface",
+          "signature": "interface AlertProps",
+          "sourcePath": "packages/react/src/components/alert.tsx",
+          "description": "Props for {@link Alert}, in addition to div attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "variant",
+              "type": "'info' | 'success' | 'warning' | 'danger'",
+              "optional": true,
+              "description": "Color treatment communicating the alert category.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Tabs",
+          "kind": "component",
+          "signature": "({ items, value, onValueChange, panelId }: TabsProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/tabs.tsx",
+          "description": "Renders an accessible, controlled tab list with arrow, Home, and End navigation.",
+          "examples": [
+            "```tsx\n<Tabs items={tabs} value={activeTab} onValueChange={setActiveTab} panelId=\"settings-panel\" />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "TabItem",
+          "kind": "interface",
+          "signature": "interface TabItem",
+          "sourcePath": "packages/react/src/components/tabs.tsx",
+          "description": "Label and identifier for one tab button.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Value identifying this tab in controlled state.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible tab label.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "TabsProps",
+          "kind": "interface",
+          "signature": "interface TabsProps",
+          "sourcePath": "packages/react/src/components/tabs.tsx",
+          "description": "Props for the controlled tab-list component {@link Tabs}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "items",
+              "type": "TabItem[]",
+              "optional": false,
+              "description": "Tabs to render, in display and keyboard-navigation order.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Value of the selected tab.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called when a tab is activated by click or tab-list keyboard navigation.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "panelId",
+              "type": "string",
+              "optional": true,
+              "description": "ID of the associated tab panel, assigned to each tab's `aria-controls`.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Checkbox",
+          "kind": "component",
+          "signature": "({ className, error, type, ...props }: CheckboxProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/checkbox.tsx",
+          "description": "Renders an HTML checkbox input with optional error styling. Its input type defaults\nto `checkbox`.",
+          "examples": [
+            "```tsx\n<Checkbox checked={accepted} onChange={(event) => setAccepted(event.target.checked)} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "CheckboxProps",
+          "kind": "interface",
+          "signature": "interface CheckboxProps",
+          "sourcePath": "packages/react/src/components/checkbox.tsx",
+          "description": "Props for {@link Checkbox}, in addition to HTML input attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "error",
+              "type": "boolean",
+              "optional": true,
+              "description": "Apply error styling without setting browser form-validation state.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Switch",
+          "kind": "component",
+          "signature": "({ checked, onCheckedChange, className, disabled, onClick, ...props }: SwitchProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/switch.tsx",
+          "description": "Renders a controlled switch using a button with switch semantics.",
+          "examples": [
+            "```tsx\n<Switch checked={enabled} onCheckedChange={setEnabled} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SwitchProps",
+          "kind": "interface",
+          "signature": "interface SwitchProps",
+          "sourcePath": "packages/react/src/components/switch.tsx",
+          "description": "Props for the controlled {@link Switch} component.",
+          "examples": [],
+          "members": [
+            {
+              "name": "checked",
+              "type": "boolean",
+              "optional": false,
+              "description": "Whether the switch is currently on.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onCheckedChange",
+              "type": "(checked: boolean) => void",
+              "optional": false,
+              "description": "Called after activation with the inverse of the current `checked` value.",
+              "callbackParameters": [
+                {
+                  "name": "checked",
+                  "type": "boolean",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Textarea",
+          "kind": "component",
+          "signature": "({ className, error, ...props }: TextareaProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/textarea.tsx",
+          "description": "Renders an HTML textarea with the library's input styling.",
+          "examples": [
+            "```tsx\n<Textarea aria-label=\"Notes\" rows={4} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "TextareaProps",
+          "kind": "interface",
+          "signature": "interface TextareaProps",
+          "sourcePath": "packages/react/src/components/textarea.tsx",
+          "description": "Props for {@link Textarea}, in addition to HTML textarea attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "error",
+              "type": "boolean",
+              "optional": true,
+              "description": "Apply the component's error styling; this does not set browser form-validation state.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Spinner",
+          "kind": "component",
+          "signature": "({ className, label, size, ...props }: SpinnerProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/spinner.tsx",
+          "description": "Renders a loading indicator with a status role and accessible name.",
+          "examples": [
+            "```tsx\n<Spinner label=\"Saving changes\" size=\"sm\" />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SpinnerProps",
+          "kind": "interface",
+          "signature": "interface SpinnerProps",
+          "sourcePath": "packages/react/src/components/spinner.tsx",
+          "description": "Props for {@link Spinner}, in addition to span attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible status name.",
+              "callbackParameters": []
+            },
+            {
+              "name": "size",
+              "type": "'sm' | 'md' | 'lg'",
+              "optional": true,
+              "description": "Preset spinner size.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Skeleton",
+          "kind": "component",
+          "signature": "({ className, circle, ...props }: SkeletonProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/skeleton.tsx",
+          "description": "Renders a decorative loading placeholder hidden from assistive technology.",
+          "examples": [
+            "```tsx\n<Skeleton circle style={{ width: 40, height: 40 }} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SkeletonProps",
+          "kind": "interface",
+          "signature": "interface SkeletonProps",
+          "sourcePath": "packages/react/src/components/skeleton.tsx",
+          "description": "Props for {@link Skeleton}, in addition to div attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "circle",
+              "type": "boolean",
+              "optional": true,
+              "description": "Render a circular placeholder instead of the default shape.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "IconButton",
+          "kind": "component",
+          "signature": "({ label, variant, className, type, ...props }: IconButtonProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/icon-button.tsx",
+          "description": "Renders a button whose accessible name is supplied separately from its content.\nIts HTML `type` defaults to `button`.",
+          "examples": [
+            "```tsx\n<IconButton label=\"Close\" onClick={close}>×</IconButton>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "IconButtonProps",
+          "kind": "interface",
+          "signature": "interface IconButtonProps",
+          "sourcePath": "packages/react/src/components/icon-button.tsx",
+          "description": "Props for {@link IconButton}, in addition to HTML button attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible name applied as the button's `aria-label`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "variant",
+              "type": "'neutral' | 'primary' | 'danger'",
+              "optional": true,
+              "description": "Visual treatment of the button.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Select",
+          "kind": "component",
+          "signature": "({ className, error, ...props }: SelectProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/select.tsx",
+          "description": "Renders an HTML select with the library's input styling.",
+          "examples": [
+            "```tsx\n<Select aria-label=\"Plan\" value={plan} onChange={(event) => setPlan(event.target.value)}>\n  <option value=\"basic\">Basic</option>\n</Select>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SelectProps",
+          "kind": "interface",
+          "signature": "interface SelectProps",
+          "sourcePath": "packages/react/src/components/select.tsx",
+          "description": "Props for {@link Select}, in addition to HTML select attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "error",
+              "type": "boolean",
+              "optional": true,
+              "description": "Apply the component's error styling; this does not set browser form-validation state.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Dialog",
+          "kind": "component",
+          "signature": "({ open, onOpenChange, title, description, className, children, onClick, onClose, onCancel, onKeyDown, ...props }: DialogProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/dialog.tsx",
+          "description": "Renders a controlled modal dialog with a heading, optional description, and close control.",
+          "examples": [
+            "```tsx\n<Dialog open={open} onOpenChange={setOpen} title=\"Confirm\" description=\"Continue?\">\n  <p>This action cannot be undone.</p>\n</Dialog>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "DialogProps",
+          "kind": "interface",
+          "signature": "interface DialogProps",
+          "sourcePath": "packages/react/src/components/dialog.tsx",
+          "description": "Props for the controlled HTML {@link Dialog}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "open",
+              "type": "boolean",
+              "optional": false,
+              "description": "Whether the modal dialog should be open.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onOpenChange",
+              "type": "(open: boolean) => void",
+              "optional": false,
+              "description": "Called when the dialog requests a state change, including close button, Escape, backdrop,\ndialog close, and cancel interactions.",
+              "callbackParameters": [
+                {
+                  "name": "open",
+                  "type": "boolean",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Dialog heading, used as its accessible name.",
+              "callbackParameters": []
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "optional": true,
+              "description": "Optional dialog description associated with the dialog.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onClose",
+              "type": "React.ReactEventHandler<HTMLDialogElement>",
+              "optional": true,
+              "description": "HTML dialog close event handler, called after the component requests a closed state.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onCancel",
+              "type": "React.ReactEventHandler<HTMLDialogElement>",
+              "optional": true,
+              "description": "HTML dialog cancel event handler, called after cancellation is prevented and close is requested.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Tooltip",
+          "kind": "component",
+          "signature": "({ content, children }: TooltipProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/tooltip.tsx",
+          "description": "Associates a child element with descriptive tooltip content via `aria-describedby`.",
+          "examples": [
+            "```tsx\n<Tooltip content=\"Opens in a new window\"><button>Help</button></Tooltip>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "TooltipProps",
+          "kind": "interface",
+          "signature": "interface TooltipProps",
+          "sourcePath": "packages/react/src/components/tooltip.tsx",
+          "description": "Props for {@link Tooltip}; children must be one React element that accepts `aria-describedby`.",
+          "examples": [],
+          "members": [
+            {
+              "name": "content",
+              "type": "string",
+              "optional": false,
+              "description": "Text rendered in the tooltip content.",
+              "callbackParameters": []
+            },
+            {
+              "name": "children",
+              "type": "React.ReactElement<{ 'aria-describedby'?: string }>",
+              "optional": false,
+              "description": "Single trigger element; existing `aria-describedby` ids are preserved.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "NavigationMenu",
+          "kind": "component",
+          "signature": "({ items, label, className, ...props }: NavigationMenuProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/navigation-menu.tsx",
+          "description": "Renders a labeled navigation landmark containing a list of links.",
+          "examples": [
+            "```tsx\n<NavigationMenu label=\"Account\" items={[{ label: 'Profile', href: '/profile', current: true }]} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "NavigationMenuItem",
+          "kind": "interface",
+          "signature": "interface NavigationMenuItem",
+          "sourcePath": "packages/react/src/components/navigation-menu.tsx",
+          "description": "One destination rendered in a {@link NavigationMenu}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Link text or other visible label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "href",
+              "type": "string",
+              "optional": false,
+              "description": "Link destination.",
+              "callbackParameters": []
+            },
+            {
+              "name": "current",
+              "type": "boolean",
+              "optional": true,
+              "description": "Marks this link as the current page for assistive technology.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "NavigationMenuProps",
+          "kind": "interface",
+          "signature": "interface NavigationMenuProps",
+          "sourcePath": "packages/react/src/components/navigation-menu.tsx",
+          "description": "Props for {@link NavigationMenu}, in addition to nav attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "items",
+              "type": "NavigationMenuItem[]",
+              "optional": false,
+              "description": "Navigation links in display order.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible name for the navigation landmark.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Pagination",
+          "kind": "component",
+          "signature": "({ page, pageCount, onPageChange, label, className, ...props }: PaginationProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/pagination.tsx",
+          "description": "Renders previous/next controls and up to five consecutive page buttons.",
+          "examples": [
+            "```tsx\n<Pagination page={page} pageCount={pageCount} onPageChange={setPage} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "PaginationProps",
+          "kind": "interface",
+          "signature": "interface PaginationProps",
+          "sourcePath": "packages/react/src/components/pagination.tsx",
+          "description": "Props for the controlled {@link Pagination} navigation.",
+          "examples": [],
+          "members": [
+            {
+              "name": "page",
+              "type": "number",
+              "optional": false,
+              "description": "Current page, numbered from 1.",
+              "callbackParameters": []
+            },
+            {
+              "name": "pageCount",
+              "type": "number",
+              "optional": false,
+              "description": "Total number of pages; must be a positive integer.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onPageChange",
+              "type": "(page: number) => void",
+              "optional": false,
+              "description": "Called with the requested page after a page control is activated.",
+              "callbackParameters": [
+                {
+                  "name": "page",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible name for the pagination navigation landmark.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Progress",
+          "kind": "component",
+          "signature": "({ value, min, max, label, className, ...props }: ProgressProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/progress.tsx",
+          "description": "Renders progress over the supplied range, clamping displayed values to its bounds.",
+          "examples": [
+            "```tsx\n<Progress label=\"Upload\" value={uploaded} max={total} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "ProgressProps",
+          "kind": "interface",
+          "signature": "interface ProgressProps",
+          "sourcePath": "packages/react/src/components/progress.tsx",
+          "description": "Props for a determinate or indeterminate {@link Progress} indicator.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "number",
+              "optional": true,
+              "description": "Current progress value; omit to render an indeterminate indicator.",
+              "callbackParameters": []
+            },
+            {
+              "name": "min",
+              "type": "number",
+              "optional": true,
+              "description": "Lower bound used to calculate the percentage.",
+              "callbackParameters": []
+            },
+            {
+              "name": "max",
+              "type": "number",
+              "optional": true,
+              "description": "Upper bound used to calculate the percentage; must be greater than `min`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible name for the progress indicator.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "QrScanner",
+          "kind": "component",
+          "signature": "({ onScan, onScanError, label, className, ...props }: QrScannerProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/qr-scanner.tsx",
+          "description": "Renders an opt-in camera scanner using the browser BarcodeDetector API for QR codes.\nCamera access begins only after the user activates the start control.",
+          "examples": [
+            "```tsx\n<QrScanner onScan={(value) => setScannedValue(value)} onScanError={reportError} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "QrScannerProps",
+          "kind": "interface",
+          "signature": "interface QrScannerProps",
+          "sourcePath": "packages/react/src/components/qr-scanner.tsx",
+          "description": "Props for {@link QrScanner}, in addition to div attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "onScan",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called once a QR code value is detected.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "onScanError",
+              "type": "(error: Error) => void",
+              "optional": true,
+              "description": "Called when camera setup or QR detection fails.",
+              "callbackParameters": [
+                {
+                  "name": "error",
+                  "type": "Error",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible name used for the camera preview.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "RadioGroup",
+          "kind": "component",
+          "signature": "({ label, name, options, value, onValueChange, className, ...props }: RadioGroupProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/radio-group.tsx",
+          "description": "Renders a fieldset of radio choices controlled by `value`.",
+          "examples": [
+            "```tsx\n<RadioGroup label=\"Shipping\" name=\"shipping\" options={options} value={method} onValueChange={setMethod} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "RadioOption",
+          "kind": "interface",
+          "signature": "interface RadioOption",
+          "sourcePath": "packages/react/src/components/radio-group.tsx",
+          "description": "One radio choice shown by {@link RadioGroup}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Value emitted when this option is selected.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Visible label for the option.",
+              "callbackParameters": []
+            },
+            {
+              "name": "description",
+              "type": "React.ReactNode",
+              "optional": true,
+              "description": "Optional secondary text rendered below the label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "disabled",
+              "type": "boolean",
+              "optional": true,
+              "description": "Prevents this option from being selected.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "RadioGroupProps",
+          "kind": "interface",
+          "signature": "interface RadioGroupProps",
+          "sourcePath": "packages/react/src/components/radio-group.tsx",
+          "description": "Props for the controlled {@link RadioGroup} component.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Text or content rendered in the fieldset legend.",
+              "callbackParameters": []
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "optional": false,
+              "description": "Shared HTML radio `name` for this group.",
+              "callbackParameters": []
+            },
+            {
+              "name": "options",
+              "type": "RadioOption[]",
+              "optional": false,
+              "description": "Choices rendered in the group.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Value of the currently selected choice.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called with the selected option's value when a radio changes.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Slider",
+          "kind": "component",
+          "signature": "({ label, value, onValueChange, onValueCommit, className, ...props }: SliderProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/slider.tsx",
+          "description": "Renders a controlled range input with its label and current numeric value.",
+          "examples": [
+            "```tsx\n<Slider label=\"Volume\" min={0} max={10} value={volume} onValueChange={setVolume} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SliderProps",
+          "kind": "interface",
+          "signature": "interface SliderProps",
+          "sourcePath": "packages/react/src/components/slider.tsx",
+          "description": "Props for the controlled range input {@link Slider}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible label and fallback accessible name for the range input.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "number",
+              "optional": false,
+              "description": "Current numeric range value.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: number) => void",
+              "optional": false,
+              "description": "Called on each HTML range input change.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "onValueCommit",
+              "type": "(value: number) => void",
+              "optional": true,
+              "description": "Called when a pointer or keyboard interaction is released.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Toast",
+          "kind": "component",
+          "signature": "({ title, description, variant, onDismiss, className, ...props }: ToastProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/toast.tsx",
+          "description": "Renders a live notification and an optional dismiss control.",
+          "examples": [
+            "```tsx\n<Toast title=\"Saved\" description=\"Your changes are up to date.\" onDismiss={dismiss} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "ToastProps",
+          "kind": "interface",
+          "signature": "interface ToastProps",
+          "sourcePath": "packages/react/src/components/toast.tsx",
+          "description": "Props for {@link Toast}, in addition to div attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Short notification heading.",
+              "callbackParameters": []
+            },
+            {
+              "name": "description",
+              "type": "React.ReactNode",
+              "optional": true,
+              "description": "Optional explanatory content shown below the heading.",
+              "callbackParameters": []
+            },
+            {
+              "name": "variant",
+              "type": "'info' | 'success' | 'warning' | 'danger'",
+              "optional": true,
+              "description": "Notification category, which also determines its live-region urgency.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onDismiss",
+              "type": "() => void",
+              "optional": true,
+              "description": "When supplied, renders a dismiss button that invokes this callback.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "MarkdownEditor",
+          "kind": "component",
+          "signature": "({ label, value, onValueChange, preview, className, ...props }: MarkdownEditorProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/markdown-editor.tsx",
+          "description": "Renders a controlled markdown textarea with spell checking enabled and, optionally, a parsed preview.",
+          "examples": [
+            "```tsx\n<MarkdownEditor label=\"Description\" value={text} onValueChange={setText} preview />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "MarkdownEditorProps",
+          "kind": "interface",
+          "signature": "interface MarkdownEditorProps",
+          "sourcePath": "packages/react/src/components/markdown-editor.tsx",
+          "description": "Props for the controlled {@link MarkdownEditor}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible label associated with the editing textarea.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Current markdown source text.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called whenever the textarea's source text changes.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "preview",
+              "type": "boolean",
+              "optional": true,
+              "description": "Show a rendered preview of the parsed source beneath the editor.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Divider",
+          "kind": "component",
+          "signature": "({ orientation, decorative, className, ...props }: DividerProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders a horizontal or vertical visual divider.",
+          "examples": [
+            "```tsx\n<Divider orientation=\"horizontal\" />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "HelperText",
+          "kind": "component",
+          "signature": "({ error, className, ...props }: HelperTextProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders supporting text, optionally marked and announced as an error.",
+          "examples": [
+            "```tsx\n<HelperText error={invalid}>Enter a valid email address.</HelperText>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Indicator",
+          "kind": "component",
+          "signature": "({ label, status, className, ...props }: IndicatorProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders a status message with a decorative dot and status role.",
+          "examples": [
+            "```tsx\n<Indicator label=\"All systems operational\" status=\"success\" />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Tag",
+          "kind": "component",
+          "signature": "({ onRemove, removeLabel, variant, className, children, ...props }: TagProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders a compact label with an optional accessible remove button.",
+          "examples": [
+            "```tsx\n<Tag onRemove={removeTag}>Design</Tag>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Typography",
+          "kind": "component",
+          "signature": "({ variant, as, className, ...props }: TypographyProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders content using a typography style and a semantic element.",
+          "examples": [
+            "```tsx\n<Typography variant=\"heading-2\">Account settings</Typography>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Pips",
+          "kind": "component",
+          "signature": "({ count, index, onIndexChange, label, className }: PipsProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders one button per item and optionally reports selected indicator changes.",
+          "examples": [
+            "```tsx\n<Pips count={slides.length} index={active} onIndexChange={setActive} label=\"Choose slide\" />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Carousel",
+          "kind": "component",
+          "signature": "({ slides, index, defaultIndex, label, onIndexChange }: CarouselProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders one current slide with previous/next controls and selectable position indicators.",
+          "examples": [
+            "```tsx\n<Carousel slides={[<p key=\"1\">One</p>, <p key=\"2\">Two</p>]} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SegmentedButtons",
+          "kind": "component",
+          "signature": "({ options, value, onValueChange, label, className }: SegmentedButtonsProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders a controlled set of mutually labeled buttons with pressed state.",
+          "examples": [
+            "```tsx\n<SegmentedButtons label=\"View\" options={views} value={view} onValueChange={setView} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SelectCard",
+          "kind": "component",
+          "signature": "({ options, value, onValueChange, label, className }: SelectCardProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders selectable card buttons with radio-group semantics and controlled selection.",
+          "examples": [
+            "```tsx\n<SelectCard label=\"Plan\" options={plans} value={plan} onValueChange={setPlan} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "StarRating",
+          "kind": "component",
+          "signature": "({ value, onValueChange, max, label, className }: StarRatingProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders a static or selectable integer star rating.",
+          "examples": [
+            "```tsx\n<StarRating value={rating} onValueChange={setRating} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SteppedProgressBar",
+          "kind": "component",
+          "signature": "({ steps, activeStep, label, className }: SteppedProgressBarProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders an ordered list with completed, current, and upcoming step states.",
+          "examples": [
+            "```tsx\n<SteppedProgressBar steps={steps} activeStep={1} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Stepper",
+          "kind": "component",
+          "signature": "({ steps, activeStep, onStepChange, label, className }: StepperProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders a step progress list with Back and Continue controls.",
+          "examples": [
+            "```tsx\n<Stepper steps={steps} activeStep={step} onStepChange={setStep} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "FileUploadInput",
+          "kind": "component",
+          "signature": "({ label, onFilesSelected, accept, multiple, disabled, helperText, className }: FileUploadInputProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders an HTML file input with a button that opens the browser's file picker.",
+          "examples": [
+            "```tsx\n<FileUploadInput label=\"Choose images\" accept=\"image/*\" multiple onFilesSelected={uploadFiles} />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "Popover",
+          "kind": "component",
+          "signature": "({ trigger, children, label, className }: PopoverProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders a button-controlled popover that closes on outside pointer press or Escape.",
+          "examples": [
+            "```tsx\n<Popover trigger=\"Help\" label=\"Help\"><p>Find setup instructions here.</p></Popover>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "BottomSheet",
+          "kind": "component",
+          "signature": "({ className, ...props }: SheetProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders the shared modal dialog as a bottom-positioned sheet.",
+          "examples": [
+            "```tsx\n<BottomSheet open={open} onOpenChange={setOpen} title=\"Filters\"><p>Filter options</p></BottomSheet>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SideSheet",
+          "kind": "component",
+          "signature": "({ className, ...props }: SheetProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Renders the shared modal dialog as a side-positioned sheet.",
+          "examples": [
+            "```tsx\n<SideSheet open={open} onOpenChange={setOpen} title=\"Details\"><p>Item details</p></SideSheet>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "DividerProps",
+          "kind": "interface",
+          "signature": "interface DividerProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for {@link Divider}, in addition to horizontal-rule attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "orientation",
+              "type": "'horizontal' | 'vertical'",
+              "optional": true,
+              "description": "Visual orientation and, when non-decorative, separator orientation.",
+              "callbackParameters": []
+            },
+            {
+              "name": "decorative",
+              "type": "boolean",
+              "optional": true,
+              "description": "Use presentation semantics instead of exposing a separator.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "HelperTextProps",
+          "kind": "interface",
+          "signature": "interface HelperTextProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for {@link HelperText}, in addition to paragraph attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "error",
+              "type": "boolean",
+              "optional": true,
+              "description": "Style and expose this text as an error message.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "IndicatorStatus",
+          "kind": "type",
+          "signature": "'neutral' | 'info' | 'success' | 'warning' | 'danger'",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Status categories supported by {@link Indicator}.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "IndicatorProps",
+          "kind": "interface",
+          "signature": "interface IndicatorProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for {@link Indicator}, in addition to span attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Status text displayed beside the indicator dot.",
+              "callbackParameters": []
+            },
+            {
+              "name": "status",
+              "type": "IndicatorStatus",
+              "optional": true,
+              "description": "Visual status treatment.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "TagProps",
+          "kind": "interface",
+          "signature": "interface TagProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for {@link Tag}, in addition to span attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "onRemove",
+              "type": "() => void",
+              "optional": true,
+              "description": "When supplied, adds a removal button that invokes this callback.",
+              "callbackParameters": []
+            },
+            {
+              "name": "removeLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible name of the removal button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "variant",
+              "type": "'neutral' | 'primary' | 'success' | 'warning' | 'danger'",
+              "optional": true,
+              "description": "Visual treatment of the tag.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "TypographyVariant",
+          "kind": "type",
+          "signature": "'display' | 'heading-1' | 'heading-2' | 'heading-3' | 'body' | 'body-small' | 'caption'",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Preset visual variants supported by {@link Typography}.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "TypographyElement",
+          "kind": "type",
+          "signature": "'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span'",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Allowed semantic elements rendered by {@link Typography}.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "TypographyProps",
+          "kind": "interface",
+          "signature": "interface TypographyProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for {@link Typography}, in addition to HTML attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "variant",
+              "type": "TypographyVariant",
+              "optional": true,
+              "description": "Visual text style preset; also selects a default heading or paragraph element unless `as` overrides it.",
+              "callbackParameters": []
+            },
+            {
+              "name": "as",
+              "type": "TypographyElement",
+              "optional": true,
+              "description": "Override the element selected by the variant's default element mapping.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "PipsProps",
+          "kind": "interface",
+          "signature": "interface PipsProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for the selectable indicator buttons in {@link Pips}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "count",
+              "type": "number",
+              "optional": false,
+              "description": "Number of indicators to render; must be a positive integer.",
+              "callbackParameters": []
+            },
+            {
+              "name": "index",
+              "type": "number",
+              "optional": false,
+              "description": "Zero-based index marked as current; must be within `count`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onIndexChange",
+              "type": "(index: number) => void",
+              "optional": true,
+              "description": "Called with the zero-based selected index. If omitted, the indicators are disabled.",
+              "callbackParameters": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible group name and prefix for each indicator's accessible name.",
+              "callbackParameters": []
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "optional": true,
+              "description": "Optional class name applied to the indicator group.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "CarouselProps",
+          "kind": "interface",
+          "signature": "interface CarouselProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for the controlled or uncontrolled {@link Carousel}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "slides",
+              "type": "React.ReactNode[]",
+              "optional": false,
+              "description": "Slide content in navigation order; must contain at least one entry.",
+              "callbackParameters": []
+            },
+            {
+              "name": "index",
+              "type": "number",
+              "optional": true,
+              "description": "Controlled current slide index, starting at zero.",
+              "callbackParameters": []
+            },
+            {
+              "name": "defaultIndex",
+              "type": "number",
+              "optional": true,
+              "description": "Initial slide index when `index` is not provided.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible name of the carousel region.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onIndexChange",
+              "type": "(index: number) => void",
+              "optional": true,
+              "description": "Called with the requested zero-based slide index.",
+              "callbackParameters": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SegmentedButtonOption",
+          "kind": "interface",
+          "signature": "interface SegmentedButtonOption",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "One option rendered by {@link SegmentedButtons}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Stable value returned when this option is selected.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible option text.",
+              "callbackParameters": []
+            },
+            {
+              "name": "disabled",
+              "type": "boolean",
+              "optional": true,
+              "description": "Prevents selecting this option.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SegmentedButtonsProps",
+          "kind": "interface",
+          "signature": "interface SegmentedButtonsProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for the controlled {@link SegmentedButtons} group.",
+          "examples": [],
+          "members": [
+            {
+              "name": "options",
+              "type": "SegmentedButtonOption[]",
+              "optional": false,
+              "description": "Options displayed in the group.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Value of the currently pressed option.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called with the selected option's value.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible name of the button group.",
+              "callbackParameters": []
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "optional": true,
+              "description": "Optional class name applied to the group.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SelectCardOption",
+          "kind": "interface",
+          "signature": "interface SelectCardOption",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "One selectable card option rendered by {@link SelectCard}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Stable option value.",
+              "callbackParameters": []
+            },
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Main visible heading for the option.",
+              "callbackParameters": []
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "optional": true,
+              "description": "Optional supporting text, also included in the option's accessible name.",
+              "callbackParameters": []
+            },
+            {
+              "name": "disabled",
+              "type": "boolean",
+              "optional": true,
+              "description": "Prevents selecting this option.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SelectCardProps",
+          "kind": "interface",
+          "signature": "interface SelectCardProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for the controlled {@link SelectCard} radio group.",
+          "examples": [],
+          "members": [
+            {
+              "name": "options",
+              "type": "SelectCardOption[]",
+              "optional": false,
+              "description": "Cards displayed in the radio group.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Value of the currently checked card.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called with the selected card's value.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible name of the radio group.",
+              "callbackParameters": []
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "optional": true,
+              "description": "Optional class name applied to the group.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "StarRatingProps",
+          "kind": "interface",
+          "signature": "interface StarRatingProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for {@link StarRating}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "number",
+              "optional": false,
+              "description": "Current integer score from zero through `max`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: number) => void",
+              "optional": true,
+              "description": "When provided, renders interactive star buttons and reports the chosen score.\nWhen omitted, renders the score as static stars.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "max",
+              "type": "number",
+              "optional": true,
+              "description": "Number of stars in the scale; must be a positive integer.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible rating label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "optional": true,
+              "description": "Optional class name applied to the rating group.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "ProgressStep",
+          "kind": "interface",
+          "signature": "interface ProgressStep",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "A named step used by {@link SteppedProgressBar} and {@link Stepper}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text identifying the step.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SteppedProgressBarProps",
+          "kind": "interface",
+          "signature": "interface SteppedProgressBarProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for the non-interactive {@link SteppedProgressBar}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "steps",
+              "type": "ProgressStep[]",
+              "optional": false,
+              "description": "Ordered steps; must not be empty.",
+              "callbackParameters": []
+            },
+            {
+              "name": "activeStep",
+              "type": "number",
+              "optional": false,
+              "description": "Zero-based current step index.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible name of the ordered progress list.",
+              "callbackParameters": []
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "optional": true,
+              "description": "Optional class name applied to the list.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "StepperProps",
+          "kind": "interface",
+          "signature": "interface StepperProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for the interactive {@link Stepper}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "steps",
+              "type": "ProgressStep[]",
+              "optional": false,
+              "description": "Ordered steps; must not be empty.",
+              "callbackParameters": []
+            },
+            {
+              "name": "activeStep",
+              "type": "number",
+              "optional": false,
+              "description": "Zero-based current step index.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onStepChange",
+              "type": "(index: number) => void",
+              "optional": false,
+              "description": "Called with the adjacent requested step when Back or Continue is activated.",
+              "callbackParameters": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible name of the stepper navigation.",
+              "callbackParameters": []
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "optional": true,
+              "description": "Optional class name applied to the navigation.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "FileUploadInputProps",
+          "kind": "interface",
+          "signature": "interface FileUploadInputProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for {@link FileUploadInput}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible name for the file input and visible chooser button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onFilesSelected",
+              "type": "(files: FileList) => void",
+              "optional": false,
+              "description": "Called after the HTML input reports a non-null `FileList`.",
+              "callbackParameters": [
+                {
+                  "name": "files",
+                  "type": "FileList",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "accept",
+              "type": "string",
+              "optional": true,
+              "description": "HTML file input accept filter, such as `image/*` or `.pdf`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "multiple",
+              "type": "boolean",
+              "optional": true,
+              "description": "Allow selecting more than one file.",
+              "callbackParameters": []
+            },
+            {
+              "name": "disabled",
+              "type": "boolean",
+              "optional": true,
+              "description": "Disable both the HTML input and its chooser button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "helperText",
+              "type": "string",
+              "optional": true,
+              "description": "Optional helper text rendered below the input and button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "optional": true,
+              "description": "Optional class name applied to the root element.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "PopoverProps",
+          "kind": "interface",
+          "signature": "interface PopoverProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props for the disclosure-style {@link Popover}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "trigger",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Content of the button that opens or closes the popover.",
+              "callbackParameters": []
+            },
+            {
+              "name": "children",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Content displayed while the popover is open.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible name of the displayed dialog.",
+              "callbackParameters": []
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "optional": true,
+              "description": "Optional class name applied to the root element.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "SheetProps",
+          "kind": "interface",
+          "signature": "interface SheetProps",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Props shared by {@link BottomSheet} and {@link SideSheet}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "open",
+              "type": "boolean",
+              "optional": false,
+              "description": "Whether the modal sheet should be open.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onOpenChange",
+              "type": "(open: boolean) => void",
+              "optional": false,
+              "description": "Called when the underlying dialog requests a state change.",
+              "callbackParameters": [
+                {
+                  "name": "open",
+                  "type": "boolean",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Sheet heading, used as the dialog's accessible name.",
+              "callbackParameters": []
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "optional": true,
+              "description": "Optional text associated as the dialog description.",
+              "callbackParameters": []
+            },
+            {
+              "name": "children",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Content rendered inside the sheet.",
+              "callbackParameters": []
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "optional": true,
+              "description": "Optional class name added to the sheet's built-in classes.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        }
+      ]
+    },
+    {
+      "packageName": "@qzl/react-native",
+      "publicApi": [
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Accordion",
+          "kind": "component",
+          "signature": "({ title, open, defaultOpen, onOpenChange, onPress, theme, children, style, ...props }: AccordionProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/accordion.tsx",
+          "description": "Renders an accessible, pressable disclosure row with optional controlled state.",
+          "examples": [
+            "<Accordion title=\"Shipping\" defaultOpen>Delivery takes 3–5 days.</Accordion>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "AccordionProps",
+          "kind": "interface",
+          "signature": "interface AccordionProps",
+          "sourcePath": "packages/react-native/src/components/accordion.tsx",
+          "description": "Props for the controlled or locally toggled accordion row.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Text shown in the pressable row.",
+              "callbackParameters": []
+            },
+            {
+              "name": "open",
+              "type": "boolean",
+              "optional": true,
+              "description": "Controls expansion when provided; otherwise the row maintains its own state.",
+              "callbackParameters": []
+            },
+            {
+              "name": "defaultOpen",
+              "type": "boolean",
+              "optional": true,
+              "description": "Initial expansion state used only when `open` is omitted.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onOpenChange",
+              "type": "(open: boolean) => void",
+              "optional": true,
+              "description": "Called after activation with the next expansion state.",
+              "callbackParameters": [
+                {
+                  "name": "open",
+                  "type": "boolean",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for row text and divider.",
+              "callbackParameters": []
+            },
+            {
+              "name": "children",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Content rendered below the title while expanded.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the outer row container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Alert",
+          "kind": "component",
+          "signature": "({ children, variant, theme, style }: AlertProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/alert.tsx",
+          "description": "Displays a themed status message; danger alerts use the React Native alert role.",
+          "examples": [
+            "<Alert variant=\"warning\">Check the required fields before continuing.</Alert>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "AlertProps",
+          "kind": "interface",
+          "signature": "interface AlertProps",
+          "sourcePath": "packages/react-native/src/components/alert.tsx",
+          "description": "Props for a non-interactive, themed status message.",
+          "examples": [],
+          "members": [
+            {
+              "name": "children",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Message content displayed in the alert.",
+              "callbackParameters": []
+            },
+            {
+              "name": "variant",
+              "type": "'info' | 'success' | 'warning' | 'danger'",
+              "optional": true,
+              "description": "Semantic color and React Native accessibility role.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the message.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the outer container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Avatar",
+          "kind": "component",
+          "signature": "({ name, uri, size, theme, style, onError, ...props }: AvatarProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/avatar.tsx",
+          "description": "Shows a circular avatar image, falling back to the name's initials on failure.",
+          "examples": [
+            "<Avatar name=\"Ada Lovelace\" uri=\"https://example.com/ada.png\" />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "AvatarProps",
+          "kind": "interface",
+          "signature": "interface AvatarProps",
+          "sourcePath": "packages/react-native/src/components/avatar.tsx",
+          "description": "Props for a remote-image avatar with an initials fallback.\nRemaining image props are forwarded to React Native's `Image` when `uri` is present.",
+          "examples": [],
+          "members": [
+            {
+              "name": "name",
+              "type": "string",
+              "optional": false,
+              "description": "Person or entity name, also used as the image accessibility label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "uri",
+              "type": "string",
+              "optional": true,
+              "description": "Remote image URI; initials are shown when omitted or when loading fails.",
+              "callbackParameters": []
+            },
+            {
+              "name": "size",
+              "type": "'sm' | 'md' | 'lg'",
+              "optional": true,
+              "description": "Preset circular diameter: 32, 40, or 56 logical pixels.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the fallback background and initials.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the circular outer container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "BarChart",
+          "kind": "component",
+          "signature": "({ title, data, formatValue, theme, style }: BarChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/bar-chart.tsx",
+          "description": "Renders a bar chart in React Native views with a shared zero baseline.",
+          "examples": [
+            "<BarChart title=\"Weekly signups\" data={[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }]} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "BarChartDatum",
+          "kind": "interface",
+          "signature": "interface BarChartDatum",
+          "sourcePath": "packages/react-native/src/components/bar-chart.tsx",
+          "description": "One labeled numeric value rendered as a horizontal bar.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text identifying this datum.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "number",
+              "optional": false,
+              "description": "Finite numeric value; negative values extend left of the zero baseline.",
+              "callbackParameters": []
+            },
+            {
+              "name": "color",
+              "type": "string",
+              "optional": true,
+              "description": "Optional bar fill color, overriding the selected theme's primary color.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "BarChartProps",
+          "kind": "interface",
+          "signature": "interface BarChartProps",
+          "sourcePath": "packages/react-native/src/components/bar-chart.tsx",
+          "description": "Props for a simple labeled horizontal bar chart.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Chart heading, also exposed as the container accessibility label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "data",
+              "type": "BarChartDatum[]",
+              "optional": false,
+              "description": "Values to render in input order. Each value must be finite.",
+              "callbackParameters": []
+            },
+            {
+              "name": "formatValue",
+              "type": "(value: number) => string",
+              "optional": true,
+              "description": "Formats each numeric value for display.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for chart text, tracks, and default bars.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the chart container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Breadcrumbs",
+          "kind": "component",
+          "signature": "({ items, label, theme, style }: BreadcrumbsProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/breadcrumbs.tsx",
+          "description": "Displays a React Native breadcrumb list; non-current items are actionable only when they have an `onPress` callback.",
+          "examples": [
+            "<Breadcrumbs items={[{ label: 'Home', onPress: goHome }, { label: 'Library' }]} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "BreadcrumbItem",
+          "kind": "interface",
+          "signature": "interface BreadcrumbItem",
+          "sourcePath": "packages/react-native/src/components/breadcrumbs.tsx",
+          "description": "One label in a breadcrumb trail.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text shown for this location.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onPress",
+              "type": "() => void",
+              "optional": true,
+              "description": "Optional press action; ignored for the final (current) item.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "BreadcrumbsProps",
+          "kind": "interface",
+          "signature": "interface BreadcrumbsProps",
+          "sourcePath": "packages/react-native/src/components/breadcrumbs.tsx",
+          "description": "Props for a wrapping breadcrumb trail.",
+          "examples": [],
+          "members": [
+            {
+              "name": "items",
+              "type": "BreadcrumbItem[]",
+              "optional": false,
+              "description": "Breadcrumbs in display order; the final item is marked as current.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible label for the list.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for current, linked, and separator text.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the list container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Button",
+          "kind": "component",
+          "signature": "({ title, variant, size, loading, disabled, theme, style, textStyle, ...props }: ButtonProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/button.tsx",
+          "description": "Renders a React Native pressable button with disabled and busy accessibility states.",
+          "examples": [
+            "<Button title=\"Save changes\" onPress={saveChanges} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "ButtonProps",
+          "kind": "interface",
+          "signature": "interface ButtonProps",
+          "sourcePath": "packages/react-native/src/components/button.tsx",
+          "description": "Props for the themed React Native pressable button.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Button text; replaced by an activity indicator while loading.",
+              "callbackParameters": []
+            },
+            {
+              "name": "variant",
+              "type": "'primary' | 'secondary' | 'ghost' | 'danger'",
+              "optional": true,
+              "description": "Visual treatment of the button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "size",
+              "type": "'sm' | 'md' | 'lg'",
+              "optional": true,
+              "description": "Preset control height and text size.",
+              "callbackParameters": []
+            },
+            {
+              "name": "loading",
+              "type": "boolean",
+              "optional": true,
+              "description": "Shows an activity indicator and disables pressing.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for button colors.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the pressable.",
+              "callbackParameters": []
+            },
+            {
+              "name": "textStyle",
+              "type": "StyleProp<TextStyle>",
+              "optional": true,
+              "description": "Additional style applied to the title.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Card",
+          "kind": "component",
+          "signature": "({ elevated, theme, style, ...props }: CardProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/card.tsx",
+          "description": "Provides a padded React Native view with a themed surface and optional elevation.",
+          "examples": [
+            "<Card><Text>Account details</Text></Card>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "CardProps",
+          "kind": "interface",
+          "signature": "interface CardProps",
+          "sourcePath": "packages/react-native/src/components/card.tsx",
+          "description": "Props for a themed content container.",
+          "examples": [],
+          "members": [
+            {
+              "name": "elevated",
+              "type": "boolean",
+              "optional": true,
+              "description": "Adds platform elevation when true.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the border and surface.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Checkbox",
+          "kind": "component",
+          "signature": "({ checked, onCheckedChange, onPress, label, theme, disabled, style, ...props }: CheckboxProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/checkbox.tsx",
+          "description": "Renders a labeled, controlled checkbox using React Native press and accessibility semantics.",
+          "examples": [
+            "<Checkbox label=\"Remember me\" checked={remember} onCheckedChange={setRemember} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "CheckboxProps",
+          "kind": "interface",
+          "signature": "interface CheckboxProps",
+          "sourcePath": "packages/react-native/src/components/checkbox.tsx",
+          "description": "Props for a controlled React Native checkbox row.",
+          "examples": [],
+          "members": [
+            {
+              "name": "checked",
+              "type": "boolean",
+              "optional": false,
+              "description": "Whether the checkbox is currently selected.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onCheckedChange",
+              "type": "(checked: boolean) => void",
+              "optional": false,
+              "description": "Called when the user presses the row with the next checked state.",
+              "callbackParameters": [
+                {
+                  "name": "checked",
+                  "type": "boolean",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible label and accessibility label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the check mark and control.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the pressable row.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "DataTable",
+          "kind": "component",
+          "signature": "<Row>({ columns, rows, getRowKey, caption, emptyMessage, theme, style }: DataTableProps<Row>) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/data-table.tsx",
+          "description": "Renders a horizontally scrollable table with stable local sorting for sortable columns.",
+          "examples": [
+            "<DataTable\n  caption=\"People\"\n  columns={[{ key: 'name', header: 'Name', render: (row) => row.name, sortValue: (row) => row.name }]}\n  rows={[{ name: 'Ada' }]}\n  getRowKey={(row) => row.name}\n/>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "DataTableColumn",
+          "kind": "interface",
+          "signature": "interface DataTableColumn",
+          "sourcePath": "packages/react-native/src/components/data-table.tsx",
+          "description": "Describes a table column and the functions used to render or sort its cells.",
+          "examples": [],
+          "members": [
+            {
+              "name": "key",
+              "type": "string",
+              "optional": false,
+              "description": "Stable identifier used for React keys and sort state.",
+              "callbackParameters": []
+            },
+            {
+              "name": "header",
+              "type": "string",
+              "optional": false,
+              "description": "Text shown in the column header.",
+              "callbackParameters": []
+            },
+            {
+              "name": "render",
+              "type": "(row: Row, index: number) => React.ReactNode",
+              "optional": false,
+              "description": "Renders a cell for a row in the current display order.",
+              "callbackParameters": [
+                {
+                  "name": "row",
+                  "type": "Row",
+                  "description": "",
+                  "documented": true
+                },
+                {
+                  "name": "index",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "sortValue",
+              "type": "(row: Row) => string | number",
+              "optional": true,
+              "description": "Returns a comparable value for sorting; omitting it makes the header non-sortable.",
+              "callbackParameters": [
+                {
+                  "name": "row",
+                  "type": "Row",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "DataTableProps",
+          "kind": "interface",
+          "signature": "interface DataTableProps",
+          "sourcePath": "packages/react-native/src/components/data-table.tsx",
+          "description": "Props for a horizontally scrollable, locally sortable React Native table.",
+          "examples": [],
+          "members": [
+            {
+              "name": "columns",
+              "type": "DataTableColumn<Row>[]",
+              "optional": false,
+              "description": "Column definitions in display order.",
+              "callbackParameters": []
+            },
+            {
+              "name": "rows",
+              "type": "Row[]",
+              "optional": false,
+              "description": "Row data in the original order; sorting does not mutate this array.",
+              "callbackParameters": []
+            },
+            {
+              "name": "getRowKey",
+              "type": "(row: Row, index: number) => string | number",
+              "optional": false,
+              "description": "Supplies a stable key for each row.",
+              "callbackParameters": [
+                {
+                  "name": "row",
+                  "type": "Row",
+                  "description": "",
+                  "documented": true
+                },
+                {
+                  "name": "index",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "caption",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible label for the horizontal scroll container.",
+              "callbackParameters": []
+            },
+            {
+              "name": "emptyMessage",
+              "type": "string",
+              "optional": true,
+              "description": "Text shown when there are no rows.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for table text, borders, and header surface.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the horizontal scroll view.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Dialog",
+          "kind": "component",
+          "signature": "({ open, onOpenChange, title, description, children, theme, contentStyle, ...props }: DialogProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/dialog.tsx",
+          "description": "Presents content in a React Native modal, defaulting to a transparent fade transition, and reports\nclose requests through `onOpenChange` (including platform close requests such as\nAndroid hardware back).",
+          "examples": [
+            "<Dialog open={open} onOpenChange={setOpen} title=\"Delete item\">\n  <Text>This action cannot be undone.</Text>\n</Dialog>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "DialogProps",
+          "kind": "interface",
+          "signature": "interface DialogProps",
+          "sourcePath": "packages/react-native/src/components/dialog.tsx",
+          "description": "Props for a controlled React Native modal dialog.",
+          "examples": [],
+          "members": [
+            {
+              "name": "open",
+              "type": "boolean",
+              "optional": false,
+              "description": "Controls whether the React Native modal is visible.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onOpenChange",
+              "type": "(open: boolean) => void",
+              "optional": false,
+              "description": "Requests a visibility change, including platform close requests and the close button.",
+              "callbackParameters": [
+                {
+                  "name": "open",
+                  "type": "boolean",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Heading displayed in the modal.",
+              "callbackParameters": []
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "optional": true,
+              "description": "Optional supporting text displayed below the heading.",
+              "callbackParameters": []
+            },
+            {
+              "name": "children",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Dialog body rendered inside the modal.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for modal surface and text.",
+              "callbackParameters": []
+            },
+            {
+              "name": "contentStyle",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the dialog content panel.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "DropdownMenu",
+          "kind": "component",
+          "signature": "({ label, items, theme, style }: DropdownMenuProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/dropdown-menu.tsx",
+          "description": "Toggles a React Native list of actions; selecting an enabled item closes the list before calling it.",
+          "examples": [
+            "<DropdownMenu label=\"More\" items={[{ label: 'Refresh', onSelect: refresh }]} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "DropdownMenuItem",
+          "kind": "interface",
+          "signature": "interface DropdownMenuItem",
+          "sourcePath": "packages/react-native/src/components/dropdown-menu.tsx",
+          "description": "One action in a dropdown menu.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text shown in the menu item.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onSelect",
+              "type": "() => void",
+              "optional": false,
+              "description": "Action invoked after this item is selected; the menu closes first.",
+              "callbackParameters": []
+            },
+            {
+              "name": "disabled",
+              "type": "boolean",
+              "optional": true,
+              "description": "Prevents selecting this item.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "DropdownMenuProps",
+          "kind": "interface",
+          "signature": "interface DropdownMenuProps",
+          "sourcePath": "packages/react-native/src/components/dropdown-menu.tsx",
+          "description": "Props for a locally opened dropdown list.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text shown on the trigger and used as its React Native button accessibility label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "items",
+              "type": "DropdownMenuItem[]",
+              "optional": false,
+              "description": "Menu items displayed when the trigger is pressed.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for trigger and menu surfaces.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the wrapper.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "IconButton",
+          "kind": "component",
+          "signature": "({ label, children, variant, theme, style, ...props }: IconButtonProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/icon-button.tsx",
+          "description": "Renders a compact React Native button whose accessible name comes from `label`.",
+          "examples": [
+            "<IconButton label=\"Add item\" onPress={addItem}>＋</IconButton>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "IconButtonProps",
+          "kind": "interface",
+          "signature": "interface IconButtonProps",
+          "sourcePath": "packages/react-native/src/components/icon-button.tsx",
+          "description": "Props for an icon-only React Native pressable.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible name announced for the button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "children",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Icon or other node shown inside the button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "variant",
+              "type": "'neutral' | 'primary' | 'danger'",
+              "optional": true,
+              "description": "Foreground color treatment.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for button border and icon color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the pressable.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Input",
+          "kind": "component",
+          "signature": "({ error, theme, style, inputStyle, accessibilityHint, ...props }: InputProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/input.tsx",
+          "description": "Renders React Native's text input with themed colors and an error accessibility hint.",
+          "examples": [
+            "<Input accessibilityLabel=\"Email address\" keyboardType=\"email-address\" placeholder=\"you@example.com\" />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "InputProps",
+          "kind": "interface",
+          "signature": "interface InputProps",
+          "sourcePath": "packages/react-native/src/components/input.tsx",
+          "description": "Props for a themed React Native text input.",
+          "examples": [],
+          "members": [
+            {
+              "name": "error",
+              "type": "boolean",
+              "optional": true,
+              "description": "Applies danger styling and overrides the React Native accessibility hint.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for text, surface, placeholder, and border colors.",
+              "callbackParameters": []
+            },
+            {
+              "name": "inputStyle",
+              "type": "StyleProp<TextStyle>",
+              "optional": true,
+              "description": "Additional style applied after the input's base and inherited `style`.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Badge",
+          "kind": "component",
+          "signature": "({ variant, theme, style, ...props }: BadgeProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/badge.tsx",
+          "description": "Renders a non-interactive badge using a themed React Native `Text` element.",
+          "examples": [
+            "<Badge variant=\"success\">Available</Badge>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "BadgeProps",
+          "kind": "interface",
+          "signature": "interface BadgeProps",
+          "sourcePath": "packages/react-native/src/components/badge.tsx",
+          "description": "Props for a compact themed text badge.",
+          "examples": [],
+          "members": [
+            {
+              "name": "variant",
+              "type": "'primary' | 'neutral' | 'success' | 'warning' | 'danger'",
+              "optional": true,
+              "description": "Semantic color and background treatment.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used to resolve the badge colors.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Select",
+          "kind": "component",
+          "signature": "({ label, options, value, onValueChange, placeholder, theme, style }: SelectProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/select.tsx",
+          "description": "Toggles a React Native list of radio-style choices; it is not a platform picker control.",
+          "examples": [
+            "<Select label=\"Country\" options={countries} value={country} onValueChange={setCountry} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SelectOption",
+          "kind": "interface",
+          "signature": "interface SelectOption",
+          "sourcePath": "packages/react-native/src/components/select.tsx",
+          "description": "One option in the locally expanded select list.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Value reported to the controlled change callback.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text shown for the option.",
+              "callbackParameters": []
+            },
+            {
+              "name": "disabled",
+              "type": "boolean",
+              "optional": true,
+              "description": "Prevents selecting this option.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SelectProps",
+          "kind": "interface",
+          "signature": "interface SelectProps",
+          "sourcePath": "packages/react-native/src/components/select.tsx",
+          "description": "Props for a controlled React Native disclosure list used for selection.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible label and accessibility label for the trigger.",
+              "callbackParameters": []
+            },
+            {
+              "name": "options",
+              "type": "SelectOption[]",
+              "optional": false,
+              "description": "Choices shown when the trigger is expanded.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Currently selected option value.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called with the chosen option's value before the option list closes.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "placeholder",
+              "type": "string",
+              "optional": true,
+              "description": "Trigger text used when `value` does not match an option.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the trigger and option list.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the outer wrapper.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Skeleton",
+          "kind": "component",
+          "signature": "({ circle, theme, style }: SkeletonProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/skeleton.tsx",
+          "description": "Renders a static loading placeholder hidden from platform accessibility services.",
+          "examples": [
+            "<Skeleton />\n<Skeleton circle />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SkeletonProps",
+          "kind": "interface",
+          "signature": "interface SkeletonProps",
+          "sourcePath": "packages/react-native/src/components/skeleton.tsx",
+          "description": "Props for an accessibility-hidden loading placeholder.",
+          "examples": [],
+          "members": [
+            {
+              "name": "circle",
+              "type": "boolean",
+              "optional": true,
+              "description": "Renders a 40-by-40 circular placeholder instead of the full-width bar.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the placeholder surface.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the placeholder view.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Slider",
+          "kind": "component",
+          "signature": "({ label, value, onValueChange, onValueCommit, min, max, step, theme, style }: SliderProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/slider.tsx",
+          "description": "Wraps `@react-native-community/slider`, forwarding value changes and completion callbacks.",
+          "examples": [
+            "<Slider label=\"Volume\" value={volume} onValueChange={setVolume} onValueCommit={saveVolume} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SliderProps",
+          "kind": "interface",
+          "signature": "interface SliderProps",
+          "sourcePath": "packages/react-native/src/components/slider.tsx",
+          "description": "Props for a controlled community slider.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible label for the slider.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "number",
+              "optional": false,
+              "description": "Current slider position.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: number) => void",
+              "optional": false,
+              "description": "Called while the slider position changes.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "onValueCommit",
+              "type": "(value: number) => void",
+              "optional": true,
+              "description": "Called when the slider interaction is completed.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "min",
+              "type": "number",
+              "optional": true,
+              "description": "Minimum value; must be less than `max`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "max",
+              "type": "number",
+              "optional": true,
+              "description": "Maximum value; must be greater than `min`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "step",
+              "type": "number",
+              "optional": true,
+              "description": "Slider increment.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the track and thumb.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the community slider.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Switch",
+          "kind": "component",
+          "signature": "({ checked, onCheckedChange, theme, ...props }: SwitchProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/switch.tsx",
+          "description": "Wraps React Native's switch with a controlled checked value and themed colors.",
+          "examples": [
+            "<Switch checked={notificationsEnabled} onCheckedChange={setNotificationsEnabled} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SwitchProps",
+          "kind": "interface",
+          "signature": "interface SwitchProps",
+          "sourcePath": "packages/react-native/src/components/switch.tsx",
+          "description": "Props for the controlled React Native switch.",
+          "examples": [],
+          "members": [
+            {
+              "name": "checked",
+              "type": "boolean",
+              "optional": false,
+              "description": "Whether the switch is on.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onCheckedChange",
+              "type": "(checked: boolean) => void",
+              "optional": false,
+              "description": "Called when the React Native switch changes state.",
+              "callbackParameters": [
+                {
+                  "name": "checked",
+                  "type": "boolean",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the track and thumb.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Spinner",
+          "kind": "component",
+          "signature": "({ label, size, theme, style }: SpinnerProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/spinner.tsx",
+          "description": "Displays React Native's activity indicator with a progressbar accessibility role.",
+          "examples": [
+            "<Spinner label=\"Loading account\" />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SpinnerProps",
+          "kind": "interface",
+          "signature": "interface SpinnerProps",
+          "sourcePath": "packages/react-native/src/components/spinner.tsx",
+          "description": "Props for a React Native activity indicator.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible label announced by platform accessibility services.",
+              "callbackParameters": []
+            },
+            {
+              "name": "size",
+              "type": "'sm' | 'md' | 'lg'",
+              "optional": true,
+              "description": "`sm` maps to the small indicator; `md` and `lg` map to the large indicator.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the indicator color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the React Native activity indicator.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Tabs",
+          "kind": "component",
+          "signature": "({ items, value, onValueChange, theme, style }: TabsProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/tabs.tsx",
+          "description": "Renders React Native pressable tabs and exposes the selected state to accessibility services.",
+          "examples": [
+            "<Tabs items={[{ value: 'details', label: 'Details' }]} value={tab} onValueChange={setTab} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "TabItem",
+          "kind": "interface",
+          "signature": "interface TabItem",
+          "sourcePath": "packages/react-native/src/components/tabs.tsx",
+          "description": "One tab label and value.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Value emitted when the tab is pressed.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible text and tab content.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "TabsProps",
+          "kind": "interface",
+          "signature": "interface TabsProps",
+          "sourcePath": "packages/react-native/src/components/tabs.tsx",
+          "description": "Props for a controlled React Native tab list.",
+          "examples": [],
+          "members": [
+            {
+              "name": "items",
+              "type": "TabItem[]",
+              "optional": false,
+              "description": "Tabs rendered in input order.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Value of the selected tab.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called with the value of the pressed tab.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for selected and unselected tabs.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the tab-list container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Textarea",
+          "kind": "component",
+          "signature": "({ inputStyle, ...props }: TextareaProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/textarea.tsx",
+          "description": "Renders the themed {@link Input} in multiline, top-aligned mode with four displayed lines.",
+          "examples": [
+            "<Textarea accessibilityLabel=\"Message\" value={message} onChangeText={setMessage} placeholder=\"Write a message\" />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "TextareaProps",
+          "kind": "interface",
+          "signature": "interface TextareaProps",
+          "sourcePath": "packages/react-native/src/components/textarea.tsx",
+          "description": "Props for a multiline input; all other input options are inherited from {@link InputProps}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "inputStyle",
+              "type": "StyleProp<TextStyle>",
+              "optional": true,
+              "description": "Additional style applied to the multiline text input after its top-aligned minimum-height style.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Tooltip",
+          "kind": "component",
+          "signature": "({ content, children, theme, style }: TooltipProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/tooltip.tsx",
+          "description": "Toggles a text help message from a React Native pressable control; it does not use a hover popup.",
+          "examples": [
+            "<Tooltip content=\"Use at least eight characters.\"><Text>Password</Text></Tooltip>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "TooltipProps",
+          "kind": "interface",
+          "signature": "interface TooltipProps",
+          "sourcePath": "packages/react-native/src/components/tooltip.tsx",
+          "description": "Props for a press-to-reveal help message.",
+          "examples": [],
+          "members": [
+            {
+              "name": "content",
+              "type": "string",
+              "optional": false,
+              "description": "Text exposed as the trigger's accessibility hint and shown when revealed.",
+              "callbackParameters": []
+            },
+            {
+              "name": "children",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Content displayed beside the help trigger.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the help affordance and message.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the outer container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "NavigationMenu",
+          "kind": "component",
+          "signature": "({ items, label, theme, style }: NavigationMenuProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/navigation-menu.tsx",
+          "description": "Renders navigation choices as React Native pressable rows; this component does not perform routing.",
+          "examples": [
+            "<NavigationMenu label=\"Settings\" items={[{ label: 'Profile', current: true, onPress: showProfile }]} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "NavigationMenuItem",
+          "kind": "interface",
+          "signature": "interface NavigationMenuItem",
+          "sourcePath": "packages/react-native/src/components/navigation-menu.tsx",
+          "description": "One selectable entry in a navigation menu.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible title and button text.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onPress",
+              "type": "() => void",
+              "optional": false,
+              "description": "Action invoked when the entry is pressed.",
+              "callbackParameters": []
+            },
+            {
+              "name": "current",
+              "type": "boolean",
+              "optional": true,
+              "description": "Marks this entry as selected in accessibility state and styling.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "NavigationMenuProps",
+          "kind": "interface",
+          "signature": "interface NavigationMenuProps",
+          "sourcePath": "packages/react-native/src/components/navigation-menu.tsx",
+          "description": "Props for a labeled list of navigation actions.",
+          "examples": [],
+          "members": [
+            {
+              "name": "items",
+              "type": "NavigationMenuItem[]",
+              "optional": false,
+              "description": "Entries rendered in order.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible label for the list.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for selected and unselected entries.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the list container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Pagination",
+          "kind": "component",
+          "signature": "({ page, pageCount, onPageChange, label, theme, style }: PaginationProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/pagination.tsx",
+          "description": "Renders previous/next controls and up to five nearby React Native buttons with selected and disabled accessibility states.",
+          "examples": [
+            "<Pagination page={page} pageCount={12} onPageChange={setPage} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "PaginationProps",
+          "kind": "interface",
+          "signature": "interface PaginationProps",
+          "sourcePath": "packages/react-native/src/components/pagination.tsx",
+          "description": "Props for a controlled page selector.",
+          "examples": [],
+          "members": [
+            {
+              "name": "page",
+              "type": "number",
+              "optional": false,
+              "description": "Current one-based page number. Must be within `1..pageCount`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "pageCount",
+              "type": "number",
+              "optional": false,
+              "description": "Total number of pages; must be a positive integer.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onPageChange",
+              "type": "(page: number) => void",
+              "optional": false,
+              "description": "Called with the requested page number when an enabled page control is pressed.",
+              "callbackParameters": [
+                {
+                  "name": "page",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible label announced by platform accessibility services.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for page controls.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the control list.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Progress",
+          "kind": "component",
+          "signature": "({ value, min, max, label, theme, style }: ProgressProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/progress.tsx",
+          "description": "Displays clamped progress in a React Native view and exposes its range through accessibility values.",
+          "examples": [
+            "<Progress label=\"Upload\" value={uploaded} max={total} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "ProgressProps",
+          "kind": "interface",
+          "signature": "interface ProgressProps",
+          "sourcePath": "packages/react-native/src/components/progress.tsx",
+          "description": "Props for a determinate or unset React Native progress indicator.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "number",
+              "optional": true,
+              "description": "Current progress value; omitted values render an empty bar without an accessibility `now`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "min",
+              "type": "number",
+              "optional": true,
+              "description": "Lower bound for clamping and the accessibility value.",
+              "callbackParameters": []
+            },
+            {
+              "name": "max",
+              "type": "number",
+              "optional": true,
+              "description": "Upper bound for clamping; must be greater than `min`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible label describing the progress task.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the track and filled portion.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the outer progress track.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "RadioGroup",
+          "kind": "component",
+          "signature": "({ label, options, value, onValueChange, theme, style }: RadioGroupProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/radio-group.tsx",
+          "description": "Renders React Native radio controls with checked and disabled accessibility states.",
+          "examples": [
+            "<RadioGroup label=\"Plan\" options={[{ value: 'basic', label: 'Basic' }]} value={plan} onValueChange={setPlan} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "RadioOption",
+          "kind": "interface",
+          "signature": "interface RadioOption",
+          "sourcePath": "packages/react-native/src/components/radio-group.tsx",
+          "description": "One labeled choice in a radio group.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Value emitted when this choice is pressed.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible title and fallback accessibility label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "optional": true,
+              "description": "Optional supporting text, also included in the accessibility label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "disabled",
+              "type": "boolean",
+              "optional": true,
+              "description": "Prevents selecting this choice.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "RadioGroupProps",
+          "kind": "interface",
+          "signature": "interface RadioGroupProps",
+          "sourcePath": "packages/react-native/src/components/radio-group.tsx",
+          "description": "Props for a controlled, labeled set of radio choices.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible label for the group.",
+              "callbackParameters": []
+            },
+            {
+              "name": "options",
+              "type": "RadioOption[]",
+              "optional": false,
+              "description": "Choices rendered in input order.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Currently selected option value.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called with the pressed option's value.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for selected and unselected controls.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the group container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Toast",
+          "kind": "component",
+          "signature": "({ title, description, variant, onDismiss, theme, style }: ToastProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/toast.tsx",
+          "description": "Renders a status message; danger uses an alert role and assertive live region.",
+          "examples": [
+            "<Toast title=\"Saved\" description=\"Your changes are up to date.\" variant=\"success\" />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "ToastProps",
+          "kind": "interface",
+          "signature": "interface ToastProps",
+          "sourcePath": "packages/react-native/src/components/toast.tsx",
+          "description": "Props for a themed status notification with an optional dismiss action.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Short notification heading.",
+              "callbackParameters": []
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "optional": true,
+              "description": "Optional supporting message.",
+              "callbackParameters": []
+            },
+            {
+              "name": "variant",
+              "type": "'info' | 'success' | 'warning' | 'danger'",
+              "optional": true,
+              "description": "Semantic color treatment and platform announcement behavior.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onDismiss",
+              "type": "() => void",
+              "optional": true,
+              "description": "Optional action shown as a dismiss button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for text, border, and surface.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the notification container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "MarkdownEditor",
+          "kind": "component",
+          "signature": "({ label, value, onValueChange, preview, theme, style, inputStyle, ...props }: MarkdownEditorProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/markdown-editor.tsx",
+          "description": "Provides a controlled multiline React Native editor and an optional parsed-text preview.",
+          "examples": [
+            "<MarkdownEditor label=\"Notes\" value={notes} onValueChange={setNotes} preview />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "MarkdownEditorProps",
+          "kind": "interface",
+          "signature": "interface MarkdownEditorProps",
+          "sourcePath": "packages/react-native/src/components/markdown-editor.tsx",
+          "description": "Props for a controlled multiline Markdown input with an optional rendered preview.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible label and accessibility label for the text input.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Current Markdown source string.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called whenever the React Native text input changes.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "preview",
+              "type": "boolean",
+              "optional": true,
+              "description": "Shows a lightweight React Native text rendering of parsed Markdown blocks.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the input and preview.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the wrapper containing the label, input, and optional preview.",
+              "callbackParameters": []
+            },
+            {
+              "name": "inputStyle",
+              "type": "StyleProp<TextStyle>",
+              "optional": true,
+              "description": "Additional style applied to the React Native text input.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Divider",
+          "kind": "component",
+          "signature": "({ orientation, decorative, theme, style }: DividerProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Renders a themed line and exposes it with the separator accessibility role unless decorative.",
+          "examples": [
+            "<Divider orientation=\"horizontal\" />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "HelperText",
+          "kind": "component",
+          "signature": "({ children, error, theme, style }: HelperTextProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Displays supporting text; error messages use a polite accessibility live region.",
+          "examples": [
+            "<HelperText error>Enter a valid email address.</HelperText>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Indicator",
+          "kind": "component",
+          "signature": "({ label, status, theme, style }: IndicatorProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Pairs a status-colored marker with text; the marker itself is hidden from accessibility.",
+          "examples": [
+            "<Indicator label=\"Synced\" status=\"success\" />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Tag",
+          "kind": "component",
+          "signature": "({ children, onRemove, removeLabel, variant, theme, style }: TagProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Displays a compact status tag with an optional React Native remove button.",
+          "examples": [
+            "<Tag variant=\"info\" onRemove={removeFilter}>Unreviewed</Tag>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Typography",
+          "kind": "component",
+          "signature": "({ variant, theme, accessibilityRole, style, ...props }: TypographyProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Applies a named type scale; heading variants default to the header accessibility role.",
+          "examples": [
+            "<Typography variant=\"heading-2\">Account</Typography>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Pips",
+          "kind": "component",
+          "signature": "({ count, index, onIndexChange, label, theme, style }: PipsProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Renders React Native button pips, or disabled visual pips when no change callback is supplied.",
+          "examples": [
+            "<Pips count={4} index={selectedIndex} onIndexChange={setSelectedIndex} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Carousel",
+          "kind": "component",
+          "signature": "({ slides, index, defaultIndex, label, onIndexChange, theme, style }: CarouselProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Shows one slide at a time with previous/next buttons and selectable React Native pips.",
+          "examples": [
+            "<Carousel slides={[<Text key=\"one\">First</Text>, <Text key=\"two\">Second</Text>]} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SegmentedButtons",
+          "kind": "component",
+          "signature": "({ options, value, onValueChange, label, theme, style }: SegmentedButtonsProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Renders a compact React Native radio group styled as adjoining segmented buttons.",
+          "examples": [
+            "<SegmentedButtons label=\"View\" options={[{ value: 'list', label: 'List' }]} value={view} onValueChange={setView} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SelectCard",
+          "kind": "component",
+          "signature": "({ options, value, onValueChange, label, theme, style }: SelectCardProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Presents each choice as a React Native radio button with a bordered card layout.",
+          "examples": [
+            "<SelectCard label=\"Delivery\" options={[{ value: 'standard', title: 'Standard' }]} value={method} onValueChange={setMethod} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "StarRating",
+          "kind": "component",
+          "signature": "({ value, onValueChange, max, label, theme, style }: StarRatingProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Displays an integer star rating; when interactive, each star is a React Native radio button.",
+          "examples": [
+            "<StarRating value={rating} onValueChange={setRating} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SteppedProgressBar",
+          "kind": "component",
+          "signature": "({ steps, activeStep, label, theme, style }: SteppedProgressBarProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Shows completed/current segments and step labels without navigation controls.\nIts accessible label defaults to `Progress`.",
+          "examples": [
+            "<SteppedProgressBar steps={[{ label: 'Details' }, { label: 'Review' }]} activeStep={0} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Stepper",
+          "kind": "component",
+          "signature": "({ steps, activeStep, onStepChange, label, theme, style }: StepperProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Combines a stepped progress display with React Native Back and Continue buttons.\nIts default label is `Setup steps`, with ` progress` appended for the progress list.",
+          "examples": [
+            "<Stepper steps={steps} activeStep={step} onStepChange={setStep} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "FileUploadInput",
+          "kind": "component",
+          "signature": "({ label, onPress, selectedFiles, helperText, disabled, theme, style }: FileUploadInputProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Renders a React Native button and selected-file labels; it does not open a file picker itself.",
+          "examples": [
+            "<FileUploadInput label=\"Choose documents\" onPress={openDocumentPicker} selectedFiles={fileNames} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "Popover",
+          "kind": "component",
+          "signature": "({ trigger, children, label, theme, style }: PopoverProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Toggles an inline labeled summary panel from a React Native button; it is not a floating modal.",
+          "examples": [
+            "<Popover trigger=\"Details\"><Text>Additional information.</Text></Popover>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "BottomSheet",
+          "kind": "component",
+          "signature": "(props: SheetProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Presents a slide-animated React Native modal panel attached to the bottom edge.\nThe hardware/back close request and backdrop press call `onOpenChange(false)`.",
+          "examples": [
+            "<BottomSheet open={open} onOpenChange={setOpen} title=\"Filters\"><Text>Filter options</Text></BottomSheet>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SideSheet",
+          "kind": "component",
+          "signature": "(props: SheetProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Presents a slide-animated React Native modal panel attached to the right edge.\nThe hardware/back close request and backdrop press call `onOpenChange(false)`.",
+          "examples": [
+            "<SideSheet open={open} onOpenChange={setOpen} title=\"Details\"><Text>Item details</Text></SideSheet>"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "DividerProps",
+          "kind": "interface",
+          "signature": "interface DividerProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for a horizontal or vertical divider.",
+          "examples": [],
+          "members": [
+            {
+              "name": "orientation",
+              "type": "'horizontal' | 'vertical'",
+              "optional": true,
+              "description": "Divider axis; horizontal dividers span the available width, vertical dividers are 24 points tall.",
+              "callbackParameters": []
+            },
+            {
+              "name": "decorative",
+              "type": "boolean",
+              "optional": true,
+              "description": "Uses the `none` accessibility role instead of exposing a separator.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the separator color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the divider view.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "HelperTextProps",
+          "kind": "interface",
+          "signature": "interface HelperTextProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for compact supporting or error text.",
+          "examples": [],
+          "members": [
+            {
+              "name": "children",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Text or nested content shown to the user.",
+              "callbackParameters": []
+            },
+            {
+              "name": "error",
+              "type": "boolean",
+              "optional": true,
+              "description": "Uses danger coloring and a polite alert announcement.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for normal helper text.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<TextStyle>",
+              "optional": true,
+              "description": "Style applied to the React Native `Text` element.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "IndicatorStatus",
+          "kind": "type",
+          "signature": "'neutral' | 'info' | 'success' | 'warning' | 'danger'",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Semantic color states supported by {@link Indicator} and {@link Tag}.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "IndicatorProps",
+          "kind": "interface",
+          "signature": "interface IndicatorProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for a labeled status indicator.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible text and accessibility label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "status",
+              "type": "IndicatorStatus",
+              "optional": true,
+              "description": "Status color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used to resolve the status color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the indicator row.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "TagProps",
+          "kind": "interface",
+          "signature": "interface TagProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for a compact label that can optionally be removed.",
+          "examples": [],
+          "members": [
+            {
+              "name": "children",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Tag content.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onRemove",
+              "type": "() => void",
+              "optional": true,
+              "description": "Optional action invoked by the remove button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "removeLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible label for the remove button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "variant",
+              "type": "IndicatorStatus",
+              "optional": true,
+              "description": "Semantic color and surface treatment.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for tag colors.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the outer tag container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "TypographyVariant",
+          "kind": "type",
+          "signature": "'display' | 'heading-1' | 'heading-2' | 'heading-3' | 'body' | 'body-small' | 'caption'",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Text style presets supported by {@link Typography}.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "TypographyProps",
+          "kind": "interface",
+          "signature": "interface TypographyProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for themed text with semantic heading roles for heading presets.",
+          "examples": [],
+          "members": [
+            {
+              "name": "variant",
+              "type": "TypographyVariant",
+              "optional": true,
+              "description": "Font-size and weight preset.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for text color.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "PipsProps",
+          "kind": "interface",
+          "signature": "interface PipsProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for a row of selectable or display-only pagination pips.",
+          "examples": [],
+          "members": [
+            {
+              "name": "count",
+              "type": "number",
+              "optional": false,
+              "description": "Number of pips; must be a positive integer.",
+              "callbackParameters": []
+            },
+            {
+              "name": "index",
+              "type": "number",
+              "optional": false,
+              "description": "Zero-based index of the selected pip; must be less than `count`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onIndexChange",
+              "type": "(index: number) => void",
+              "optional": true,
+              "description": "Enables the pips and reports the selected zero-based index when pressed.\nWhen omitted, pips are disabled.",
+              "callbackParameters": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible label prefix for the pip list and each pip.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for selected and unselected pips.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the pip list.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "CarouselProps",
+          "kind": "interface",
+          "signature": "interface CarouselProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for a controlled or locally managed slide selector.",
+          "examples": [],
+          "members": [
+            {
+              "name": "slides",
+              "type": "React.ReactNode[]",
+              "optional": false,
+              "description": "Non-empty slide contents in display order.",
+              "callbackParameters": []
+            },
+            {
+              "name": "index",
+              "type": "number",
+              "optional": true,
+              "description": "Controlled zero-based slide index; controls local state when supplied.",
+              "callbackParameters": []
+            },
+            {
+              "name": "defaultIndex",
+              "type": "number",
+              "optional": true,
+              "description": "Initial zero-based slide index when `index` is omitted.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible label for the carousel container.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onIndexChange",
+              "type": "(index: number) => void",
+              "optional": true,
+              "description": "Called with the requested zero-based slide index after navigation.",
+              "callbackParameters": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for navigation controls and pips.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the outer carousel container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SegmentedButtonOption",
+          "kind": "interface",
+          "signature": "interface SegmentedButtonOption",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "One option in a segmented button group.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Value emitted when this option is pressed.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible option text and accessibility label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "disabled",
+              "type": "boolean",
+              "optional": true,
+              "description": "Prevents selecting this option.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SegmentedButtonsProps",
+          "kind": "interface",
+          "signature": "interface SegmentedButtonsProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for a controlled segmented radio group.",
+          "examples": [],
+          "members": [
+            {
+              "name": "options",
+              "type": "SegmentedButtonOption[]",
+              "optional": false,
+              "description": "Options rendered from left to right.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Currently selected option value.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called with the selected option's value.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible label for the radio group.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for selected and unselected options.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the radio-group container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SelectCardOption",
+          "kind": "interface",
+          "signature": "interface SelectCardOption",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "One selectable card option.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Value emitted when this card is pressed.",
+              "callbackParameters": []
+            },
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Main visible heading for the option.",
+              "callbackParameters": []
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "optional": true,
+              "description": "Optional supporting text, also included in the accessibility label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "disabled",
+              "type": "boolean",
+              "optional": true,
+              "description": "Prevents selecting this option.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SelectCardProps",
+          "kind": "interface",
+          "signature": "interface SelectCardProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for a controlled vertical group of selectable cards.",
+          "examples": [],
+          "members": [
+            {
+              "name": "options",
+              "type": "SelectCardOption[]",
+              "optional": false,
+              "description": "Options rendered in input order.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": "Currently selected option value.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called with the pressed option's value.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Accessible label for the radio group.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for selected and unselected cards.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the group container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "StarRatingProps",
+          "kind": "interface",
+          "signature": "interface StarRatingProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for a selectable or display-only integer star rating.",
+          "examples": [],
+          "members": [
+            {
+              "name": "value",
+              "type": "number",
+              "optional": false,
+              "description": "Current integer rating from zero through `max`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onValueChange",
+              "type": "(value: number) => void",
+              "optional": true,
+              "description": "Enables rating controls and reports the selected one-based score.\nWhen omitted, stars are display-only.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "max",
+              "type": "number",
+              "optional": true,
+              "description": "Number of stars; must be a positive integer.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible label prefix.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for filled and empty stars.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the rating row.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "ProgressStep",
+          "kind": "interface",
+          "signature": "interface ProgressStep",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Label for a step in a stepped progress display.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text identifying this step.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SteppedProgressBarProps",
+          "kind": "interface",
+          "signature": "interface SteppedProgressBarProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for a non-interactive stepped progress bar.",
+          "examples": [],
+          "members": [
+            {
+              "name": "steps",
+              "type": "ProgressStep[]",
+              "optional": false,
+              "description": "Steps shown in order; must contain at least one step.",
+              "callbackParameters": []
+            },
+            {
+              "name": "activeStep",
+              "type": "number",
+              "optional": false,
+              "description": "Zero-based current step index; must be within `steps`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible label for the progress list.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used to distinguish completed/current and future steps.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the component's outer container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "StepperProps",
+          "kind": "interface",
+          "signature": "interface StepperProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for the stepped progress display with back/continue actions.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible label; the progress list appends ` progress`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onStepChange",
+              "type": "(index: number) => void",
+              "optional": false,
+              "description": "Called with the adjacent zero-based step index after Back or Continue is pressed.\nThe component disables those actions at the first and last steps.",
+              "callbackParameters": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "FileUploadInputProps",
+          "kind": "interface",
+          "signature": "interface FileUploadInputProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for a pressable file-selection affordance.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Visible button text and accessibility label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onPress",
+              "type": "() => void",
+              "optional": false,
+              "description": "Invoked on press; the application must perform any platform-specific file selection.",
+              "callbackParameters": []
+            },
+            {
+              "name": "selectedFiles",
+              "type": "string[]",
+              "optional": true,
+              "description": "Selected file names displayed below the button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "helperText",
+              "type": "string",
+              "optional": true,
+              "description": "Optional supporting text shown below the button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "disabled",
+              "type": "boolean",
+              "optional": true,
+              "description": "Disables the pressable.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for button and file-name text.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the wrapper.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "PopoverProps",
+          "kind": "interface",
+          "signature": "interface PopoverProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Props for an inline disclosure panel.",
+          "examples": [],
+          "members": [
+            {
+              "name": "trigger",
+              "type": "string",
+              "optional": false,
+              "description": "Text shown on the pressable trigger and used as its accessibility label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "children",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Content displayed while the disclosure is open.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible label for the open summary panel.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the trigger and panel.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the wrapper.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "SheetProps",
+          "kind": "interface",
+          "signature": "interface SheetProps",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Shared controlled props for the modal bottom and side sheets.",
+          "examples": [],
+          "members": [
+            {
+              "name": "open",
+              "type": "boolean",
+              "optional": false,
+              "description": "Controls React Native modal visibility.",
+              "callbackParameters": []
+            },
+            {
+              "name": "onOpenChange",
+              "type": "(open: boolean) => void",
+              "optional": false,
+              "description": "Called when the React Native modal requests closure, the close button is pressed, or the backdrop is pressed.",
+              "callbackParameters": [
+                {
+                  "name": "open",
+                  "type": "boolean",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Heading displayed in the panel.",
+              "callbackParameters": []
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "optional": true,
+              "description": "Optional supporting text displayed below the heading.",
+              "callbackParameters": []
+            },
+            {
+              "name": "children",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Sheet body content.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the panel and text.",
+              "callbackParameters": []
+            },
+            {
+              "name": "contentStyle",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the modal panel.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "QrScanner",
+          "kind": "component",
+          "signature": "({ onScan, label, theme, style }: QrScannerProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/expo/qr-scanner.tsx",
+          "description": "Starts Expo Camera only after the user presses the scan button, requesting permission when needed.\nThe React Native camera preview is restricted to QR codes; decoded content is passed to the app without opening it.",
+          "examples": [
+            "<QrScanner onScan={(value) => setScannedCode(value)} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "QrScannerProps",
+          "kind": "interface",
+          "signature": "interface QrScannerProps",
+          "sourcePath": "packages/react-native/src/expo/qr-scanner.tsx",
+          "description": "Props for the Expo Camera QR scanner subpath export.",
+          "examples": [],
+          "members": [
+            {
+              "name": "onScan",
+              "type": "(value: string) => void",
+              "optional": false,
+              "description": "Called once a QR barcode is read; the scanner is stopped before invocation.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible label for the camera preview.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the scanner controls and status text.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the scanner wrapper.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        }
+      ]
+    },
+    {
+      "packageName": "@qzl/core",
+      "publicApi": [
+        {
+          "packageName": "@qzl/core",
+          "platform": "core",
+          "name": "clamp",
+          "kind": "function",
+          "signature": "(value: number, min: number, max: number) => number",
+          "sourcePath": "packages/core/src/index.ts",
+          "description": "Constrains a number to an inclusive range.",
+          "examples": [
+            "```ts\nclamp(12, 0, 10); // 10\n```"
+          ],
+          "members": [],
+          "parameters": [
+            {
+              "name": "value",
+              "type": "number",
+              "description": "- Number to constrain.",
+              "documented": true
+            },
+            {
+              "name": "min",
+              "type": "number",
+              "description": "- Inclusive lower bound.",
+              "documented": true
+            },
+            {
+              "name": "max",
+              "type": "number",
+              "description": "- Inclusive upper bound.",
+              "documented": true
+            }
+          ]
+        },
+        {
+          "packageName": "@qzl/core",
+          "platform": "core",
+          "name": "parseMarkdown",
+          "kind": "function",
+          "signature": "(source: string) => MarkdownBlock[]",
+          "sourcePath": "packages/core/src/index.ts",
+          "description": "Parses the supported Markdown subset into typed content blocks.\n\nSupports headings one through three, paragraphs, unordered lists, block quotes, and fenced code blocks.",
+          "examples": [
+            "```ts\nparseMarkdown('# Hello\\n\\nA paragraph');\n```"
+          ],
+          "members": [],
+          "parameters": [
+            {
+              "name": "source",
+              "type": "string",
+              "description": "- Markdown source text.",
+              "documented": true
+            }
+          ]
+        },
+        {
+          "packageName": "@qzl/core",
+          "platform": "core",
+          "name": "mergeClasses",
+          "kind": "function",
+          "signature": "(...classes: Array<string | false | null | undefined>) => string",
+          "sourcePath": "packages/core/src/index.ts",
+          "description": "Joins truthy class names with a single space.",
+          "examples": [
+            "```ts\nmergeClasses('button', isActive && 'button-active');\n```"
+          ],
+          "members": [],
+          "parameters": [
+            {
+              "name": "classes",
+              "type": "Array<string | false | null | undefined>",
+              "description": "- Class names and conditional values to combine.",
+              "documented": true
+            }
+          ]
+        },
+        {
+          "packageName": "@qzl/core",
+          "platform": "core",
+          "name": "getThemeModePreference",
+          "kind": "function",
+          "signature": "() => ThemeMode",
+          "sourcePath": "packages/core/src/index.ts",
+          "description": "Resolves the preferred theme mode from saved preference and system settings.\n\nDuring server rendering, returns `light`; in a browser, a valid saved preference takes precedence over the system preference.",
+          "examples": [
+            "```ts\nconst mode = getThemeModePreference();\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/core",
+          "platform": "core",
+          "name": "ThemeMode",
+          "kind": "type",
+          "signature": "'light' | 'dark'",
+          "sourcePath": "packages/core/src/index.ts",
+          "description": "Supported application theme modes.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/core",
+          "platform": "core",
+          "name": "ThemeContextValue",
+          "kind": "interface",
+          "signature": "interface ThemeContextValue",
+          "sourcePath": "packages/core/src/index.ts",
+          "description": "Values exposed by the shared theme context.",
+          "examples": [],
+          "members": [
+            {
+              "name": "mode",
+              "type": "ThemeMode",
+              "optional": false,
+              "description": "Current theme mode.",
+              "callbackParameters": []
+            },
+            {
+              "name": "toggleMode",
+              "type": "() => void",
+              "optional": false,
+              "description": "Switches the current theme mode.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/core",
+          "platform": "core",
+          "name": "MarkdownBlock",
+          "kind": "type",
+          "signature": "| {\n      /** A Markdown heading with a supported level. */\n      type: 'heading';\n      /** Heading depth, limited to levels one through three. */\n      level: 1 | 2 | 3;\n      /** Heading content without the Markdown prefix. */\n      text: string;\n    }\n  | {\n      /** A plain text paragraph. */\n      type: 'paragraph';\n      /** Paragraph content with source line breaks preserved. */\n      text: string;\n    }\n  | {\n      /** A list containing unordered Markdown items. */\n      type: 'list';\n      /** List item content without the bullet marker. */\n      items: string[];\n    }\n  | {\n      /** A block quote. */\n      type: 'quote';\n      /** Quote content with source line breaks preserved. */\n      text: string;\n    }\n  | {\n      /** A fenced code block. */\n      type: 'code';\n      /** Language identifier from the opening fence, or an empty string. */\n      language: string;\n      /** Code content without the fences. */\n      text: string;\n    }",
+          "sourcePath": "packages/core/src/index.ts",
+          "description": "A block produced by {@link parseMarkdown}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "type",
+              "type": "'heading'",
+              "optional": false,
+              "description": "A Markdown heading with a supported level.",
+              "callbackParameters": []
+            },
+            {
+              "name": "level",
+              "type": "1 | 2 | 3",
+              "optional": false,
+              "description": "Heading depth, limited to levels one through three.",
+              "callbackParameters": []
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "optional": false,
+              "description": "Heading content without the Markdown prefix.",
+              "callbackParameters": []
+            },
+            {
+              "name": "type",
+              "type": "'paragraph'",
+              "optional": false,
+              "description": "A plain text paragraph.",
+              "callbackParameters": []
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "optional": false,
+              "description": "Paragraph content with source line breaks preserved.",
+              "callbackParameters": []
+            },
+            {
+              "name": "type",
+              "type": "'list'",
+              "optional": false,
+              "description": "A list containing unordered Markdown items.",
+              "callbackParameters": []
+            },
+            {
+              "name": "items",
+              "type": "string[]",
+              "optional": false,
+              "description": "List item content without the bullet marker.",
+              "callbackParameters": []
+            },
+            {
+              "name": "type",
+              "type": "'quote'",
+              "optional": false,
+              "description": "A block quote.",
+              "callbackParameters": []
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "optional": false,
+              "description": "Quote content with source line breaks preserved.",
+              "callbackParameters": []
+            },
+            {
+              "name": "type",
+              "type": "'code'",
+              "optional": false,
+              "description": "A fenced code block.",
+              "callbackParameters": []
+            },
+            {
+              "name": "language",
+              "type": "string",
+              "optional": false,
+              "description": "Language identifier from the opening fence, or an empty string.",
+              "callbackParameters": []
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "optional": false,
+              "description": "Code content without the fences.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        }
+      ]
+    },
+    {
+      "packageName": "@qzl/tokens",
+      "publicApi": [
+        {
+          "packageName": "@qzl/tokens",
+          "platform": "tokens",
+          "name": "getThemeCssVariables",
+          "kind": "function",
+          "signature": "(mode: ThemeName) => ThemeCssVariables",
+          "sourcePath": "packages/tokens/src/index.ts",
+          "description": "Converts a semantic theme into CSS custom properties.",
+          "examples": [
+            "```ts\nconst variables = getThemeCssVariables('dark');\n```"
+          ],
+          "members": [],
+          "parameters": [
+            {
+              "name": "mode",
+              "type": "ThemeName",
+              "description": "- Theme whose colors should be converted.",
+              "documented": true
+            }
+          ]
+        },
+        {
+          "packageName": "@qzl/tokens",
+          "platform": "tokens",
+          "name": "qzlTokens",
+          "kind": "constant",
+          "signature": "typeof qzlTokens",
+          "sourcePath": "packages/tokens/src/index.ts",
+          "description": "Platform-neutral design tokens for color, spacing, typography, shape, motion, and layering.",
+          "examples": [
+            "```ts\nimport { qzlTokens } from '@qzl/tokens';\n\nconst cardRadius = qzlTokens.radius.md;\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/tokens",
+          "platform": "tokens",
+          "name": "themes",
+          "kind": "constant",
+          "signature": "typeof themes",
+          "sourcePath": "packages/tokens/src/index.ts",
+          "description": "Named light and dark semantic color themes.",
+          "examples": [
+            "```ts\nimport { themes } from '@qzl/tokens';\n\nconst pageBackground = themes.light.background;\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/tokens",
+          "platform": "tokens",
+          "name": "ThemeName",
+          "kind": "type",
+          "signature": "keyof typeof themes",
+          "sourcePath": "packages/tokens/src/index.ts",
+          "description": "Names of the built-in semantic themes.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/tokens",
+          "platform": "tokens",
+          "name": "ThemeTokens",
+          "kind": "type",
+          "signature": "(typeof themes)[ThemeName]",
+          "sourcePath": "packages/tokens/src/index.ts",
+          "description": "Semantic color values available in each built-in theme.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/tokens",
+          "platform": "tokens",
+          "name": "QzlTokenSet",
+          "kind": "type",
+          "signature": "typeof qzlTokens",
+          "sourcePath": "packages/tokens/src/index.ts",
+          "description": "Type of the exported platform-neutral design token collection.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/tokens",
+          "platform": "tokens",
+          "name": "ThemeCssVariables",
+          "kind": "interface",
+          "signature": "interface ThemeCssVariables",
+          "sourcePath": "packages/tokens/src/index.ts",
+          "description": "CSS custom properties generated from a semantic theme.",
+          "examples": [],
+          "members": [
+            {
+              "name": "'--qzl-background'",
+              "type": "string",
+              "optional": false,
+              "description": "Default page background color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-background-strong'",
+              "type": "string",
+              "optional": false,
+              "description": "Stronger page background color used to distinguish sections.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-surface'",
+              "type": "string",
+              "optional": false,
+              "description": "Default component surface color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-surface-muted'",
+              "type": "string",
+              "optional": false,
+              "description": "Muted component surface color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-surface-inverse'",
+              "type": "string",
+              "optional": false,
+              "description": "Inverse component surface color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-border'",
+              "type": "string",
+              "optional": false,
+              "description": "Default border color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-text'",
+              "type": "string",
+              "optional": false,
+              "description": "Primary text color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-text-muted'",
+              "type": "string",
+              "optional": false,
+              "description": "Muted text color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-text-soft'",
+              "type": "string",
+              "optional": false,
+              "description": "Soft secondary text color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-primary'",
+              "type": "string",
+              "optional": false,
+              "description": "Primary action and emphasis color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-primary-foreground'",
+              "type": "string",
+              "optional": false,
+              "description": "Text color intended for a primary-colored surface.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-primary-subtle'",
+              "type": "string",
+              "optional": false,
+              "description": "Subtle primary-colored surface.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-primary-border'",
+              "type": "string",
+              "optional": false,
+              "description": "Border color for primary-colored controls.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-accent'",
+              "type": "string",
+              "optional": false,
+              "description": "Accent color for secondary emphasis.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-success'",
+              "type": "string",
+              "optional": false,
+              "description": "Success status color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-success-subtle'",
+              "type": "string",
+              "optional": false,
+              "description": "Subtle success status surface.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-success-border'",
+              "type": "string",
+              "optional": false,
+              "description": "Success status border color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-warning'",
+              "type": "string",
+              "optional": false,
+              "description": "Warning status color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-warning-subtle'",
+              "type": "string",
+              "optional": false,
+              "description": "Subtle warning status surface.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-warning-border'",
+              "type": "string",
+              "optional": false,
+              "description": "Warning status border color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-danger'",
+              "type": "string",
+              "optional": false,
+              "description": "Danger status color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-danger-subtle'",
+              "type": "string",
+              "optional": false,
+              "description": "Subtle danger status surface.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-danger-border'",
+              "type": "string",
+              "optional": false,
+              "description": "Danger status border color.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        }
+      ]
+    }
+  ]
+};

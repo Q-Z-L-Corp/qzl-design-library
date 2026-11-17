@@ -1,6 +1,8 @@
 # @qzl/tokens
 
-Platform-neutral design tokens and semantic light/dark theme values for QZL interfaces.
+Shared design tokens and semantic light and dark theme values for QZL Design Library.
+
+This package has not been published yet. Use the install command after the first release.
 
 ```sh
 pnpm add @qzl/tokens

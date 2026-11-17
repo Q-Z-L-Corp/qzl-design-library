@@ -4,7 +4,7 @@ import React from 'react';
 
 export const metadata = {
   title: 'QZL Design Library',
-  description: 'Original design system for Q.Z.L Corp.'
+  description: 'An open-source design system with shared foundations and components for Web and React Native.'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
