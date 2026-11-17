@@ -1,0 +1,28 @@
+{
+  "name": "@qzl/core",
+  "version": "0.1.0",
+  "description": "Platform-neutral helpers for QZL component packages.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist/index.js", "dist/index.d.ts", "README.md", "LICENSE"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "pnpm build",
+    "lint": "eslint src",
+    "test": "node --test"
+  }
+}

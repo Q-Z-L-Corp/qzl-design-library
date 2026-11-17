@@ -1,0 +1,51 @@
+{
+  "name": "@qzl/react-native",
+  "version": "0.1.0",
+  "description": "Native React Native components built on the QZL design system.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./expo/qr-scanner": {
+      "types": "./dist/expo/qr-scanner.d.ts",
+      "import": "./dist/expo/qr-scanner.js",
+      "default": "./dist/expo/qr-scanner.js"
+    }
+  },
+  "files": ["dist/index.js", "dist/index.d.ts", "dist/components", "dist/expo", "README.md", "LICENSE"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@qzl/core": "workspace:*",
+    "@qzl/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@react-native-community/slider": "5.2.1",
+    "expo-camera": "58.0.14"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-native": ">=0.78",
+    "expo-camera": ">=58.0.0",
+    "@react-native-community/slider": "^5.2.1"
+  },
+  "peerDependenciesMeta": {
+    "expo-camera": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "pnpm build",
+    "lint": "eslint src"
+  }
+}

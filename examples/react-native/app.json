@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "QZL Design Library Example",
+    "slug": "qzl-design-library-example",
+    "version": "0.1.0",
+    "platforms": ["ios", "android"],
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow QZL Design Library Example to use your camera to scan QR codes.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": true
+        }
+      ]
+    ],
+    "newArchEnabled": true
+  }
+}

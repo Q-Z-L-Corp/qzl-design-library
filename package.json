@@ -1,0 +1,30 @@
+{
+  "name": "qzl-design-library",
+  "private": true,
+  "packageManager": "pnpm@10.15.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build:packages": "pnpm -r --filter './packages/**' build",
+    "dev": "pnpm build:packages && pnpm --filter docs dev",
+    "start:native": "pnpm build:packages && pnpm --filter @qzl/example-native start",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r --if-present lint",
+    "test": "pnpm build:packages && pnpm -r --if-present test",
+    "test:watch": "pnpm --filter @qzl/react test:watch",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release:publish": "pnpm -r --filter '@qzl/*' publish --access public"
+  },
+  "devDependencies": {
+    "@changesets/cli": "3.0.3",
+    "@types/react": "19.2.0",
+    "@types/react-dom": "19.2.0",
+    "eslint": "10.15.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.73.0"
+  }
+}
