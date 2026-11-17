@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Props for the controlled range input {@link Slider}. */
 export interface SliderProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'value' | 'onChange'> {

@@ -432,6 +432,8 @@
 .qzl-carousel { display: grid; gap: 12px; color: var(--qzl-text); }
 .qzl-carousel__slide { min-height: 80px; }
 .qzl-carousel__slide--overlay { position: relative; }
+.qzl-carousel__slide-content--overlay-arrows { padding-inline: 56px; }
+.qzl-carousel__slide-content--overlay-text { padding-inline: 96px 72px; }
 .qzl-carousel__controls { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .qzl-carousel__controls--pagination-only { justify-content: center; }
 .qzl-carousel__controls > button,
@@ -441,7 +443,8 @@
 .qzl-carousel__navigation-button:disabled,
 .qzl-stepper__controls button:disabled { opacity: 0.5; cursor: not-allowed; }
 .qzl-carousel__overlay-controls { position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 8px; pointer-events: none; }
-.qzl-carousel__overlay-controls > button { width: 40px; height: 40px; padding: 0; border: 1px solid var(--qzl-border); border-radius: 50%; color: var(--qzl-text); background: var(--qzl-surface); cursor: pointer; pointer-events: auto; }
+.qzl-carousel__overlay-controls--arrows > button { width: 40px; height: 40px; padding: 0; border: 1px solid var(--qzl-border); border-radius: 50%; color: var(--qzl-text); background: var(--qzl-surface); cursor: pointer; pointer-events: auto; }
+.qzl-carousel__overlay-controls--text > button { width: auto; min-width: 0; height: auto; border-radius: 9px; pointer-events: auto; }
 .qzl-carousel__overlay-controls > button:disabled { opacity: 0.5; cursor: not-allowed; }
 .qzl-carousel__pagination { display: flex; justify-content: center; }
 .qzl-carousel__progress { width: 100%; flex: 1; height: 4px; overflow: hidden; border-radius: 99px; background: var(--qzl-border); }

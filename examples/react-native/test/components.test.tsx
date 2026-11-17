@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, Text } from 'react-native';
+import { Pressable, StyleSheet, Text } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import {
   Accordion,
@@ -46,7 +46,7 @@ import {
   Toast,
   Tooltip,
   Typography
-} from '@qzl/react-native';
+} from '@qzlcorp/react-native';
 
 describe('React Native components', () => {
   it('exposes an accessible action and disabled state', () => {
@@ -322,12 +322,30 @@ describe('React Native components', () => {
       />
     );
 
+    expect(StyleSheet.flatten(screen.getByLabelText('Slide 3 of 3').props.style)).toMatchObject({
+      paddingHorizontal: 52
+    });
     expect(screen.getByRole('progressbar', { name: 'Slide progress' }).props.accessibilityValue).toEqual({ min: 1, max: 3, now: 3 });
     expect(screen.getByRole('button', { name: 'Next slide' })).toBeEnabled();
     fireEvent.press(screen.getByRole('button', { name: 'Next slide' }));
     expect(screen.getByText('Slide one')).toBeOnTheScreen();
     fireEvent.press(screen.getByRole('button', { name: 'Previous slide' }));
     expect(screen.getByText('Slide three')).toBeOnTheScreen();
+  });
+
+  it('reserves slide content space for built-in text controls in overlay placement', () => {
+    render(
+      <Carousel
+        navigation="text"
+        navigationPlacement="overlay"
+        slides={[<Text key="one">Slide one</Text>, <Text key="two">Slide two</Text>]}
+      />
+    );
+
+    expect(StyleSheet.flatten(screen.getByLabelText('Slide 1 of 2').props.style)).toMatchObject({
+      paddingStart: 92,
+      paddingEnd: 68
+    });
   });
 
   it('uses custom carousel navigation and pagination renderers', () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
-import { clamp } from '@qzl/core';
-import { themes, type ThemeName } from '@qzl/tokens';
+import { clamp } from '@qzlcorp/core';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 /** Props for a determinate or unset React Native progress indicator. */
 export interface ProgressProps {

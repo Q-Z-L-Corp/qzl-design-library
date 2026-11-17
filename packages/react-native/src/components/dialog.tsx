@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Pressable, Text, View } from 'react-native';
 import type { ModalProps, StyleProp, ViewStyle } from 'react-native';
-import { themes, type ThemeName } from '@qzl/tokens';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 /** Props for a controlled React Native modal dialog. */
 export interface DialogProps extends Omit<ModalProps, 'visible' | 'onRequestClose' | 'children'> {

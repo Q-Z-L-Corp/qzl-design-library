@@ -30,9 +30,9 @@ import {
   Switch,
   Tag,
   Typography
-} from '@qzl/react-native';
-import { QrScanner } from '@qzl/react-native/expo/qr-scanner';
-import { themes, type ThemeName } from '@qzl/tokens';
+} from '@qzlcorp/react-native';
+import { QrScanner } from '@qzlcorp/react-native/expo/qr-scanner';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 const linkRows = [
   { destination: 'example.com/spring', clicks: 1248 },

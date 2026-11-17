@@ -1,6 +1,6 @@
 import React from 'react';
-import { mergeClasses, parseMarkdown } from '@qzl/core';
-import type { MarkdownBlock } from '@qzl/core';
+import { mergeClasses, parseMarkdown } from '@qzlcorp/core';
+import type { MarkdownBlock } from '@qzlcorp/core';
 
 /** Props for the controlled {@link MarkdownEditor}. */
 export interface MarkdownEditorProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'value' | 'onChange'> {

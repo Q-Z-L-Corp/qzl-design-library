@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 import type { TextProps } from 'react-native';
-import { themes, type ThemeName } from '@qzl/tokens';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 /** Props for a compact themed text badge. */
 export interface BadgeProps extends TextProps {

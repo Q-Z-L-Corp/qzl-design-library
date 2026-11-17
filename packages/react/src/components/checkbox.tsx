@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Props for {@link Checkbox}, in addition to HTML input attributes. */
 export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {

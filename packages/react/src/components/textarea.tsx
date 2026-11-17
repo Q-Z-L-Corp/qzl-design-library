@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Props for {@link Textarea}, in addition to HTML textarea attributes. */
 export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {

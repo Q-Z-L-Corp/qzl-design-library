@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react-native';
-import { AreaChart, BarChart, DonutChart, LineChart, MetricCard } from '@qzl/react-native';
+import { AreaChart, BarChart, DonutChart, LineChart, MetricCard } from '@qzlcorp/react-native';
 
 describe('React Native data display components', () => {
   it('renders chart labels, values, and metric comparisons', () => {

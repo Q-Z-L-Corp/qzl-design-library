@@ -1,4 +1,4 @@
-# @qzl/react
+# @qzlcorp/react
 
 Reusable React components for Web applications, with documented APIs and accessibility semantics.
 
@@ -6,19 +6,19 @@ This package has not been published yet. Use the install command after the first
 The host application must provide React and React DOM 18.3.1 or 19.
 
 ```sh
-pnpm add @qzl/react
+pnpm add @qzlcorp/react
 ```
 
 Import the stylesheet once from your application root:
 
 ```ts
-import '@qzl/react/styles.css';
+import '@qzlcorp/react/styles.css';
 ```
 
 Then compose components:
 
 ```tsx
-import { Button, Card, DataTable } from '@qzl/react';
+import { Button, Card, DataTable } from '@qzlcorp/react';
 
 export function ProjectCard() {
   return <Card><Button>Open project</Button></Card>;
@@ -31,7 +31,7 @@ Data display includes `DataTable`, `MetricCard`, `BarChart`, `LineChart`, `AreaC
 
 ## Styling and themes
 
-The stylesheet uses semantic CSS variables (`--qzl-*`). Define those variables on an ancestor or use `getThemeCssVariables` from `@qzl/tokens` to obtain theme values. Install `@qzl/tokens` directly when your application imports its APIs.
+The stylesheet uses semantic CSS variables (`--qzl-*`). Define those variables on an ancestor or use `getThemeCssVariables` from `@qzlcorp/tokens` to obtain theme values. Install `@qzlcorp/tokens` directly when your application imports its APIs.
 
 ## License
 

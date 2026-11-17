@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 import { Dialog } from './dialog.js';
 
 /** Props for {@link Divider}, in addition to horizontal-rule attributes. */
@@ -285,7 +285,8 @@ export interface CarouselProps extends React.HTMLAttributes<HTMLElement> {
    */
   pagination?: CarouselPagination;
   /**
-   * Position of navigation controls. Custom navigation content is placed at the selected position.
+   * Position of navigation controls. Built-in overlay controls reserve space at the slide edges;
+   * custom overlay controls should account for their own width.
    * @default 'below'
    */
   navigationPlacement?: CarouselNavigationPlacement;
@@ -429,6 +430,8 @@ export function Carousel({
             </div>
           )
           : <span className="qzl-carousel__fraction" role="status" aria-label={`Slide ${currentIndex + 1} of ${slides.length}`} aria-live="polite">{currentIndex + 1} / {slides.length}</span>;
+  const hasBuiltInOverlayNavigation =
+    navigationPlacement === 'overlay' && Boolean(navigationContent) && !renderNavigation;
 
   return (
     <section
@@ -438,9 +441,19 @@ export function Carousel({
       {...props}
     >
       <div className={mergeClasses('qzl-carousel__slide', navigationPlacement === 'overlay' && Boolean(navigationContent) && 'qzl-carousel__slide--overlay')} role="group" aria-roledescription="slide" aria-label={`${currentIndex + 1} of ${slides.length}`}>
-        {slides[currentIndex]}
+        <div className={mergeClasses(
+          'qzl-carousel__slide-content',
+          hasBuiltInOverlayNavigation && `qzl-carousel__slide-content--overlay-${navigation}`
+        )}>
+          {slides[currentIndex]}
+        </div>
         {navigationPlacement === 'overlay' && navigationContent && (
-          <div className="qzl-carousel__overlay-controls">{navigationContent}</div>
+          <div className={mergeClasses(
+            'qzl-carousel__overlay-controls',
+            `qzl-carousel__overlay-controls--${renderNavigation ? 'custom' : navigation}`
+          )}>
+            {navigationContent}
+          </div>
         )}
       </div>
       {navigationPlacement === 'below'

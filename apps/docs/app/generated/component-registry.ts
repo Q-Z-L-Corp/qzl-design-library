@@ -63,7 +63,7 @@ export interface ComponentRegistry {
 }
 
 export const componentRegistry: ComponentRegistry = {
-  "generatedAt": "2026-11-17T08:43:25.230Z",
+  "generatedAt": "2026-11-17T09:08:45.821Z",
   "categories": [
     "Actions",
     "Forms",
@@ -77,13 +77,13 @@ export const componentRegistry: ComponentRegistry = {
   ],
   "packages": {
     "web": {
-      "name": "@qzl/react",
-      "version": "0.1.0",
+      "name": "@qzlcorp/react",
+      "version": "0.2.0-beta.0",
       "componentCount": 49
     },
     "native": {
-      "name": "@qzl/react-native",
-      "version": "0.1.0",
+      "name": "@qzlcorp/react-native",
+      "version": "0.2.0-beta.0",
       "componentCount": 48
     },
     "optionalNativeComponents": [
@@ -104,18 +104,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Button } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Button>\n      Example content\n    </Button>\n  );\n}",
+        "web": "import { Button } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Button>\n      Example content\n    </Button>\n  );\n}",
         "customization": {
-          "web": "import { Button } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Button variant=\"secondary\">\n      Example content\n    </Button>\n  );\n}",
-          "native": "import { Button } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Button title=\"Example title\" variant=\"danger\" />\n  );\n}"
+          "web": "import { Button } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Button variant=\"secondary\">\n      Example content\n    </Button>\n  );\n}",
+          "native": "import { Button } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Button title=\"Example title\" variant=\"danger\" />\n  );\n}"
         },
-        "native": "import { Button } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Button title=\"Example title\" />\n  );\n}"
+        "native": "import { Button } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Button title=\"Example title\" />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/button.tsx",
           "description": "Renders a styled HTML button with variant, size, and width options. Its `type`\ndefaults to `button`.",
           "examples": [
@@ -188,12 +188,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/button.tsx",
           "description": "Renders a React Native pressable button with disabled and busy accessibility states.",
           "examples": [
@@ -297,7 +297,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -309,18 +309,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { IconButton } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <IconButton label=\"Example label\">\n      <span aria-hidden=\"true\">⌕</span>\n    </IconButton>\n  );\n}",
+        "web": "import { IconButton } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <IconButton label=\"Example label\">\n      <span aria-hidden=\"true\">⌕</span>\n    </IconButton>\n  );\n}",
         "customization": {
-          "web": "import { IconButton } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <IconButton label=\"Example label\" variant=\"primary\">\n      <span aria-hidden=\"true\">⌕</span>\n    </IconButton>\n  );\n}",
-          "native": "import { IconButton } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <IconButton label=\"Example label\" variant=\"danger\">\n      <Text>⌕</Text>\n    </IconButton>\n  );\n}"
+          "web": "import { IconButton } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <IconButton label=\"Example label\" variant=\"primary\">\n      <span aria-hidden=\"true\">⌕</span>\n    </IconButton>\n  );\n}",
+          "native": "import { IconButton } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <IconButton label=\"Example label\" variant=\"danger\">\n      <Text>⌕</Text>\n    </IconButton>\n  );\n}"
         },
-        "native": "import { IconButton } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <IconButton label=\"Example label\">\n      <Text>⌕</Text>\n    </IconButton>\n  );\n}"
+        "native": "import { IconButton } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <IconButton label=\"Example label\">\n      <Text>⌕</Text>\n    </IconButton>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/icon-button.tsx",
           "description": "Renders a button whose accessible name is supplied separately from its content.\nIts HTML `type` defaults to `button`.",
           "examples": [
@@ -358,12 +358,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/icon-button.tsx",
           "description": "Renders a compact React Native button whose accessible name comes from `label`.",
           "examples": [
@@ -437,7 +437,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -449,18 +449,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { FileUploadInput } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <FileUploadInput label=\"Example label\" onFilesSelected={() => {}} />\n  );\n}",
+        "web": "import { FileUploadInput } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <FileUploadInput label=\"Example label\" onFilesSelected={() => {}} />\n  );\n}",
         "customization": {
-          "web": "import { FileUploadInput } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <FileUploadInput label=\"Example label\" onFilesSelected={() => {}} multiple={true} />\n  );\n}",
-          "native": "import { FileUploadInput } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <FileUploadInput label=\"Example label\" onPress={() => {}} theme=\"dark\" />\n  );\n}"
+          "web": "import { FileUploadInput } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <FileUploadInput label=\"Example label\" onFilesSelected={() => {}} multiple={true} />\n  );\n}",
+          "native": "import { FileUploadInput } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <FileUploadInput label=\"Example label\" onPress={() => {}} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { FileUploadInput } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <FileUploadInput label=\"Example label\" onPress={() => {}} />\n  );\n}"
+        "native": "import { FileUploadInput } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <FileUploadInput label=\"Example label\" onPress={() => {}} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders an HTML file input with a button that opens the browser's file picker.",
           "examples": [
@@ -553,12 +553,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Renders a React Native button and selected-file labels; it does not open a file picker itself.",
           "examples": [
@@ -651,7 +651,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -663,18 +663,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { HelperText } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <HelperText>\n      Example content\n    </HelperText>\n  );\n}",
+        "web": "import { HelperText } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <HelperText>\n      Example content\n    </HelperText>\n  );\n}",
         "customization": {
-          "web": "import { HelperText } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <HelperText error={true}>\n      Example content\n    </HelperText>\n  );\n}",
-          "native": "import { HelperText } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <HelperText theme=\"dark\">\n      <Text>Example content</Text>\n    </HelperText>\n  );\n}"
+          "web": "import { HelperText } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <HelperText error={true}>\n      Example content\n    </HelperText>\n  );\n}",
+          "native": "import { HelperText } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <HelperText theme=\"dark\">\n      <Text>Example content</Text>\n    </HelperText>\n  );\n}"
         },
-        "native": "import { HelperText } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <HelperText>\n      <Text>Example content</Text>\n    </HelperText>\n  );\n}"
+        "native": "import { HelperText } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <HelperText>\n      <Text>Example content</Text>\n    </HelperText>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders supporting text, optionally marked and announced as an error.",
           "examples": [
@@ -700,12 +700,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Displays supporting text; error messages use a polite accessibility live region.",
           "examples": [
@@ -765,7 +765,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -777,18 +777,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Input } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Input aria-label=\"Project name\" placeholder=\"Name your project\" />\n  );\n}",
+        "web": "import { Input } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Input aria-label=\"Project name\" placeholder=\"Name your project\" />\n  );\n}",
         "customization": {
-          "web": "import { Input } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Input error={true} aria-label=\"Project name\" placeholder=\"Name your project\" />\n  );\n}",
-          "native": "import { Input } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Input theme=\"dark\" />\n  );\n}"
+          "web": "import { Input } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Input error={true} aria-label=\"Project name\" placeholder=\"Name your project\" />\n  );\n}",
+          "native": "import { Input } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Input theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Input } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Input />\n  );\n}"
+        "native": "import { Input } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Input />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/input.tsx",
           "description": "Renders an HTML input with the library's input styling.",
           "examples": [
@@ -814,12 +814,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/input.tsx",
           "description": "Renders React Native's text input with themed colors and an error accessibility hint.",
           "examples": [
@@ -870,7 +870,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -882,18 +882,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Select } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Select aria-label=\"Choose a plan\" value=\"team\">\n      <option value=\"team\">Team</option>\n    </Select>\n  );\n}",
+        "web": "import { Select } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Select aria-label=\"Choose a plan\" value=\"team\">\n      <option value=\"team\">Team</option>\n    </Select>\n  );\n}",
         "customization": {
-          "web": "import { Select } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Select error={true} aria-label=\"Choose a plan\" value=\"team\">\n      <option value=\"team\">Team</option>\n    </Select>\n  );\n}",
-          "native": "import { Select } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Select label=\"Example label\" options={[{ value: 'team', label: 'Team' }, { value: 'individual', label: 'Individual' }]} value=\"team\" onValueChange={() => {}} theme=\"dark\" />\n  );\n}"
+          "web": "import { Select } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Select error={true} aria-label=\"Choose a plan\" value=\"team\">\n      <option value=\"team\">Team</option>\n    </Select>\n  );\n}",
+          "native": "import { Select } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Select label=\"Example label\" options={[{ value: 'team', label: 'Team' }, { value: 'individual', label: 'Individual' }]} value=\"team\" onValueChange={() => {}} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Select } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Select label=\"Example label\" options={[{ value: 'team', label: 'Team' }, { value: 'individual', label: 'Individual' }]} value=\"team\" onValueChange={() => {}} />\n  );\n}"
+        "native": "import { Select } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Select label=\"Example label\" options={[{ value: 'team', label: 'Team' }, { value: 'individual', label: 'Individual' }]} value=\"team\" onValueChange={() => {}} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/select.tsx",
           "description": "Renders an HTML select with the library's input styling.",
           "examples": [
@@ -919,12 +919,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/select.tsx",
           "description": "Toggles a React Native list of radio-style choices; it is not a platform picker control.",
           "examples": [
@@ -1022,7 +1022,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -1034,18 +1034,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Slider } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Slider label=\"Example label\" value={4} onValueChange={() => {}} />\n  );\n}",
+        "web": "import { Slider } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Slider label=\"Example label\" value={4} onValueChange={() => {}} />\n  );\n}",
         "customization": {
-          "web": "import { Slider } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Slider label=\"Example label\" value={4} onValueChange={() => {}} className=\"custom-example\" />\n  );\n}",
-          "native": "import { Slider } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Slider label=\"Example label\" value={4} onValueChange={() => {}} theme=\"dark\" />\n  );\n}"
+          "web": "import { Slider } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Slider label=\"Example label\" value={4} onValueChange={() => {}} className=\"custom-example\" />\n  );\n}",
+          "native": "import { Slider } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Slider label=\"Example label\" value={4} onValueChange={() => {}} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Slider } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Slider label=\"Example label\" value={4} onValueChange={() => {}} />\n  );\n}"
+        "native": "import { Slider } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Slider label=\"Example label\" value={4} onValueChange={() => {}} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/slider.tsx",
           "description": "Renders a controlled range input with its label and current numeric value.",
           "examples": [
@@ -1101,12 +1101,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/slider.tsx",
           "description": "Wraps `@react-native-community/slider`, forwarding value changes and completion callbacks.",
           "examples": [
@@ -1218,7 +1218,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -1230,18 +1230,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Stepper } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Stepper steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} onStepChange={() => {}} />\n  );\n}",
+        "web": "import { Stepper } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Stepper steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} onStepChange={() => {}} />\n  );\n}",
         "customization": {
-          "web": "import { Stepper } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Stepper steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} onStepChange={() => {}} className=\"custom-example\" />\n  );\n}",
-          "native": "import { Stepper } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Stepper onStepChange={() => {}} steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} theme=\"dark\" />\n  );\n}"
+          "web": "import { Stepper } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Stepper steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} onStepChange={() => {}} className=\"custom-example\" />\n  );\n}",
+          "native": "import { Stepper } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Stepper onStepChange={() => {}} steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Stepper } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Stepper onStepChange={() => {}} steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} />\n  );\n}"
+        "native": "import { Stepper } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Stepper onStepChange={() => {}} steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders a step progress list with Back and Continue controls.",
           "examples": [
@@ -1314,12 +1314,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Combines a stepped progress display with React Native Back and Continue buttons.\nIts default label is `Setup steps`, with ` progress` appended for the progress list.",
           "examples": [
@@ -1408,7 +1408,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -1420,18 +1420,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Textarea } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Textarea aria-label=\"Notes\" placeholder=\"Write a note\" />\n  );\n}",
+        "web": "import { Textarea } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Textarea aria-label=\"Notes\" placeholder=\"Write a note\" />\n  );\n}",
         "customization": {
-          "web": "import { Textarea } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Textarea error={true} aria-label=\"Notes\" placeholder=\"Write a note\" />\n  );\n}",
-          "native": "import { Textarea } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Textarea theme=\"light\" />\n  );\n}"
+          "web": "import { Textarea } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Textarea error={true} aria-label=\"Notes\" placeholder=\"Write a note\" />\n  );\n}",
+          "native": "import { Textarea } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Textarea theme=\"light\" />\n  );\n}"
         },
-        "native": "import { Textarea } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Textarea />\n  );\n}"
+        "native": "import { Textarea } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Textarea />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/textarea.tsx",
           "description": "Renders an HTML textarea with the library's input styling.",
           "examples": [
@@ -1457,12 +1457,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/textarea.tsx",
           "description": "Renders the themed {@link Input} in multiline, top-aligned mode with four displayed lines.",
           "examples": [
@@ -1513,7 +1513,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -1525,18 +1525,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Checkbox } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Checkbox checked={false} onChange={() => {}} aria-label=\"Remember this choice\" />\n  );\n}",
+        "web": "import { Checkbox } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Checkbox checked={false} onChange={() => {}} aria-label=\"Remember this choice\" />\n  );\n}",
         "customization": {
-          "web": "import { Checkbox } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Checkbox error={true} checked={false} onChange={() => {}} aria-label=\"Remember this choice\" />\n  );\n}",
-          "native": "import { Checkbox } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Checkbox checked={false} onCheckedChange={() => {}} label=\"Example label\" theme=\"dark\" />\n  );\n}"
+          "web": "import { Checkbox } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Checkbox error={true} checked={false} onChange={() => {}} aria-label=\"Remember this choice\" />\n  );\n}",
+          "native": "import { Checkbox } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Checkbox checked={false} onCheckedChange={() => {}} label=\"Example label\" theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Checkbox } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Checkbox checked={false} onCheckedChange={() => {}} label=\"Example label\" />\n  );\n}"
+        "native": "import { Checkbox } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Checkbox checked={false} onCheckedChange={() => {}} label=\"Example label\" />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/checkbox.tsx",
           "description": "Renders an HTML checkbox input with optional error styling. Its input type defaults\nto `checkbox`.",
           "examples": [
@@ -1562,12 +1562,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/checkbox.tsx",
           "description": "Renders a labeled, controlled checkbox using React Native press and accessibility semantics.",
           "examples": [
@@ -1640,7 +1640,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -1652,18 +1652,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { RadioGroup } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <RadioGroup label=\"Example label\" name=\"plan\" options={[{ value: 'team', label: 'Team' }, { value: 'individual', label: 'Individual' }]} value=\"team\" onValueChange={() => {}} />\n  );\n}",
+        "web": "import { RadioGroup } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <RadioGroup label=\"Example label\" name=\"plan\" options={[{ value: 'team', label: 'Team' }, { value: 'individual', label: 'Individual' }]} value=\"team\" onValueChange={() => {}} />\n  );\n}",
         "customization": {
-          "web": "import { RadioGroup } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <RadioGroup label=\"Example label\" name=\"plan\" options={[{ value: 'team', label: 'Team' }, { value: 'individual', label: 'Individual' }]} value=\"team\" onValueChange={() => {}} className=\"custom-example\" />\n  );\n}",
-          "native": "import { RadioGroup } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <RadioGroup label=\"Example label\" options={[{ value: 'team', label: 'Team' }, { value: 'individual', label: 'Individual' }]} value=\"team\" onValueChange={() => {}} theme=\"dark\" />\n  );\n}"
+          "web": "import { RadioGroup } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <RadioGroup label=\"Example label\" name=\"plan\" options={[{ value: 'team', label: 'Team' }, { value: 'individual', label: 'Individual' }]} value=\"team\" onValueChange={() => {}} className=\"custom-example\" />\n  );\n}",
+          "native": "import { RadioGroup } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <RadioGroup label=\"Example label\" options={[{ value: 'team', label: 'Team' }, { value: 'individual', label: 'Individual' }]} value=\"team\" onValueChange={() => {}} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { RadioGroup } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <RadioGroup label=\"Example label\" options={[{ value: 'team', label: 'Team' }, { value: 'individual', label: 'Individual' }]} value=\"team\" onValueChange={() => {}} />\n  );\n}"
+        "native": "import { RadioGroup } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <RadioGroup label=\"Example label\" options={[{ value: 'team', label: 'Team' }, { value: 'individual', label: 'Individual' }]} value=\"team\" onValueChange={() => {}} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/radio-group.tsx",
           "description": "Renders a fieldset of radio choices controlled by `value`.",
           "examples": [
@@ -1738,12 +1738,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/radio-group.tsx",
           "description": "Renders React Native radio controls with checked and disabled accessibility states.",
           "examples": [
@@ -1830,7 +1830,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -1842,18 +1842,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { SegmentedButtons } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <SegmentedButtons options={[{ value: 'comfortable', label: 'Comfortable' }, { value: 'compact', label: 'Compact' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" />\n  );\n}",
+        "web": "import { SegmentedButtons } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <SegmentedButtons options={[{ value: 'comfortable', label: 'Comfortable' }, { value: 'compact', label: 'Compact' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" />\n  );\n}",
         "customization": {
-          "web": "import { SegmentedButtons } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <SegmentedButtons options={[{ value: 'comfortable', label: 'Comfortable' }, { value: 'compact', label: 'Compact' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" className=\"custom-example\" />\n  );\n}",
-          "native": "import { SegmentedButtons } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <SegmentedButtons options={[{ value: 'comfortable', label: 'Comfortable' }, { value: 'compact', label: 'Compact' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" theme=\"dark\" />\n  );\n}"
+          "web": "import { SegmentedButtons } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <SegmentedButtons options={[{ value: 'comfortable', label: 'Comfortable' }, { value: 'compact', label: 'Compact' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" className=\"custom-example\" />\n  );\n}",
+          "native": "import { SegmentedButtons } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <SegmentedButtons options={[{ value: 'comfortable', label: 'Comfortable' }, { value: 'compact', label: 'Compact' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { SegmentedButtons } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <SegmentedButtons options={[{ value: 'comfortable', label: 'Comfortable' }, { value: 'compact', label: 'Compact' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" />\n  );\n}"
+        "native": "import { SegmentedButtons } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <SegmentedButtons options={[{ value: 'comfortable', label: 'Comfortable' }, { value: 'compact', label: 'Compact' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders a controlled set of mutually labeled buttons with pressed state.",
           "examples": [
@@ -1926,12 +1926,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Renders a compact React Native radio group styled as adjoining segmented buttons.",
           "examples": [
@@ -2018,7 +2018,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -2030,18 +2030,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { SelectCard } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <SelectCard options={[{ value: 'team', title: 'Team', description: 'For collaboration' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" />\n  );\n}",
+        "web": "import { SelectCard } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <SelectCard options={[{ value: 'team', title: 'Team', description: 'For collaboration' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" />\n  );\n}",
         "customization": {
-          "web": "import { SelectCard } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <SelectCard options={[{ value: 'team', title: 'Team', description: 'For collaboration' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" className=\"custom-example\" />\n  );\n}",
-          "native": "import { SelectCard } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <SelectCard options={[{ value: 'team', title: 'Team', description: 'For collaboration' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" theme=\"dark\" />\n  );\n}"
+          "web": "import { SelectCard } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <SelectCard options={[{ value: 'team', title: 'Team', description: 'For collaboration' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" className=\"custom-example\" />\n  );\n}",
+          "native": "import { SelectCard } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <SelectCard options={[{ value: 'team', title: 'Team', description: 'For collaboration' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { SelectCard } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <SelectCard options={[{ value: 'team', title: 'Team', description: 'For collaboration' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" />\n  );\n}"
+        "native": "import { SelectCard } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <SelectCard options={[{ value: 'team', title: 'Team', description: 'For collaboration' }]} value=\"team\" onValueChange={() => {}} label=\"Example label\" />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders selectable card buttons with radio-group semantics and controlled selection.",
           "examples": [
@@ -2114,12 +2114,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Presents each choice as a React Native radio button with a bordered card layout.",
           "examples": [
@@ -2206,7 +2206,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -2218,18 +2218,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { StarRating } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <StarRating value={4} />\n  );\n}",
+        "web": "import { StarRating } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <StarRating value={4} />\n  );\n}",
         "customization": {
-          "web": "import { StarRating } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <StarRating value={4} className=\"custom-example\" />\n  );\n}",
-          "native": "import { StarRating } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <StarRating value={4} theme=\"dark\" />\n  );\n}"
+          "web": "import { StarRating } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <StarRating value={4} className=\"custom-example\" />\n  );\n}",
+          "native": "import { StarRating } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <StarRating value={4} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { StarRating } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <StarRating value={4} />\n  );\n}"
+        "native": "import { StarRating } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <StarRating value={4} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders a static or selectable integer star rating.",
           "examples": [
@@ -2294,12 +2294,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Displays an integer star rating; when interactive, each star is a React Native radio button.",
           "examples": [
@@ -2378,7 +2378,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -2390,18 +2390,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Switch } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Switch checked={false} onCheckedChange={() => {}} />\n  );\n}",
+        "web": "import { Switch } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Switch checked={false} onCheckedChange={() => {}} />\n  );\n}",
         "customization": {
-          "web": "import { Switch } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Switch checked={false} onCheckedChange={() => {}} className=\"custom-example\" />\n  );\n}",
-          "native": "import { Switch } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Switch checked={false} onCheckedChange={() => {}} theme=\"dark\" />\n  );\n}"
+          "web": "import { Switch } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Switch checked={false} onCheckedChange={() => {}} className=\"custom-example\" />\n  );\n}",
+          "native": "import { Switch } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Switch checked={false} onCheckedChange={() => {}} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Switch } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Switch checked={false} onCheckedChange={() => {}} />\n  );\n}"
+        "native": "import { Switch } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Switch checked={false} onCheckedChange={() => {}} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/switch.tsx",
           "description": "Renders a controlled switch using a button with switch semantics.",
           "examples": [
@@ -2438,12 +2438,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/switch.tsx",
           "description": "Wraps React Native's switch with a controlled checked value and themed colors.",
           "examples": [
@@ -2494,7 +2494,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -2506,18 +2506,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Alert } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Alert>\n      Example content\n    </Alert>\n  );\n}",
+        "web": "import { Alert } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Alert>\n      Example content\n    </Alert>\n  );\n}",
         "customization": {
-          "web": "import { Alert } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Alert variant=\"danger\">\n      Example content\n    </Alert>\n  );\n}",
-          "native": "import { Alert } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Alert variant=\"success\">\n      <Text>Example content</Text>\n    </Alert>\n  );\n}"
+          "web": "import { Alert } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Alert variant=\"danger\">\n      Example content\n    </Alert>\n  );\n}",
+          "native": "import { Alert } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Alert variant=\"success\">\n      <Text>Example content</Text>\n    </Alert>\n  );\n}"
         },
-        "native": "import { Alert } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Alert>\n      <Text>Example content</Text>\n    </Alert>\n  );\n}"
+        "native": "import { Alert } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Alert>\n      <Text>Example content</Text>\n    </Alert>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/alert.tsx",
           "description": "Renders a styled alert container; supply its contents and semantics as needed.",
           "examples": [
@@ -2545,12 +2545,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/alert.tsx",
           "description": "Displays a themed status message; danger alerts use the React Native alert role.",
           "examples": [
@@ -2612,7 +2612,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -2624,18 +2624,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Badge } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Badge>\n      Example content\n    </Badge>\n  );\n}",
+        "web": "import { Badge } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Badge>\n      Example content\n    </Badge>\n  );\n}",
         "customization": {
-          "web": "import { Badge } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Badge variant=\"danger\">\n      Example content\n    </Badge>\n  );\n}",
-          "native": "import { Badge } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Badge variant=\"success\">\n      <Text>Example content</Text>\n    </Badge>\n  );\n}"
+          "web": "import { Badge } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Badge variant=\"danger\">\n      Example content\n    </Badge>\n  );\n}",
+          "native": "import { Badge } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Badge variant=\"success\">\n      <Text>Example content</Text>\n    </Badge>\n  );\n}"
         },
-        "native": "import { Badge } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Badge>\n      <Text>Example content</Text>\n    </Badge>\n  );\n}"
+        "native": "import { Badge } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Badge>\n      <Text>Example content</Text>\n    </Badge>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/badge.tsx",
           "description": "Renders a short status or category label.",
           "examples": [
@@ -2664,12 +2664,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/badge.tsx",
           "description": "Renders a non-interactive badge using a themed React Native `Text` element.",
           "examples": [
@@ -2712,7 +2712,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -2724,18 +2724,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Indicator } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Indicator label=\"Example label\" />\n  );\n}",
+        "web": "import { Indicator } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Indicator label=\"Example label\" />\n  );\n}",
         "customization": {
-          "web": "import { Indicator } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Indicator label=\"Example label\" status=\"danger\" />\n  );\n}",
-          "native": "import { Indicator } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Indicator label=\"Example label\" status=\"info\" />\n  );\n}"
+          "web": "import { Indicator } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Indicator label=\"Example label\" status=\"danger\" />\n  );\n}",
+          "native": "import { Indicator } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Indicator label=\"Example label\" status=\"info\" />\n  );\n}"
         },
-        "native": "import { Indicator } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Indicator label=\"Example label\" />\n  );\n}"
+        "native": "import { Indicator } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Indicator label=\"Example label\" />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders a status message with a decorative dot and status role.",
           "examples": [
@@ -2783,12 +2783,12 @@ export const componentRegistry: ComponentRegistry = {
               ]
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Pairs a status-colored marker with text; the marker itself is hidden from accessibility.",
           "examples": [
@@ -2859,7 +2859,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -2871,18 +2871,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Progress } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Progress label=\"Example label\" />\n  );\n}",
+        "web": "import { Progress } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Progress label=\"Example label\" />\n  );\n}",
         "customization": {
-          "web": "import { Progress } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Progress label=\"Example label\" className=\"custom-example\" />\n  );\n}",
-          "native": "import { Progress } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Progress label=\"Example label\" theme=\"dark\" />\n  );\n}"
+          "web": "import { Progress } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Progress label=\"Example label\" className=\"custom-example\" />\n  );\n}",
+          "native": "import { Progress } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Progress label=\"Example label\" theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Progress } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Progress label=\"Example label\" />\n  );\n}"
+        "native": "import { Progress } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Progress label=\"Example label\" />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/progress.tsx",
           "description": "Renders progress over the supplied range, clamping displayed values to its bounds.",
           "examples": [
@@ -2938,12 +2938,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/progress.tsx",
           "description": "Displays clamped progress in a React Native view and exposes its range through accessibility values.",
           "examples": [
@@ -3022,7 +3022,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -3034,18 +3034,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Skeleton } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Skeleton />\n  );\n}",
+        "web": "import { Skeleton } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Skeleton />\n  );\n}",
         "customization": {
-          "web": "import { Skeleton } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Skeleton circle={true} />\n  );\n}",
-          "native": "import { Skeleton } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Skeleton theme=\"dark\" />\n  );\n}"
+          "web": "import { Skeleton } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Skeleton circle={true} />\n  );\n}",
+          "native": "import { Skeleton } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Skeleton theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Skeleton } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Skeleton />\n  );\n}"
+        "native": "import { Skeleton } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Skeleton />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/skeleton.tsx",
           "description": "Renders a decorative loading placeholder hidden from assistive technology.",
           "examples": [
@@ -3071,12 +3071,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/skeleton.tsx",
           "description": "Renders a static loading placeholder hidden from platform accessibility services.",
           "examples": [
@@ -3125,7 +3125,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -3137,18 +3137,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Spinner } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Spinner />\n  );\n}",
+        "web": "import { Spinner } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Spinner />\n  );\n}",
         "customization": {
-          "web": "import { Spinner } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Spinner size=\"sm\" />\n  );\n}",
-          "native": "import { Spinner } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Spinner size=\"sm\" />\n  );\n}"
+          "web": "import { Spinner } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Spinner size=\"sm\" />\n  );\n}",
+          "native": "import { Spinner } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Spinner size=\"sm\" />\n  );\n}"
         },
-        "native": "import { Spinner } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Spinner />\n  );\n}"
+        "native": "import { Spinner } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Spinner />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/spinner.tsx",
           "description": "Renders a loading indicator with a status role and accessible name.",
           "examples": [
@@ -3186,12 +3186,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/spinner.tsx",
           "description": "Displays React Native's activity indicator with a progressbar accessibility role.",
           "examples": [
@@ -3252,7 +3252,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -3264,18 +3264,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { SteppedProgressBar } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <SteppedProgressBar steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} />\n  );\n}",
+        "web": "import { SteppedProgressBar } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <SteppedProgressBar steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} />\n  );\n}",
         "customization": {
-          "web": "import { SteppedProgressBar } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <SteppedProgressBar steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} className=\"custom-example\" />\n  );\n}",
-          "native": "import { SteppedProgressBar } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <SteppedProgressBar steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} theme=\"dark\" />\n  );\n}"
+          "web": "import { SteppedProgressBar } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <SteppedProgressBar steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} className=\"custom-example\" />\n  );\n}",
+          "native": "import { SteppedProgressBar } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <SteppedProgressBar steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { SteppedProgressBar } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <SteppedProgressBar steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} />\n  );\n}"
+        "native": "import { SteppedProgressBar } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <SteppedProgressBar steps={[{ label: 'Profile' }, { label: 'Review' }]} activeStep={0} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders an ordered list with completed, current, and upcoming step states.",
           "examples": [
@@ -3337,12 +3337,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Shows completed/current segments and step labels without navigation controls.\nIts accessible label defaults to `Progress`.",
           "examples": [
@@ -3418,7 +3418,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -3430,18 +3430,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Toast } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Toast title=\"Example title\" />\n  );\n}",
+        "web": "import { Toast } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Toast title=\"Example title\" />\n  );\n}",
         "customization": {
-          "web": "import { Toast } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Toast title=\"Example title\" variant=\"danger\" />\n  );\n}",
-          "native": "import { Toast } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Toast title=\"Example title\" variant=\"success\" />\n  );\n}"
+          "web": "import { Toast } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Toast title=\"Example title\" variant=\"danger\" />\n  );\n}",
+          "native": "import { Toast } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Toast title=\"Example title\" variant=\"success\" />\n  );\n}"
         },
-        "native": "import { Toast } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Toast title=\"Example title\" />\n  );\n}"
+        "native": "import { Toast } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Toast title=\"Example title\" />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/toast.tsx",
           "description": "Renders a live notification and an optional dismiss control.",
           "examples": [
@@ -3502,12 +3502,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/toast.tsx",
           "description": "Renders a status message; danger uses an alert role and assertive live region.",
           "examples": [
@@ -3591,7 +3591,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -3603,18 +3603,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Accordion } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Accordion title=\"Example title\">\n      Example content\n    </Accordion>\n  );\n}",
+        "web": "import { Accordion } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Accordion title=\"Example title\">\n      Example content\n    </Accordion>\n  );\n}",
         "customization": {
-          "web": "import { Accordion } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Accordion title=\"Example title\" open={false}>\n      Example content\n    </Accordion>\n  );\n}",
-          "native": "import { Accordion } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Accordion title=\"Example title\" theme=\"dark\">\n      <Text>Example content</Text>\n    </Accordion>\n  );\n}"
+          "web": "import { Accordion } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Accordion title=\"Example title\" open={false}>\n      Example content\n    </Accordion>\n  );\n}",
+          "native": "import { Accordion } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Accordion title=\"Example title\" theme=\"dark\">\n      <Text>Example content</Text>\n    </Accordion>\n  );\n}"
         },
-        "native": "import { Accordion } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Accordion title=\"Example title\">\n      <Text>Example content</Text>\n    </Accordion>\n  );\n}"
+        "native": "import { Accordion } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Accordion title=\"Example title\">\n      <Text>Example content</Text>\n    </Accordion>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/accordion.tsx",
           "description": "Renders a disclosure control and its associated region.",
           "examples": [
@@ -3676,12 +3676,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/accordion.tsx",
           "description": "Renders an accessible, pressable disclosure row with optional controlled state.",
           "examples": [
@@ -3779,7 +3779,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -3791,18 +3791,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Avatar } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Avatar name=\"Alex Morgan\" />\n  );\n}",
+        "web": "import { Avatar } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Avatar name=\"Alex Morgan\" />\n  );\n}",
         "customization": {
-          "web": "import { Avatar } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Avatar name=\"Alex Morgan\" size=\"sm\" />\n  );\n}",
-          "native": "import { Avatar } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Avatar name=\"Alex Morgan\" size=\"sm\" />\n  );\n}"
+          "web": "import { Avatar } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Avatar name=\"Alex Morgan\" size=\"sm\" />\n  );\n}",
+          "native": "import { Avatar } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Avatar name=\"Alex Morgan\" size=\"sm\" />\n  );\n}"
         },
-        "native": "import { Avatar } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Avatar name=\"Alex Morgan\" />\n  );\n}"
+        "native": "import { Avatar } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Avatar name=\"Alex Morgan\" />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/avatar.tsx",
           "description": "Displays a named image, falling back to up to two initials when no image is available.",
           "examples": [
@@ -3851,12 +3851,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/avatar.tsx",
           "description": "Shows a circular avatar image, falling back to the name's initials on failure.",
           "examples": [
@@ -3930,7 +3930,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -3942,18 +3942,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Card } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Card>\n      Example content\n    </Card>\n  );\n}",
+        "web": "import { Card } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Card>\n      Example content\n    </Card>\n  );\n}",
         "customization": {
-          "web": "import { Card } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Card elevated={false}>\n      Example content\n    </Card>\n  );\n}",
-          "native": "import { Card } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Card theme=\"dark\">\n      <Text>Example content</Text>\n    </Card>\n  );\n}"
+          "web": "import { Card } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Card elevated={false}>\n      Example content\n    </Card>\n  );\n}",
+          "native": "import { Card } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Card theme=\"dark\">\n      <Text>Example content</Text>\n    </Card>\n  );\n}"
         },
-        "native": "import { Card } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Card>\n      <Text>Example content</Text>\n    </Card>\n  );\n}"
+        "native": "import { Card } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Card>\n      <Text>Example content</Text>\n    </Card>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/card.tsx",
           "description": "Renders a content container with optional elevated styling.",
           "examples": [
@@ -3979,12 +3979,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/card.tsx",
           "description": "Provides a padded React Native view with a themed surface and optional elevation.",
           "examples": [
@@ -4024,7 +4024,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -4036,18 +4036,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Divider } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Divider />\n  );\n}",
+        "web": "import { Divider } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Divider />\n  );\n}",
         "customization": {
-          "web": "import { Divider } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Divider orientation=\"vertical\" />\n  );\n}",
-          "native": "import { Divider } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Divider orientation=\"vertical\" />\n  );\n}"
+          "web": "import { Divider } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Divider orientation=\"vertical\" />\n  );\n}",
+          "native": "import { Divider } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Divider orientation=\"vertical\" />\n  );\n}"
         },
-        "native": "import { Divider } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Divider />\n  );\n}"
+        "native": "import { Divider } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Divider />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders a horizontal or vertical visual divider.",
           "examples": [
@@ -4087,12 +4087,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Renders a themed line and exposes it with the separator accessibility role unless decorative.",
           "examples": [
@@ -4155,7 +4155,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -4167,18 +4167,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Tag } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Tag>\n      Example content\n    </Tag>\n  );\n}",
+        "web": "import { Tag } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Tag>\n      Example content\n    </Tag>\n  );\n}",
         "customization": {
-          "web": "import { Tag } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Tag variant=\"primary\">\n      Example content\n    </Tag>\n  );\n}",
-          "native": "import { Tag } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Tag variant=\"info\">\n      <Text>Example content</Text>\n    </Tag>\n  );\n}"
+          "web": "import { Tag } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Tag variant=\"primary\">\n      Example content\n    </Tag>\n  );\n}",
+          "native": "import { Tag } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Tag variant=\"info\">\n      <Text>Example content</Text>\n    </Tag>\n  );\n}"
         },
-        "native": "import { Tag } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Tag>\n      <Text>Example content</Text>\n    </Tag>\n  );\n}"
+        "native": "import { Tag } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Tag>\n      <Text>Example content</Text>\n    </Tag>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders a compact label with an optional accessible remove button.",
           "examples": [
@@ -4229,12 +4229,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Displays a compact status tag with an optional React Native remove button.",
           "examples": [
@@ -4327,7 +4327,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -4339,18 +4339,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Typography } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Typography>\n      Example content\n    </Typography>\n  );\n}",
+        "web": "import { Typography } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Typography>\n      Example content\n    </Typography>\n  );\n}",
         "customization": {
-          "web": "import { Typography } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Typography variant=\"display\">\n      Example content\n    </Typography>\n  );\n}",
-          "native": "import { Typography } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Typography variant=\"display\">\n      <Text>Example content</Text>\n    </Typography>\n  );\n}"
+          "web": "import { Typography } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Typography variant=\"display\">\n      Example content\n    </Typography>\n  );\n}",
+          "native": "import { Typography } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Typography variant=\"display\">\n      <Text>Example content</Text>\n    </Typography>\n  );\n}"
         },
-        "native": "import { Typography } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Typography>\n      <Text>Example content</Text>\n    </Typography>\n  );\n}"
+        "native": "import { Typography } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Typography>\n      <Text>Example content</Text>\n    </Typography>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders content using a typography style and a semantic element.",
           "examples": [
@@ -4415,12 +4415,12 @@ export const componentRegistry: ComponentRegistry = {
               ]
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Applies a named type scale; heading variants default to the header accessibility role.",
           "examples": [
@@ -4473,7 +4473,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -4485,18 +4485,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Breadcrumbs } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Current page' }]} />\n  );\n}",
+        "web": "import { Breadcrumbs } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Current page' }]} />\n  );\n}",
         "customization": {
-          "web": "import { Breadcrumbs } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Current page' }]} className=\"custom-example\" />\n  );\n}",
-          "native": "import { Breadcrumbs } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Breadcrumbs items={[{ label: 'Home' }, { label: 'Current page' }]} theme=\"dark\" />\n  );\n}"
+          "web": "import { Breadcrumbs } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Current page' }]} className=\"custom-example\" />\n  );\n}",
+          "native": "import { Breadcrumbs } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Breadcrumbs items={[{ label: 'Home' }, { label: 'Current page' }]} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Breadcrumbs } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Breadcrumbs items={[{ label: 'Home' }, { label: 'Current page' }]} />\n  );\n}"
+        "native": "import { Breadcrumbs } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Breadcrumbs items={[{ label: 'Home' }, { label: 'Current page' }]} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/breadcrumbs.tsx",
           "description": "Renders an ordered breadcrumb trail; the final item is current unless overridden.",
           "examples": [
@@ -4538,12 +4538,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/breadcrumbs.tsx",
           "description": "Displays a React Native breadcrumb list; non-current items are actionable only when they have an `onPress` callback.",
           "examples": [
@@ -4608,7 +4608,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -4620,18 +4620,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Carousel } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Carousel slides={[<span>Overview</span>, <span>Details</span>]} />\n  );\n}",
+        "web": "import { Carousel } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Carousel slides={[<span>Overview</span>, <span>Details</span>]} />\n  );\n}",
         "customization": {
-          "web": "import { Carousel } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Carousel slides={[<span>Overview</span>, <span>Details</span>]} navigation=\"arrows\" />\n  );\n}",
-          "native": "import { Carousel, Typography } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Carousel slides={[<Typography key=\"overview\">Overview</Typography>, <Typography key=\"details\">Details</Typography>]} theme=\"dark\" />\n  );\n}"
+          "web": "import { Carousel } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Carousel slides={[<span>Overview</span>, <span>Details</span>]} navigation=\"arrows\" />\n  );\n}",
+          "native": "import { Carousel, Typography } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Carousel slides={[<Typography key=\"overview\">Overview</Typography>, <Typography key=\"details\">Details</Typography>]} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Carousel, Typography } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Carousel slides={[<Typography key=\"overview\">Overview</Typography>, <Typography key=\"details\">Details</Typography>]} />\n  );\n}"
+        "native": "import { Carousel, Typography } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Carousel slides={[<Typography key=\"overview\">Overview</Typography>, <Typography key=\"details\">Details</Typography>]} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders one slide with configurable navigation and position indicators.",
           "examples": [
@@ -4821,18 +4821,18 @@ export const componentRegistry: ComponentRegistry = {
               ]
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Shows one slide with configurable React Native navigation and position indicators.",
           "examples": [
             "<Carousel slides={[<Text key=\"one\">First</Text>, <Text key=\"two\">Second</Text>]} />",
             "<Carousel slides={slides} navigation=\"arrows\" pagination=\"progress\" loop />",
-            "```tsx\nimport { Carousel } from '@qzl/react-native';\nimport { Pressable, Text, View } from 'react-native';\n\n<Carousel\n  slides={[<Text key=\"first\">First</Text>, <Text key=\"second\">Second</Text>]}\n  renderNavigation={({ previous, next, canGoPrevious, canGoNext }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Previous slide\" disabled={!canGoPrevious} onPress={previous}>\n        <Text>Back</Text>\n      </Pressable>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Next slide\" disabled={!canGoNext} onPress={next}>\n        <Text>Next</Text>\n      </Pressable>\n    </View>\n  )}\n  renderPagination={({ index, slideCount, goTo }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      {Array.from({ length: slideCount }, (_, slide) => (\n        <Pressable key={slide} accessibilityRole=\"button\" accessibilityLabel={`Go to slide ${slide + 1}`} accessibilityState={{ selected: index === slide }} onPress={() => goTo(slide)}>\n          <Text>{slide + 1}</Text>\n        </Pressable>\n      ))}\n    </View>\n  )}\n/>\n```"
+            "```tsx\nimport { Carousel } from '@qzlcorp/react-native';\nimport { Pressable, Text, View } from 'react-native';\n\n<Carousel\n  slides={[<Text key=\"first\">First</Text>, <Text key=\"second\">Second</Text>]}\n  renderNavigation={({ previous, next, canGoPrevious, canGoNext }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Previous slide\" disabled={!canGoPrevious} onPress={previous}>\n        <Text>Back</Text>\n      </Pressable>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Next slide\" disabled={!canGoNext} onPress={next}>\n        <Text>Next</Text>\n      </Pressable>\n    </View>\n  )}\n  renderPagination={({ index, slideCount, goTo }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      {Array.from({ length: slideCount }, (_, slide) => (\n        <Pressable key={slide} accessibilityRole=\"button\" accessibilityLabel={`Go to slide ${slide + 1}`} accessibilityState={{ selected: index === slide }} onPress={() => goTo(slide)}>\n          <Text>{slide + 1}</Text>\n        </Pressable>\n      ))}\n    </View>\n  )}\n/>\n```"
           ],
           "propsType": "CarouselProps",
           "extends": [],
@@ -5039,7 +5039,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -5051,18 +5051,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { DropdownMenu } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <DropdownMenu label=\"Example label\" items={[{ label: 'Edit', onSelect: () => {} }, { label: 'Duplicate', onSelect: () => {} }]} />\n  );\n}",
+        "web": "import { DropdownMenu } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <DropdownMenu label=\"Example label\" items={[{ label: 'Edit', onSelect: () => {} }, { label: 'Duplicate', onSelect: () => {} }]} />\n  );\n}",
         "customization": {
-          "web": "import { DropdownMenu } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <DropdownMenu label=\"Example label\" items={[{ label: 'Edit', onSelect: () => {} }, { label: 'Duplicate', onSelect: () => {} }]} className=\"custom-example\" />\n  );\n}",
-          "native": "import { DropdownMenu } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <DropdownMenu label=\"Example label\" items={[{ label: 'Edit', onSelect: () => {} }, { label: 'Duplicate', onSelect: () => {} }]} theme=\"dark\" />\n  );\n}"
+          "web": "import { DropdownMenu } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <DropdownMenu label=\"Example label\" items={[{ label: 'Edit', onSelect: () => {} }, { label: 'Duplicate', onSelect: () => {} }]} className=\"custom-example\" />\n  );\n}",
+          "native": "import { DropdownMenu } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <DropdownMenu label=\"Example label\" items={[{ label: 'Edit', onSelect: () => {} }, { label: 'Duplicate', onSelect: () => {} }]} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { DropdownMenu } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <DropdownMenu label=\"Example label\" items={[{ label: 'Edit', onSelect: () => {} }, { label: 'Duplicate', onSelect: () => {} }]} />\n  );\n}"
+        "native": "import { DropdownMenu } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <DropdownMenu label=\"Example label\" items={[{ label: 'Edit', onSelect: () => {} }, { label: 'Duplicate', onSelect: () => {} }]} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/dropdown-menu.tsx",
           "description": "Renders an HTML disclosure menu; selecting an enabled item invokes its callback and closes it.",
           "examples": [
@@ -5104,12 +5104,12 @@ export const componentRegistry: ComponentRegistry = {
               ]
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/dropdown-menu.tsx",
           "description": "Toggles a React Native list of actions; selecting an enabled item closes the list before calling it.",
           "examples": [
@@ -5174,7 +5174,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -5186,18 +5186,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { NavigationMenu } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <NavigationMenu items={[{ label: 'Overview', href: '/' }, { label: 'Components', href: '/components' }]} label=\"Example label\" />\n  );\n}",
+        "web": "import { NavigationMenu } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <NavigationMenu items={[{ label: 'Overview', href: '/' }, { label: 'Components', href: '/components' }]} label=\"Example label\" />\n  );\n}",
         "customization": {
-          "web": "import { NavigationMenu } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <NavigationMenu items={[{ label: 'Overview', href: '/' }, { label: 'Components', href: '/components' }]} label=\"Example label\" className=\"custom-example\" />\n  );\n}",
-          "native": "import { NavigationMenu } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <NavigationMenu items={[{ label: 'Overview', onPress: () => {}, current: true }, { label: 'Components', onPress: () => {} }]} label=\"Example label\" theme=\"dark\" />\n  );\n}"
+          "web": "import { NavigationMenu } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <NavigationMenu items={[{ label: 'Overview', href: '/' }, { label: 'Components', href: '/components' }]} label=\"Example label\" className=\"custom-example\" />\n  );\n}",
+          "native": "import { NavigationMenu } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <NavigationMenu items={[{ label: 'Overview', onPress: () => {}, current: true }, { label: 'Components', onPress: () => {} }]} label=\"Example label\" theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { NavigationMenu } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <NavigationMenu items={[{ label: 'Overview', onPress: () => {}, current: true }, { label: 'Components', onPress: () => {} }]} label=\"Example label\" />\n  );\n}"
+        "native": "import { NavigationMenu } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <NavigationMenu items={[{ label: 'Overview', onPress: () => {}, current: true }, { label: 'Components', onPress: () => {} }]} label=\"Example label\" />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/navigation-menu.tsx",
           "description": "Renders a labeled navigation landmark containing a list of links.",
           "examples": [
@@ -5239,12 +5239,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/navigation-menu.tsx",
           "description": "Renders navigation choices as React Native pressable rows; this component does not perform routing.",
           "examples": [
@@ -5309,7 +5309,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -5321,18 +5321,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Pagination } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Pagination page={1} pageCount={3} onPageChange={() => {}} />\n  );\n}",
+        "web": "import { Pagination } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Pagination page={1} pageCount={3} onPageChange={() => {}} />\n  );\n}",
         "customization": {
-          "web": "import { Pagination } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Pagination page={1} pageCount={3} onPageChange={() => {}} className=\"custom-example\" />\n  );\n}",
-          "native": "import { Pagination } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Pagination page={1} pageCount={3} onPageChange={() => {}} theme=\"dark\" />\n  );\n}"
+          "web": "import { Pagination } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Pagination page={1} pageCount={3} onPageChange={() => {}} className=\"custom-example\" />\n  );\n}",
+          "native": "import { Pagination } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Pagination page={1} pageCount={3} onPageChange={() => {}} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Pagination } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Pagination page={1} pageCount={3} onPageChange={() => {}} />\n  );\n}"
+        "native": "import { Pagination } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Pagination page={1} pageCount={3} onPageChange={() => {}} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/pagination.tsx",
           "description": "Renders previous/next controls and up to five consecutive page buttons.",
           "examples": [
@@ -5388,12 +5388,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/pagination.tsx",
           "description": "Renders previous/next controls and up to five nearby React Native buttons with selected and disabled accessibility states.",
           "examples": [
@@ -5472,7 +5472,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -5484,18 +5484,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Pips } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Pips count={3} index={0} />\n  );\n}",
+        "web": "import { Pips } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Pips count={3} index={0} />\n  );\n}",
         "customization": {
-          "web": "import { Pips } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Pips count={3} index={0} className=\"custom-example\" />\n  );\n}",
-          "native": "import { Pips } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Pips count={3} index={0} theme=\"dark\" />\n  );\n}"
+          "web": "import { Pips } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Pips count={3} index={0} className=\"custom-example\" />\n  );\n}",
+          "native": "import { Pips } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Pips count={3} index={0} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Pips } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Pips count={3} index={0} />\n  );\n}"
+        "native": "import { Pips } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Pips count={3} index={0} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders one button per item and optionally reports selected indicator changes.",
           "examples": [
@@ -5560,12 +5560,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Renders React Native button pips, or disabled visual pips when no change callback is supplied.",
           "examples": [
@@ -5644,7 +5644,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -5656,18 +5656,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Tabs } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Tabs items={[{ value: 'overview', label: 'Overview' }, { value: 'details', label: 'Details' }]} value=\"team\" onValueChange={() => {}} />\n  );\n}",
+        "web": "import { Tabs } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Tabs items={[{ value: 'overview', label: 'Overview' }, { value: 'details', label: 'Details' }]} value=\"team\" onValueChange={() => {}} />\n  );\n}",
         "customization": {
-          "web": "import { Tabs } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Tabs items={[{ value: 'overview', label: 'Overview' }, { value: 'details', label: 'Details' }]} value=\"details\" onValueChange={() => {}} />\n  );\n}",
-          "native": "import { Tabs } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Tabs items={[{ value: 'overview', label: 'Overview' }, { value: 'details', label: 'Details' }]} value=\"team\" onValueChange={() => {}} theme=\"dark\" />\n  );\n}"
+          "web": "import { Tabs } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Tabs items={[{ value: 'overview', label: 'Overview' }, { value: 'details', label: 'Details' }]} value=\"details\" onValueChange={() => {}} />\n  );\n}",
+          "native": "import { Tabs } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Tabs items={[{ value: 'overview', label: 'Overview' }, { value: 'details', label: 'Details' }]} value=\"team\" onValueChange={() => {}} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { Tabs } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <Tabs items={[{ value: 'overview', label: 'Overview' }, { value: 'details', label: 'Details' }]} value=\"team\" onValueChange={() => {}} />\n  );\n}"
+        "native": "import { Tabs } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <Tabs items={[{ value: 'overview', label: 'Overview' }, { value: 'details', label: 'Details' }]} value=\"team\" onValueChange={() => {}} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/tabs.tsx",
           "description": "Renders an accessible, controlled tab list with arrow, Home, and End navigation.",
           "examples": [
@@ -5729,12 +5729,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/tabs.tsx",
           "description": "Renders React Native pressable tabs and exposes the selected state to accessibility services.",
           "examples": [
@@ -5810,7 +5810,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -5822,18 +5822,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { BottomSheet } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <BottomSheet open={false} onOpenChange={() => {}} title=\"Example title\">\n      Example content\n    </BottomSheet>\n  );\n}",
+        "web": "import { BottomSheet } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <BottomSheet open={false} onOpenChange={() => {}} title=\"Example title\">\n      Example content\n    </BottomSheet>\n  );\n}",
         "customization": {
-          "web": "import { BottomSheet } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <BottomSheet open={false} onOpenChange={() => {}} title=\"Example title\" className=\"custom-example\">\n      Example content\n    </BottomSheet>\n  );\n}",
-          "native": "import { BottomSheet } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <BottomSheet open={false} onOpenChange={() => {}} title=\"Example title\" theme=\"light\">\n      <Text>Example content</Text>\n    </BottomSheet>\n  );\n}"
+          "web": "import { BottomSheet } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <BottomSheet open={false} onOpenChange={() => {}} title=\"Example title\" className=\"custom-example\">\n      Example content\n    </BottomSheet>\n  );\n}",
+          "native": "import { BottomSheet } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <BottomSheet open={false} onOpenChange={() => {}} title=\"Example title\" theme=\"light\">\n      <Text>Example content</Text>\n    </BottomSheet>\n  );\n}"
         },
-        "native": "import { BottomSheet } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <BottomSheet open={false} onOpenChange={() => {}} title=\"Example title\">\n      <Text>Example content</Text>\n    </BottomSheet>\n  );\n}"
+        "native": "import { BottomSheet } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <BottomSheet open={false} onOpenChange={() => {}} title=\"Example title\">\n      <Text>Example content</Text>\n    </BottomSheet>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders the shared modal dialog as a bottom-positioned sheet.",
           "examples": [
@@ -5912,12 +5912,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Presents a slide-animated React Native modal panel attached to the bottom edge.\nThe hardware/back close request and backdrop press call `onOpenChange(false)`.",
           "examples": [
@@ -6010,7 +6010,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -6022,18 +6022,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Dialog } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Dialog open={false} onOpenChange={() => {}} title=\"Example title\">\n      Example content\n    </Dialog>\n  );\n}",
+        "web": "import { Dialog } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Dialog open={false} onOpenChange={() => {}} title=\"Example title\">\n      Example content\n    </Dialog>\n  );\n}",
         "customization": {
-          "web": "import { Dialog } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Dialog open={false} onOpenChange={() => {}} title=\"Example title\" className=\"custom-example\">\n      Example content\n    </Dialog>\n  );\n}",
-          "native": "import { Dialog } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Dialog open={false} onOpenChange={() => {}} title=\"Example title\" theme=\"dark\">\n      <Text>Example content</Text>\n    </Dialog>\n  );\n}"
+          "web": "import { Dialog } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Dialog open={false} onOpenChange={() => {}} title=\"Example title\" className=\"custom-example\">\n      Example content\n    </Dialog>\n  );\n}",
+          "native": "import { Dialog } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Dialog open={false} onOpenChange={() => {}} title=\"Example title\" theme=\"dark\">\n      <Text>Example content</Text>\n    </Dialog>\n  );\n}"
         },
-        "native": "import { Dialog } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Dialog open={false} onOpenChange={() => {}} title=\"Example title\">\n      <Text>Example content</Text>\n    </Dialog>\n  );\n}"
+        "native": "import { Dialog } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Dialog open={false} onOpenChange={() => {}} title=\"Example title\">\n      <Text>Example content</Text>\n    </Dialog>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/dialog.tsx",
           "description": "Renders a controlled modal dialog with a heading, optional description, and close control.",
           "examples": [
@@ -6114,12 +6114,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/dialog.tsx",
           "description": "Presents content in a React Native modal, defaulting to a transparent fade transition, and reports\nclose requests through `onOpenChange` (including platform close requests such as\nAndroid hardware back).",
           "examples": [
@@ -6214,7 +6214,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -6226,18 +6226,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Popover } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Popover trigger=\"More information\">\n      Example content\n    </Popover>\n  );\n}",
+        "web": "import { Popover } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Popover trigger=\"More information\">\n      Example content\n    </Popover>\n  );\n}",
         "customization": {
-          "web": "import { Popover } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Popover trigger=\"More information\" className=\"custom-example\">\n      Example content\n    </Popover>\n  );\n}",
-          "native": "import { Popover } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Popover trigger=\"More information\" theme=\"dark\">\n      <Text>Example content</Text>\n    </Popover>\n  );\n}"
+          "web": "import { Popover } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Popover trigger=\"More information\" className=\"custom-example\">\n      Example content\n    </Popover>\n  );\n}",
+          "native": "import { Popover } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Popover trigger=\"More information\" theme=\"dark\">\n      <Text>Example content</Text>\n    </Popover>\n  );\n}"
         },
-        "native": "import { Popover } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Popover trigger=\"More information\">\n      <Text>Example content</Text>\n    </Popover>\n  );\n}"
+        "native": "import { Popover } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Popover trigger=\"More information\">\n      <Text>Example content</Text>\n    </Popover>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders a button-controlled popover that closes on outside pointer press or Escape.",
           "examples": [
@@ -6291,12 +6291,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Toggles an inline labeled summary panel from a React Native button; it is not a floating modal.",
           "examples": [
@@ -6364,7 +6364,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -6376,18 +6376,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { SideSheet } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <SideSheet open={false} onOpenChange={() => {}} title=\"Example title\">\n      Example content\n    </SideSheet>\n  );\n}",
+        "web": "import { SideSheet } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <SideSheet open={false} onOpenChange={() => {}} title=\"Example title\">\n      Example content\n    </SideSheet>\n  );\n}",
         "customization": {
-          "web": "import { SideSheet } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <SideSheet open={false} onOpenChange={() => {}} title=\"Example title\" className=\"custom-example\">\n      Example content\n    </SideSheet>\n  );\n}",
-          "native": "import { SideSheet } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <SideSheet open={false} onOpenChange={() => {}} title=\"Example title\" theme=\"light\">\n      <Text>Example content</Text>\n    </SideSheet>\n  );\n}"
+          "web": "import { SideSheet } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <SideSheet open={false} onOpenChange={() => {}} title=\"Example title\" className=\"custom-example\">\n      Example content\n    </SideSheet>\n  );\n}",
+          "native": "import { SideSheet } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <SideSheet open={false} onOpenChange={() => {}} title=\"Example title\" theme=\"light\">\n      <Text>Example content</Text>\n    </SideSheet>\n  );\n}"
         },
-        "native": "import { SideSheet } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <SideSheet open={false} onOpenChange={() => {}} title=\"Example title\">\n      <Text>Example content</Text>\n    </SideSheet>\n  );\n}"
+        "native": "import { SideSheet } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <SideSheet open={false} onOpenChange={() => {}} title=\"Example title\">\n      <Text>Example content</Text>\n    </SideSheet>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders the shared modal dialog as a side-positioned sheet.",
           "examples": [
@@ -6466,12 +6466,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Presents a slide-animated React Native modal panel attached to the right edge.\nThe hardware/back close request and backdrop press call `onOpenChange(false)`.",
           "examples": [
@@ -6564,7 +6564,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -6576,18 +6576,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { Tooltip, Button } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Tooltip content=\"Example\">\n      <Button>Focus or hover</Button>\n    </Tooltip>\n  );\n}",
+        "web": "import { Tooltip, Button } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Tooltip content=\"Example\">\n      <Button>Focus or hover</Button>\n    </Tooltip>\n  );\n}",
         "customization": {
-          "web": "import { Tooltip, Button } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Tooltip content=\"Helpful details for this action.\">\n      <Button>Focus or hover</Button>\n    </Tooltip>\n  );\n}",
-          "native": "import { Tooltip } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Tooltip content=\"Example\" theme=\"dark\">\n      <Text>Focus for help</Text>\n    </Tooltip>\n  );\n}"
+          "web": "import { Tooltip, Button } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Tooltip content=\"Helpful details for this action.\">\n      <Button>Focus or hover</Button>\n    </Tooltip>\n  );\n}",
+          "native": "import { Tooltip } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Tooltip content=\"Example\" theme=\"dark\">\n      <Text>Focus for help</Text>\n    </Tooltip>\n  );\n}"
         },
-        "native": "import { Tooltip } from '@qzl/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Tooltip content=\"Example\">\n      <Text>Focus for help</Text>\n    </Tooltip>\n  );\n}"
+        "native": "import { Tooltip } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Tooltip content=\"Example\">\n      <Text>Focus for help</Text>\n    </Tooltip>\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/tooltip.tsx",
           "description": "Associates a child element with descriptive tooltip content via `aria-describedby`.",
           "examples": [
@@ -6619,12 +6619,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/tooltip.tsx",
           "description": "Toggles a text help message from a React Native pressable control; it does not use a hover popup.",
           "examples": [
@@ -6681,7 +6681,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -6693,18 +6693,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { AreaChart } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <AreaChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} />\n  );\n}",
+        "web": "import { AreaChart } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <AreaChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} />\n  );\n}",
         "customization": {
-          "web": "import { AreaChart } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <AreaChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} stacked={true} />\n  );\n}",
-          "native": "import { AreaChart } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <AreaChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} theme=\"dark\" />\n  );\n}"
+          "web": "import { AreaChart } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <AreaChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} stacked={true} />\n  );\n}",
+          "native": "import { AreaChart } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <AreaChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { AreaChart } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <AreaChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} />\n  );\n}"
+        "native": "import { AreaChart } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <AreaChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/area-chart.tsx",
           "description": "Renders area series over shared labels. Use `stacked` for cumulative, non-negative values.",
           "examples": [
@@ -6782,12 +6782,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/area-chart.tsx",
           "description": "Renders area series in React Native. Set `stacked` for cumulative, non-negative values.",
           "examples": [
@@ -6888,7 +6888,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -6900,18 +6900,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { BarChart } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <BarChart data={[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }]} title=\"Weekly activity\" />\n  );\n}",
+        "web": "import { BarChart } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <BarChart data={[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }]} title=\"Weekly activity\" />\n  );\n}",
         "customization": {
-          "web": "import { BarChart } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <BarChart data={[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }]} title=\"Weekly activity\" orientation=\"vertical\" />\n  );\n}",
-          "native": "import { BarChart } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <BarChart title=\"Weekly activity\" data={[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }]} orientation=\"vertical\" />\n  );\n}"
+          "web": "import { BarChart } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <BarChart data={[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }]} title=\"Weekly activity\" orientation=\"vertical\" />\n  );\n}",
+          "native": "import { BarChart } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <BarChart title=\"Weekly activity\" data={[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }]} orientation=\"vertical\" />\n  );\n}"
         },
-        "native": "import { BarChart } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <BarChart title=\"Weekly activity\" data={[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }]} />\n  );\n}"
+        "native": "import { BarChart } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <BarChart title=\"Weekly activity\" data={[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }]} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/bar-chart.tsx",
           "description": "Renders horizontal or vertical bars, with grouped and stacked multi-series layouts.\nThe accessible data labels remain available alongside the visual bars.",
           "examples": [
@@ -7019,12 +7019,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/bar-chart.tsx",
           "description": "Renders bars in React Native views, with horizontal or vertical, grouped or stacked layouts.\nThe category labels and values remain visible as text.",
           "examples": [
@@ -7155,7 +7155,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -7167,18 +7167,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { DataTable } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" />\n  );\n}",
+        "web": "import { DataTable } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" />\n  );\n}",
         "customization": {
-          "web": "import { DataTable } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" className=\"custom-example\" />\n  );\n}",
-          "native": "import { DataTable } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" theme=\"dark\" />\n  );\n}"
+          "web": "import { DataTable } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" className=\"custom-example\" />\n  );\n}",
+          "native": "import { DataTable } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { DataTable } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" />\n  );\n}"
+        "native": "import { DataTable } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/data-table.tsx",
           "description": "Renders a table with optional client-side sorting for columns that define `sortValue`.",
           "examples": [
@@ -7253,12 +7253,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/data-table.tsx",
           "description": "Renders a horizontally scrollable table with stable local sorting for sortable columns.",
           "examples": [
@@ -7356,7 +7356,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -7368,18 +7368,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { DonutChart } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <DonutChart title=\"Example title\" data={[{ label: 'Desktop', value: 64 }, { label: 'Mobile', value: 36 }]} />\n  );\n}",
+        "web": "import { DonutChart } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <DonutChart title=\"Example title\" data={[{ label: 'Desktop', value: 64 }, { label: 'Mobile', value: 36 }]} />\n  );\n}",
         "customization": {
-          "web": "import { DonutChart } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <DonutChart title=\"Example title\" data={[{ label: 'Desktop', value: 64 }, { label: 'Mobile', value: 36 }]} className=\"custom-example\" />\n  );\n}",
-          "native": "import { DonutChart } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <DonutChart title=\"Example title\" data={[{ label: 'Desktop', value: 64 }, { label: 'Mobile', value: 36 }]} theme=\"dark\" />\n  );\n}"
+          "web": "import { DonutChart } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <DonutChart title=\"Example title\" data={[{ label: 'Desktop', value: 64 }, { label: 'Mobile', value: 36 }]} className=\"custom-example\" />\n  );\n}",
+          "native": "import { DonutChart } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <DonutChart title=\"Example title\" data={[{ label: 'Desktop', value: 64 }, { label: 'Mobile', value: 36 }]} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { DonutChart } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <DonutChart title=\"Example title\" data={[{ label: 'Desktop', value: 64 }, { label: 'Mobile', value: 36 }]} />\n  );\n}"
+        "native": "import { DonutChart } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <DonutChart title=\"Example title\" data={[{ label: 'Desktop', value: 64 }, { label: 'Mobile', value: 36 }]} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/donut-chart.tsx",
           "description": "Shows proportional category values as a donut, with a labeled total and text legend.",
           "examples": [
@@ -7443,12 +7443,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/donut-chart.tsx",
           "description": "Shows proportional category values as a React Native SVG donut with a text legend.",
           "examples": [
@@ -7535,7 +7535,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -7547,18 +7547,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { LineChart } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <LineChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} />\n  );\n}",
+        "web": "import { LineChart } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <LineChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} />\n  );\n}",
         "customization": {
-          "web": "import { LineChart } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <LineChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} className=\"custom-example\" />\n  );\n}",
-          "native": "import { LineChart } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <LineChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} theme=\"dark\" />\n  );\n}"
+          "web": "import { LineChart } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <LineChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} className=\"custom-example\" />\n  );\n}",
+          "native": "import { LineChart } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <LineChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { LineChart } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <LineChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} />\n  );\n}"
+        "native": "import { LineChart } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <LineChart title=\"Example title\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [12, 18, 15] }]} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/line-chart.tsx",
           "description": "Renders one or more time series with shared category labels and a readable data summary.",
           "examples": [
@@ -7622,12 +7622,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/line-chart.tsx",
           "description": "Renders one or more time series with React Native SVG and a readable text data summary.",
           "examples": [
@@ -7714,7 +7714,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -7726,18 +7726,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { MetricCard } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <MetricCard label=\"Example label\" value=\"$24.8k\" />\n  );\n}",
+        "web": "import { MetricCard } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <MetricCard label=\"Example label\" value=\"$24.8k\" />\n  );\n}",
         "customization": {
-          "web": "import { MetricCard } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <MetricCard label=\"Example label\" value=\"$24.8k\" trend=\"positive\" />\n  );\n}",
-          "native": "import { MetricCard } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <MetricCard label=\"Example label\" value=\"$24.8k\" theme=\"dark\" />\n  );\n}"
+          "web": "import { MetricCard } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <MetricCard label=\"Example label\" value=\"$24.8k\" trend=\"positive\" />\n  );\n}",
+          "native": "import { MetricCard } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <MetricCard label=\"Example label\" value=\"$24.8k\" theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { MetricCard } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <MetricCard label=\"Example label\" value=\"$24.8k\" />\n  );\n}"
+        "native": "import { MetricCard } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <MetricCard label=\"Example label\" value=\"$24.8k\" />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/metric-card.tsx",
           "description": "Presents a key metric with optional change, comparison period, and supporting context.",
           "examples": [
@@ -7827,12 +7827,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/metric-card.tsx",
           "description": "Presents a key metric with optional change, comparison period, and supporting context.",
           "examples": [
@@ -7945,7 +7945,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -7957,18 +7957,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { MarkdownEditor } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <MarkdownEditor label=\"Example label\" value=\"team\" onValueChange={() => {}} />\n  );\n}",
+        "web": "import { MarkdownEditor } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <MarkdownEditor label=\"Example label\" value=\"team\" onValueChange={() => {}} />\n  );\n}",
         "customization": {
-          "web": "import { MarkdownEditor } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <MarkdownEditor label=\"Example label\" value=\"team\" onValueChange={() => {}} preview={true} />\n  );\n}",
-          "native": "import { MarkdownEditor } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <MarkdownEditor label=\"Example label\" value=\"team\" onValueChange={() => {}} theme=\"dark\" />\n  );\n}"
+          "web": "import { MarkdownEditor } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <MarkdownEditor label=\"Example label\" value=\"team\" onValueChange={() => {}} preview={true} />\n  );\n}",
+          "native": "import { MarkdownEditor } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <MarkdownEditor label=\"Example label\" value=\"team\" onValueChange={() => {}} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { MarkdownEditor } from '@qzl/react-native';\n\nexport function Example() {\n  return (\n    <MarkdownEditor label=\"Example label\" value=\"team\" onValueChange={() => {}} />\n  );\n}"
+        "native": "import { MarkdownEditor } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <MarkdownEditor label=\"Example label\" value=\"team\" onValueChange={() => {}} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/markdown-editor.tsx",
           "description": "Renders a controlled markdown textarea with spell checking enabled and, optionally, a parsed preview.",
           "examples": [
@@ -8027,12 +8027,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "native": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/markdown-editor.tsx",
           "description": "Provides a controlled multiline React Native editor and an optional parsed-text preview.",
           "examples": [
@@ -8127,7 +8127,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         }
       }
     },
@@ -8139,18 +8139,18 @@ export const componentRegistry: ComponentRegistry = {
       "status": "beta",
       "preview": true,
       "examples": {
-        "web": "import { QrScanner } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <QrScanner onScan={() => {}} />\n  );\n}",
+        "web": "import { QrScanner } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <QrScanner onScan={() => {}} />\n  );\n}",
         "customization": {
-          "web": "import { QrScanner } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <QrScanner onScan={() => {}} className=\"custom-example\" />\n  );\n}",
-          "native": "import { QrScanner } from '@qzl/react-native/expo/qr-scanner';\n\nexport function Example() {\n  return (\n    <QrScanner onScan={() => {}} theme=\"dark\" />\n  );\n}"
+          "web": "import { QrScanner } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <QrScanner onScan={() => {}} className=\"custom-example\" />\n  );\n}",
+          "native": "import { QrScanner } from '@qzlcorp/react-native/expo/qr-scanner';\n\nexport function Example() {\n  return (\n    <QrScanner onScan={() => {}} theme=\"dark\" />\n  );\n}"
         },
-        "native": "import { QrScanner } from '@qzl/react-native/expo/qr-scanner';\n\nexport function Example() {\n  return (\n    <QrScanner onScan={() => {}} />\n  );\n}"
+        "native": "import { QrScanner } from '@qzlcorp/react-native/expo/qr-scanner';\n\nexport function Example() {\n  return (\n    <QrScanner onScan={() => {}} />\n  );\n}"
       },
       "platforms": {
         "web": {
           "platform": "web",
-          "packageName": "@qzl/react",
-          "importPath": "@qzl/react",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/qr-scanner.tsx",
           "description": "Renders an opt-in camera scanner using the browser BarcodeDetector API for QR codes.\nCamera access begins only after the user activates the start control.",
           "examples": [
@@ -8195,12 +8195,12 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0"
+          "version": "0.2.0-beta.0"
         },
         "nativeOptional": {
           "platform": "native",
-          "packageName": "@qzl/react-native",
-          "importPath": "@qzl/react-native/expo/qr-scanner",
+          "packageName": "@qzlcorp/react-native",
+          "importPath": "@qzlcorp/react-native/expo/qr-scanner",
           "sourcePath": "packages/react-native/src/expo/qr-scanner.tsx",
           "description": "Starts Expo Camera only after the user presses the scan button, requesting permission when needed.\nThe React Native camera preview is restricted to QR codes; decoded content is passed to the app without opening it.",
           "examples": [
@@ -8257,7 +8257,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.1.0",
+          "version": "0.2.0-beta.0",
           "dependencies": [
             "expo-camera"
           ]

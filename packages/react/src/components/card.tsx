@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Props for {@link Card}, in addition to div attributes. */
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {

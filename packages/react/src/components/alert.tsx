@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Props for {@link Alert}, in addition to div attributes. */
 export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {

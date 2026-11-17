@@ -50,9 +50,9 @@ import {
   Toast,
   Tooltip,
   Typography
-} from '@qzl/react';
-import { getThemeCssVariables, qzlTokens, type ThemeName } from '@qzl/tokens';
-import type { ButtonSize, ButtonVariant } from '@qzl/react';
+} from '@qzlcorp/react';
+import { getThemeCssVariables, qzlTokens, type ThemeName } from '@qzlcorp/tokens';
+import type { ButtonSize, ButtonVariant } from '@qzlcorp/react';
 import { componentRegistry } from './generated/component-registry';
 import { ComponentDocumentationPage } from './component-documentation';
 import { publicApiDocumentation } from './generated/public-api-docs';
@@ -471,15 +471,15 @@ function OverviewPage({ onNavigate }: { onNavigate: (page: DocPage) => void }) {
 }
 
 function GettingStarted({ onCopy }: { onCopy: (value: string) => void }) {
-  const snippet = `import { Button, Card, Input } from '@qzl/react';\nimport '@qzl/react/styles.css';\n\nexport function Example() {\n  return (\n    <Card>\n      <Input aria-label=\"Project name\" placeholder=\"Name your project\" />\n      <Button>Continue</Button>\n    </Card>\n  );\n}`;
+  const snippet = `import { Button, Card, Input } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Card>\n      <Input aria-label=\"Project name\" placeholder=\"Name your project\" />\n      <Button>Continue</Button>\n    </Card>\n  );\n}`;
   return (
     <>
       <PageTitle eyebrow="START HERE" title="Getting started" description="Choose a platform package, add its styles or peer dependencies, and build with shared design tokens and themes." />
       <div className="docs-callout"><span>i</span><p><strong>Packages are not published yet.</strong> The commands below are for use after the first release. For local development, clone the repository and use its workspace commands.</p></div>
       <div className="docs-section">
         <h2>Install for Web</h2>
-        <p>Install the React package in an application using React 18.3.1 or 19 with a matching React DOM version. Its supporting packages are installed as dependencies; add <code>@qzl/tokens</code> directly only if your application imports token APIs.</p>
-        <CodeSample code="pnpm add @qzl/react" onCopy={onCopy} />
+        <p>Install the React package in an application using React 18.3.1 or 19 with a matching React DOM version. Its supporting packages are installed as dependencies; add <code>@qzlcorp/tokens</code> directly only if your application imports token APIs.</p>
+        <CodeSample code="pnpm add @qzlcorp/react" onCopy={onCopy} />
       </div>
       <div className="docs-section">
         <h2>Use a Web component</h2>
@@ -489,15 +489,15 @@ function GettingStarted({ onCopy }: { onCopy: (value: string) => void }) {
       <div className="docs-section">
         <h2>Install for React Native</h2>
         <p>Install the package in an existing application using React 19 and React Native 0.78 or later. The slider and <code>react-native-svg</code> packages are required peer dependencies; <code>expo-camera</code> is needed only for the optional Expo QR scanner.</p>
-        <CodeSample code="pnpm add @qzl/react-native @react-native-community/slider react-native-svg" onCopy={onCopy} />
+        <CodeSample code="pnpm add @qzlcorp/react-native @react-native-community/slider react-native-svg" onCopy={onCopy} />
       </div>
       <div className="docs-section">
         <h2>Customize themes</h2>
-        <p>Use <code>@qzl/tokens</code> when you need shared values directly. Apply <code>getThemeCssVariables</code> to a Web ancestor; for React Native, use values from <code>themes</code> in component styles.</p>
+        <p>Use <code>@qzlcorp/tokens</code> when you need shared values directly. Apply <code>getThemeCssVariables</code> to a Web ancestor; for React Native, use values from <code>themes</code> in component styles.</p>
         <h3>Web</h3>
-        <CodeSample code={`import { getThemeCssVariables } from '@qzl/tokens';\nimport type { CSSProperties } from 'react';\n\nconst darkThemeStyle = getThemeCssVariables('dark') as CSSProperties;\n\n<div style={darkThemeStyle}>Web content</div>`} onCopy={onCopy} />
+        <CodeSample code={`import { getThemeCssVariables } from '@qzlcorp/tokens';\nimport type { CSSProperties } from 'react';\n\nconst darkThemeStyle = getThemeCssVariables('dark') as CSSProperties;\n\n<div style={darkThemeStyle}>Web content</div>`} onCopy={onCopy} />
         <h3>React Native</h3>
-        <CodeSample code={`import { themes } from '@qzl/tokens';\nimport { Text, View } from 'react-native';\n\nconst palette = themes.dark;\n\n<View style={{ backgroundColor: palette.surface }}>\n  <Text style={{ color: palette.text }}>React Native content</Text>\n</View>`} onCopy={onCopy} />
+        <CodeSample code={`import { themes } from '@qzlcorp/tokens';\nimport { Text, View } from 'react-native';\n\nconst palette = themes.dark;\n\n<View style={{ backgroundColor: palette.surface }}>\n  <Text style={{ color: palette.text }}>React Native content</Text>\n</View>`} onCopy={onCopy} />
       </div>
       <div className="docs-section">
         <h2>Run the React Native example</h2>
@@ -506,10 +506,10 @@ function GettingStarted({ onCopy }: { onCopy: (value: string) => void }) {
       </div>
       <div className="docs-section docs-platform-table">
         <h2>Package map</h2>
-        <div className="docs-package-row"><strong>@qzl/react</strong><span>49 Web components and the package stylesheet</span><Badge variant="success">Web</Badge></div>
-        <div className="docs-package-row"><strong>@qzl/react-native</strong><span>48 React Native components and an optional Expo QR scanner entry</span><Badge variant="success">React Native</Badge></div>
-        <div className="docs-package-row"><strong>@qzl/tokens</strong><span>Shared design tokens and light and dark theme values</span><Badge>Supporting package</Badge></div>
-        <div className="docs-package-row"><strong>@qzl/core</strong><span>Shared helpers used by the component packages</span><Badge>Supporting package</Badge></div>
+        <div className="docs-package-row"><strong>@qzlcorp/react</strong><span>49 Web components and the package stylesheet</span><Badge variant="success">Web</Badge></div>
+        <div className="docs-package-row"><strong>@qzlcorp/react-native</strong><span>48 React Native components and an optional Expo QR scanner entry</span><Badge variant="success">React Native</Badge></div>
+        <div className="docs-package-row"><strong>@qzlcorp/tokens</strong><span>Shared design tokens and light and dark theme values</span><Badge>Supporting package</Badge></div>
+        <div className="docs-package-row"><strong>@qzlcorp/core</strong><span>Shared helpers used by the component packages</span><Badge>Supporting package</Badge></div>
       </div>
       <div className="docs-section">
         <h2>Platform differences</h2>
@@ -545,7 +545,7 @@ function ColorsPage({ onCopy }: { onCopy: (value: string) => void }) {
         <h2>Semantic themes</h2>
         <div className="docs-theme-note"><div className="docs-theme-sample docs-theme-sample--light"><span>Aa</span><small>Light surface</small></div><div className="docs-theme-sample docs-theme-sample--dark"><span>◐</span><small>Dark surface</small></div><p>Use semantic roles such as <code>primary</code>, <code>border</code>, and <code>textMuted</code> so theme values can change without rewriting component logic.</p></div>
         <p>Use semantic roles for component styling and the exported theme values when configuring a Web ancestor or React Native styles.</p>
-        <CodeSample code={`import { qzlTokens, themes } from '@qzl/tokens';\n\nconst brandBlue = qzlTokens.colors.brand[500];\nconst sectionSpacing = qzlTokens.spacing.section;\nconst darkSurface = themes.dark.surface;`} onCopy={onCopy} />
+        <CodeSample code={`import { qzlTokens, themes } from '@qzlcorp/tokens';\n\nconst brandBlue = qzlTokens.colors.brand[500];\nconst sectionSpacing = qzlTokens.spacing.section;\nconst darkSurface = themes.dark.surface;`} onCopy={onCopy} />
       </section>
     </>
   );
@@ -871,7 +871,7 @@ function AdvancedPage({ onCopy }: { onCopy: (value: string) => void }) {
       <section className="docs-section">
         <h2>React Native QR scanning</h2>
         <p>Expo camera support is an optional package entry so non-Expo React Native apps do not load a camera dependency.</p>
-        <CodeSample code={`import { QrScanner } from '@qzl/react-native/expo/qr-scanner';\n\n<QrScanner onScan={(value) => setScannedValue(value)} />`} onCopy={onCopy} />
+        <CodeSample code={`import { QrScanner } from '@qzlcorp/react-native/expo/qr-scanner';\n\n<QrScanner onScan={(value) => setScannedValue(value)} />`} onCopy={onCopy} />
       </section>
       <section className="docs-section docs-guidance"><h2>Safety & permissions</h2><p>Camera access is requested only after an explicit scan action. Treat scanned strings as untrusted input: show them for review, validate them for your use case, and never navigate automatically.</p></section>
     </>

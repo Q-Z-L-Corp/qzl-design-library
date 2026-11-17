@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ['@qzl/react', '@qzl/core', '@qzl/tokens']
+  transpilePackages: ['@qzlcorp/react', '@qzlcorp/core', '@qzlcorp/tokens']
 };
 
 export default nextConfig;

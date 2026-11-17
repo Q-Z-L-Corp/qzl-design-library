@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
-import { themes, type ThemeName } from '@qzl/tokens';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 /** One labeled numeric value rendered as a bar by {@link BarChart}. */
 export interface BarChartDatum {

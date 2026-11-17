@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import type { ViewProps } from 'react-native';
-import { themes, type ThemeName } from '@qzl/tokens';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 /** Props for a themed content container. */
 export interface CardProps extends ViewProps {

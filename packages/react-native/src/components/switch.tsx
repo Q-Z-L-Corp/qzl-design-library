@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch as NativeSwitch } from 'react-native';
 import type { SwitchProps as NativeSwitchProps } from 'react-native';
-import { themes, type ThemeName } from '@qzl/tokens';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 /** Props for the controlled React Native switch. */
 export interface SwitchProps extends Omit<NativeSwitchProps, 'value' | 'onValueChange' | 'trackColor' | 'thumbColor'> {

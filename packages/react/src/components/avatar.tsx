@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Props for {@link Avatar}, in addition to span attributes. */
 export interface AvatarProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'> {

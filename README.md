@@ -6,7 +6,7 @@ QZL Design Library is an open-source design system for building consistent, acce
 
 - `packages/tokens` — cross-platform design tokens and light/dark themes
 - `packages/core` — platform-neutral helpers and safe Markdown block parsing
-- `packages/react` — 49 Web components and `@qzl/react/styles.css`
+- `packages/react` — 49 Web components and `@qzlcorp/react/styles.css`
 - `packages/react-native` — 48 corresponding React Native components
 - `apps/docs` — interactive documentation and component playground
 - `examples/react-native` — Expo example for iOS and Android
@@ -57,12 +57,12 @@ Tests use Node's test runner for core and token utilities, Vitest and Testing Li
 The packages have not been published yet. After release, install the package for your platform:
 
 ```sh
-pnpm add @qzl/react
+pnpm add @qzlcorp/react
 # or, in a React Native application:
-pnpm add @qzl/react-native @react-native-community/slider react-native-svg
+pnpm add @qzlcorp/react-native @react-native-community/slider react-native-svg
 ```
 
-For Web, `@qzl/react` supports React 18.3.1 or 19 with a matching React DOM version; import `@qzl/react/styles.css` once in the application entry point. `@qzl/react-native` supports React 19 and React Native 0.78 or later, and requires `@react-native-community/slider` and `react-native-svg`. React Native components use platform controls and do not import Web styles. Expo camera scanning is available from `@qzl/react-native/expo/qr-scanner` and requires `expo-camera`; the other React Native components do not depend on Expo. Install `@qzl/tokens` directly only when your application imports its token APIs.
+For Web, `@qzlcorp/react` supports React 18.3.1 or 19 with a matching React DOM version; import `@qzlcorp/react/styles.css` once in the application entry point. `@qzlcorp/react-native` supports React 19 and React Native 0.78 or later, and requires `@react-native-community/slider` and `react-native-svg`. React Native components use platform controls and do not import Web styles. Expo camera scanning is available from `@qzlcorp/react-native/expo/qr-scanner` and requires `expo-camera`; the other React Native components do not depend on Expo. Install `@qzlcorp/tokens` directly only when your application imports its token APIs.
 
 All packages emit ESM JavaScript and TypeScript declarations to `dist/`. Package tarballs include their runtime files, styles where applicable, README, and MIT license.
 

@@ -14,10 +14,10 @@ test('all exported public APIs meet the source JSDoc standard', async () => {
   assert.equal(coverage.coverage.failures.length, 0, coverage.coverage.failures.join('\n'));
   assert.equal(coverage.coverage.documented, coverage.coverage.total);
   assert.match(report, /No missing public API documentation was found/);
-  for (const packageName of ['@qzl/react', '@qzl/react-native', '@qzl/core', '@qzl/tokens']) {
+  for (const packageName of ['@qzlcorp/react', '@qzlcorp/react-native', '@qzlcorp/core', '@qzlcorp/tokens']) {
     assert.ok(coverage.packages.some((pkg) => pkg.packageName === packageName), `${packageName} is included in coverage`);
   }
   const publicApis = coverage.packages.flatMap((pkg) => pkg.publicApi);
-  assert.ok(publicApis.some((api) => api.packageName === '@qzl/core' && api.name === 'clamp'));
-  assert.ok(publicApis.some((api) => api.packageName === '@qzl/tokens' && api.name === 'ThemeCssVariables'));
+  assert.ok(publicApis.some((api) => api.packageName === '@qzlcorp/core' && api.name === 'clamp'));
+  assert.ok(publicApis.some((api) => api.packageName === '@qzlcorp/tokens' && api.name === 'ThemeCssVariables'));
 });

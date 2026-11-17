@@ -1,5 +1,5 @@
 import './globals.css';
-import '@qzl/react/styles.css';
+import '@qzlcorp/react/styles.css';
 import React from 'react';
 
 export const metadata = {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Image, Text, View } from 'react-native';
 import type { ImageProps, StyleProp, ViewStyle } from 'react-native';
-import { themes, type ThemeName } from '@qzl/tokens';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 /**
  * Props for a remote-image avatar with an initials fallback.

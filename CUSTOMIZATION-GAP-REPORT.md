@@ -4,7 +4,7 @@
 
 The guiding principle is **Easy by default. Flexible by design. Extensible when needed.**
 
-The source currently exports 49 component functions from `@qzl/react` and 48 from the main `@qzl/react-native` entry point. React Native also exposes `QrScanner` through its separate Expo subpath. These counts differ from the 45/44 figures in the audit request.
+The source currently exports 49 component functions from `@qzlcorp/react` and 48 from the main `@qzlcorp/react-native` entry point. React Native also exposes `QrScanner` through its separate Expo subpath. These counts differ from the 45/44 figures in the audit request.
 
 The library already has useful foundations: Web components commonly accept `className` and native HTML attributes; React Native components commonly accept `StyleProp` and a built-in light/dark `theme`; data components support formatters, per-series colors, and render callbacks where they matter. The largest gaps are concentrated in complex components rather than simple visual primitives:
 

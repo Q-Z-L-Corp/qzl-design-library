@@ -1,8 +1,13 @@
 {
-  "name": "@qzl/tokens",
-  "version": "0.1.0",
+  "name": "@qzlcorp/tokens",
+  "version": "0.2.0-beta.0",
   "description": "Shared design tokens and semantic themes for QZL Design Library.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Q-Z-L-Corp/qzl-design-library.git",
+    "directory": "packages/tokens"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

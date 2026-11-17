@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Pressable, ScrollView, Text, View } from 'react-native';
 import type { StyleProp, TextProps, TextStyle, ViewStyle } from 'react-native';
-import { themes, type ThemeName } from '@qzl/tokens';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 /** Props for a horizontal or vertical divider. */
 export interface DividerProps {
@@ -297,7 +297,8 @@ export interface CarouselProps {
    */
   pagination?: CarouselPagination;
   /**
-   * Position of navigation controls. Custom navigation content is placed at the selected position.
+   * Position of navigation controls. Built-in overlay controls reserve space at the slide edges;
+   * custom overlay controls should account for their own width.
    * @default 'below'
    */
   navigationPlacement?: CarouselNavigationPlacement;
@@ -334,7 +335,7 @@ export interface CarouselProps {
  *
  * @example
  * ```tsx
- * import { Carousel } from '@qzl/react-native';
+ * import { Carousel } from '@qzlcorp/react-native';
  * import { Pressable, Text, View } from 'react-native';
  *
  * <Carousel
@@ -452,10 +453,21 @@ export function Carousel({
             </View>
           )
           : <Text accessibilityLabel={`Slide ${currentIndex + 1} of ${slides.length}`} style={{ color: colors.textMuted }}>{currentIndex + 1} / {slides.length}</Text>;
+  const hasBuiltInOverlayNavigation =
+    navigationPlacement === 'overlay' && Boolean(navigationContent) && !renderNavigation;
+  const slideContentStyle = !hasBuiltInOverlayNavigation
+    ? undefined
+    : navigation === 'arrows'
+      ? { paddingHorizontal: 52 }
+      : { paddingStart: 92, paddingEnd: 68 };
 
   return (
     <View accessibilityLabel={label} style={[{ position: 'relative' }, style]}>
-      <View accessibilityRole="listitem" accessibilityLabel={`Slide ${currentIndex + 1} of ${slides.length}`} style={{ minHeight: 72, justifyContent: 'center' }}>
+      <View
+        accessibilityRole="listitem"
+        accessibilityLabel={`Slide ${currentIndex + 1} of ${slides.length}`}
+        style={[{ minHeight: 72, justifyContent: 'center' }, slideContentStyle]}
+      >
         {slides[currentIndex]}
       </View>
       {navigationPlacement === 'overlay' && navigationContent && (

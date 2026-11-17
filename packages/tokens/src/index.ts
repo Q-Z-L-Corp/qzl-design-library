@@ -2,7 +2,7 @@
  * Platform-neutral design tokens for color, spacing, typography, shape, motion, and layering.
  * @example
  * ```ts
- * import { qzlTokens } from '@qzl/tokens';
+ * import { qzlTokens } from '@qzlcorp/tokens';
  *
  * const cardRadius = qzlTokens.radius.md;
  * ```
@@ -140,7 +140,7 @@ export const qzlTokens = {
  * Named light and dark semantic color themes.
  * @example
  * ```ts
- * import { themes } from '@qzl/tokens';
+ * import { themes } from '@qzlcorp/tokens';
  *
  * const pageBackground = themes.light.background;
  * ```

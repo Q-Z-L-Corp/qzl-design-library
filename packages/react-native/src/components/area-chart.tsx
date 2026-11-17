@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import Svg, { Line as SvgLine, Path, Text as SvgText } from 'react-native-svg';
 import type { StyleProp, ViewStyle } from 'react-native';
-import { themes, type ThemeName } from '@qzl/tokens';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 /** One named area whose values align with the chart's labels. */
 export interface AreaChartSeries {

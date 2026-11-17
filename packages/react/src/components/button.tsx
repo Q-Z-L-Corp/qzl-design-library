@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Visual treatment applied to a {@link Button}. */
 export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';

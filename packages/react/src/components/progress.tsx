@@ -1,5 +1,5 @@
 import React from 'react';
-import { clamp, mergeClasses } from '@qzl/core';
+import { clamp, mergeClasses } from '@qzlcorp/core';
 
 /** Props for a determinate or indeterminate {@link Progress} indicator. */
 export interface ProgressProps extends React.HTMLAttributes<HTMLDivElement> {

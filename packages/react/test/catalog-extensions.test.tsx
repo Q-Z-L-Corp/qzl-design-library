@@ -101,6 +101,8 @@ describe('reference catalog extensions', () => {
 
     expect(container.querySelector('.qzl-carousel')).toHaveClass('custom-carousel');
     expect(container.querySelector('.qzl-carousel__slide')).toHaveClass('qzl-carousel__slide--overlay');
+    expect(container.querySelector('.qzl-carousel__slide-content')).toHaveClass('qzl-carousel__slide-content--overlay-arrows');
+    expect(container.querySelector('.qzl-carousel__overlay-controls')).toHaveClass('qzl-carousel__overlay-controls--arrows');
     expect(screen.getByRole('progressbar', { name: 'Slide progress' })).toHaveAttribute('aria-valuenow', '2');
     expect(screen.getByRole('button', { name: 'Previous slide' })).toHaveTextContent('‹');
     fireEvent.click(screen.getByRole('button', { name: 'Next slide' }));
@@ -122,6 +124,19 @@ describe('reference catalog extensions', () => {
     expect(screen.getByText('Slide three')).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Previous slide' })).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Choose slide 1' })).not.toBeInTheDocument();
+  });
+
+  it('reserves slide content space for built-in text controls in overlay placement', () => {
+    const { container } = render(
+      <Carousel
+        navigation="text"
+        navigationPlacement="overlay"
+        slides={[<p key="one">Slide one</p>, <p key="two">Slide two</p>]}
+      />
+    );
+
+    expect(container.querySelector('.qzl-carousel__slide-content')).toHaveClass('qzl-carousel__slide-content--overlay-text');
+    expect(container.querySelector('.qzl-carousel__overlay-controls')).toHaveClass('qzl-carousel__overlay-controls--text');
   });
 
   it('rejects invalid custom slide indexes while keeping unavailable boundary actions safe', () => {

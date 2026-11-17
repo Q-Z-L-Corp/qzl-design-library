@@ -1,4 +1,4 @@
-# @qzl/react-native
+# @qzlcorp/react-native
 
 React Native components that use shared design tokens and follow the same interaction intent where platform conventions allow.
 
@@ -9,10 +9,10 @@ Data display includes `DataTable`, `MetricCard`, `BarChart`, `LineChart`, `AreaC
 This package has not been published yet. Use the install command after the first release. Your application must provide React 19 and React Native 0.78 or later.
 
 ```sh
-pnpm add @qzl/react-native @react-native-community/slider react-native-svg
+pnpm add @qzlcorp/react-native @react-native-community/slider react-native-svg
 ```
 
-Components use React Native `View`, `Text`, `Pressable`, `TextInput`, and accessibility APIs. The chart components use `react-native-svg` for vector rendering. Props and behavior intentionally differ from the Web package where platform conventions require it. Install `@qzl/tokens` directly when your application imports its APIs.
+Components use React Native `View`, `Text`, `Pressable`, `TextInput`, and accessibility APIs. The chart components use `react-native-svg` for vector rendering. Props and behavior intentionally differ from the Web package where platform conventions require it. Install `@qzlcorp/tokens` directly when your application imports its APIs.
 
 `FileUploadInput` delegates opening a document picker to the host app through `onPress`; provide the platform picker and pass selected names with `selectedFiles`. This avoids requiring a specific picker library.
 
@@ -23,7 +23,7 @@ npx expo install expo-camera
 ```
 
 ```tsx
-import { QrScanner } from '@qzl/react-native/expo/qr-scanner';
+import { QrScanner } from '@qzlcorp/react-native/expo/qr-scanner';
 ```
 
 The camera permission is requested after an explicit scan action. Scanned strings are returned to the caller; validate and display them before acting on them.

@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** One labeled numeric value rendered as a bar by {@link BarChart}. */
 export interface BarChartDatum {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** One action rendered in a {@link DropdownMenu}. */
 export interface DropdownMenuItem {

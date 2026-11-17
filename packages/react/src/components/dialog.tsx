@@ -1,6 +1,6 @@
 import React, { useEffect, useId, useRef } from 'react';
 import { IconButton } from './icon-button.js';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Props for the controlled HTML {@link Dialog}. */
 export interface DialogProps extends Omit<React.HTMLAttributes<HTMLDialogElement>, 'title'> {

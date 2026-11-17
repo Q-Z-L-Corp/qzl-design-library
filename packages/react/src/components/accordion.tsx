@@ -1,5 +1,5 @@
 import React, { useId, useState } from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Props for the controlled or uncontrolled {@link Accordion}. */
 export interface AccordionProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {

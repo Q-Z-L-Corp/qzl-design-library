@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextInput } from 'react-native';
 import type { TextInputProps, StyleProp, TextStyle } from 'react-native';
-import { themes, type ThemeName } from '@qzl/tokens';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 /** Props for a themed React Native text input. */
 export interface InputProps extends TextInputProps {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Props for {@link Toast}, in addition to div attributes. */
 export interface ToastProps extends React.HTMLAttributes<HTMLDivElement> {

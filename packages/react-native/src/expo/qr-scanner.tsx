@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { Pressable, Text, View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
-import { themes, type ThemeName } from '@qzl/tokens';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 /** Props for the Expo Camera QR scanner subpath export. */
 export interface QrScannerProps {

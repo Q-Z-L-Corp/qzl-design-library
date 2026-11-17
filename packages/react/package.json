@@ -1,8 +1,13 @@
 {
-  "name": "@qzl/react",
-  "version": "0.1.0",
+  "name": "@qzlcorp/react",
+  "version": "0.2.0-beta.0",
   "description": "React components for Web applications in QZL Design Library.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Q-Z-L-Corp/qzl-design-library.git",
+    "directory": "packages/react"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -30,8 +35,8 @@
     "**/*.css"
   ],
   "dependencies": {
-    "@qzl/core": "workspace:*",
-    "@qzl/tokens": "workspace:*"
+    "@qzlcorp/core": "workspace:*",
+    "@qzlcorp/tokens": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18.3.1 || ^19.0.0",

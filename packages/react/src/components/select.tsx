@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Props for {@link Select}, in addition to HTML select attributes. */
 export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {

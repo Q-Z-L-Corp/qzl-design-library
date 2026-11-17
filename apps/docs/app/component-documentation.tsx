@@ -52,15 +52,15 @@ import {
   Toast,
   Tooltip,
   Typography
-} from '@qzl/react';
-import { getThemeCssVariables, type ThemeName } from '@qzl/tokens';
+} from '@qzlcorp/react';
+import { getThemeCssVariables, type ThemeName } from '@qzlcorp/tokens';
 import type {
   ButtonSize,
   ButtonVariant,
   CarouselNavigation,
   CarouselNavigationPlacement,
   CarouselPagination
-} from '@qzl/react';
+} from '@qzlcorp/react';
 import { componentRegistry } from './generated/component-registry';
 import type { ApiProperty, ComponentRecord, PlatformApi } from './generated/component-registry';
 
@@ -483,7 +483,7 @@ export function ComponentDocumentationPage({ component, onCopy, onNavigate }: {
               ? `Optional React Native entry; install ${component.platforms.nativeOptional.dependencies.join(', ')} in the Expo application.`
               : 'Use the React Native implementation and props shown in its API reference.'}
         </p>
-        {usageCode && usageApi ? <CodeExample code={usageCode} importCode={`import { ${component.name} } from '${usageApi.importPath}';${usagePlatform === 'web' ? "\nimport '@qzl/react/styles.css';" : ''}`} onCopy={onCopy} /> : <p>This component is not available on the selected platform.</p>}
+        {usageCode && usageApi ? <CodeExample code={usageCode} importCode={`import { ${component.name} } from '${usageApi.importPath}';${usagePlatform === 'web' ? "\nimport '@qzlcorp/react/styles.css';" : ''}`} onCopy={onCopy} /> : <p>This component is not available on the selected platform.</p>}
       </section>
 
       <section className="component-doc-section" id="api">
@@ -513,11 +513,11 @@ export function ComponentDocumentationPage({ component, onCopy, onNavigate }: {
           </div>
         </div>
         {customizationCode && customizationApi
-          ? <CodeExample code={customizationCode} importCode={`import { ${component.name} } from '${customizationApi.importPath}';${customizationPlatform === 'web' ? "\nimport '@qzl/react/styles.css';" : ''}`} onCopy={onCopy} />
+          ? <CodeExample code={customizationCode} importCode={`import { ${component.name} } from '${customizationApi.importPath}';${customizationPlatform === 'web' ? "\nimport '@qzlcorp/react/styles.css';" : ''}`} onCopy={onCopy} />
           : <p>A verified customization example is not yet available for this platform.</p>}
         <ul className="component-doc-list">{customizationNotes.map((note) => <li key={note}>{note}</li>)}</ul>
-        <p>For a Web example using <code>className</code>, define the custom class in your application stylesheet. The <code>@qzl/react</code> stylesheet does not provide app-specific classes.</p>
-        <p>Shared design values come from <code>@qzl/tokens</code>. Use the component’s declared props and platform API above; unsupported styling mechanisms are not assumed.</p>
+        <p>For a Web example using <code>className</code>, define the custom class in your application stylesheet. The <code>@qzlcorp/react</code> stylesheet does not provide app-specific classes.</p>
+        <p>Shared design values come from <code>@qzlcorp/tokens</code>. Use the component’s declared props and platform API above; unsupported styling mechanisms are not assumed.</p>
       </section>
 
       <section className="component-doc-section" id="accessibility">

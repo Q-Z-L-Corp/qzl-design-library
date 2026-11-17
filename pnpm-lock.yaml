@@ -32,13 +32,13 @@ importers:
 
   apps/docs:
     dependencies:
-      '@qzl/core':
+      '@qzlcorp/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@qzl/react':
+      '@qzlcorp/react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@qzl/tokens':
+      '@qzlcorp/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
       next:
@@ -66,10 +66,10 @@ importers:
 
   examples/react-native:
     dependencies:
-      '@qzl/react-native':
+      '@qzlcorp/react-native':
         specifier: workspace:*
         version: link:../../packages/react-native
-      '@qzl/tokens':
+      '@qzlcorp/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
       '@react-native-community/slider':
@@ -111,10 +111,10 @@ importers:
 
   packages/react:
     dependencies:
-      '@qzl/core':
+      '@qzlcorp/core':
         specifier: workspace:*
         version: link:../core
-      '@qzl/tokens':
+      '@qzlcorp/tokens':
         specifier: workspace:*
         version: link:../tokens
       react:
@@ -145,10 +145,10 @@ importers:
 
   packages/react-native:
     dependencies:
-      '@qzl/core':
+      '@qzlcorp/core':
         specifier: workspace:*
         version: link:../core
-      '@qzl/tokens':
+      '@qzlcorp/tokens':
         specifier: workspace:*
         version: link:../tokens
       react:

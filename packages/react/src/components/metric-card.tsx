@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Direction used to style and describe a metric's change. */
 export type MetricTrend = 'positive' | 'negative' | 'neutral';

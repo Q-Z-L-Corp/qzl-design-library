@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { useCameraPermissions } from 'expo-camera';
-import { QrScanner } from '@qzl/react-native/expo/qr-scanner';
+import { QrScanner } from '@qzlcorp/react-native/expo/qr-scanner';
 
 jest.mock('expo-camera', () => ({
   CameraView: () => null,

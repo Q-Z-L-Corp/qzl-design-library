@@ -62,10 +62,10 @@ const metadata = {
 
 function packageConfiguration(platform) {
   const packageSettings = {
-    web: { packageName: '@qzl/react', directory: 'react' },
-    native: { packageName: '@qzl/react-native', directory: 'react-native', optionalEntry: 'src/expo/qr-scanner.tsx' },
-    core: { packageName: '@qzl/core', directory: 'core' },
-    tokens: { packageName: '@qzl/tokens', directory: 'tokens' }
+    web: { packageName: '@qzlcorp/react', directory: 'react' },
+    native: { packageName: '@qzlcorp/react-native', directory: 'react-native', optionalEntry: 'src/expo/qr-scanner.tsx' },
+    core: { packageName: '@qzlcorp/core', directory: 'core' },
+    tokens: { packageName: '@qzlcorp/tokens', directory: 'tokens' }
   }[platform];
   if (!packageSettings) throw new Error(`Unknown package platform: ${platform}`);
   const packageDirectory = path.join(repositoryRoot, 'packages', packageSettings.directory);
@@ -435,7 +435,7 @@ function renderApiDocumentationCoverage(packages, coverage) {
   const lines = [
     '# Public API JSDoc coverage',
     '',
-    'Generated from the exported TypeScript APIs of `@qzl/react`, `@qzl/react-native`, `@qzl/core`, and `@qzl/tokens`.',
+    'Generated from the exported TypeScript APIs of `@qzlcorp/react`, `@qzlcorp/react-native`, `@qzlcorp/core`, and `@qzlcorp/tokens`.',
     '',
     `Coverage: ${coverage.documented}/${coverage.total} public API documentation checks pass.`,
     '',
@@ -697,7 +697,7 @@ function generateExampleWithOverrides(componentName, api, platform, overrides) {
   if (componentName === 'Carousel' && platform === 'native') importedComponents.push('Typography');
   if (componentName === 'Tooltip' && platform === 'web') importedComponents.push('Button');
   const imports = [`import { ${importedComponents.join(', ')} } from '${api.importPath}';`];
-  if (platform === 'web') imports.push("import '@qzl/react/styles.css';");
+  if (platform === 'web') imports.push("import '@qzlcorp/react/styles.css';");
   if (platform === 'native' && body?.includes('<Text')) imports.push("import { Text } from 'react-native';");
   return `${imports.join('\n')}\n\nexport function Example() {\n  return (\n    ${componentMarkup}\n  );\n}`;
 }

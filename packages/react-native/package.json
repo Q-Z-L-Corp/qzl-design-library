@@ -1,8 +1,13 @@
 {
-  "name": "@qzl/react-native",
-  "version": "0.1.0",
+  "name": "@qzlcorp/react-native",
+  "version": "0.2.0-beta.0",
   "description": "React Native components for QZL Design Library.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Q-Z-L-Corp/qzl-design-library.git",
+    "directory": "packages/react-native"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -25,8 +30,8 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@qzl/core": "workspace:*",
-    "@qzl/tokens": "workspace:*"
+    "@qzlcorp/core": "workspace:*",
+    "@qzlcorp/tokens": "workspace:*"
   },
   "devDependencies": {
     "@react-native-community/slider": "5.2.1",

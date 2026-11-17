@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text, TextInput, View } from 'react-native';
 import type { StyleProp, TextInputProps, TextStyle, ViewStyle } from 'react-native';
-import { parseMarkdown } from '@qzl/core';
-import type { MarkdownBlock } from '@qzl/core';
-import { themes, type ThemeName } from '@qzl/tokens';
+import { parseMarkdown } from '@qzlcorp/core';
+import type { MarkdownBlock } from '@qzlcorp/core';
+import { themes, type ThemeName } from '@qzlcorp/tokens';
 
 /** Props for a controlled multiline Markdown input with an optional rendered preview. */
 export interface MarkdownEditorProps extends Omit<TextInputProps, 'value' | 'onChangeText' | 'multiline'> {

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** Column definition used by the generic {@link DataTable}. */
 export interface DataTableColumn<Row> {

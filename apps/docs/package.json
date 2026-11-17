@@ -12,9 +12,9 @@
     "lint": "eslint app scripts test"
   },
   "dependencies": {
-    "@qzl/core": "workspace:*",
-    "@qzl/react": "workspace:*",
-    "@qzl/tokens": "workspace:*",
+    "@qzlcorp/core": "workspace:*",
+    "@qzlcorp/react": "workspace:*",
+    "@qzlcorp/tokens": "workspace:*",
     "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0"

@@ -44,10 +44,10 @@ export const publicApiDocumentation: PublicApiDocumentation = {
   },
   "packages": [
     {
-      "packageName": "@qzl/react",
+      "packageName": "@qzlcorp/react",
       "publicApi": [
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Accordion",
           "kind": "component",
@@ -61,7 +61,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "AccordionProps",
           "kind": "interface",
@@ -109,7 +109,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "AreaChart",
           "kind": "component",
@@ -123,7 +123,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "AreaChartSeries",
           "kind": "interface",
@@ -157,7 +157,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "AreaChartProps",
           "kind": "interface",
@@ -212,7 +212,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Avatar",
           "kind": "component",
@@ -226,7 +226,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "AvatarProps",
           "kind": "interface",
@@ -260,7 +260,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "BarChart",
           "kind": "component",
@@ -275,7 +275,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "BarChartDatum",
           "kind": "interface",
@@ -309,7 +309,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "BarChartMultiSeriesDatum",
           "kind": "interface",
@@ -336,7 +336,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "BarChartSeries",
           "kind": "interface",
@@ -370,7 +370,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "BarChartProps",
           "kind": "interface",
@@ -432,7 +432,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Breadcrumbs",
           "kind": "component",
@@ -446,7 +446,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "BreadcrumbItem",
           "kind": "interface",
@@ -480,7 +480,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "BreadcrumbsProps",
           "kind": "interface",
@@ -507,7 +507,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Button",
           "kind": "component",
@@ -521,7 +521,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "ButtonVariant",
           "kind": "type",
@@ -533,7 +533,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "ButtonSize",
           "kind": "type",
@@ -545,7 +545,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "ButtonProps",
           "kind": "interface",
@@ -579,7 +579,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Card",
           "kind": "component",
@@ -593,7 +593,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "CardProps",
           "kind": "interface",
@@ -613,7 +613,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "DataTable",
           "kind": "component",
@@ -627,7 +627,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "DataTableColumn",
           "kind": "interface",
@@ -688,7 +688,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "DataTableProps",
           "kind": "interface",
@@ -749,7 +749,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "DonutChart",
           "kind": "component",
@@ -763,7 +763,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "DonutChartDatum",
           "kind": "interface",
@@ -797,7 +797,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "DonutChartProps",
           "kind": "interface",
@@ -845,7 +845,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "DropdownMenu",
           "kind": "component",
@@ -859,7 +859,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "DropdownMenuItem",
           "kind": "interface",
@@ -893,7 +893,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "DropdownMenuProps",
           "kind": "interface",
@@ -920,7 +920,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Input",
           "kind": "component",
@@ -934,7 +934,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "InputProps",
           "kind": "interface",
@@ -954,7 +954,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "LineChart",
           "kind": "component",
@@ -968,7 +968,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "LineChartSeries",
           "kind": "interface",
@@ -1002,7 +1002,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "LineChartProps",
           "kind": "interface",
@@ -1050,7 +1050,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "MetricCard",
           "kind": "component",
@@ -1064,7 +1064,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "MetricTrend",
           "kind": "type",
@@ -1076,7 +1076,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "MetricCardProps",
           "kind": "interface",
@@ -1131,7 +1131,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Badge",
           "kind": "component",
@@ -1145,7 +1145,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "BadgeProps",
           "kind": "interface",
@@ -1165,7 +1165,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Alert",
           "kind": "component",
@@ -1179,7 +1179,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "AlertProps",
           "kind": "interface",
@@ -1199,7 +1199,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Tabs",
           "kind": "component",
@@ -1213,7 +1213,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "TabItem",
           "kind": "interface",
@@ -1240,7 +1240,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "TabsProps",
           "kind": "interface",
@@ -1288,7 +1288,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Checkbox",
           "kind": "component",
@@ -1302,7 +1302,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "CheckboxProps",
           "kind": "interface",
@@ -1322,7 +1322,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Switch",
           "kind": "component",
@@ -1336,7 +1336,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SwitchProps",
           "kind": "interface",
@@ -1370,7 +1370,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Textarea",
           "kind": "component",
@@ -1384,7 +1384,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "TextareaProps",
           "kind": "interface",
@@ -1404,7 +1404,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Spinner",
           "kind": "component",
@@ -1418,7 +1418,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SpinnerProps",
           "kind": "interface",
@@ -1445,7 +1445,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Skeleton",
           "kind": "component",
@@ -1459,7 +1459,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SkeletonProps",
           "kind": "interface",
@@ -1479,7 +1479,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "IconButton",
           "kind": "component",
@@ -1493,7 +1493,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "IconButtonProps",
           "kind": "interface",
@@ -1520,7 +1520,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Select",
           "kind": "component",
@@ -1534,7 +1534,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SelectProps",
           "kind": "interface",
@@ -1554,7 +1554,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Dialog",
           "kind": "component",
@@ -1568,7 +1568,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "DialogProps",
           "kind": "interface",
@@ -1630,7 +1630,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Tooltip",
           "kind": "component",
@@ -1644,7 +1644,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "TooltipProps",
           "kind": "interface",
@@ -1671,7 +1671,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "NavigationMenu",
           "kind": "component",
@@ -1685,7 +1685,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "NavigationMenuItem",
           "kind": "interface",
@@ -1719,7 +1719,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "NavigationMenuProps",
           "kind": "interface",
@@ -1746,7 +1746,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Pagination",
           "kind": "component",
@@ -1760,7 +1760,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "PaginationProps",
           "kind": "interface",
@@ -1808,7 +1808,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Progress",
           "kind": "component",
@@ -1822,7 +1822,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "ProgressProps",
           "kind": "interface",
@@ -1863,7 +1863,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "QrScanner",
           "kind": "component",
@@ -1877,7 +1877,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "QrScannerProps",
           "kind": "interface",
@@ -1925,7 +1925,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "RadioGroup",
           "kind": "component",
@@ -1939,7 +1939,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "RadioOption",
           "kind": "interface",
@@ -1980,7 +1980,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "RadioGroupProps",
           "kind": "interface",
@@ -2035,7 +2035,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Slider",
           "kind": "component",
@@ -2049,7 +2049,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SliderProps",
           "kind": "interface",
@@ -2104,7 +2104,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Toast",
           "kind": "component",
@@ -2118,7 +2118,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "ToastProps",
           "kind": "interface",
@@ -2159,7 +2159,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "MarkdownEditor",
           "kind": "component",
@@ -2173,7 +2173,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "MarkdownEditorProps",
           "kind": "interface",
@@ -2221,7 +2221,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Divider",
           "kind": "component",
@@ -2235,7 +2235,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "HelperText",
           "kind": "component",
@@ -2249,7 +2249,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Indicator",
           "kind": "component",
@@ -2263,7 +2263,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Tag",
           "kind": "component",
@@ -2277,7 +2277,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Typography",
           "kind": "component",
@@ -2291,7 +2291,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Pips",
           "kind": "component",
@@ -2305,7 +2305,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Carousel",
           "kind": "component",
@@ -2321,7 +2321,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SegmentedButtons",
           "kind": "component",
@@ -2335,7 +2335,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SelectCard",
           "kind": "component",
@@ -2349,7 +2349,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "StarRating",
           "kind": "component",
@@ -2363,7 +2363,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SteppedProgressBar",
           "kind": "component",
@@ -2377,7 +2377,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Stepper",
           "kind": "component",
@@ -2391,7 +2391,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "FileUploadInput",
           "kind": "component",
@@ -2405,7 +2405,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "Popover",
           "kind": "component",
@@ -2419,7 +2419,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "BottomSheet",
           "kind": "component",
@@ -2433,7 +2433,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SideSheet",
           "kind": "component",
@@ -2447,7 +2447,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "DividerProps",
           "kind": "interface",
@@ -2474,7 +2474,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "HelperTextProps",
           "kind": "interface",
@@ -2494,7 +2494,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "IndicatorStatus",
           "kind": "type",
@@ -2506,7 +2506,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "IndicatorProps",
           "kind": "interface",
@@ -2533,7 +2533,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "TagProps",
           "kind": "interface",
@@ -2567,7 +2567,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "TypographyVariant",
           "kind": "type",
@@ -2579,7 +2579,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "TypographyElement",
           "kind": "type",
@@ -2591,7 +2591,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "TypographyProps",
           "kind": "interface",
@@ -2618,7 +2618,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "PipsProps",
           "kind": "interface",
@@ -2673,7 +2673,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "CarouselNavigation",
           "kind": "type",
@@ -2685,7 +2685,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "CarouselPagination",
           "kind": "type",
@@ -2697,7 +2697,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "CarouselNavigationPlacement",
           "kind": "type",
@@ -2709,7 +2709,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "CarouselControls",
           "kind": "interface",
@@ -2778,7 +2778,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "CarouselProps",
           "kind": "interface",
@@ -2889,7 +2889,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SegmentedButtonOption",
           "kind": "interface",
@@ -2923,7 +2923,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SegmentedButtonsProps",
           "kind": "interface",
@@ -2978,7 +2978,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SelectCardOption",
           "kind": "interface",
@@ -3019,7 +3019,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SelectCardProps",
           "kind": "interface",
@@ -3074,7 +3074,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "StarRatingProps",
           "kind": "interface",
@@ -3129,7 +3129,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "ProgressStep",
           "kind": "interface",
@@ -3149,7 +3149,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SteppedProgressBarProps",
           "kind": "interface",
@@ -3190,7 +3190,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "StepperProps",
           "kind": "interface",
@@ -3245,7 +3245,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "FileUploadInputProps",
           "kind": "interface",
@@ -3314,7 +3314,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "PopoverProps",
           "kind": "interface",
@@ -3355,7 +3355,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react",
+          "packageName": "@qzlcorp/react",
           "platform": "web",
           "name": "SheetProps",
           "kind": "interface",
@@ -3419,10 +3419,10 @@ export const publicApiDocumentation: PublicApiDocumentation = {
       ]
     },
     {
-      "packageName": "@qzl/react-native",
+      "packageName": "@qzlcorp/react-native",
       "publicApi": [
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Accordion",
           "kind": "component",
@@ -3436,7 +3436,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "AccordionProps",
           "kind": "interface",
@@ -3505,7 +3505,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "AreaChart",
           "kind": "component",
@@ -3519,7 +3519,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "AreaChartSeries",
           "kind": "interface",
@@ -3553,7 +3553,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "AreaChartProps",
           "kind": "interface",
@@ -3622,7 +3622,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Alert",
           "kind": "component",
@@ -3636,7 +3636,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "AlertProps",
           "kind": "interface",
@@ -3677,7 +3677,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Avatar",
           "kind": "component",
@@ -3691,7 +3691,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "AvatarProps",
           "kind": "interface",
@@ -3739,7 +3739,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "BarChart",
           "kind": "component",
@@ -3754,7 +3754,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "BarChartDatum",
           "kind": "interface",
@@ -3788,7 +3788,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "BarChartMultiSeriesDatum",
           "kind": "interface",
@@ -3815,7 +3815,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "BarChartSeries",
           "kind": "interface",
@@ -3849,7 +3849,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "BarChartProps",
           "kind": "interface",
@@ -3925,7 +3925,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Breadcrumbs",
           "kind": "component",
@@ -3939,7 +3939,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "BreadcrumbItem",
           "kind": "interface",
@@ -3966,7 +3966,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "BreadcrumbsProps",
           "kind": "interface",
@@ -4007,7 +4007,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Button",
           "kind": "component",
@@ -4021,7 +4021,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "ButtonProps",
           "kind": "interface",
@@ -4083,7 +4083,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Card",
           "kind": "component",
@@ -4097,7 +4097,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "CardProps",
           "kind": "interface",
@@ -4124,7 +4124,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Checkbox",
           "kind": "component",
@@ -4138,7 +4138,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "CheckboxProps",
           "kind": "interface",
@@ -4193,7 +4193,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "DataTable",
           "kind": "component",
@@ -4207,7 +4207,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "DataTableColumn",
           "kind": "interface",
@@ -4268,7 +4268,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "DataTableProps",
           "kind": "interface",
@@ -4343,7 +4343,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "DonutChart",
           "kind": "component",
@@ -4357,7 +4357,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "DonutChartDatum",
           "kind": "interface",
@@ -4391,7 +4391,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "DonutChartProps",
           "kind": "interface",
@@ -4453,7 +4453,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Dialog",
           "kind": "component",
@@ -4467,7 +4467,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "DialogProps",
           "kind": "interface",
@@ -4536,7 +4536,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "DropdownMenu",
           "kind": "component",
@@ -4550,7 +4550,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "DropdownMenuItem",
           "kind": "interface",
@@ -4584,7 +4584,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "DropdownMenuProps",
           "kind": "interface",
@@ -4625,7 +4625,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "IconButton",
           "kind": "component",
@@ -4639,7 +4639,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "IconButtonProps",
           "kind": "interface",
@@ -4687,7 +4687,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Input",
           "kind": "component",
@@ -4701,7 +4701,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "InputProps",
           "kind": "interface",
@@ -4735,7 +4735,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "LineChart",
           "kind": "component",
@@ -4749,7 +4749,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "LineChartSeries",
           "kind": "interface",
@@ -4783,7 +4783,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "LineChartProps",
           "kind": "interface",
@@ -4845,7 +4845,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "MetricCard",
           "kind": "component",
@@ -4859,7 +4859,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "MetricTrend",
           "kind": "type",
@@ -4871,7 +4871,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "MetricCardProps",
           "kind": "interface",
@@ -4940,7 +4940,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Badge",
           "kind": "component",
@@ -4954,7 +4954,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "BadgeProps",
           "kind": "interface",
@@ -4981,7 +4981,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Select",
           "kind": "component",
@@ -4995,7 +4995,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SelectOption",
           "kind": "interface",
@@ -5029,7 +5029,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SelectProps",
           "kind": "interface",
@@ -5098,7 +5098,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Skeleton",
           "kind": "component",
@@ -5112,7 +5112,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SkeletonProps",
           "kind": "interface",
@@ -5146,7 +5146,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Slider",
           "kind": "component",
@@ -5160,7 +5160,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SliderProps",
           "kind": "interface",
@@ -5250,7 +5250,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Switch",
           "kind": "component",
@@ -5264,7 +5264,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SwitchProps",
           "kind": "interface",
@@ -5305,7 +5305,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Spinner",
           "kind": "component",
@@ -5319,7 +5319,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SpinnerProps",
           "kind": "interface",
@@ -5360,7 +5360,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Tabs",
           "kind": "component",
@@ -5374,7 +5374,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "TabItem",
           "kind": "interface",
@@ -5401,7 +5401,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "TabsProps",
           "kind": "interface",
@@ -5456,7 +5456,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Textarea",
           "kind": "component",
@@ -5470,7 +5470,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "TextareaProps",
           "kind": "interface",
@@ -5490,7 +5490,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Tooltip",
           "kind": "component",
@@ -5504,7 +5504,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "TooltipProps",
           "kind": "interface",
@@ -5545,7 +5545,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "NavigationMenu",
           "kind": "component",
@@ -5559,7 +5559,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "NavigationMenuItem",
           "kind": "interface",
@@ -5593,7 +5593,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "NavigationMenuProps",
           "kind": "interface",
@@ -5634,7 +5634,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Pagination",
           "kind": "component",
@@ -5648,7 +5648,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "PaginationProps",
           "kind": "interface",
@@ -5710,7 +5710,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Progress",
           "kind": "component",
@@ -5724,7 +5724,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "ProgressProps",
           "kind": "interface",
@@ -5779,7 +5779,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "RadioGroup",
           "kind": "component",
@@ -5793,7 +5793,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "RadioOption",
           "kind": "interface",
@@ -5834,7 +5834,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "RadioGroupProps",
           "kind": "interface",
@@ -5896,7 +5896,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Toast",
           "kind": "component",
@@ -5910,7 +5910,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "ToastProps",
           "kind": "interface",
@@ -5965,7 +5965,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "MarkdownEditor",
           "kind": "component",
@@ -5979,7 +5979,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "MarkdownEditorProps",
           "kind": "interface",
@@ -6048,7 +6048,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Divider",
           "kind": "component",
@@ -6062,7 +6062,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "HelperText",
           "kind": "component",
@@ -6076,7 +6076,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Indicator",
           "kind": "component",
@@ -6090,7 +6090,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Tag",
           "kind": "component",
@@ -6104,7 +6104,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Typography",
           "kind": "component",
@@ -6118,7 +6118,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Pips",
           "kind": "component",
@@ -6132,7 +6132,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Carousel",
           "kind": "component",
@@ -6142,13 +6142,13 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "examples": [
             "<Carousel slides={[<Text key=\"one\">First</Text>, <Text key=\"two\">Second</Text>]} />",
             "<Carousel slides={slides} navigation=\"arrows\" pagination=\"progress\" loop />",
-            "```tsx\nimport { Carousel } from '@qzl/react-native';\nimport { Pressable, Text, View } from 'react-native';\n\n<Carousel\n  slides={[<Text key=\"first\">First</Text>, <Text key=\"second\">Second</Text>]}\n  renderNavigation={({ previous, next, canGoPrevious, canGoNext }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Previous slide\" disabled={!canGoPrevious} onPress={previous}>\n        <Text>Back</Text>\n      </Pressable>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Next slide\" disabled={!canGoNext} onPress={next}>\n        <Text>Next</Text>\n      </Pressable>\n    </View>\n  )}\n  renderPagination={({ index, slideCount, goTo }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      {Array.from({ length: slideCount }, (_, slide) => (\n        <Pressable key={slide} accessibilityRole=\"button\" accessibilityLabel={`Go to slide ${slide + 1}`} accessibilityState={{ selected: index === slide }} onPress={() => goTo(slide)}>\n          <Text>{slide + 1}</Text>\n        </Pressable>\n      ))}\n    </View>\n  )}\n/>\n```"
+            "```tsx\nimport { Carousel } from '@qzlcorp/react-native';\nimport { Pressable, Text, View } from 'react-native';\n\n<Carousel\n  slides={[<Text key=\"first\">First</Text>, <Text key=\"second\">Second</Text>]}\n  renderNavigation={({ previous, next, canGoPrevious, canGoNext }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Previous slide\" disabled={!canGoPrevious} onPress={previous}>\n        <Text>Back</Text>\n      </Pressable>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Next slide\" disabled={!canGoNext} onPress={next}>\n        <Text>Next</Text>\n      </Pressable>\n    </View>\n  )}\n  renderPagination={({ index, slideCount, goTo }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      {Array.from({ length: slideCount }, (_, slide) => (\n        <Pressable key={slide} accessibilityRole=\"button\" accessibilityLabel={`Go to slide ${slide + 1}`} accessibilityState={{ selected: index === slide }} onPress={() => goTo(slide)}>\n          <Text>{slide + 1}</Text>\n        </Pressable>\n      ))}\n    </View>\n  )}\n/>\n```"
           ],
           "members": [],
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SegmentedButtons",
           "kind": "component",
@@ -6162,7 +6162,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SelectCard",
           "kind": "component",
@@ -6176,7 +6176,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "StarRating",
           "kind": "component",
@@ -6190,7 +6190,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SteppedProgressBar",
           "kind": "component",
@@ -6204,7 +6204,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Stepper",
           "kind": "component",
@@ -6218,7 +6218,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "FileUploadInput",
           "kind": "component",
@@ -6232,7 +6232,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "Popover",
           "kind": "component",
@@ -6246,7 +6246,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "BottomSheet",
           "kind": "component",
@@ -6260,7 +6260,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SideSheet",
           "kind": "component",
@@ -6274,7 +6274,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "DividerProps",
           "kind": "interface",
@@ -6315,7 +6315,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "HelperTextProps",
           "kind": "interface",
@@ -6356,7 +6356,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "IndicatorStatus",
           "kind": "type",
@@ -6368,7 +6368,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "IndicatorProps",
           "kind": "interface",
@@ -6409,7 +6409,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "TagProps",
           "kind": "interface",
@@ -6464,7 +6464,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "TypographyVariant",
           "kind": "type",
@@ -6476,7 +6476,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "TypographyProps",
           "kind": "interface",
@@ -6503,7 +6503,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "PipsProps",
           "kind": "interface",
@@ -6565,7 +6565,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "CarouselNavigation",
           "kind": "type",
@@ -6577,7 +6577,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "CarouselPagination",
           "kind": "type",
@@ -6589,7 +6589,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "CarouselNavigationPlacement",
           "kind": "type",
@@ -6601,7 +6601,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "CarouselControls",
           "kind": "interface",
@@ -6670,7 +6670,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "CarouselProps",
           "kind": "interface",
@@ -6795,7 +6795,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SegmentedButtonOption",
           "kind": "interface",
@@ -6829,7 +6829,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SegmentedButtonsProps",
           "kind": "interface",
@@ -6891,7 +6891,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SelectCardOption",
           "kind": "interface",
@@ -6932,7 +6932,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SelectCardProps",
           "kind": "interface",
@@ -6994,7 +6994,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "StarRatingProps",
           "kind": "interface",
@@ -7056,7 +7056,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "ProgressStep",
           "kind": "interface",
@@ -7076,7 +7076,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SteppedProgressBarProps",
           "kind": "interface",
@@ -7124,7 +7124,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "StepperProps",
           "kind": "interface",
@@ -7158,7 +7158,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "FileUploadInputProps",
           "kind": "interface",
@@ -7220,7 +7220,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "PopoverProps",
           "kind": "interface",
@@ -7268,7 +7268,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "SheetProps",
           "kind": "interface",
@@ -7337,7 +7337,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "QrScanner",
           "kind": "component",
@@ -7351,7 +7351,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/react-native",
+          "packageName": "@qzlcorp/react-native",
           "platform": "native",
           "name": "QrScannerProps",
           "kind": "interface",
@@ -7401,10 +7401,10 @@ export const publicApiDocumentation: PublicApiDocumentation = {
       ]
     },
     {
-      "packageName": "@qzl/core",
+      "packageName": "@qzlcorp/core",
       "publicApi": [
         {
-          "packageName": "@qzl/core",
+          "packageName": "@qzlcorp/core",
           "platform": "core",
           "name": "clamp",
           "kind": "function",
@@ -7437,7 +7437,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           ]
         },
         {
-          "packageName": "@qzl/core",
+          "packageName": "@qzlcorp/core",
           "platform": "core",
           "name": "parseMarkdown",
           "kind": "function",
@@ -7458,7 +7458,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           ]
         },
         {
-          "packageName": "@qzl/core",
+          "packageName": "@qzlcorp/core",
           "platform": "core",
           "name": "mergeClasses",
           "kind": "function",
@@ -7479,7 +7479,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           ]
         },
         {
-          "packageName": "@qzl/core",
+          "packageName": "@qzlcorp/core",
           "platform": "core",
           "name": "getThemeModePreference",
           "kind": "function",
@@ -7493,7 +7493,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/core",
+          "packageName": "@qzlcorp/core",
           "platform": "core",
           "name": "ThemeMode",
           "kind": "type",
@@ -7505,7 +7505,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/core",
+          "packageName": "@qzlcorp/core",
           "platform": "core",
           "name": "ThemeContextValue",
           "kind": "interface",
@@ -7532,7 +7532,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/core",
+          "packageName": "@qzlcorp/core",
           "platform": "core",
           "name": "MarkdownBlock",
           "kind": "type",
@@ -7631,10 +7631,10 @@ export const publicApiDocumentation: PublicApiDocumentation = {
       ]
     },
     {
-      "packageName": "@qzl/tokens",
+      "packageName": "@qzlcorp/tokens",
       "publicApi": [
         {
-          "packageName": "@qzl/tokens",
+          "packageName": "@qzlcorp/tokens",
           "platform": "tokens",
           "name": "getThemeCssVariables",
           "kind": "function",
@@ -7655,7 +7655,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           ]
         },
         {
-          "packageName": "@qzl/tokens",
+          "packageName": "@qzlcorp/tokens",
           "platform": "tokens",
           "name": "qzlTokens",
           "kind": "constant",
@@ -7663,13 +7663,13 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "sourcePath": "packages/tokens/src/index.ts",
           "description": "Platform-neutral design tokens for color, spacing, typography, shape, motion, and layering.",
           "examples": [
-            "```ts\nimport { qzlTokens } from '@qzl/tokens';\n\nconst cardRadius = qzlTokens.radius.md;\n```"
+            "```ts\nimport { qzlTokens } from '@qzlcorp/tokens';\n\nconst cardRadius = qzlTokens.radius.md;\n```"
           ],
           "members": [],
           "parameters": []
         },
         {
-          "packageName": "@qzl/tokens",
+          "packageName": "@qzlcorp/tokens",
           "platform": "tokens",
           "name": "themes",
           "kind": "constant",
@@ -7677,13 +7677,13 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "sourcePath": "packages/tokens/src/index.ts",
           "description": "Named light and dark semantic color themes.",
           "examples": [
-            "```ts\nimport { themes } from '@qzl/tokens';\n\nconst pageBackground = themes.light.background;\n```"
+            "```ts\nimport { themes } from '@qzlcorp/tokens';\n\nconst pageBackground = themes.light.background;\n```"
           ],
           "members": [],
           "parameters": []
         },
         {
-          "packageName": "@qzl/tokens",
+          "packageName": "@qzlcorp/tokens",
           "platform": "tokens",
           "name": "ThemeName",
           "kind": "type",
@@ -7695,7 +7695,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/tokens",
+          "packageName": "@qzlcorp/tokens",
           "platform": "tokens",
           "name": "ThemeTokens",
           "kind": "type",
@@ -7707,7 +7707,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/tokens",
+          "packageName": "@qzlcorp/tokens",
           "platform": "tokens",
           "name": "QzlTokenSet",
           "kind": "type",
@@ -7719,7 +7719,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "parameters": []
         },
         {
-          "packageName": "@qzl/tokens",
+          "packageName": "@qzlcorp/tokens",
           "platform": "tokens",
           "name": "ThemeCssVariables",
           "kind": "interface",

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 interface DetectedCode {
   rawValue?: string;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClasses } from '@qzl/core';
+import { mergeClasses } from '@qzlcorp/core';
 
 /** One entry in a {@link Breadcrumbs} trail. */
 export interface BreadcrumbItem {
