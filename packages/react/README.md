@@ -25,7 +25,9 @@ export function ProjectCard() {
 }
 ```
 
-The 45-component catalog includes actions, form controls, navigation, overlays, notifications, data tables and charts, progress and loading states, and content components such as `BottomSheet`, `Carousel`, `FileUploadInput`, `SelectCard`, `Stepper`, and `Typography`. It also includes Markdown editing and an opt-in browser QR scanner. The QR scanner requires a secure browser context, camera access granted by the user, and `BarcodeDetector` support. It returns scanned content to the caller and never navigates automatically.
+The 49-component catalog includes actions, form controls, navigation, overlays, notifications, data tables and charts, metric cards, progress and loading states, and content components such as `BottomSheet`, `Carousel`, `FileUploadInput`, `SelectCard`, `Stepper`, and `Typography`. It also includes Markdown editing and an opt-in browser QR scanner. The QR scanner requires a secure browser context, camera access granted by the user, and `BarcodeDetector` support. It returns scanned content to the caller and never navigates automatically.
+
+Data display includes `DataTable`, `MetricCard`, `BarChart`, `LineChart`, `AreaChart`, and `DonutChart`. `BarChart` supports horizontal or vertical, grouped or stacked series; charts retain readable labels and values alongside their visual marks.
 
 ## Styling and themes
 

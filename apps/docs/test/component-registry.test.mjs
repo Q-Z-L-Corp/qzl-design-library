@@ -8,10 +8,10 @@ const docsDirectory = path.resolve(path.dirname(fileURLToPath(import.meta.url)),
 const registry = JSON.parse(await readFile(path.join(docsDirectory, 'app/generated/component-registry.json'), 'utf8'));
 
 test('registry covers all public component exports and the optional Expo entry', () => {
-  assert.equal(registry.packages.web.componentCount, 45);
-  assert.equal(registry.packages.native.componentCount, 44);
-  assert.equal(registry.components.filter((component) => component.platforms.web).length, 45);
-  assert.equal(registry.components.filter((component) => component.platforms.native).length, 44);
+  assert.equal(registry.packages.web.componentCount, 49);
+  assert.equal(registry.packages.native.componentCount, 48);
+  assert.equal(registry.components.filter((component) => component.platforms.web).length, 49);
+  assert.equal(registry.components.filter((component) => component.platforms.native).length, 48);
   assert.deepEqual(registry.packages.optionalNativeComponents, [{ name: 'QrScanner', optionalDependencies: ['expo-camera'] }]);
   assert.ok(registry.components.find((component) => component.name === 'QrScanner').platforms.nativeOptional);
 });
@@ -65,6 +65,17 @@ test('every advertised interactive preview has a component renderer', async () =
   assert.equal(advertised.length, registry.components.length);
   const missing = advertised.filter((component) => !source.includes(`case '${component.name}':`));
   assert.deepEqual(missing.map((component) => component.name), []);
+});
+
+test('breadcrumb preview links point to routes handled by the docs app', async () => {
+  const componentSource = await readFile(path.join(docsDirectory, 'app/component-documentation.tsx'), 'utf8');
+  const docsAppSource = await readFile(path.join(docsDirectory, 'app/docs-app.tsx'), 'utf8');
+  const routes = [...docsAppSource.matchAll(/\bid: '([^']+)'/g)].map((match) => match[1]);
+
+  assert.match(componentSource, /label: 'Home', href: '#overview'/);
+  assert.match(componentSource, /label: 'Components', href: '#catalog'/);
+  assert.ok(routes.includes('overview'), 'the Home breadcrumb route is handled');
+  assert.ok(routes.includes('catalog'), 'the Components breadcrumb route is handled');
 });
 
 test('StarRating playground keeps its preview value within the declared maximum', async () => {

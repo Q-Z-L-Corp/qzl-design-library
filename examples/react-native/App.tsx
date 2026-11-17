@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
 import { ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import {
+  AreaChart,
   Accordion,
   Alert,
   Badge,
+  BarChart,
   BottomSheet,
   Button,
   Carousel,
   Card,
   DataTable,
   Divider,
+  DonutChart,
   FileUploadInput,
   HelperText,
   Indicator,
   Input,
+  LineChart,
+  MetricCard,
   MarkdownEditor,
   Popover,
   SegmentedButtons,
@@ -37,6 +42,13 @@ const linkRows = [
 const linkColumns = [
   { key: 'destination', header: 'Destination', render: (row: typeof linkRows[number]) => row.destination, sortValue: (row: typeof linkRows[number]) => row.destination },
   { key: 'clicks', header: 'Clicks', render: (row: typeof linkRows[number]) => row.clicks, sortValue: (row: typeof linkRows[number]) => row.clicks }
+];
+
+const chartLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const visitsBySource = [
+  { label: 'Direct', values: [180, 220, 205, 260, 242, 190, 215] },
+  { label: 'Organic', values: [240, 280, 310, 295, 340, 310, 365] },
+  { label: 'Referral', values: [90, 110, 125, 100, 145, 130, 155] }
 ];
 
 export default function App() {
@@ -63,7 +75,7 @@ export default function App() {
       <View style={styles.header}>
         <View>
           <Text style={[styles.eyebrow, { color: colors.primary }]}>QZL DESIGN LIBRARY</Text>
-          <Text style={[styles.title, { color: colors.text }]}>Native foundations</Text>
+          <Text style={[styles.title, { color: colors.text }]}>React Native foundations</Text>
         </View>
         <Button
           title={theme === 'light' ? 'Dark mode' : 'Light mode'}
@@ -124,6 +136,42 @@ export default function App() {
             getRowKey={(row) => row.destination}
             theme={theme}
           />
+          <BarChart
+            title="Campaign clicks by channel"
+            orientation="vertical"
+            data={[
+              { label: 'Spring', values: { organic: 1248, referral: 852 } },
+              { label: 'Guide', values: { organic: 1004, referral: 612 } },
+              { label: 'Launch', values: { organic: 2041, referral: 1084 } }
+            ]}
+            series={[{ key: 'organic', label: 'Organic' }, { key: 'referral', label: 'Referral' }]}
+            formatValue={(value) => value.toLocaleString()}
+            theme={theme}
+          />
+        </Card>
+        <Card theme={theme} style={styles.card}>
+          <Typography variant="heading-2" theme={theme}>Performance overview</Typography>
+          <View style={{ flexDirection: 'row', gap: 10 }}>
+            <MetricCard label="Monthly visits" value="24.8k" change="+8.2%" trend="positive" comparison="vs. last month" theme={theme} style={{ flex: 1 }} />
+            <MetricCard label="Conversion rate" value="3.8%" change="+0.6 pp" trend="positive" comparison="vs. last month" theme={theme} style={{ flex: 1 }} />
+          </View>
+          <AreaChart title="Visits by source" labels={chartLabels} series={visitsBySource} stacked theme={theme} />
+          <LineChart
+            title="Visits and returning visits"
+            labels={chartLabels}
+            series={[
+              { label: 'Visits', values: [510, 610, 640, 655, 720, 630, 735] },
+              { label: 'Returning', values: [205, 244, 250, 278, 302, 260, 318] }
+            ]}
+            theme={theme}
+          />
+          <DonutChart
+            title="Visitors by device"
+            centerLabel="Visitors"
+            data={[{ label: 'Desktop', value: 1840 }, { label: 'Mobile', value: 2120 }, { label: 'Tablet', value: 355 }]}
+            formatValue={(value) => value.toLocaleString()}
+            theme={theme}
+          />
         </Card>
         <Card theme={theme} style={styles.card}>
           <Typography variant="heading-2" theme={theme}>More component patterns</Typography>
@@ -136,6 +184,8 @@ export default function App() {
             theme={theme}
             index={slideIndex}
             onIndexChange={setSlideIndex}
+            navigation="arrows"
+            pagination="progress"
             slides={[
               <Text key="overview" style={{ color: colors.text }}>Workspace overview</Text>,
               <Text key="sharing" style={{ color: colors.text }}>Sharing preferences</Text>,
@@ -190,7 +240,7 @@ export default function App() {
             </Alert>
           )}
         </Card>
-      <Text style={[styles.footer, { color: colors.textSoft }]}>React Native · 44 shared components for iOS and Android</Text>
+      <Text style={[styles.footer, { color: colors.textSoft }]}>React Native · 48 shared components for iOS and Android</Text>
     </ScrollView>
   );
 }

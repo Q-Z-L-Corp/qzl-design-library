@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Pressable, Text } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import {
   Accordion,
@@ -304,6 +304,77 @@ describe('React Native components', () => {
     expect(onSegmentChange).toHaveBeenCalledWith('compact');
     expect(onCardChange).toHaveBeenCalledWith('team');
     expect(onRatingChange).toHaveBeenCalledWith(5);
+  });
+
+  it('configures carousel arrow navigation, progress, overlay placement, and looping', () => {
+    render(
+      <Carousel
+        defaultIndex={2}
+        loop
+        navigation="arrows"
+        navigationPlacement="overlay"
+        pagination="progress"
+        slides={[
+          <Text key="one">Slide one</Text>,
+          <Text key="two">Slide two</Text>,
+          <Text key="three">Slide three</Text>
+        ]}
+      />
+    );
+
+    expect(screen.getByRole('progressbar', { name: 'Slide progress' }).props.accessibilityValue).toEqual({ min: 1, max: 3, now: 3 });
+    expect(screen.getByRole('button', { name: 'Next slide' })).toBeEnabled();
+    fireEvent.press(screen.getByRole('button', { name: 'Next slide' }));
+    expect(screen.getByText('Slide one')).toBeOnTheScreen();
+    fireEvent.press(screen.getByRole('button', { name: 'Previous slide' }));
+    expect(screen.getByText('Slide three')).toBeOnTheScreen();
+  });
+
+  it('uses custom carousel navigation and pagination renderers', () => {
+    render(
+      <Carousel
+        renderNavigation={({ next }) => (
+          <Pressable accessibilityRole="button" accessibilityLabel="Custom next" onPress={next}>
+            <Text>Continue</Text>
+          </Pressable>
+        )}
+        renderPagination={({ goTo, slideCount }) => (
+          <Pressable accessibilityRole="button" accessibilityLabel="Custom last" onPress={() => goTo(slideCount - 1)}>
+            <Text>Last slide</Text>
+          </Pressable>
+        )}
+        slides={[
+          <Text key="one">Slide one</Text>,
+          <Text key="two">Slide two</Text>,
+          <Text key="three">Slide three</Text>
+        ]}
+      />
+    );
+
+    fireEvent.press(screen.getByRole('button', { name: 'Custom next' }));
+    expect(screen.getByText('Slide two')).toBeOnTheScreen();
+    fireEvent.press(screen.getByRole('button', { name: 'Custom last' }));
+    expect(screen.getByText('Slide three')).toBeOnTheScreen();
+    expect(screen.queryByRole('button', { name: 'Next slide' })).not.toBeOnTheScreen();
+    expect(screen.queryByRole('button', { name: 'Choose slide 1' })).not.toBeOnTheScreen();
+  });
+
+  it('rejects invalid custom slide indexes while keeping unavailable boundary actions safe', () => {
+    let goTo: ((index: number) => void) | undefined;
+    let previous: (() => void) | undefined;
+    render(
+      <Carousel
+        renderNavigation={(controls) => {
+          goTo = controls.goTo;
+          previous = controls.previous;
+          return null;
+        }}
+        slides={[<Text key="one">Slide one</Text>, <Text key="two">Slide two</Text>]}
+      />
+    );
+
+    expect(() => goTo?.(2)).toThrow(RangeError);
+    expect(() => previous?.()).not.toThrow();
   });
 
   it('advances steps and exposes upload and popover actions', () => {

@@ -12,6 +12,7 @@ export { qzlTokens, themes as reactNativeTheme, getThemeCssVariables } from '@qz
  */
 export type { ThemeName as ReactNativeThemeName, ThemeTokens } from '@qzl/tokens';
 export * from './components/accordion.js';
+export * from './components/area-chart.js';
 export * from './components/alert.js';
 export * from './components/avatar.js';
 export * from './components/bar-chart.js';
@@ -20,10 +21,13 @@ export * from './components/button.js';
 export * from './components/card.js';
 export * from './components/checkbox.js';
 export * from './components/data-table.js';
+export * from './components/donut-chart.js';
 export * from './components/dialog.js';
 export * from './components/dropdown-menu.js';
 export * from './components/icon-button.js';
 export * from './components/input.js';
+export * from './components/line-chart.js';
+export * from './components/metric-card.js';
 export * from './components/badge.js';
 export * from './components/select.js';
 export * from './components/skeleton.js';

@@ -1,7 +1,7 @@
 {
   "coverage": {
-    "total": 1459,
-    "documented": 1459,
+    "total": 1737,
+    "documented": 1737,
     "failures": []
   },
   "packages": [
@@ -73,6 +73,109 @@
         {
           "packageName": "@qzl/react",
           "platform": "web",
+          "name": "AreaChart",
+          "kind": "component",
+          "signature": "({ title, labels, series, stacked, formatValue, className, ...props }: AreaChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/area-chart.tsx",
+          "description": "Renders area series over shared labels. Use `stacked` for cumulative, non-negative values.",
+          "examples": [
+            "```tsx\n<AreaChart\n  title=\"Cumulative weekly visits\"\n  labels={['Mon', 'Tue', 'Wed']}\n  series={[{ label: 'Visits', values: [120, 156, 142] }]}\n/>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "AreaChartSeries",
+          "kind": "interface",
+          "signature": "interface AreaChartSeries",
+          "sourcePath": "packages/react/src/components/area-chart.tsx",
+          "description": "One named area whose values align with the chart's labels.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text identifying this area in the legend.",
+              "callbackParameters": []
+            },
+            {
+              "name": "values",
+              "type": "number[]",
+              "optional": false,
+              "description": "Finite numeric values, one for each chart label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "color",
+              "type": "string",
+              "optional": true,
+              "description": "Optional CSS color for the area and its outline.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "AreaChartProps",
+          "kind": "interface",
+          "signature": "interface AreaChartProps",
+          "sourcePath": "packages/react/src/components/area-chart.tsx",
+          "description": "Props for {@link AreaChart}, in addition to figure attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Figure caption displayed above the chart.",
+              "callbackParameters": []
+            },
+            {
+              "name": "labels",
+              "type": "string[]",
+              "optional": false,
+              "description": "Ordered category or time labels shared by every series.",
+              "callbackParameters": []
+            },
+            {
+              "name": "series",
+              "type": "AreaChartSeries[]",
+              "optional": false,
+              "description": "One or more area series. Each series must contain one value per label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "stacked",
+              "type": "boolean",
+              "optional": true,
+              "description": "Stack non-negative series on top of one another.",
+              "callbackParameters": []
+            },
+            {
+              "name": "formatValue",
+              "type": "(value: number) => string",
+              "optional": true,
+              "description": "Formats values in the accessible data summary and axis.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
           "name": "Avatar",
           "kind": "component",
           "signature": "({ name, src, size, className, ...props }: AvatarProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
@@ -123,11 +226,12 @@
           "platform": "web",
           "name": "BarChart",
           "kind": "component",
-          "signature": "({ title, data, formatValue, className, ...props }: BarChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "({ title, data, series, orientation, mode, formatValue, className, ...props }: BarChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react/src/components/bar-chart.tsx",
-          "description": "Renders a figure containing a labeled bar for each finite value, including values below zero.",
+          "description": "Renders horizontal or vertical bars, with grouped and stacked multi-series layouts.\nThe accessible data labels remain available alongside the visual bars.",
           "examples": [
-            "```tsx\n<BarChart title=\"Monthly signups\" data={[{ label: 'Jan', value: 24 }]} />\n```"
+            "```tsx\n<BarChart title=\"Monthly signups\" data={[{ label: 'Jan', value: 24 }]} orientation=\"vertical\" />\n```",
+            "```tsx\n<BarChart\n  title=\"Quarterly signups\"\n  data={[{ label: 'Q1', values: { organic: 24, referral: 12 } }]}\n  series={[{ key: 'organic', label: 'Organic' }, { key: 'referral', label: 'Referral' }]}\n  mode=\"stacked\"\n/>\n```"
           ],
           "members": [],
           "parameters": []
@@ -169,6 +273,67 @@
         {
           "packageName": "@qzl/react",
           "platform": "web",
+          "name": "BarChartMultiSeriesDatum",
+          "kind": "interface",
+          "signature": "interface BarChartMultiSeriesDatum",
+          "sourcePath": "packages/react/src/components/bar-chart.tsx",
+          "description": "A category containing values keyed by the corresponding {@link BarChartSeries.key}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Category label shown beside the grouped or stacked bars.",
+              "callbackParameters": []
+            },
+            {
+              "name": "values",
+              "type": "Record<string, number>",
+              "optional": false,
+              "description": "Finite numeric values keyed by each declared series key.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "BarChartSeries",
+          "kind": "interface",
+          "signature": "interface BarChartSeries",
+          "sourcePath": "packages/react/src/components/bar-chart.tsx",
+          "description": "A labeled series used to render grouped or stacked bars.",
+          "examples": [],
+          "members": [
+            {
+              "name": "key",
+              "type": "string",
+              "optional": false,
+              "description": "Stable key used to read values from each multi-series datum.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text identifying this series in the legend and data summary.",
+              "callbackParameters": []
+            },
+            {
+              "name": "color",
+              "type": "string",
+              "optional": true,
+              "description": "Optional CSS color for this series.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
           "name": "BarChartProps",
           "kind": "interface",
           "signature": "interface BarChartProps",
@@ -177,6 +342,20 @@
           "examples": [],
           "members": [
             {
+              "name": "data",
+              "type": "Array<BarChartDatum | BarChartMultiSeriesDatum>",
+              "optional": false,
+              "description": "Category values. Use `value` for one series or `values` with `series` for multiple series.",
+              "callbackParameters": []
+            },
+            {
+              "name": "series",
+              "type": "BarChartSeries[]",
+              "optional": true,
+              "description": "Series definitions for grouped or stacked data. Each datum must contain a value for every key.",
+              "callbackParameters": []
+            },
+            {
               "name": "title",
               "type": "string",
               "optional": false,
@@ -184,10 +363,17 @@
               "callbackParameters": []
             },
             {
-              "name": "data",
-              "type": "BarChartDatum[]",
-              "optional": false,
-              "description": "Values to render, one bar per datum.",
+              "name": "orientation",
+              "type": "'horizontal' | 'vertical'",
+              "optional": true,
+              "description": "Bar direction.",
+              "callbackParameters": []
+            },
+            {
+              "name": "mode",
+              "type": "'grouped' | 'stacked'",
+              "optional": true,
+              "description": "How multiple series are arranged. Stacked values must be non-negative.",
               "callbackParameters": []
             },
             {
@@ -527,6 +713,102 @@
         {
           "packageName": "@qzl/react",
           "platform": "web",
+          "name": "DonutChart",
+          "kind": "component",
+          "signature": "({ title, data, centerLabel, formatValue, className, ...props }: DonutChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/donut-chart.tsx",
+          "description": "Shows proportional category values as a donut, with a labeled total and text legend.",
+          "examples": [
+            "```tsx\n<DonutChart title=\"Visitors by device\" data={[{ label: 'Desktop', value: 64 }, { label: 'Mobile', value: 36 }]} centerLabel=\"Visitors\" />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "DonutChartDatum",
+          "kind": "interface",
+          "signature": "interface DonutChartDatum",
+          "sourcePath": "packages/react/src/components/donut-chart.tsx",
+          "description": "One non-negative slice in a {@link DonutChart}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Category label shown in the legend.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "number",
+              "optional": false,
+              "description": "Finite, non-negative value contributing to the total.",
+              "callbackParameters": []
+            },
+            {
+              "name": "color",
+              "type": "string",
+              "optional": true,
+              "description": "Optional CSS color for this slice.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "DonutChartProps",
+          "kind": "interface",
+          "signature": "interface DonutChartProps",
+          "sourcePath": "packages/react/src/components/donut-chart.tsx",
+          "description": "Props for {@link DonutChart}, in addition to figure attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Figure caption displayed above the chart.",
+              "callbackParameters": []
+            },
+            {
+              "name": "data",
+              "type": "DonutChartDatum[]",
+              "optional": false,
+              "description": "Values to render as proportional slices.",
+              "callbackParameters": []
+            },
+            {
+              "name": "centerLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Optional label shown inside the ring above its total.",
+              "callbackParameters": []
+            },
+            {
+              "name": "formatValue",
+              "type": "(value: number) => string",
+              "optional": true,
+              "description": "Formats slice values and the center total.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
           "name": "DropdownMenu",
           "kind": "component",
           "signature": "({ label, items, className, ...props }: DropdownMenuProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
@@ -628,6 +910,183 @@
               "type": "boolean",
               "optional": true,
               "description": "Apply the component's error styling; this does not set browser form-validation state.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "LineChart",
+          "kind": "component",
+          "signature": "({ title, labels, series, formatValue, className, ...props }: LineChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/line-chart.tsx",
+          "description": "Renders one or more time series with shared category labels and a readable data summary.",
+          "examples": [
+            "```tsx\n<LineChart\n  title=\"Weekly visits\"\n  labels={['Mon', 'Tue', 'Wed']}\n  series={[{ label: 'Visits', values: [120, 156, 142] }]}\n/>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "LineChartSeries",
+          "kind": "interface",
+          "signature": "interface LineChartSeries",
+          "sourcePath": "packages/react/src/components/line-chart.tsx",
+          "description": "One named line whose values align with the chart's labels.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text identifying this line in the legend.",
+              "callbackParameters": []
+            },
+            {
+              "name": "values",
+              "type": "number[]",
+              "optional": false,
+              "description": "Finite numeric values, one for each chart label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "color",
+              "type": "string",
+              "optional": true,
+              "description": "Optional CSS color for the line and points.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "LineChartProps",
+          "kind": "interface",
+          "signature": "interface LineChartProps",
+          "sourcePath": "packages/react/src/components/line-chart.tsx",
+          "description": "Props for {@link LineChart}, in addition to figure attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Figure caption displayed above the chart.",
+              "callbackParameters": []
+            },
+            {
+              "name": "labels",
+              "type": "string[]",
+              "optional": false,
+              "description": "Ordered category or time labels shared by every series.",
+              "callbackParameters": []
+            },
+            {
+              "name": "series",
+              "type": "LineChartSeries[]",
+              "optional": false,
+              "description": "One or more line series. Each series must contain one value per label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "formatValue",
+              "type": "(value: number) => string",
+              "optional": true,
+              "description": "Formats values in the accessible data summary and axis.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "MetricCard",
+          "kind": "component",
+          "signature": "({ label, value, change, trend, comparison, description, className, ...props }: MetricCardProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/metric-card.tsx",
+          "description": "Presents a key metric with optional change, comparison period, and supporting context.",
+          "examples": [
+            "```tsx\n<MetricCard label=\"Monthly visits\" value=\"24,815\" change=\"+8.2%\" trend=\"positive\" comparison=\"vs. previous 30 days\" />\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "MetricTrend",
+          "kind": "type",
+          "signature": "'positive' | 'negative' | 'neutral'",
+          "sourcePath": "packages/react/src/components/metric-card.tsx",
+          "description": "Direction used to style and describe a metric's change.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "MetricCardProps",
+          "kind": "interface",
+          "signature": "interface MetricCardProps",
+          "sourcePath": "packages/react/src/components/metric-card.tsx",
+          "description": "Props for {@link MetricCard}, in addition to article attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Short name for the metric.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string | number",
+              "optional": false,
+              "description": "Preformatted value or number displayed as the primary figure.",
+              "callbackParameters": []
+            },
+            {
+              "name": "change",
+              "type": "string",
+              "optional": true,
+              "description": "Optional change text, such as `+8.2%`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "trend",
+              "type": "MetricTrend",
+              "optional": true,
+              "description": "Direction of the change; the text remains available independently of color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "comparison",
+              "type": "string",
+              "optional": true,
+              "description": "Context for the change, such as `vs. previous 30 days`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "optional": true,
+              "description": "Optional supporting text below the value.",
               "callbackParameters": []
             }
           ],
@@ -1812,11 +2271,13 @@
           "platform": "web",
           "name": "Carousel",
           "kind": "component",
-          "signature": "({ slides, index, defaultIndex, label, onIndexChange }: CarouselProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "({ slides, index, defaultIndex, label, onIndexChange, navigation, pagination, navigationPlacement, loop, renderNavigation, renderPagination, className, ...props }: CarouselProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
-          "description": "Renders one current slide with previous/next controls and selectable position indicators.",
+          "description": "Renders one slide with configurable navigation and position indicators.",
           "examples": [
-            "```tsx\n<Carousel slides={[<p key=\"1\">One</p>, <p key=\"2\">Two</p>]} />\n```"
+            "```tsx\n<Carousel slides={[<p key=\"1\">One</p>, <p key=\"2\">Two</p>]} />\n```",
+            "```tsx\n<Carousel\n  slides={slides}\n  navigation=\"arrows\"\n  navigationPlacement=\"overlay\"\n  pagination=\"progress\"\n  loop\n/>\n```",
+            "```tsx\n<Carousel\n  slides={[<p key=\"first\">First</p>, <p key=\"second\">Second</p>]}\n  renderNavigation={({ previous, next, canGoPrevious, canGoNext }) => (\n    <div>\n      <button type=\"button\" aria-label=\"Previous slide\" disabled={!canGoPrevious} onClick={previous}>Back</button>\n      <button type=\"button\" aria-label=\"Next slide\" disabled={!canGoNext} onClick={next}>Next</button>\n    </div>\n  )}\n  renderPagination={({ index, slideCount, goTo }) => (\n    <div role=\"group\" aria-label=\"Choose slide\">\n      {Array.from({ length: slideCount }, (_, slide) => (\n        <button key={slide} type=\"button\" aria-label={`Go to slide ${slide + 1}`} aria-current={index === slide ? 'true' : undefined} onClick={() => goTo(slide)}>\n          {slide + 1}\n        </button>\n      ))}\n    </div>\n  )}\n/>\n```"
           ],
           "members": [],
           "parameters": []
@@ -2176,6 +2637,111 @@
         {
           "packageName": "@qzl/react",
           "platform": "web",
+          "name": "CarouselNavigation",
+          "kind": "type",
+          "signature": "'text' | 'arrows' | 'none'",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Built-in navigation presentation for {@link Carousel}.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "CarouselPagination",
+          "kind": "type",
+          "signature": "'dots' | 'progress' | 'fraction' | 'none'",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Built-in position indicator presentation for {@link Carousel}.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "CarouselNavigationPlacement",
+          "kind": "type",
+          "signature": "'below' | 'overlay'",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Placement for built-in or custom Carousel navigation controls.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
+          "name": "CarouselControls",
+          "kind": "interface",
+          "signature": "interface CarouselControls",
+          "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
+          "description": "Navigation actions and state passed to Carousel control render callbacks.",
+          "examples": [],
+          "members": [
+            {
+              "name": "index",
+              "type": "number",
+              "optional": false,
+              "description": "Current zero-based slide index.",
+              "callbackParameters": []
+            },
+            {
+              "name": "slideCount",
+              "type": "number",
+              "optional": false,
+              "description": "Number of slides in the carousel.",
+              "callbackParameters": []
+            },
+            {
+              "name": "canGoPrevious",
+              "type": "boolean",
+              "optional": false,
+              "description": "Whether `previous` can move to another slide.",
+              "callbackParameters": []
+            },
+            {
+              "name": "canGoNext",
+              "type": "boolean",
+              "optional": false,
+              "description": "Whether `next` can move to another slide.",
+              "callbackParameters": []
+            },
+            {
+              "name": "previous",
+              "type": "() => void",
+              "optional": false,
+              "description": "Move to the previous slide when available; wraps when `loop` is enabled.",
+              "callbackParameters": []
+            },
+            {
+              "name": "next",
+              "type": "() => void",
+              "optional": false,
+              "description": "Move to the next slide when available; wraps when `loop` is enabled.",
+              "callbackParameters": []
+            },
+            {
+              "name": "goTo",
+              "type": "(index: number) => void",
+              "optional": false,
+              "description": "Select a valid zero-based slide index.",
+              "callbackParameters": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react",
+          "platform": "web",
           "name": "CarouselProps",
           "kind": "interface",
           "signature": "interface CarouselProps",
@@ -2220,6 +2786,62 @@
                 {
                   "name": "index",
                   "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "navigation",
+              "type": "CarouselNavigation",
+              "optional": true,
+              "description": "Built-in previous/next control presentation. `none` hides the controls.\n`renderNavigation` can replace the built-in controls unless this is `none`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "pagination",
+              "type": "CarouselPagination",
+              "optional": true,
+              "description": "Built-in slide position indicator. `none` hides the indicator.\n`renderPagination` can replace the built-in indicator unless this is `none`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "navigationPlacement",
+              "type": "CarouselNavigationPlacement",
+              "optional": true,
+              "description": "Position of navigation controls. Custom navigation content is placed at the selected position.",
+              "callbackParameters": []
+            },
+            {
+              "name": "loop",
+              "type": "boolean",
+              "optional": true,
+              "description": "Wrap previous/next navigation from the first and last slides.",
+              "callbackParameters": []
+            },
+            {
+              "name": "renderNavigation",
+              "type": "(controls: CarouselControls) => React.ReactNode",
+              "optional": true,
+              "description": "Replaces the built-in previous/next controls when `navigation` is not `none`.\nCustom controls should expose accessible names and use the provided navigation actions.",
+              "callbackParameters": [
+                {
+                  "name": "controls",
+                  "type": "CarouselControls",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "renderPagination",
+              "type": "(controls: CarouselControls) => React.ReactNode",
+              "optional": true,
+              "description": "Replaces the built-in position indicator when `pagination` is not `none`.\nCustom indicators should expose the current slide and an accessible way to select slides.",
+              "callbackParameters": [
+                {
+                  "name": "controls",
+                  "type": "CarouselControls",
                   "description": "",
                   "documented": true
                 }
@@ -2847,6 +3469,123 @@
         {
           "packageName": "@qzl/react-native",
           "platform": "native",
+          "name": "AreaChart",
+          "kind": "component",
+          "signature": "({ title, labels, series, stacked, formatValue, theme, style }: AreaChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/area-chart.tsx",
+          "description": "Renders area series in React Native. Set `stacked` for cumulative, non-negative values.",
+          "examples": [
+            "<AreaChart title=\"Cumulative visits\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [120, 156, 142] }]} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "AreaChartSeries",
+          "kind": "interface",
+          "signature": "interface AreaChartSeries",
+          "sourcePath": "packages/react-native/src/components/area-chart.tsx",
+          "description": "One named area whose values align with the chart's labels.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text identifying this area in the legend.",
+              "callbackParameters": []
+            },
+            {
+              "name": "values",
+              "type": "number[]",
+              "optional": false,
+              "description": "Finite numeric values, one for each chart label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "color",
+              "type": "string",
+              "optional": true,
+              "description": "Optional area fill and outline color.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "AreaChartProps",
+          "kind": "interface",
+          "signature": "interface AreaChartProps",
+          "sourcePath": "packages/react-native/src/components/area-chart.tsx",
+          "description": "Props for {@link AreaChart}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Chart heading.",
+              "callbackParameters": []
+            },
+            {
+              "name": "labels",
+              "type": "string[]",
+              "optional": false,
+              "description": "Ordered category or time labels shared by every series.",
+              "callbackParameters": []
+            },
+            {
+              "name": "series",
+              "type": "AreaChartSeries[]",
+              "optional": false,
+              "description": "One or more area series. Each series must contain one value per label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "stacked",
+              "type": "boolean",
+              "optional": true,
+              "description": "Stack non-negative series on top of one another.",
+              "callbackParameters": []
+            },
+            {
+              "name": "formatValue",
+              "type": "(value: number) => string",
+              "optional": true,
+              "description": "Formats values in the accessible data summary and axis.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for chart text, grid lines, and default series colors.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the chart container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
           "name": "Alert",
           "kind": "component",
           "signature": "({ children, variant, theme, style }: AlertProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
@@ -2966,11 +3705,12 @@
           "platform": "native",
           "name": "BarChart",
           "kind": "component",
-          "signature": "({ title, data, formatValue, theme, style }: BarChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "({ title, data, series, orientation, mode, formatValue, theme, style }: BarChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react-native/src/components/bar-chart.tsx",
-          "description": "Renders a bar chart in React Native views with a shared zero baseline.",
+          "description": "Renders bars in React Native views, with horizontal or vertical, grouped or stacked layouts.\nThe category labels and values remain visible as text.",
           "examples": [
-            "<BarChart title=\"Weekly signups\" data={[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }]} />"
+            "<BarChart title=\"Weekly signups\" data={[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }]} />",
+            "<BarChart title=\"Quarterly signups\" data={[{ label: 'Q1', values: { organic: 24, referral: 12 } }]} series={[{ key: 'organic', label: 'Organic' }, { key: 'referral', label: 'Referral' }]} mode=\"stacked\" />"
           ],
           "members": [],
           "parameters": []
@@ -2982,7 +3722,7 @@
           "kind": "interface",
           "signature": "interface BarChartDatum",
           "sourcePath": "packages/react-native/src/components/bar-chart.tsx",
-          "description": "One labeled numeric value rendered as a horizontal bar.",
+          "description": "One labeled numeric value rendered as a bar by {@link BarChart}.",
           "examples": [],
           "members": [
             {
@@ -2996,7 +3736,7 @@
               "name": "value",
               "type": "number",
               "optional": false,
-              "description": "Finite numeric value; negative values extend left of the zero baseline.",
+              "description": "Finite numeric value; negative values extend from the zero baseline.",
               "callbackParameters": []
             },
             {
@@ -3012,11 +3752,72 @@
         {
           "packageName": "@qzl/react-native",
           "platform": "native",
+          "name": "BarChartMultiSeriesDatum",
+          "kind": "interface",
+          "signature": "interface BarChartMultiSeriesDatum",
+          "sourcePath": "packages/react-native/src/components/bar-chart.tsx",
+          "description": "A category containing values keyed by the corresponding {@link BarChartSeries.key}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text identifying this category.",
+              "callbackParameters": []
+            },
+            {
+              "name": "values",
+              "type": "Record<string, number>",
+              "optional": false,
+              "description": "Finite numeric values keyed by each declared series key.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "BarChartSeries",
+          "kind": "interface",
+          "signature": "interface BarChartSeries",
+          "sourcePath": "packages/react-native/src/components/bar-chart.tsx",
+          "description": "A labeled series used to render grouped or stacked bars.",
+          "examples": [],
+          "members": [
+            {
+              "name": "key",
+              "type": "string",
+              "optional": false,
+              "description": "Stable key used to read values from each multi-series datum.",
+              "callbackParameters": []
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text identifying this series in the legend and data summary.",
+              "callbackParameters": []
+            },
+            {
+              "name": "color",
+              "type": "string",
+              "optional": true,
+              "description": "Optional bar fill color.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
           "name": "BarChartProps",
           "kind": "interface",
           "signature": "interface BarChartProps",
           "sourcePath": "packages/react-native/src/components/bar-chart.tsx",
-          "description": "Props for a simple labeled horizontal bar chart.",
+          "description": "Props for a horizontal or vertical bar chart.",
           "examples": [],
           "members": [
             {
@@ -3028,9 +3829,30 @@
             },
             {
               "name": "data",
-              "type": "BarChartDatum[]",
+              "type": "Array<BarChartDatum | BarChartMultiSeriesDatum>",
               "optional": false,
-              "description": "Values to render in input order. Each value must be finite.",
+              "description": "Category values. Use `value` for one series or `values` with `series` for multiple series.",
+              "callbackParameters": []
+            },
+            {
+              "name": "series",
+              "type": "BarChartSeries[]",
+              "optional": true,
+              "description": "Series definitions for grouped or stacked data. Each datum must contain a value for every key.",
+              "callbackParameters": []
+            },
+            {
+              "name": "orientation",
+              "type": "'horizontal' | 'vertical'",
+              "optional": true,
+              "description": "Bar direction.",
+              "callbackParameters": []
+            },
+            {
+              "name": "mode",
+              "type": "'grouped' | 'stacked'",
+              "optional": true,
+              "description": "How multiple series are arranged. Stacked values must be non-negative.",
               "callbackParameters": []
             },
             {
@@ -3485,6 +4307,116 @@
         {
           "packageName": "@qzl/react-native",
           "platform": "native",
+          "name": "DonutChart",
+          "kind": "component",
+          "signature": "({ title, data, centerLabel, formatValue, theme, style }: DonutChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/donut-chart.tsx",
+          "description": "Shows proportional category values as a React Native SVG donut with a text legend.",
+          "examples": [
+            "<DonutChart title=\"Visitors by device\" data={[{ label: 'Desktop', value: 64 }, { label: 'Mobile', value: 36 }]} centerLabel=\"Visitors\" />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "DonutChartDatum",
+          "kind": "interface",
+          "signature": "interface DonutChartDatum",
+          "sourcePath": "packages/react-native/src/components/donut-chart.tsx",
+          "description": "One non-negative slice in a {@link DonutChart}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Category label shown in the legend.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "number",
+              "optional": false,
+              "description": "Finite, non-negative value contributing to the total.",
+              "callbackParameters": []
+            },
+            {
+              "name": "color",
+              "type": "string",
+              "optional": true,
+              "description": "Optional slice color.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "DonutChartProps",
+          "kind": "interface",
+          "signature": "interface DonutChartProps",
+          "sourcePath": "packages/react-native/src/components/donut-chart.tsx",
+          "description": "Props for {@link DonutChart}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Chart heading.",
+              "callbackParameters": []
+            },
+            {
+              "name": "data",
+              "type": "DonutChartDatum[]",
+              "optional": false,
+              "description": "Values to render as proportional slices.",
+              "callbackParameters": []
+            },
+            {
+              "name": "centerLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Optional label shown inside the ring above its total.",
+              "callbackParameters": []
+            },
+            {
+              "name": "formatValue",
+              "type": "(value: number) => string",
+              "optional": true,
+              "description": "Formats slice values and the center total.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for chart text and default slice colors.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the chart container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
           "name": "Dialog",
           "kind": "component",
           "signature": "({ open, onOpenChange, title, description, children, theme, contentStyle, ...props }: DialogProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
@@ -3759,6 +4691,211 @@
               "type": "StyleProp<TextStyle>",
               "optional": true,
               "description": "Additional style applied after the input's base and inherited `style`.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "LineChart",
+          "kind": "component",
+          "signature": "({ title, labels, series, formatValue, theme, style }: LineChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/line-chart.tsx",
+          "description": "Renders one or more time series with React Native SVG and a readable text data summary.",
+          "examples": [
+            "<LineChart title=\"Weekly visits\" labels={['Mon', 'Tue', 'Wed']} series={[{ label: 'Visits', values: [120, 156, 142] }]} />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "LineChartSeries",
+          "kind": "interface",
+          "signature": "interface LineChartSeries",
+          "sourcePath": "packages/react-native/src/components/line-chart.tsx",
+          "description": "One named line whose values align with the chart's labels.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Text identifying this line in the legend.",
+              "callbackParameters": []
+            },
+            {
+              "name": "values",
+              "type": "number[]",
+              "optional": false,
+              "description": "Finite numeric values, one for each chart label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "color",
+              "type": "string",
+              "optional": true,
+              "description": "Optional line and point color.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "LineChartProps",
+          "kind": "interface",
+          "signature": "interface LineChartProps",
+          "sourcePath": "packages/react-native/src/components/line-chart.tsx",
+          "description": "Props for {@link LineChart}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "title",
+              "type": "string",
+              "optional": false,
+              "description": "Chart heading.",
+              "callbackParameters": []
+            },
+            {
+              "name": "labels",
+              "type": "string[]",
+              "optional": false,
+              "description": "Ordered category or time labels shared by every series.",
+              "callbackParameters": []
+            },
+            {
+              "name": "series",
+              "type": "LineChartSeries[]",
+              "optional": false,
+              "description": "One or more line series. Each series must contain one value per label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "formatValue",
+              "type": "(value: number) => string",
+              "optional": true,
+              "description": "Formats values in the accessible data summary and axis.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for chart text, grid lines, and default series colors.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the chart container.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "MetricCard",
+          "kind": "component",
+          "signature": "({ label, value, change, trend, comparison, description, theme, style }: MetricCardProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react-native/src/components/metric-card.tsx",
+          "description": "Presents a key metric with optional change, comparison period, and supporting context.",
+          "examples": [
+            "<MetricCard label=\"Monthly visits\" value=\"24,815\" change=\"+8.2%\" trend=\"positive\" comparison=\"vs. previous 30 days\" />"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "MetricTrend",
+          "kind": "type",
+          "signature": "'positive' | 'negative' | 'neutral'",
+          "sourcePath": "packages/react-native/src/components/metric-card.tsx",
+          "description": "Direction used to style and describe a metric's change.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "MetricCardProps",
+          "kind": "interface",
+          "signature": "interface MetricCardProps",
+          "sourcePath": "packages/react-native/src/components/metric-card.tsx",
+          "description": "Props for {@link MetricCard}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "string",
+              "optional": false,
+              "description": "Short name for the metric.",
+              "callbackParameters": []
+            },
+            {
+              "name": "value",
+              "type": "string | number",
+              "optional": false,
+              "description": "Preformatted value or number displayed as the primary figure.",
+              "callbackParameters": []
+            },
+            {
+              "name": "change",
+              "type": "string",
+              "optional": true,
+              "description": "Optional change text, such as `+8.2%`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "trend",
+              "type": "MetricTrend",
+              "optional": true,
+              "description": "Direction of the change; the text remains available independently of color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "comparison",
+              "type": "string",
+              "optional": true,
+              "description": "Context for the change, such as `vs. previous 30 days`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "optional": true,
+              "description": "Optional supporting text below the value.",
+              "callbackParameters": []
+            },
+            {
+              "name": "theme",
+              "type": "ThemeName",
+              "optional": true,
+              "description": "Palette used for the card text and status color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "style",
+              "type": "StyleProp<ViewStyle>",
+              "optional": true,
+              "description": "Style applied to the card container.",
               "callbackParameters": []
             }
           ],
@@ -4961,11 +6098,13 @@
           "platform": "native",
           "name": "Carousel",
           "kind": "component",
-          "signature": "({ slides, index, defaultIndex, label, onIndexChange, theme, style }: CarouselProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "({ slides, index, defaultIndex, label, onIndexChange, navigation, pagination, navigationPlacement, loop, renderNavigation, renderPagination, theme, style }: CarouselProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
-          "description": "Shows one slide at a time with previous/next buttons and selectable React Native pips.",
+          "description": "Shows one slide with configurable React Native navigation and position indicators.",
           "examples": [
-            "<Carousel slides={[<Text key=\"one\">First</Text>, <Text key=\"two\">Second</Text>]} />"
+            "<Carousel slides={[<Text key=\"one\">First</Text>, <Text key=\"two\">Second</Text>]} />",
+            "<Carousel slides={slides} navigation=\"arrows\" pagination=\"progress\" loop />",
+            "```tsx\nimport { Carousel } from '@qzl/react-native';\nimport { Pressable, Text, View } from 'react-native';\n\n<Carousel\n  slides={[<Text key=\"first\">First</Text>, <Text key=\"second\">Second</Text>]}\n  renderNavigation={({ previous, next, canGoPrevious, canGoNext }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Previous slide\" disabled={!canGoPrevious} onPress={previous}>\n        <Text>Back</Text>\n      </Pressable>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Next slide\" disabled={!canGoNext} onPress={next}>\n        <Text>Next</Text>\n      </Pressable>\n    </View>\n  )}\n  renderPagination={({ index, slideCount, goTo }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      {Array.from({ length: slideCount }, (_, slide) => (\n        <Pressable key={slide} accessibilityRole=\"button\" accessibilityLabel={`Go to slide ${slide + 1}`} accessibilityState={{ selected: index === slide }} onPress={() => goTo(slide)}>\n          <Text>{slide + 1}</Text>\n        </Pressable>\n      ))}\n    </View>\n  )}\n/>\n```"
           ],
           "members": [],
           "parameters": []
@@ -5390,6 +6529,111 @@
         {
           "packageName": "@qzl/react-native",
           "platform": "native",
+          "name": "CarouselNavigation",
+          "kind": "type",
+          "signature": "'text' | 'arrows' | 'none'",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Built-in navigation presentation for {@link Carousel}.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "CarouselPagination",
+          "kind": "type",
+          "signature": "'dots' | 'progress' | 'fraction' | 'none'",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Built-in position indicator presentation for {@link Carousel}.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "CarouselNavigationPlacement",
+          "kind": "type",
+          "signature": "'below' | 'overlay'",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Placement for built-in or custom Carousel navigation controls.",
+          "examples": [],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
+          "name": "CarouselControls",
+          "kind": "interface",
+          "signature": "interface CarouselControls",
+          "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
+          "description": "Navigation actions and state passed to Carousel control render callbacks.",
+          "examples": [],
+          "members": [
+            {
+              "name": "index",
+              "type": "number",
+              "optional": false,
+              "description": "Current zero-based slide index.",
+              "callbackParameters": []
+            },
+            {
+              "name": "slideCount",
+              "type": "number",
+              "optional": false,
+              "description": "Number of slides in the carousel.",
+              "callbackParameters": []
+            },
+            {
+              "name": "canGoPrevious",
+              "type": "boolean",
+              "optional": false,
+              "description": "Whether `previous` can move to another slide.",
+              "callbackParameters": []
+            },
+            {
+              "name": "canGoNext",
+              "type": "boolean",
+              "optional": false,
+              "description": "Whether `next` can move to another slide.",
+              "callbackParameters": []
+            },
+            {
+              "name": "previous",
+              "type": "() => void",
+              "optional": false,
+              "description": "Move to the previous slide when available; wraps when `loop` is enabled.",
+              "callbackParameters": []
+            },
+            {
+              "name": "next",
+              "type": "() => void",
+              "optional": false,
+              "description": "Move to the next slide when available; wraps when `loop` is enabled.",
+              "callbackParameters": []
+            },
+            {
+              "name": "goTo",
+              "type": "(index: number) => void",
+              "optional": false,
+              "description": "Select a valid zero-based slide index.",
+              "callbackParameters": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzl/react-native",
+          "platform": "native",
           "name": "CarouselProps",
           "kind": "interface",
           "signature": "interface CarouselProps",
@@ -5434,6 +6678,62 @@
                 {
                   "name": "index",
                   "type": "number",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "navigation",
+              "type": "CarouselNavigation",
+              "optional": true,
+              "description": "Built-in previous/next control presentation. `none` hides the controls.\n`renderNavigation` can replace the built-in controls unless this is `none`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "pagination",
+              "type": "CarouselPagination",
+              "optional": true,
+              "description": "Built-in slide position indicator. `none` hides the indicator.\n`renderPagination` can replace the built-in indicator unless this is `none`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "navigationPlacement",
+              "type": "CarouselNavigationPlacement",
+              "optional": true,
+              "description": "Position of navigation controls. Custom navigation content is placed at the selected position.",
+              "callbackParameters": []
+            },
+            {
+              "name": "loop",
+              "type": "boolean",
+              "optional": true,
+              "description": "Wrap previous/next navigation from the first and last slides.",
+              "callbackParameters": []
+            },
+            {
+              "name": "renderNavigation",
+              "type": "(controls: CarouselControls) => React.ReactNode",
+              "optional": true,
+              "description": "Replaces the built-in previous/next controls when `navigation` is not `none`.\nCustom controls should expose accessible names and use the provided navigation actions.",
+              "callbackParameters": [
+                {
+                  "name": "controls",
+                  "type": "CarouselControls",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "renderPagination",
+              "type": "(controls: CarouselControls) => React.ReactNode",
+              "optional": true,
+              "description": "Replaces the built-in position indicator when `pagination` is not `none`.\nCustom indicators should expose the current slide and an accessible way to select slides.",
+              "callbackParameters": [
+                {
+                  "name": "controls",
+                  "type": "CarouselControls",
                   "description": "",
                   "documented": true
                 }

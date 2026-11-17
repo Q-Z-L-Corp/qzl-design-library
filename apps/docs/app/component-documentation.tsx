@@ -5,6 +5,7 @@ import type { CSSProperties } from 'react';
 import {
   Accordion,
   Alert,
+  AreaChart,
   Avatar,
   BarChart,
   Badge,
@@ -16,6 +17,7 @@ import {
   Checkbox,
   DataTable,
   Divider,
+  DonutChart,
   Dialog,
   DropdownMenu,
   FileUploadInput,
@@ -23,6 +25,8 @@ import {
   Indicator,
   IconButton,
   Input,
+  LineChart,
+  MetricCard,
   MarkdownEditor,
   NavigationMenu,
   Pagination,
@@ -50,7 +54,13 @@ import {
   Typography
 } from '@qzl/react';
 import { getThemeCssVariables, type ThemeName } from '@qzl/tokens';
-import type { ButtonSize, ButtonVariant } from '@qzl/react';
+import type {
+  ButtonSize,
+  ButtonVariant,
+  CarouselNavigation,
+  CarouselNavigationPlacement,
+  CarouselPagination
+} from '@qzl/react';
 import { componentRegistry } from './generated/component-registry';
 import type { ApiProperty, ComponentRecord, PlatformApi } from './generated/component-registry';
 
@@ -63,6 +73,9 @@ const tagVariants = ['neutral', 'primary', 'success', 'warning', 'danger'] as co
 const iconButtonVariants = ['neutral', 'primary', 'danger'] as const;
 const spinnerSizes = ['sm', 'md', 'lg'] as const;
 const avatarSizes = ['sm', 'md', 'lg'] as const;
+const carouselNavigationOptions: CarouselNavigation[] = ['text', 'arrows', 'none'];
+const carouselPaginationOptions: CarouselPagination[] = ['dots', 'progress', 'fraction', 'none'];
+const carouselPlacementOptions: CarouselNavigationPlacement[] = ['below', 'overlay'];
 const steps = [{ label: 'Profile' }, { label: 'Security' }, { label: 'Review' }];
 const tableRows = [{ name: 'Design system' }, { name: 'Component docs' }];
 const tableColumns = [{
@@ -91,6 +104,13 @@ type PreviewState = {
   plan: string;
   selectedTab: string;
   selectedOption: string;
+  barChartOrientation: 'horizontal' | 'vertical';
+  barChartMode: 'grouped' | 'stacked';
+  stackedArea: boolean;
+  carouselNavigation: CarouselNavigation;
+  carouselPagination: CarouselPagination;
+  carouselPlacement: CarouselNavigationPlacement;
+  carouselLoop: boolean;
   open: boolean;
   theme: ThemeName;
 };
@@ -115,6 +135,13 @@ function createInitialState(): PreviewState {
     plan: 'team',
     selectedTab: 'overview',
     selectedOption: 'team',
+    barChartOrientation: 'vertical',
+    barChartMode: 'grouped',
+    stackedArea: false,
+    carouselNavigation: 'text',
+    carouselPagination: 'dots',
+    carouselPlacement: 'below',
+    carouselLoop: false,
     open: false,
     theme: 'light'
   };
@@ -187,23 +214,27 @@ function WebPreview({ component, state, update }: {
     case 'Avatar':
       return <Avatar name="Alex Morgan" size={state.avatarSize} />;
     case 'BarChart':
-      return <BarChart title="Weekly activity" data={[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }, { label: 'Wed', value: 15 }]} />;
+      return <BarChart title="Weekly signups by channel" orientation={state.barChartOrientation} mode={state.barChartMode} data={[{ label: 'Mon', values: { organic: 12, referral: 5 } }, { label: 'Tue', values: { organic: 18, referral: 8 } }, { label: 'Wed', values: { organic: 15, referral: 6 } }]} series={[{ key: 'organic', label: 'Organic' }, { key: 'referral', label: 'Referral' }]} />;
+    case 'AreaChart':
+      return <AreaChart title="Visits by source" labels={['Mon', 'Tue', 'Wed', 'Thu', 'Fri']} stacked={state.stackedArea} series={[{ label: 'Direct', values: [18, 22, 21, 26, 24] }, { label: 'Organic', values: [24, 28, 31, 29, 34] }]} />;
     case 'Badge':
       return <Badge variant={state.badgeVariant}>In progress</Badge>;
     case 'Breadcrumbs':
-      return <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Components', href: '/components' }, { label: 'Button' }]} />;
+      return <Breadcrumbs items={[{ label: 'Home', href: '#overview' }, { label: 'Components', href: '#catalog' }, { label: 'Button' }]} />;
     case 'Button':
       return <Button variant={state.buttonVariant} size={state.buttonSize} disabled={state.disabled}>Save changes</Button>;
     case 'BottomSheet':
       return <div className="component-preview-stack"><Button variant="secondary" onClick={() => update('open', true)}>Open bottom sheet</Button><BottomSheet open={state.open} onOpenChange={(open) => update('open', open)} title="Share link"><p>Choose how you would like to share this link.</p></BottomSheet></div>;
     case 'Carousel':
-      return <Carousel slides={[<Card key="overview" className="component-slide"><strong>Overview</strong><span>Review your workspace.</span></Card>, <Card key="details" className="component-slide"><strong>Details</strong><span>Update your preferences.</span></Card>]} />;
+      return <Carousel navigation={state.carouselNavigation} navigationPlacement={state.carouselPlacement} pagination={state.carouselPagination} loop={state.carouselLoop} slides={[<Card key="overview" className="component-slide"><strong>Overview</strong><span>Review your workspace.</span></Card>, <Card key="details" className="component-slide"><strong>Details</strong><span>Update your preferences.</span></Card>, <Card key="security" className="component-slide"><strong>Security</strong><span>Protect your account.</span></Card>]} />;
     case 'Card':
       return <Card className="component-preview-card"><strong>Workspace settings</strong><p>Manage your account preferences.</p></Card>;
     case 'Checkbox':
       return <Checkbox checked={state.checked} onChange={(event) => update('checked', event.currentTarget.checked)} aria-label="Remember this choice" />;
     case 'DataTable':
       return <DataTable caption="Projects" rows={tableRows} columns={tableColumns} getRowKey={(row) => row.name} />;
+    case 'DonutChart':
+      return <DonutChart title="Visitors by device" centerLabel="Visitors" data={[{ label: 'Desktop', value: 64 }, { label: 'Mobile', value: 36 }]} />;
     case 'Divider':
       return <div className="component-preview-stack"><span>Account</span><Divider /><span>Preferences</span></div>;
     case 'Dialog':
@@ -220,8 +251,12 @@ function WebPreview({ component, state, update }: {
       return <IconButton label="Search" variant={state.iconButtonVariant}><span aria-hidden="true">⌕</span></IconButton>;
     case 'Input':
       return <div className="component-preview-stack"><label htmlFor="component-example-input">Project name</label><Input id="component-example-input" placeholder="Name your project" disabled={state.disabled} error={state.error} /></div>;
+    case 'LineChart':
+      return <LineChart title="Visits and returning visits" labels={['Mon', 'Tue', 'Wed', 'Thu', 'Fri']} series={[{ label: 'Visits', values: [120, 156, 142, 174, 188] }, { label: 'Returning', values: [42, 48, 51, 56, 61] }]} />;
     case 'MarkdownEditor':
       return <MarkdownEditor label="Release notes" value="# Improvements\n\n- Faster setup" onValueChange={() => {}} preview />;
+    case 'MetricCard':
+      return <MetricCard label="Monthly visits" value="24,815" change="+8.2%" trend="positive" comparison="vs. previous 30 days" />;
     case 'NavigationMenu':
       return <NavigationMenu label="Project navigation" items={[{ label: 'Overview', href: '#overview', current: true }, { label: 'Settings', href: '#settings' }]} />;
     case 'Pagination':
@@ -302,12 +337,23 @@ function ComponentPlayground({ component, state, update }: {
         {component.name === 'Avatar' && <label>Size<select value={state.avatarSize} onChange={(event) => update('avatarSize', event.target.value as PreviewState['avatarSize'])}>{avatarSizes.map((size) => <option key={size}>{size}</option>)}</select></label>}
         {component.name === 'Spinner' && <label>Size<select value={state.spinnerSize} onChange={(event) => update('spinnerSize', event.target.value as PreviewState['spinnerSize'])}>{spinnerSizes.map((size) => <option key={size}>{size}</option>)}</select></label>}
         {component.name === 'Progress' && <label>Value<input type="range" min="0" max="100" value={state.value} onChange={(event) => update('value', Number(event.target.value))} /></label>}
+        {component.name === 'BarChart' && <>
+          <label>Orientation<select value={state.barChartOrientation} onChange={(event) => update('barChartOrientation', event.target.value as PreviewState['barChartOrientation'])}><option value="horizontal">Horizontal</option><option value="vertical">Vertical</option></select></label>
+          <label>Series layout<select value={state.barChartMode} onChange={(event) => update('barChartMode', event.target.value as PreviewState['barChartMode'])}><option value="grouped">Grouped</option><option value="stacked">Stacked</option></select></label>
+        </>}
+        {component.name === 'AreaChart' && <label className="component-playground__check"><input type="checkbox" checked={state.stackedArea} onChange={(event) => update('stackedArea', event.target.checked)} /> Stacked</label>}
+        {component.name === 'Carousel' && <>
+          <label>Navigation<select value={state.carouselNavigation} onChange={(event) => update('carouselNavigation', event.target.value as CarouselNavigation)}>{carouselNavigationOptions.map((option) => <option key={option} value={option}>{option === 'none' ? 'Hidden' : option === 'arrows' ? 'Arrow buttons' : 'Text buttons'}</option>)}</select></label>
+          <label>Navigation placement<select value={state.carouselPlacement} onChange={(event) => update('carouselPlacement', event.target.value as CarouselNavigationPlacement)}>{carouselPlacementOptions.map((option) => <option key={option} value={option}>{option === 'below' ? 'Below slide' : 'Over slide'}</option>)}</select></label>
+          <label>Pagination<select value={state.carouselPagination} onChange={(event) => update('carouselPagination', event.target.value as CarouselPagination)}>{carouselPaginationOptions.map((option) => <option key={option} value={option}>{option === 'none' ? 'Hidden' : option[0].toUpperCase() + option.slice(1)}</option>)}</select></label>
+          <label className="component-playground__check"><input type="checkbox" checked={state.carouselLoop} onChange={(event) => update('carouselLoop', event.target.checked)} /> Loop</label>
+        </>}
         {['Input', 'Textarea'].includes(component.name) && <>
           <label className="component-playground__check"><input type="checkbox" checked={state.disabled} onChange={(event) => update('disabled', event.target.checked)} /> Disabled</label>
           <label className="component-playground__check"><input type="checkbox" checked={state.error} onChange={(event) => update('error', event.target.checked)} /> Error</label>
         </>}
         {component.name === 'HelperText' && <label className="component-playground__check"><input type="checkbox" checked={state.error} onChange={(event) => update('error', event.target.checked)} /> Error</label>}
-        {!['Button', 'Alert', 'Indicator', 'Toast', 'Badge', 'Tag', 'IconButton', 'Avatar', 'Spinner', 'Progress', 'Input', 'Textarea', 'HelperText'].includes(component.name) && <span>Use the live component controls in the preview.</span>}
+        {!['Button', 'Alert', 'Indicator', 'Toast', 'Badge', 'Tag', 'IconButton', 'Avatar', 'Spinner', 'Progress', 'Input', 'Textarea', 'HelperText', 'BarChart', 'AreaChart', 'DonutChart', 'LineChart', 'MetricCard'].includes(component.name) && <span>Use the live component controls in the preview.</span>}
       </div>
       <div className={`component-playground__preview qzl-docs--${state.theme}`} style={getThemeCssVariables(state.theme) as CSSProperties}>
         <WebPreview component={component} state={state} update={update} />

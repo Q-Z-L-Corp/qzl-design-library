@@ -222,8 +222,37 @@ export function Pips({ count, index, onIndexChange, label = 'Choose item', class
   );
 }
 
+/** Built-in navigation presentation for {@link Carousel}. */
+export type CarouselNavigation = 'text' | 'arrows' | 'none';
+/** Built-in position indicator presentation for {@link Carousel}. */
+export type CarouselPagination = 'dots' | 'progress' | 'fraction' | 'none';
+/** Placement for built-in or custom Carousel navigation controls. */
+export type CarouselNavigationPlacement = 'below' | 'overlay';
+
+/** Navigation actions and state passed to Carousel control render callbacks. */
+export interface CarouselControls {
+  /** Current zero-based slide index. */
+  index: number;
+  /** Number of slides in the carousel. */
+  slideCount: number;
+  /** Whether `previous` can move to another slide. */
+  canGoPrevious: boolean;
+  /** Whether `next` can move to another slide. */
+  canGoNext: boolean;
+  /** Move to the previous slide when available; wraps when `loop` is enabled. */
+  previous: () => void;
+  /** Move to the next slide when available; wraps when `loop` is enabled. */
+  next: () => void;
+  /**
+   * Select a valid zero-based slide index.
+   * @param index The slide index to select.
+   * @throws {RangeError} If the index is outside the slide range.
+   */
+  goTo: (index: number) => void;
+}
+
 /** Props for the controlled or uncontrolled {@link Carousel}. */
-export interface CarouselProps {
+export interface CarouselProps extends React.HTMLAttributes<HTMLElement> {
   /** Slide content in navigation order; must contain at least one entry. */
   slides: React.ReactNode[];
   /** Controlled current slide index, starting at zero. */
@@ -243,17 +272,96 @@ export interface CarouselProps {
    * @param index Index of the newly selected slide.
    */
   onIndexChange?: (index: number) => void;
+  /**
+   * Built-in previous/next control presentation. `none` hides the controls.
+   * `renderNavigation` can replace the built-in controls unless this is `none`.
+   * @default 'text'
+   */
+  navigation?: CarouselNavigation;
+  /**
+   * Built-in slide position indicator. `none` hides the indicator.
+   * `renderPagination` can replace the built-in indicator unless this is `none`.
+   * @default 'dots'
+   */
+  pagination?: CarouselPagination;
+  /**
+   * Position of navigation controls. Custom navigation content is placed at the selected position.
+   * @default 'below'
+   */
+  navigationPlacement?: CarouselNavigationPlacement;
+  /**
+   * Wrap previous/next navigation from the first and last slides.
+   * @default false
+   */
+  loop?: boolean;
+  /**
+   * Replaces the built-in previous/next controls when `navigation` is not `none`.
+   * Custom controls should expose accessible names and use the provided navigation actions.
+   * @param controls Current slide state and navigation actions.
+   */
+  renderNavigation?: (controls: CarouselControls) => React.ReactNode;
+  /**
+   * Replaces the built-in position indicator when `pagination` is not `none`.
+   * Custom indicators should expose the current slide and an accessible way to select slides.
+   * @param controls Current slide state and navigation actions.
+   */
+  renderPagination?: (controls: CarouselControls) => React.ReactNode;
 }
 
 /**
- * Renders one current slide with previous/next controls and selectable position indicators.
+ * Renders one slide with configurable navigation and position indicators.
  *
  * @example
  * ```tsx
  * <Carousel slides={[<p key="1">One</p>, <p key="2">Two</p>]} />
  * ```
+ * @example
+ * ```tsx
+ * <Carousel
+ *   slides={slides}
+ *   navigation="arrows"
+ *   navigationPlacement="overlay"
+ *   pagination="progress"
+ *   loop
+ * />
+ * ```
+ * @example
+ * ```tsx
+ * <Carousel
+ *   slides={[<p key="first">First</p>, <p key="second">Second</p>]}
+ *   renderNavigation={({ previous, next, canGoPrevious, canGoNext }) => (
+ *     <div>
+ *       <button type="button" aria-label="Previous slide" disabled={!canGoPrevious} onClick={previous}>Back</button>
+ *       <button type="button" aria-label="Next slide" disabled={!canGoNext} onClick={next}>Next</button>
+ *     </div>
+ *   )}
+ *   renderPagination={({ index, slideCount, goTo }) => (
+ *     <div role="group" aria-label="Choose slide">
+ *       {Array.from({ length: slideCount }, (_, slide) => (
+ *         <button key={slide} type="button" aria-label={`Go to slide ${slide + 1}`} aria-current={index === slide ? 'true' : undefined} onClick={() => goTo(slide)}>
+ *           {slide + 1}
+ *         </button>
+ *       ))}
+ *     </div>
+ *   )}
+ * />
+ * ```
  */
-export function Carousel({ slides, index, defaultIndex = 0, label = 'Carousel', onIndexChange }: CarouselProps) {
+export function Carousel({
+  slides,
+  index,
+  defaultIndex = 0,
+  label = 'Carousel',
+  onIndexChange,
+  navigation = 'text',
+  pagination = 'dots',
+  navigationPlacement = 'below',
+  loop = false,
+  renderNavigation,
+  renderPagination,
+  className,
+  ...props
+}: CarouselProps) {
   const [uncontrolledIndex, setUncontrolledIndex] = useState(defaultIndex);
   const currentIndex = index ?? uncontrolledIndex;
 
@@ -263,21 +371,87 @@ export function Carousel({ slides, index, defaultIndex = 0, label = 'Carousel', 
   }
 
   function changeIndex(nextIndex: number) {
-    if (nextIndex < 0 || nextIndex >= slides.length) return;
+    if (!Number.isInteger(nextIndex) || nextIndex < 0 || nextIndex >= slides.length) {
+      throw new RangeError('Carousel index must be within the slides array.');
+    }
     if (index === undefined) setUncontrolledIndex(nextIndex);
     onIndexChange?.(nextIndex);
   }
 
+  const canNavigate = slides.length > 1;
+  const canGoPrevious = canNavigate && (loop || currentIndex > 0);
+  const canGoNext = canNavigate && (loop || currentIndex < slides.length - 1);
+  const controls: CarouselControls = {
+    index: currentIndex,
+    slideCount: slides.length,
+    canGoPrevious,
+    canGoNext,
+    previous: () => {
+      if (canGoPrevious) changeIndex(loop && currentIndex === 0 ? slides.length - 1 : currentIndex - 1);
+    },
+    next: () => {
+      if (canGoNext) changeIndex(loop && currentIndex === slides.length - 1 ? 0 : currentIndex + 1);
+    },
+    goTo: changeIndex
+  };
+  const previousButton = (
+    <button type="button" className="qzl-carousel__navigation-button" onClick={controls.previous} disabled={!controls.canGoPrevious} aria-label="Previous slide">
+      {navigation === 'arrows' ? '‹' : 'Previous'}
+    </button>
+  );
+  const nextButton = (
+    <button type="button" className="qzl-carousel__navigation-button" onClick={controls.next} disabled={!controls.canGoNext} aria-label="Next slide">
+      {navigation === 'arrows' ? '›' : 'Next'}
+    </button>
+  );
+  const navigationContent = navigation === 'none'
+    ? null
+    : renderNavigation
+      ? renderNavigation(controls)
+      : <>{previousButton}{nextButton}</>;
+  const paginationContent = pagination === 'none'
+    ? null
+    : renderPagination
+      ? renderPagination(controls)
+      : pagination === 'dots'
+        ? <Pips count={slides.length} index={currentIndex} onIndexChange={controls.goTo} label="Choose slide" />
+        : pagination === 'progress'
+          ? (
+            <div
+              className="qzl-carousel__progress"
+              role="progressbar"
+              aria-label="Slide progress"
+              aria-valuemin={1}
+              aria-valuemax={slides.length}
+              aria-valuenow={currentIndex + 1}
+            >
+              <span style={{ width: `${(currentIndex + 1) / slides.length * 100}%` }} />
+            </div>
+          )
+          : <span className="qzl-carousel__fraction" role="status" aria-label={`Slide ${currentIndex + 1} of ${slides.length}`} aria-live="polite">{currentIndex + 1} / {slides.length}</span>;
+
   return (
-    <section className="qzl-carousel" aria-label={label} aria-roledescription="carousel">
-      <div className="qzl-carousel__slide" role="group" aria-roledescription="slide" aria-label={`${currentIndex + 1} of ${slides.length}`}>
+    <section
+      className={mergeClasses('qzl-carousel', className)}
+      aria-label={label}
+      aria-roledescription="carousel"
+      {...props}
+    >
+      <div className={mergeClasses('qzl-carousel__slide', navigationPlacement === 'overlay' && Boolean(navigationContent) && 'qzl-carousel__slide--overlay')} role="group" aria-roledescription="slide" aria-label={`${currentIndex + 1} of ${slides.length}`}>
         {slides[currentIndex]}
+        {navigationPlacement === 'overlay' && navigationContent && (
+          <div className="qzl-carousel__overlay-controls">{navigationContent}</div>
+        )}
       </div>
-      <div className="qzl-carousel__controls">
-        <button type="button" onClick={() => changeIndex(currentIndex - 1)} disabled={currentIndex <= 0} aria-label="Previous slide">Previous</button>
-        <Pips count={slides.length} index={currentIndex} onIndexChange={changeIndex} label="Choose slide" />
-        <button type="button" onClick={() => changeIndex(currentIndex + 1)} disabled={currentIndex >= slides.length - 1} aria-label="Next slide">Next</button>
-      </div>
+      {navigationPlacement === 'below'
+        ? (navigationContent || paginationContent) && (
+          <div className={mergeClasses('qzl-carousel__controls', !navigationContent && 'qzl-carousel__controls--pagination-only')}>
+            {renderNavigation ? navigationContent : navigation !== 'none' && previousButton}
+            {paginationContent}
+            {!renderNavigation && navigation !== 'none' && nextButton}
+          </div>
+        )
+        : paginationContent && <div className="qzl-carousel__pagination">{paginationContent}</div>}
     </section>
   );
 }

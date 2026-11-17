@@ -86,6 +86,62 @@ describe('reference catalog extensions', () => {
     expect(onRatingChange).toHaveBeenCalledWith(5);
   });
 
+  it('configures carousel navigation, indicators, looping, and custom controls', () => {
+    const { rerender, container } = render(
+      <Carousel
+        className="custom-carousel"
+        defaultIndex={1}
+        loop
+        navigation="arrows"
+        navigationPlacement="overlay"
+        pagination="progress"
+        slides={[<p key="one">Slide one</p>, <p key="two">Slide two</p>]}
+      />
+    );
+
+    expect(container.querySelector('.qzl-carousel')).toHaveClass('custom-carousel');
+    expect(container.querySelector('.qzl-carousel__slide')).toHaveClass('qzl-carousel__slide--overlay');
+    expect(screen.getByRole('progressbar', { name: 'Slide progress' })).toHaveAttribute('aria-valuenow', '2');
+    expect(screen.getByRole('button', { name: 'Previous slide' })).toHaveTextContent('‹');
+    fireEvent.click(screen.getByRole('button', { name: 'Next slide' }));
+    expect(screen.getByText('Slide one')).toBeInTheDocument();
+
+    rerender(
+      <Carousel
+        navigation="arrows"
+        pagination="dots"
+        renderNavigation={({ next }) => <button type="button" onClick={next}>Custom next</button>}
+        renderPagination={({ goTo, slideCount }) => <button type="button" onClick={() => goTo(slideCount - 1)}>Custom last</button>}
+        slides={[<p key="one">Slide one</p>, <p key="two">Slide two</p>, <p key="three">Slide three</p>]}
+      />
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Custom next' }));
+    expect(screen.getByText('Slide two')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Custom last' }));
+    expect(screen.getByText('Slide three')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Previous slide' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Choose slide 1' })).not.toBeInTheDocument();
+  });
+
+  it('rejects invalid custom slide indexes while keeping unavailable boundary actions safe', () => {
+    let goTo: ((index: number) => void) | undefined;
+    let previous: (() => void) | undefined;
+    render(
+      <Carousel
+        renderNavigation={(controls) => {
+          goTo = controls.goTo;
+          previous = controls.previous;
+          return null;
+        }}
+        slides={[<p key="one">Slide one</p>, <p key="two">Slide two</p>]}
+      />
+    );
+
+    expect(() => goTo?.(2)).toThrow(RangeError);
+    expect(() => previous?.()).not.toThrow();
+  });
+
   it('supports step progress, back/continue actions, a popover, and file selection', () => {
     const onStepChange = vi.fn();
     const onFilesSelected = vi.fn();

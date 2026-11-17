@@ -5,6 +5,7 @@ import type { CSSProperties, ReactNode } from 'react';
 import {
   Alert,
   Accordion,
+  AreaChart,
   Avatar,
   BarChart,
   Badge,
@@ -16,6 +17,7 @@ import {
   Checkbox,
   DataTable,
   Divider,
+  DonutChart,
   Dialog,
   DropdownMenu,
   FileUploadInput,
@@ -23,13 +25,14 @@ import {
   Indicator,
   IconButton,
   Input,
+  LineChart,
+  MetricCard,
   MarkdownEditor,
   NavigationMenu,
   Pagination,
   Popover,
   Progress,
   QrScanner,
-  RadioGroup,
   Skeleton,
   SegmentedButtons,
   Select,
@@ -91,7 +94,7 @@ const navigation: { label: string; items: { id: DocPage; label: string }[] }[] =
       { id: 'tabs', label: 'Tabs' },
       { id: 'overlays', label: 'Dialog & tooltip' },
       { id: 'navigation', label: 'Navigation & menus' },
-      { id: 'data', label: 'Tables & charts' },
+      { id: 'data', label: 'Data display' },
       { id: 'advanced', label: 'Editors & QR scanning' },
       { id: 'catalog', label: 'More components' },
       { id: 'notifications', label: 'Notifications' }
@@ -317,11 +320,11 @@ export default function DocsApp() {
     <div className={`qzl-docs ${theme === 'dark' ? 'qzl-docs--dark' : ''}`} style={themeStyle}>
       <header className="docs-header">
         <button type="button" className="docs-brand" onClick={() => navigateTo('overview')} aria-label="QZL Design Library home">
-          <span className="docs-brand__mark">q</span>
+          <span className="docs-brand__mark">qzl</span>
           <span className="docs-brand__text"><strong>QZL Design</strong><small>Design system</small></span>
         </button>
         <div className="docs-header__right">
-          <span className="docs-version">v0.1 · 45 Web · 44 React Native</span>
+          <span className="docs-version">v0.1 · 49 Web · 48 React Native</span>
           <button className="docs-theme-button" type="button" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`} aria-pressed={theme === 'dark'}>
             <span aria-hidden="true">{theme === 'light' ? '◐' : '☼'}</span><span>{theme === 'light' ? 'Dark' : 'Light'}</span>
           </button>
@@ -428,7 +431,7 @@ function OverviewPage({ onNavigate }: { onNavigate: (page: DocPage) => void }) {
           <Card className="docs-hero-card docs-hero-card--main">
             <div className="docs-mini-window"><span /><span /><span /><small>qzl.design</small></div>
             <div className="docs-mini-heading"><span>Component library</span><Badge variant="success">API documented</Badge></div>
-            <div className="docs-mini-stat"><strong>45</strong><span>Web components <b>44 React Native</b></span></div>
+            <div className="docs-mini-stat"><strong>49</strong><span>Web components <b>48 React Native</b></span></div>
             <div className="docs-mini-chart"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
             <div className="docs-mini-footer"><span>Shared foundations</span><span>Tokens · Themes</span></div>
           </Card>
@@ -485,8 +488,8 @@ function GettingStarted({ onCopy }: { onCopy: (value: string) => void }) {
       </div>
       <div className="docs-section">
         <h2>Install for React Native</h2>
-        <p>Install the package in an existing application using React 19 and React Native 0.78 or later. The slider package is a required peer dependency; <code>expo-camera</code> is needed only for the optional Expo QR scanner.</p>
-        <CodeSample code="pnpm add @qzl/react-native @react-native-community/slider" onCopy={onCopy} />
+        <p>Install the package in an existing application using React 19 and React Native 0.78 or later. The slider and <code>react-native-svg</code> packages are required peer dependencies; <code>expo-camera</code> is needed only for the optional Expo QR scanner.</p>
+        <CodeSample code="pnpm add @qzl/react-native @react-native-community/slider react-native-svg" onCopy={onCopy} />
       </div>
       <div className="docs-section">
         <h2>Customize themes</h2>
@@ -503,14 +506,14 @@ function GettingStarted({ onCopy }: { onCopy: (value: string) => void }) {
       </div>
       <div className="docs-section docs-platform-table">
         <h2>Package map</h2>
-        <div className="docs-package-row"><strong>@qzl/react</strong><span>45 Web components and the package stylesheet</span><Badge variant="success">Web</Badge></div>
-        <div className="docs-package-row"><strong>@qzl/react-native</strong><span>44 React Native components and an optional Expo QR scanner entry</span><Badge variant="success">React Native</Badge></div>
+        <div className="docs-package-row"><strong>@qzl/react</strong><span>49 Web components and the package stylesheet</span><Badge variant="success">Web</Badge></div>
+        <div className="docs-package-row"><strong>@qzl/react-native</strong><span>48 React Native components and an optional Expo QR scanner entry</span><Badge variant="success">React Native</Badge></div>
         <div className="docs-package-row"><strong>@qzl/tokens</strong><span>Shared design tokens and light and dark theme values</span><Badge>Supporting package</Badge></div>
         <div className="docs-package-row"><strong>@qzl/core</strong><span>Shared helpers used by the component packages</span><Badge>Supporting package</Badge></div>
       </div>
       <div className="docs-section">
         <h2>Platform differences</h2>
-        <p>Forty-four components are available for both Web and React Native, with platform-specific implementations and props. The Web package also includes a browser QR scanner; React Native camera scanning is a separate optional Expo entry. Both request camera access only after a person starts a scan and return scanned content without opening it automatically. The React Native file-upload component delegates document-picker integration to the host app.</p>
+        <p>Forty-eight components are available for both Web and React Native, with platform-specific implementations and props. The React Native data visualization components use <code>react-native-svg</code>. The Web package also includes a browser QR scanner; React Native camera scanning is a separate optional Expo entry. Both request camera access only after a person starts a scan and return scanned content without opening it automatically. The React Native file-upload component delegates document-picker integration to the host app.</p>
       </div>
     </>
   );
@@ -762,7 +765,6 @@ function NavigationPage() {
 }
 
 function DataPage() {
-  const [metric, setMetric] = useState('clicks');
   const [threshold, setThreshold] = useState(72);
   const rows = [
     { destination: 'example.com/spring', clicks: 1248, status: 'Healthy' },
@@ -776,24 +778,77 @@ function DataPage() {
   ];
   return (
     <>
-      <PageTitle eyebrow="COMPONENTS / DATA" title="Tables & charts" description="Make comparisons understandable and keep the underlying values available beyond visual marks." />
+      <PageTitle eyebrow="COMPONENTS / DATA DISPLAY" title="Tables, charts & metrics" description="Compare values, follow trends, and preserve the underlying data in clear, reusable components." />
       <div className="docs-callout"><span>i</span><p>The values in this preview are sample data; no live service is connected.</p></div>
       <PreviewSection>
-        <div className="docs-feedback-stack">
-          <RadioGroup
-            label="Chart metric"
-            name="chart-metric"
-            value={metric}
-            onValueChange={setMetric}
-            options={[{ value: 'clicks', label: 'Clicks' }, { value: 'visits', label: 'Visits' }]}
-          />
-          <DataTable caption="Shared link performance" columns={columns} rows={rows} getRowKey={(row) => row.destination} />
-          <BarChart title={`${metric === 'clicks' ? 'Clicks' : 'Visits'} by destination`} data={[{ label: 'Spring', value: 1248 }, { label: 'Guide', value: 852 }, { label: 'Start', value: 2041 }]} formatValue={(value) => value.toLocaleString()} />
-          <Slider label="Campaign completion" min={0} max={100} value={threshold} onValueChange={setThreshold} />
-          <Progress label="Campaign completion progress" value={threshold} />
+        <div className="docs-data-dashboard">
+          <div className="docs-data-metrics">
+            <MetricCard label="Monthly visits" value="24,815" change="+8.2%" trend="positive" comparison="vs. previous 30 days" />
+            <MetricCard label="New signups" value="1,284" change="+5.4%" trend="positive" comparison="vs. previous 30 days" />
+            <MetricCard label="Conversion rate" value="3.8%" change="+0.6 pp" trend="positive" comparison="vs. previous 30 days" />
+            <MetricCard label="Bounce rate" value="42.1%" change="-2.1 pp" trend="positive" comparison="vs. previous 30 days" />
+          </div>
+          <div className="docs-data-chart-grid">
+            <Card className="docs-data-card">
+              <BarChart
+                title="Campaign clicks by channel"
+                orientation="vertical"
+                data={[
+                  { label: 'Spring', values: { organic: 1248, referral: 852 } },
+                  { label: 'Guide', values: { organic: 1004, referral: 612 } },
+                  { label: 'Launch', values: { organic: 2041, referral: 1084 } }
+                ]}
+                series={[{ key: 'organic', label: 'Organic' }, { key: 'referral', label: 'Referral' }]}
+                formatValue={(value) => value.toLocaleString()}
+              />
+            </Card>
+            <Card className="docs-data-card">
+              <AreaChart
+                title="Visits by source"
+                labels={['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']}
+                stacked
+                series={[
+                  { label: 'Direct', values: [180, 220, 205, 260, 242, 190, 215] },
+                  { label: 'Organic', values: [240, 280, 310, 295, 340, 310, 365] },
+                  { label: 'Referral', values: [90, 110, 125, 100, 145, 130, 155] }
+                ]}
+                formatValue={(value) => value.toLocaleString()}
+              />
+            </Card>
+            <Card className="docs-data-card">
+              <LineChart
+                title="Visits and returning visits"
+                labels={['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']}
+                series={[
+                  { label: 'Visits', values: [510, 610, 640, 655, 720, 630, 735] },
+                  { label: 'Returning', values: [205, 244, 250, 278, 302, 260, 318] }
+                ]}
+                formatValue={(value) => value.toLocaleString()}
+              />
+            </Card>
+            <Card className="docs-data-card">
+              <DonutChart
+                title="Visitors by device"
+                centerLabel="Visitors"
+                data={[
+                  { label: 'Desktop', value: 1840 },
+                  { label: 'Mobile', value: 2120 },
+                  { label: 'Tablet', value: 355 }
+                ]}
+                formatValue={(value) => value.toLocaleString()}
+              />
+            </Card>
+          </div>
+          <Card className="docs-data-card">
+            <DataTable caption="Shared link performance" columns={columns} rows={rows} getRowKey={(row) => row.destination} />
+          </Card>
+          <div className="docs-data-progress">
+            <Slider label="Campaign completion" min={0} max={100} value={threshold} onValueChange={setThreshold} />
+            <Progress label="Campaign completion progress" value={threshold} />
+          </div>
         </div>
       </PreviewSection>
-      <section className="docs-section docs-guidance"><h2>Accessibility</h2><p>Tables retain semantic headers and sort state. Charts expose each label and value as text; color is never the only way to distinguish data.</p></section>
+      <section className="docs-section docs-guidance"><h2>Accessibility</h2><p>Tables retain semantic headers and sort state. Charts include readable labels and values alongside their visual marks; color is not the only way to distinguish a series or category.</p></section>
     </>
   );
 }

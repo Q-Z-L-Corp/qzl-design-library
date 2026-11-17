@@ -240,6 +240,35 @@ export function Pips({ count, index, onIndexChange, label = 'Choose item', theme
   );
 }
 
+/** Built-in navigation presentation for {@link Carousel}. */
+export type CarouselNavigation = 'text' | 'arrows' | 'none';
+/** Built-in position indicator presentation for {@link Carousel}. */
+export type CarouselPagination = 'dots' | 'progress' | 'fraction' | 'none';
+/** Placement for built-in or custom Carousel navigation controls. */
+export type CarouselNavigationPlacement = 'below' | 'overlay';
+
+/** Navigation actions and state passed to Carousel control render callbacks. */
+export interface CarouselControls {
+  /** Current zero-based slide index. */
+  index: number;
+  /** Number of slides in the carousel. */
+  slideCount: number;
+  /** Whether `previous` can move to another slide. */
+  canGoPrevious: boolean;
+  /** Whether `next` can move to another slide. */
+  canGoNext: boolean;
+  /** Move to the previous slide when available; wraps when `loop` is enabled. */
+  previous: () => void;
+  /** Move to the next slide when available; wraps when `loop` is enabled. */
+  next: () => void;
+  /**
+   * Select a valid zero-based slide index.
+   * @param index The slide index to select.
+   * @throws {RangeError} If the index is outside the slide range.
+   */
+  goTo: (index: number) => void;
+}
+
 /** Props for a controlled or locally managed slide selector. */
 export interface CarouselProps {
   /** Non-empty slide contents in display order. */
@@ -255,6 +284,40 @@ export interface CarouselProps {
    * @param index The new slide index.
    */
   onIndexChange?: (index: number) => void;
+  /**
+   * Built-in previous/next control presentation. `none` hides the controls.
+   * `renderNavigation` can replace the built-in controls unless this is `none`.
+   * @default 'text'
+   */
+  navigation?: CarouselNavigation;
+  /**
+   * Built-in slide position indicator. `none` hides the indicator.
+   * `renderPagination` can replace the built-in indicator unless this is `none`.
+   * @default 'dots'
+   */
+  pagination?: CarouselPagination;
+  /**
+   * Position of navigation controls. Custom navigation content is placed at the selected position.
+   * @default 'below'
+   */
+  navigationPlacement?: CarouselNavigationPlacement;
+  /**
+   * Wrap previous/next navigation from the first and last slides.
+   * @default false
+   */
+  loop?: boolean;
+  /**
+   * Replaces the built-in previous/next controls when `navigation` is not `none`.
+   * Custom controls should expose accessible names and use the provided navigation actions.
+   * @param controls Current slide state and navigation actions.
+   */
+  renderNavigation?: (controls: CarouselControls) => React.ReactNode;
+  /**
+   * Replaces the built-in position indicator when `pagination` is not `none`.
+   * Custom indicators should expose the current slide and an accessible way to select slides.
+   * @param controls Current slide state and navigation actions.
+   */
+  renderPagination?: (controls: CarouselControls) => React.ReactNode;
   /** Palette used for navigation controls and pips. @default 'light' */
   theme?: ThemeName;
   /** Style applied to the outer carousel container. */
@@ -262,12 +325,57 @@ export interface CarouselProps {
 }
 
 /**
- * Shows one slide at a time with previous/next buttons and selectable React Native pips.
+ * Shows one slide with configurable React Native navigation and position indicators.
  *
  * @example
  * <Carousel slides={[<Text key="one">First</Text>, <Text key="two">Second</Text>]} />
+ * @example
+ * <Carousel slides={slides} navigation="arrows" pagination="progress" loop />
+ *
+ * @example
+ * ```tsx
+ * import { Carousel } from '@qzl/react-native';
+ * import { Pressable, Text, View } from 'react-native';
+ *
+ * <Carousel
+ *   slides={[<Text key="first">First</Text>, <Text key="second">Second</Text>]}
+ *   renderNavigation={({ previous, next, canGoPrevious, canGoNext }) => (
+ *     <View style={{ flexDirection: 'row', gap: 8 }}>
+ *       <Pressable accessibilityRole="button" accessibilityLabel="Previous slide" disabled={!canGoPrevious} onPress={previous}>
+ *         <Text>Back</Text>
+ *       </Pressable>
+ *       <Pressable accessibilityRole="button" accessibilityLabel="Next slide" disabled={!canGoNext} onPress={next}>
+ *         <Text>Next</Text>
+ *       </Pressable>
+ *     </View>
+ *   )}
+ *   renderPagination={({ index, slideCount, goTo }) => (
+ *     <View style={{ flexDirection: 'row', gap: 8 }}>
+ *       {Array.from({ length: slideCount }, (_, slide) => (
+ *         <Pressable key={slide} accessibilityRole="button" accessibilityLabel={`Go to slide ${slide + 1}`} accessibilityState={{ selected: index === slide }} onPress={() => goTo(slide)}>
+ *           <Text>{slide + 1}</Text>
+ *         </Pressable>
+ *       ))}
+ *     </View>
+ *   )}
+ * />
+ * ```
  */
-export function Carousel({ slides, index, defaultIndex = 0, label = 'Carousel', onIndexChange, theme = 'light', style }: CarouselProps) {
+export function Carousel({
+  slides,
+  index,
+  defaultIndex = 0,
+  label = 'Carousel',
+  onIndexChange,
+  navigation = 'text',
+  pagination = 'dots',
+  navigationPlacement = 'below',
+  loop = false,
+  renderNavigation,
+  renderPagination,
+  theme = 'light',
+  style
+}: CarouselProps) {
   const [uncontrolledIndex, setUncontrolledIndex] = useState(defaultIndex);
   const currentIndex = index ?? uncontrolledIndex;
   const colors = themes[theme];
@@ -276,24 +384,96 @@ export function Carousel({ slides, index, defaultIndex = 0, label = 'Carousel', 
     throw new RangeError('Carousel index must be within the slides array.');
   }
   function changeIndex(nextIndex: number) {
-    if (nextIndex < 0 || nextIndex >= slides.length) return;
+    if (!Number.isInteger(nextIndex) || nextIndex < 0 || nextIndex >= slides.length) {
+      throw new RangeError('Carousel index must be within the slides array.');
+    }
     if (index === undefined) setUncontrolledIndex(nextIndex);
     onIndexChange?.(nextIndex);
   }
+  const canNavigate = slides.length > 1;
+  const canGoPrevious = canNavigate && (loop || currentIndex > 0);
+  const canGoNext = canNavigate && (loop || currentIndex < slides.length - 1);
+  const controls: CarouselControls = {
+    index: currentIndex,
+    slideCount: slides.length,
+    canGoPrevious,
+    canGoNext,
+    previous: () => {
+      if (canGoPrevious) changeIndex(loop && currentIndex === 0 ? slides.length - 1 : currentIndex - 1);
+    },
+    next: () => {
+      if (canGoNext) changeIndex(loop && currentIndex === slides.length - 1 ? 0 : currentIndex + 1);
+    },
+    goTo: changeIndex
+  };
+  const previousButton = (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel="Previous slide"
+      disabled={!controls.canGoPrevious}
+      onPress={controls.previous}
+      style={{ minHeight: 44, minWidth: navigation === 'arrows' ? 44 : undefined, alignItems: navigation === 'arrows' ? 'center' : undefined, justifyContent: 'center', paddingHorizontal: navigation === 'arrows' ? 0 : 10, opacity: controls.canGoPrevious ? 1 : 0.5 }}
+    >
+      <Text style={{ color: colors.primary }}>{navigation === 'arrows' ? '‹' : 'Previous'}</Text>
+    </Pressable>
+  );
+  const nextButton = (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel="Next slide"
+      disabled={!controls.canGoNext}
+      onPress={controls.next}
+      style={{ minHeight: 44, minWidth: navigation === 'arrows' ? 44 : undefined, alignItems: navigation === 'arrows' ? 'center' : undefined, justifyContent: 'center', paddingHorizontal: navigation === 'arrows' ? 0 : 10, opacity: controls.canGoNext ? 1 : 0.5 }}
+    >
+      <Text style={{ color: colors.primary }}>{navigation === 'arrows' ? '›' : 'Next'}</Text>
+    </Pressable>
+  );
+  const navigationContent = navigation === 'none'
+    ? null
+    : renderNavigation
+      ? renderNavigation(controls)
+      : <>{previousButton}{nextButton}</>;
+  const paginationContent = pagination === 'none'
+    ? null
+    : renderPagination
+      ? renderPagination(controls)
+      : pagination === 'dots'
+        ? <Pips count={slides.length} index={currentIndex} onIndexChange={controls.goTo} label="Choose slide" theme={theme} />
+        : pagination === 'progress'
+          ? (
+            <View
+              accessible
+              accessibilityRole="progressbar"
+              accessibilityLabel="Slide progress"
+              accessibilityValue={{ min: 1, max: slides.length, now: currentIndex + 1 }}
+              style={{ flex: 1, height: 4, overflow: 'hidden', borderRadius: 99, backgroundColor: colors.border }}
+            >
+              <View style={{ width: `${(currentIndex + 1) / slides.length * 100}%`, height: '100%', backgroundColor: colors.primary }} />
+            </View>
+          )
+          : <Text accessibilityLabel={`Slide ${currentIndex + 1} of ${slides.length}`} style={{ color: colors.textMuted }}>{currentIndex + 1} / {slides.length}</Text>;
+
   return (
-    <View accessibilityLabel={label} style={style}>
+    <View accessibilityLabel={label} style={[{ position: 'relative' }, style]}>
       <View accessibilityRole="listitem" accessibilityLabel={`Slide ${currentIndex + 1} of ${slides.length}`} style={{ minHeight: 72, justifyContent: 'center' }}>
         {slides[currentIndex]}
       </View>
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
-        <Pressable accessibilityRole="button" accessibilityLabel="Previous slide" disabled={currentIndex <= 0} onPress={() => changeIndex(currentIndex - 1)} style={{ minHeight: 44, justifyContent: 'center', paddingHorizontal: 10, opacity: currentIndex <= 0 ? 0.5 : 1 }}>
-          <Text style={{ color: colors.primary }}>Previous</Text>
-        </Pressable>
-        <Pips count={slides.length} index={currentIndex} onIndexChange={changeIndex} label="Choose slide" theme={theme} />
-        <Pressable accessibilityRole="button" accessibilityLabel="Next slide" disabled={currentIndex >= slides.length - 1} onPress={() => changeIndex(currentIndex + 1)} style={{ minHeight: 44, justifyContent: 'center', paddingHorizontal: 10, opacity: currentIndex >= slides.length - 1 ? 0.5 : 1 }}>
-          <Text style={{ color: colors.primary }}>Next</Text>
-        </Pressable>
-      </View>
+      {navigationPlacement === 'overlay' && navigationContent && (
+        <View pointerEvents="box-none" style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0, justifyContent: 'center' }}>
+          {renderNavigation
+            ? navigationContent
+            : <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>{previousButton}{nextButton}</View>}
+        </View>
+      )}
+      {navigationPlacement === 'below'
+        ? (navigationContent || paginationContent) && (
+          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: navigationContent ? 'space-between' : 'center', gap: 8 }}>
+            {renderNavigation ? navigationContent : navigation !== 'none' && previousButton}
+            {paginationContent}
+            {!renderNavigation && navigation !== 'none' && nextButton}
+          </View>
+        )
+        : paginationContent && <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 8 }}>{paginationContent}</View>}
     </View>
   );
 }

@@ -45,11 +45,15 @@ Generated from the public package exports and TypeScript component prop declarat
 | Popover | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
 | SideSheet | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
 | Tooltip | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
+| AreaChart | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
 | BarChart | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
 | DataTable | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
+| DonutChart | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
+| LineChart | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
+| MetricCard | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
 | MarkdownEditor | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
 | QrScanner | Yes | Optional | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
 
-Total: 45 component records.
+Total: 49 component records.
 
 A dash means that coverage is not yet authored or verified; generated API data alone does not count as complete documentation.

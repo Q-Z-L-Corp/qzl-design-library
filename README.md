@@ -6,12 +6,12 @@ QZL Design Library is an open-source design system for building consistent, acce
 
 - `packages/tokens` — cross-platform design tokens and light/dark themes
 - `packages/core` — platform-neutral helpers and safe Markdown block parsing
-- `packages/react` — 45 Web components and `@qzl/react/styles.css`
-- `packages/react-native` — 44 corresponding React Native components
+- `packages/react` — 49 Web components and `@qzl/react/styles.css`
+- `packages/react-native` — 48 corresponding React Native components
 - `apps/docs` — interactive documentation and component playground
 - `examples/react-native` — Expo example for iOS and Android
 
-Forty-four components are available for both Web and React Native. The catalog also includes a Web QR scanner and a separate optional Expo camera entry for React Native. The React Native file-upload component delegates document-picker integration to the host app. Both scanners request camera access only after a deliberate start action and return scanned content without opening it automatically.
+Forty-eight components are available for both Web and React Native. The catalog also includes a Web QR scanner and a separate optional Expo camera entry for React Native. The React Native file-upload component delegates document-picker integration to the host app. Both scanners request camera access only after a deliberate start action and return scanned content without opening it automatically.
 
 ## Local development
 
@@ -59,10 +59,10 @@ The packages have not been published yet. After release, install the package for
 ```sh
 pnpm add @qzl/react
 # or, in a React Native application:
-pnpm add @qzl/react-native @react-native-community/slider
+pnpm add @qzl/react-native @react-native-community/slider react-native-svg
 ```
 
-For Web, `@qzl/react` supports React 18.3.1 or 19 with a matching React DOM version; import `@qzl/react/styles.css` once in the application entry point. `@qzl/react-native` supports React 19 and React Native 0.78 or later, and requires `@react-native-community/slider`. React Native components use platform controls and do not import Web styles. Expo camera scanning is available from `@qzl/react-native/expo/qr-scanner` and requires `expo-camera`; the other React Native components do not depend on Expo. Install `@qzl/tokens` directly only when your application imports its token APIs.
+For Web, `@qzl/react` supports React 18.3.1 or 19 with a matching React DOM version; import `@qzl/react/styles.css` once in the application entry point. `@qzl/react-native` supports React 19 and React Native 0.78 or later, and requires `@react-native-community/slider` and `react-native-svg`. React Native components use platform controls and do not import Web styles. Expo camera scanning is available from `@qzl/react-native/expo/qr-scanner` and requires `expo-camera`; the other React Native components do not depend on Expo. Install `@qzl/tokens` directly only when your application imports its token APIs.
 
 All packages emit ESM JavaScript and TypeScript declarations to `dist/`. Package tarballs include their runtime files, styles where applicable, README, and MIT license.
 

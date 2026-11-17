@@ -11,16 +11,18 @@ const categoryOrder = ['Actions', 'Forms', 'Selection', 'Feedback', 'Layout', 'N
 const metadata = {
   Accordion: ['Layout', 'Disclose or collapse related content.'],
   Alert: ['Feedback', 'Present an important message with a clear severity.'],
+  AreaChart: ['Data display', 'Show volume trends and cumulative series over time.'],
   Avatar: ['Layout', 'Represent a person or account with an image or fallback.'],
   BarChart: ['Data display', 'Compare labeled values in a compact chart.'],
   Badge: ['Feedback', 'Show a short status, category, or count.'],
   Breadcrumbs: ['Navigation', 'Show the current location within a hierarchy.'],
   Button: ['Actions', 'Trigger an action with a clearly communicated priority.'],
   BottomSheet: ['Overlays', 'Present focused content from the bottom edge of the viewport.'],
-  Carousel: ['Navigation', 'Browse a sequence of slides with previous, next, and position controls.'],
+  Carousel: ['Navigation', 'Browse a sequence of slides with configurable navigation and position indicators.'],
   Card: ['Layout', 'Group related content into a surface.'],
   Checkbox: ['Selection', 'Select one or more independent options.'],
   DataTable: ['Data display', 'Present structured rows and columns with sorting support.'],
+  DonutChart: ['Data display', 'Show part-to-whole proportions with labeled categories.'],
   Divider: ['Layout', 'Separate adjacent content groups.'],
   Dialog: ['Overlays', 'Present focused content that requires attention or interaction.'],
   DropdownMenu: ['Navigation', 'Reveal a menu of actions from a trigger.'],
@@ -29,6 +31,8 @@ const metadata = {
   Indicator: ['Feedback', 'Communicate a concise status with a visual marker.'],
   IconButton: ['Actions', 'Trigger an action using a compact labeled icon control.'],
   Input: ['Forms', 'Accept a single line of text.'],
+  LineChart: ['Data display', 'Compare trends across categories or time series.'],
+  MetricCard: ['Data display', 'Highlight a key value with changes and comparison context.'],
   MarkdownEditor: ['Advanced', 'Edit Markdown and optionally preview the supported safe syntax.'],
   NavigationMenu: ['Navigation', 'Present a set of primary navigation destinations.'],
   Pagination: ['Navigation', 'Move through a sequence of result pages.'],
@@ -553,7 +557,7 @@ function getExampleValue(componentName, prop, platform) {
   if (name === 'caption') return "'Example records'";
   if (name === 'name') return componentName === 'Avatar' ? "'Alex Morgan'" : "'plan'";
   if (name === 'trigger') return "'More information'";
-  if (name === 'value') return type.includes('number') ? '4' : "'team'";
+  if (name === 'value') return componentName === 'MetricCard' ? "'$24.8k'" : type.includes('number') ? '4' : "'team'";
   if (name === 'page') return '1';
   if (name === 'pageCount' || name === 'count') return '3';
   if (name === 'index' || name === 'activeStep') return '0';
@@ -563,6 +567,9 @@ function getExampleValue(componentName, prop, platform) {
   if (name === 'slides') return platform === 'native'
     ? "[<Typography key=\"overview\">Overview</Typography>, <Typography key=\"details\">Details</Typography>]"
     : "[<span>Overview</span>, <span>Details</span>]";
+  if (name === 'labels' && ['LineChart', 'AreaChart'].includes(componentName)) return "['Mon', 'Tue', 'Wed']";
+  if (name === 'series' && ['LineChart', 'AreaChart'].includes(componentName)) return "[{ label: 'Visits', values: [12, 18, 15] }]";
+  if (name === 'data' && componentName === 'DonutChart') return "[{ label: 'Desktop', value: 64 }, { label: 'Mobile', value: 36 }]";
   if (name === 'data') return "[{ label: 'Mon', value: 12 }, { label: 'Tue', value: 18 }]";
   if (name === 'rows') return "[{ name: 'Design system' }, { name: 'Component docs' }]";
   if (name === 'columns') return "[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]";
