@@ -1,6 +1,6 @@
 # Publishing
 
-The published packages are `@qzlcorp/react`, `@qzlcorp/react-native`, `@qzlcorp/core`, and `@qzlcorp/tokens`. The current `0.2.0-beta.0` versions are prereleases; consumers should expect API changes before a stable release.
+The published packages are `@qzlcorp/react`, `@qzlcorp/react-native`, `@qzlcorp/core`, and `@qzlcorp/tokens`. All four are published at stable version `0.2.0`. Stable releases use npm's `latest` dist-tag; consumers can install packages without a prerelease tag.
 
 ## Configure npm trusted publishing
 
@@ -8,7 +8,7 @@ Configure a GitHub Actions trusted publisher in the npm settings for each packag
 
 The packages and their npm trusted-publisher settings are configured separately, including the supporting `@qzlcorp/core` and `@qzlcorp/tokens` packages.
 
-The repository is currently in Changesets prerelease mode for the `beta` dist-tag. The release workflow runs on pushes to `main`, opens version pull requests, and publishes selected packages after those changes merge. When the packages are ready for a stable release, exit prerelease mode with `pnpm changeset pre exit` and review the resulting version plan. Verify the default branch is named `main` and that the workflow filename remains `.github/workflows/release.yml`.
+The repository is not in Changesets prerelease mode. The release workflow runs on pushes to `main`, opens version pull requests, and publishes selected packages after those changes merge. To intentionally start a prerelease cycle, enter Changesets prerelease mode with `pnpm changeset pre enter beta`; when ready to return to stable releases, run `pnpm changeset pre exit` and review the resulting version plan. Verify the default branch is named `main` and that the workflow filename remains `.github/workflows/release.yml`.
 
 ## Local release checks
 

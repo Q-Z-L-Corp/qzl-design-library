@@ -324,7 +324,7 @@ export default function DocsApp() {
           <span className="docs-brand__text"><strong>QZL Design</strong><small>Design system</small></span>
         </button>
         <div className="docs-header__right">
-          <span className="docs-version">v0.2 beta · 50 Web · 48 React Native</span>
+          <span className="docs-version">v0.2.0 · 50 Web · 48 React Native</span>
           <button className="docs-theme-button" type="button" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`} aria-pressed={theme === 'dark'}>
             <span aria-hidden="true">{theme === 'light' ? '◐' : '☼'}</span><span>{theme === 'light' ? 'Dark' : 'Light'}</span>
           </button>

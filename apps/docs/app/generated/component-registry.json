@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T16:46:34.160Z",
+  "generatedAt": "2026-11-18T21:35:28.447Z",
   "categories": [
     "Actions",
     "Forms",
@@ -14,12 +14,12 @@
   "packages": {
     "web": {
       "name": "@qzlcorp/react",
-      "version": "0.2.0-beta.0",
+      "version": "0.2.0",
       "componentCount": 50
     },
     "native": {
       "name": "@qzlcorp/react-native",
-      "version": "0.2.0-beta.0",
+      "version": "0.2.0",
       "componentCount": 48
     },
     "optionalNativeComponents": [
@@ -138,7 +138,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -247,7 +247,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -308,7 +308,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -387,7 +387,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -503,7 +503,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -601,7 +601,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -720,7 +720,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -769,7 +769,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -834,7 +834,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -883,7 +883,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -939,7 +939,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -988,7 +988,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1091,7 +1091,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -1170,7 +1170,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1287,7 +1287,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -1383,7 +1383,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1477,7 +1477,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -1526,7 +1526,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1582,7 +1582,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -1631,7 +1631,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1709,7 +1709,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -1807,7 +1807,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1899,7 +1899,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -1995,7 +1995,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2087,7 +2087,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2183,7 +2183,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2275,7 +2275,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2363,7 +2363,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2447,7 +2447,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2507,7 +2507,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2563,7 +2563,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2614,7 +2614,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2681,7 +2681,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2733,7 +2733,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2781,7 +2781,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2852,7 +2852,7 @@
               ]
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2928,7 +2928,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3007,7 +3007,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3091,7 +3091,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3140,7 +3140,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3194,7 +3194,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3255,7 +3255,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3321,7 +3321,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3406,7 +3406,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3487,7 +3487,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3571,7 +3571,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3660,7 +3660,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3745,7 +3745,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3848,7 +3848,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3920,7 +3920,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3999,7 +3999,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -4048,7 +4048,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -4093,7 +4093,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -4156,7 +4156,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -4224,7 +4224,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -4298,7 +4298,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -4396,7 +4396,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -4484,7 +4484,7 @@
               ]
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -4542,7 +4542,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -4607,7 +4607,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -4677,7 +4677,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -4890,7 +4890,7 @@
               ]
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -5108,7 +5108,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -5173,7 +5173,7 @@
               ]
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -5243,7 +5243,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -5308,7 +5308,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -5378,7 +5378,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -5457,7 +5457,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -5541,7 +5541,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -5629,7 +5629,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -5713,7 +5713,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -5798,7 +5798,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -5879,7 +5879,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -5981,7 +5981,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -6079,7 +6079,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -6183,7 +6183,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -6283,7 +6283,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -6360,7 +6360,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -6433,7 +6433,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -6535,7 +6535,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -6633,7 +6633,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -6688,7 +6688,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -6750,7 +6750,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -6851,7 +6851,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -6957,7 +6957,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -7088,7 +7088,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -7224,7 +7224,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -7322,7 +7322,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -7425,7 +7425,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -7512,7 +7512,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -7604,7 +7604,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -7691,7 +7691,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -7783,7 +7783,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -7896,7 +7896,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -8014,7 +8014,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -8096,7 +8096,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -8196,7 +8196,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -8264,7 +8264,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "nativeOptional": {
           "platform": "native",
@@ -8326,7 +8326,7 @@
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0",
+          "version": "0.2.0",
           "dependencies": [
             "expo-camera"
           ]

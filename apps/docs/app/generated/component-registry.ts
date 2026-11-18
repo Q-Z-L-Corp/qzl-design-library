@@ -63,7 +63,7 @@ export interface ComponentRegistry {
 }
 
 export const componentRegistry: ComponentRegistry = {
-  "generatedAt": "2026-11-18T16:46:34.160Z",
+  "generatedAt": "2026-11-18T21:35:28.447Z",
   "categories": [
     "Actions",
     "Forms",
@@ -78,12 +78,12 @@ export const componentRegistry: ComponentRegistry = {
   "packages": {
     "web": {
       "name": "@qzlcorp/react",
-      "version": "0.2.0-beta.0",
+      "version": "0.2.0",
       "componentCount": 50
     },
     "native": {
       "name": "@qzlcorp/react-native",
-      "version": "0.2.0-beta.0",
+      "version": "0.2.0",
       "componentCount": 48
     },
     "optionalNativeComponents": [
@@ -202,7 +202,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -311,7 +311,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -372,7 +372,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -451,7 +451,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -567,7 +567,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -665,7 +665,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -784,7 +784,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -833,7 +833,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -898,7 +898,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -947,7 +947,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1003,7 +1003,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -1052,7 +1052,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1155,7 +1155,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -1234,7 +1234,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1351,7 +1351,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -1447,7 +1447,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1541,7 +1541,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -1590,7 +1590,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1646,7 +1646,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -1695,7 +1695,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1773,7 +1773,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -1871,7 +1871,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -1963,7 +1963,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2059,7 +2059,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2151,7 +2151,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2247,7 +2247,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2339,7 +2339,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2427,7 +2427,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2511,7 +2511,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2571,7 +2571,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2627,7 +2627,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2678,7 +2678,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2745,7 +2745,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2797,7 +2797,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2845,7 +2845,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -2916,7 +2916,7 @@ export const componentRegistry: ComponentRegistry = {
               ]
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -2992,7 +2992,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3071,7 +3071,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3155,7 +3155,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3204,7 +3204,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3258,7 +3258,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3319,7 +3319,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3385,7 +3385,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3470,7 +3470,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3551,7 +3551,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3635,7 +3635,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3724,7 +3724,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3809,7 +3809,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -3912,7 +3912,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -3984,7 +3984,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -4063,7 +4063,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -4112,7 +4112,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -4157,7 +4157,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -4220,7 +4220,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -4288,7 +4288,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -4362,7 +4362,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -4460,7 +4460,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -4548,7 +4548,7 @@ export const componentRegistry: ComponentRegistry = {
               ]
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -4606,7 +4606,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -4671,7 +4671,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -4741,7 +4741,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -4954,7 +4954,7 @@ export const componentRegistry: ComponentRegistry = {
               ]
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -5172,7 +5172,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -5237,7 +5237,7 @@ export const componentRegistry: ComponentRegistry = {
               ]
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -5307,7 +5307,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -5372,7 +5372,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -5442,7 +5442,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -5521,7 +5521,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -5605,7 +5605,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -5693,7 +5693,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -5777,7 +5777,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -5862,7 +5862,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -5943,7 +5943,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -6045,7 +6045,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -6143,7 +6143,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -6247,7 +6247,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -6347,7 +6347,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -6424,7 +6424,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -6497,7 +6497,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -6599,7 +6599,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -6697,7 +6697,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -6752,7 +6752,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -6814,7 +6814,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -6915,7 +6915,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -7021,7 +7021,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -7152,7 +7152,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -7288,7 +7288,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -7386,7 +7386,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -7489,7 +7489,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -7576,7 +7576,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -7668,7 +7668,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -7755,7 +7755,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -7847,7 +7847,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -7960,7 +7960,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -8078,7 +8078,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -8160,7 +8160,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "native": {
           "platform": "native",
@@ -8260,7 +8260,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         }
       }
     },
@@ -8328,7 +8328,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0"
+          "version": "0.2.0"
         },
         "nativeOptional": {
           "platform": "native",
@@ -8390,7 +8390,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0-beta.0",
+          "version": "0.2.0",
           "dependencies": [
             "expo-camera"
           ]

@@ -2,11 +2,13 @@
 
 Reusable React components for Web applications, with documented APIs and accessibility semantics.
 
-This package is published as a beta. APIs may change before a stable release.
+Official documentation: [design.qz-l.com](https://design.qz-l.com).
+
+This package is published at stable version `0.2.0`.
 The host application must provide React and React DOM 18.3.1 or 19.
 
 ```sh
-pnpm add @qzlcorp/react@beta
+pnpm add @qzlcorp/react
 ```
 
 Import the stylesheet once from your application root:

@@ -2,10 +2,12 @@
 
 Shared design tokens and semantic light and dark theme values for QZL Design Library.
 
-This package is published as a beta. APIs may change before a stable release.
+Official documentation: [design.qz-l.com](https://design.qz-l.com).
+
+This package is published at stable version `0.2.0`.
 
 ```sh
-pnpm add @qzlcorp/tokens@beta
+pnpm add @qzlcorp/tokens
 ```
 
 ```ts

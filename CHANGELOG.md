@@ -1,6 +1,6 @@
 # Changelog
 
-Published packages are currently in the `0.2.0-beta.0` prerelease series. Entries under Unreleased have not been published yet.
+The latest stable release is `0.2.0`. Entries under Unreleased have not been published yet.
 
 ## Unreleased
 

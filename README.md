@@ -2,6 +2,8 @@
 
 QZL Design Library is an open-source design system for building consistent, accessible, and expressive interfaces across Web and React Native. It provides shared design tokens, themes, reusable components, and API documentation. Developed by Q.Z.L Corp.
 
+Official documentation: [design.qz-l.com](https://design.qz-l.com).
+
 ## Monorepo
 
 - `packages/tokens` — cross-platform design tokens and light/dark themes
@@ -40,7 +42,7 @@ Regenerate the registry after changing package exports or component APIs:
 pnpm --filter docs generate:component-registry
 ```
 
-The JSON and TypeScript registry live in `apps/docs/app/generated/`; the generated coverage report is `apps/docs/docs-coverage.md`. Treat these as generated files. Component summaries, categories, and preview availability are maintained in `apps/docs/scripts/generate-component-registry.mjs`. Status badges are conservatively set to Beta until the project defines a release-status policy. Accessibility and related-component guidance remain marked incomplete in the report until verified.
+The JSON and TypeScript registry live in `apps/docs/app/generated/`; the generated coverage report is `apps/docs/docs-coverage.md`. Treat these as generated files. Component summaries, categories, and preview availability are maintained in `apps/docs/scripts/generate-component-registry.mjs`. Component status badges describe individual component maturity, not the package release channel; some components remain marked Beta. Accessibility and related-component guidance remain marked incomplete in the report until verified.
 
 ## Build, tests, and lint
 
@@ -54,12 +56,12 @@ Tests use Node's test runner for core and token utilities, Vitest and Testing Li
 
 ## Package use
 
-All four packages are published on npm at version `0.2.0-beta.0`. They are prereleases, so APIs may change before the first stable release. Install the latest beta for your platform:
+All four packages are published on npm at stable version `0.2.0`. Install the latest release for your platform:
 
 ```sh
-pnpm add @qzlcorp/react@beta
+pnpm add @qzlcorp/react
 # or, in a React Native application:
-pnpm add @qzlcorp/react-native@beta @react-native-community/slider react-native-svg
+pnpm add @qzlcorp/react-native @react-native-community/slider react-native-svg
 ```
 
 For Web, `@qzlcorp/react` supports React 18.3.1 or 19 with a matching React DOM version; import `@qzlcorp/react/styles.css` once in the application entry point (for Next.js, `app/layout.tsx` is a suitable place). Interactive exports declare their client boundaries; static components remain usable from Server Components. `@qzlcorp/react-native` supports React 19 and React Native 0.78 or later, and requires `@react-native-community/slider` and `react-native-svg`. React Native components use platform controls and do not import Web styles. Expo camera scanning is available from `@qzlcorp/react-native/expo/qr-scanner` and requires `expo-camera`; the other React Native components do not depend on Expo. Install `@qzlcorp/tokens` directly only when your application imports its token APIs.
