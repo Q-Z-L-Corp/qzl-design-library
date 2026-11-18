@@ -1,14 +1,14 @@
 # Publishing
 
-The consumer-facing UI packages are `@qzlcorp/react` and `@qzlcorp/react-native`. They depend on the supporting `@qzlcorp/core` and `@qzlcorp/tokens` packages. None of the four packages has been published yet. Publishing requires an npm organization/scope with the required package permissions and a configured `NPM_TOKEN`.
+The published packages are `@qzlcorp/react`, `@qzlcorp/react-native`, `@qzlcorp/core`, and `@qzlcorp/tokens`. The current `0.2.0-beta.0` versions are prereleases; consumers should expect API changes before a stable release.
 
-## Before the first release
+## Configure npm trusted publishing
 
-1. Confirm that the `@qzlcorp` npm organization is owned by the publisher and that all four package names are available.
-2. Verify each package's `repository` metadata points to `https://github.com/Q-Z-L-Corp/qzl-design-library`.
-3. Configure `NPM_TOKEN` as a GitHub Actions secret with publish permission for the `@qzlcorp` scope.
-4. Ensure the default branch is named `main`; the release workflow uses Changesets to open version pull requests and publishes after those changes merge with the `beta` dist-tag.
-5. Review the pending `.changeset` entry, package README files, license, generated tarballs, and supported React/React Native versions.
+Configure a GitHub Actions trusted publisher in the npm settings for each package. Use organization `Q-Z-L-Corp`, repository `qzl-design-library`, workflow filename `release.yml`, and no environment name unless one is added to the release job. Allow direct publishing. The release workflow requests the `id-token: write` permission and uses Node 24 (which provides the npm version required for OIDC); it does not need an `NPM_TOKEN` secret.
+
+The packages and their npm trusted-publisher settings are configured separately, including the supporting `@qzlcorp/core` and `@qzlcorp/tokens` packages.
+
+The repository is currently in Changesets prerelease mode for the `beta` dist-tag. The release workflow runs on pushes to `main`, opens version pull requests, and publishes selected packages after those changes merge. When the packages are ready for a stable release, exit prerelease mode with `pnpm changeset pre exit` and review the resulting version plan. Verify the default branch is named `main` and that the workflow filename remains `.github/workflows/release.yml`.
 
 ## Local release checks
 

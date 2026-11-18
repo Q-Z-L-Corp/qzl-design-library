@@ -8,9 +8,9 @@ const docsDirectory = path.resolve(path.dirname(fileURLToPath(import.meta.url)),
 const registry = JSON.parse(await readFile(path.join(docsDirectory, 'app/generated/component-registry.json'), 'utf8'));
 
 test('registry covers all public component exports and the optional Expo entry', () => {
-  assert.equal(registry.packages.web.componentCount, 49);
+  assert.equal(registry.packages.web.componentCount, 50);
   assert.equal(registry.packages.native.componentCount, 48);
-  assert.equal(registry.components.filter((component) => component.platforms.web).length, 49);
+  assert.equal(registry.components.filter((component) => component.platforms.web).length, 50);
   assert.equal(registry.components.filter((component) => component.platforms.native).length, 48);
   assert.deepEqual(registry.packages.optionalNativeComponents, [{ name: 'QrScanner', optionalDependencies: ['expo-camera'] }]);
   assert.ok(registry.components.find((component) => component.name === 'QrScanner').platforms.nativeOptional);
@@ -22,8 +22,12 @@ test('component records contain platform-specific APIs, examples, and defaults f
     assert.ok(component.category, `${component.name} has a category`);
     assert.ok(component.status, `${component.name} has a status`);
     assert.ok(component.platforms.web || component.platforms.native || component.platforms.nativeOptional, `${component.name} has a platform`);
-    assert.ok(component.examples.customization?.web, `${component.name} has a web customization example`);
-    assert.ok(component.examples.customization?.native, `${component.name} has a native customization example`);
+    if (component.platforms.web) {
+      assert.ok(component.examples.customization?.web, `${component.name} has a web customization example`);
+    }
+    if (component.platforms.native || component.platforms.nativeOptional) {
+      assert.ok(component.examples.customization?.native, `${component.name} has a native customization example`);
+    }
 
     for (const [platform, api] of Object.entries(component.platforms)) {
       if (!api) continue;

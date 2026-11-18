@@ -9,6 +9,7 @@ export * from './components/data-table.js';
 export * from './components/donut-chart.js';
 export * from './components/dropdown-menu.js';
 export * from './components/input.js';
+export * from './components/form-field.js';
 export * from './components/line-chart.js';
 export * from './components/metric-card.js';
 export * from './components/badge.js';

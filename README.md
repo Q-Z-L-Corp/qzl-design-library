@@ -6,12 +6,12 @@ QZL Design Library is an open-source design system for building consistent, acce
 
 - `packages/tokens` — cross-platform design tokens and light/dark themes
 - `packages/core` — platform-neutral helpers and safe Markdown block parsing
-- `packages/react` — 49 Web components and `@qzlcorp/react/styles.css`
+- `packages/react` — 50 Web components and `@qzlcorp/react/styles.css`
 - `packages/react-native` — 48 corresponding React Native components
 - `apps/docs` — interactive documentation and component playground
 - `examples/react-native` — Expo example for iOS and Android
 
-Forty-eight components are available for both Web and React Native. The catalog also includes a Web QR scanner and a separate optional Expo camera entry for React Native. The React Native file-upload component delegates document-picker integration to the host app. Both scanners request camera access only after a deliberate start action and return scanned content without opening it automatically.
+Forty-eight components are available for both Web and React Native. The Web catalog also includes `FormField` and a QR scanner, with a separate optional Expo camera entry for React Native. The React Native file-upload component delegates document-picker integration to the host app. Both scanners request camera access only after a deliberate start action and return scanned content without opening it automatically.
 
 ## Local development
 
@@ -54,21 +54,40 @@ Tests use Node's test runner for core and token utilities, Vitest and Testing Li
 
 ## Package use
 
-The packages have not been published yet. After release, install the package for your platform:
+All four packages are published on npm at version `0.2.0-beta.0`. They are prereleases, so APIs may change before the first stable release. Install the latest beta for your platform:
 
 ```sh
-pnpm add @qzlcorp/react
+pnpm add @qzlcorp/react@beta
 # or, in a React Native application:
-pnpm add @qzlcorp/react-native @react-native-community/slider react-native-svg
+pnpm add @qzlcorp/react-native@beta @react-native-community/slider react-native-svg
 ```
 
-For Web, `@qzlcorp/react` supports React 18.3.1 or 19 with a matching React DOM version; import `@qzlcorp/react/styles.css` once in the application entry point. `@qzlcorp/react-native` supports React 19 and React Native 0.78 or later, and requires `@react-native-community/slider` and `react-native-svg`. React Native components use platform controls and do not import Web styles. Expo camera scanning is available from `@qzlcorp/react-native/expo/qr-scanner` and requires `expo-camera`; the other React Native components do not depend on Expo. Install `@qzlcorp/tokens` directly only when your application imports its token APIs.
+For Web, `@qzlcorp/react` supports React 18.3.1 or 19 with a matching React DOM version; import `@qzlcorp/react/styles.css` once in the application entry point (for Next.js, `app/layout.tsx` is a suitable place). Interactive exports declare their client boundaries; static components remain usable from Server Components. `@qzlcorp/react-native` supports React 19 and React Native 0.78 or later, and requires `@react-native-community/slider` and `react-native-svg`. React Native components use platform controls and do not import Web styles. Expo camera scanning is available from `@qzlcorp/react-native/expo/qr-scanner` and requires `expo-camera`; the other React Native components do not depend on Expo. Install `@qzlcorp/tokens` directly only when your application imports its token APIs.
+
+For a Next.js theme, define variables on the root element using the token helper; per-app overrides can be passed as its second argument:
+
+```tsx
+// app/layout.tsx
+import '@qzlcorp/react/styles.css';
+import type { CSSProperties, ReactNode } from 'react';
+import { getThemeCssVariables } from '@qzlcorp/tokens';
+
+const themeStyle = getThemeCssVariables('light', {
+  '--qzl-primary': '#1b61f2'
+}) as CSSProperties;
+
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+  return <html lang="en"><body style={themeStyle}>{children}</body></html>;
+}
+```
+
+`FormField` provides a label and linked hint/error IDs to its `control` element, supplying `id`, `required`, `aria-describedby`, and `aria-invalid` together. The consumer example in the React package README shows the complete usage.
 
 All packages emit ESM JavaScript and TypeScript declarations to `dist/`. Package tarballs include their runtime files, styles where applicable, README, and MIT license.
 
 ## Publishing
 
-Packages are prepared for public npm releases but have not been published. The Changesets release workflow needs the canonical GitHub repository, npm scope ownership, and an `NPM_TOKEN` secret. Follow [PUBLISHING.md](./PUBLISHING.md) to review and configure those final account/repository details.
+The GitHub Actions release workflow uses npm trusted publishing with OIDC. Configure the trusted publisher for each package in npm before relying on automated releases; see [PUBLISHING.md](./PUBLISHING.md).
 
 ## License
 

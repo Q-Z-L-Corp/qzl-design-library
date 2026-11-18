@@ -6,10 +6,10 @@ The catalog provides React Native counterparts for the 48 components also availa
 
 Data display includes `DataTable`, `MetricCard`, `BarChart`, `LineChart`, `AreaChart`, and `DonutChart`. The chart components use `react-native-svg` and retain readable labels and values alongside their visual marks.
 
-This package has not been published yet. Use the install command after the first release. Your application must provide React 19 and React Native 0.78 or later.
+This package is published as a beta; APIs may change before a stable release. Your application must provide React 19 and React Native 0.78 or later.
 
 ```sh
-pnpm add @qzlcorp/react-native @react-native-community/slider react-native-svg
+pnpm add @qzlcorp/react-native@beta @react-native-community/slider react-native-svg
 ```
 
 Components use React Native `View`, `Text`, `Pressable`, `TextInput`, and accessibility APIs. The chart components use `react-native-svg` for vector rendering. Props and behavior intentionally differ from the Web package where platform conventions require it. Install `@qzlcorp/tokens` directly when your application imports its APIs.

@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { Accordion, Button, DataTable, MarkdownEditor, Pagination, Progress, QrScanner, Toast } from '../src/index';
+import { Accordion, Button, DataTable, FormField, Input, MarkdownEditor, Pagination, Progress, QrScanner, Tabs, Toast } from '../src/index';
 
 describe('interactive components', () => {
   it('uses a non-submit button by default and respects disabled state', () => {
@@ -14,6 +14,50 @@ describe('interactive components', () => {
 
     render(<Button disabled>Unavailable</Button>);
     expect(screen.getByRole('button', { name: 'Unavailable' })).toBeDisabled();
+  });
+
+  it('disables a loading button, marks it busy, and keeps its accessible name', () => {
+    render(<Button loading>Save changes</Button>);
+    const button = screen.getByRole('button', { name: 'Save changes' });
+    expect(button).toBeDisabled();
+    expect(button).toHaveAttribute('aria-busy', 'true');
+    expect(button.querySelector('[aria-hidden="true"]')).toBeInTheDocument();
+  });
+
+  it('links form labels, hints, and errors to the rendered control', () => {
+    render(
+      <FormField
+        label="Email"
+        required
+        hint="Use your work address"
+        error="Enter a valid address"
+        control={<Input type="email" />}
+      />
+    );
+    const input = screen.getByRole('textbox', { name: /email/i });
+    const describedBy = input.getAttribute('aria-describedby')?.split(' ') ?? [];
+    expect(input).toHaveAttribute('required');
+    expect(input).toHaveAttribute('aria-invalid', 'true');
+    expect(describedBy).toHaveLength(2);
+    expect(describedBy.map((id) => document.getElementById(id)?.textContent)).toEqual([
+      'Use your work address',
+      'Enter a valid address'
+    ]);
+  });
+
+  it('supports rich and icon-only tab labels with explicit accessible names', () => {
+    render(
+      <Tabs
+        items={[
+          { value: 'profile', label: <><strong>Profile</strong> settings</> },
+          { value: 'alerts', label: <span aria-hidden="true">●</span>, ariaLabel: 'Alerts' }
+        ]}
+        value="profile"
+        onValueChange={() => {}}
+      />
+    );
+    expect(screen.getByRole('tab', { name: 'Profile settings' })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tab', { name: 'Alerts' })).toBeInTheDocument();
   });
 
   it('exposes an accordion panel through its expanded state and relationship', () => {

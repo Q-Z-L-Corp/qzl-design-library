@@ -27,6 +27,7 @@ const metadata = {
   Dialog: ['Overlays', 'Present focused content that requires attention or interaction.'],
   DropdownMenu: ['Navigation', 'Reveal a menu of actions from a trigger.'],
   FileUploadInput: ['Forms', 'Select files through the platform file-selection control.'],
+  FormField: ['Forms', 'Associate a form control with its label, hint, and validation message.'],
   HelperText: ['Forms', 'Provide supporting or error text near a form control.'],
   Indicator: ['Feedback', 'Communicate a concise status with a visual marker.'],
   IconButton: ['Actions', 'Trigger an action using a compact labeled icon control.'],
@@ -551,6 +552,7 @@ function getExampleValue(componentName, prop, platform) {
     return '() => {}';
   }
   if (name === 'children') return null;
+  if (name === 'control' && componentName === 'FormField') return '<Input type="email" />';
   if (name === 'label') return "'Example label'";
   if (name === 'title') return componentName === 'BarChart' ? "'Weekly activity'" : "'Example title'";
   if (name === 'description') return "'A short supporting description.'";
@@ -694,6 +696,7 @@ function generateExampleWithOverrides(componentName, api, platform, overrides) {
     ? `<${componentTag}${attributes.length ? ` ${attributes.join(' ')}` : ''} />`
     : `<${componentTag}${attributes.length ? ` ${attributes.join(' ')}` : ''}>\n      ${body ?? ''}\n    </${componentTag}>`;
   const importedComponents = [componentName];
+  if (componentName === 'FormField' && platform === 'web') importedComponents.push('Input');
   if (componentName === 'Carousel' && platform === 'native') importedComponents.push('Typography');
   if (componentName === 'Tooltip' && platform === 'web') importedComponents.push('Button');
   const imports = [`import { ${importedComponents.join(', ')} } from '${api.importPath}';`];

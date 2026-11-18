@@ -324,7 +324,7 @@ export default function DocsApp() {
           <span className="docs-brand__text"><strong>QZL Design</strong><small>Design system</small></span>
         </button>
         <div className="docs-header__right">
-          <span className="docs-version">v0.1 · 49 Web · 48 React Native</span>
+          <span className="docs-version">v0.2 beta · 50 Web · 48 React Native</span>
           <button className="docs-theme-button" type="button" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`} aria-pressed={theme === 'dark'}>
             <span aria-hidden="true">{theme === 'light' ? '◐' : '☼'}</span><span>{theme === 'light' ? 'Dark' : 'Light'}</span>
           </button>
@@ -431,7 +431,7 @@ function OverviewPage({ onNavigate }: { onNavigate: (page: DocPage) => void }) {
           <Card className="docs-hero-card docs-hero-card--main">
             <div className="docs-mini-window"><span /><span /><span /><small>qzl.design</small></div>
             <div className="docs-mini-heading"><span>Component library</span><Badge variant="success">API documented</Badge></div>
-            <div className="docs-mini-stat"><strong>49</strong><span>Web components <b>48 React Native</b></span></div>
+            <div className="docs-mini-stat"><strong>50</strong><span>Web components <b>48 React Native</b></span></div>
             <div className="docs-mini-chart"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
             <div className="docs-mini-footer"><span>Shared foundations</span><span>Tokens · Themes</span></div>
           </Card>
@@ -506,7 +506,7 @@ function GettingStarted({ onCopy }: { onCopy: (value: string) => void }) {
       </div>
       <div className="docs-section docs-platform-table">
         <h2>Package map</h2>
-        <div className="docs-package-row"><strong>@qzlcorp/react</strong><span>49 Web components and the package stylesheet</span><Badge variant="success">Web</Badge></div>
+        <div className="docs-package-row"><strong>@qzlcorp/react</strong><span>50 Web components and the package stylesheet</span><Badge variant="success">Web</Badge></div>
         <div className="docs-package-row"><strong>@qzlcorp/react-native</strong><span>48 React Native components and an optional Expo QR scanner entry</span><Badge variant="success">React Native</Badge></div>
         <div className="docs-package-row"><strong>@qzlcorp/tokens</strong><span>Shared design tokens and light and dark theme values</span><Badge>Supporting package</Badge></div>
         <div className="docs-package-row"><strong>@qzlcorp/core</strong><span>Shared helpers used by the component packages</span><Badge>Supporting package</Badge></div>

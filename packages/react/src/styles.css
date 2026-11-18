@@ -2,6 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   border: 1px solid transparent;
   border-radius: 12px;
   font-weight: 600;
@@ -49,6 +50,13 @@
 .qzl-button--ghost:hover:not(:disabled) { background: var(--qzl-primary-subtle); }
 .qzl-button--danger { color: #fff; background: var(--qzl-danger); box-shadow: 0 8px 24px color-mix(in srgb, var(--qzl-danger) 20%, transparent); }
 .qzl-button--danger:hover:not(:disabled) { filter: brightness(0.94); }
+.qzl-button__spinner { flex: 0 0 auto; border-color: currentColor; border-top-color: transparent; }
+
+.qzl-form-field { display: grid; gap: 6px; color: var(--qzl-text); }
+.qzl-form-field__label { font-size: 13px; font-weight: 600; }
+.qzl-form-field__required { color: var(--qzl-danger); }
+.qzl-form-field__hint { color: var(--qzl-text-muted); font-size: 12px; line-height: 1.5; }
+.qzl-form-field__error { color: var(--qzl-danger); font-size: 12px; line-height: 1.5; }
 
 .qzl-card {
   border: 1px solid var(--qzl-border);
@@ -78,7 +86,9 @@
 .qzl-input:focus { border-color: var(--qzl-primary); outline: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--qzl-primary) 14%, transparent); }
 .qzl-input:disabled { cursor: not-allowed; opacity: 0.5; }
 .qzl-input--error,
-.qzl-input--error:focus { border-color: var(--qzl-danger); }
+.qzl-input--error:focus,
+.qzl-input[aria-invalid="true"],
+.qzl-input[aria-invalid="true"]:focus { border-color: var(--qzl-danger); }
 
 .qzl-checkbox {
   width: 18px;

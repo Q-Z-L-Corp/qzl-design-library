@@ -63,7 +63,7 @@ export interface ComponentRegistry {
 }
 
 export const componentRegistry: ComponentRegistry = {
-  "generatedAt": "2026-11-17T09:08:45.821Z",
+  "generatedAt": "2026-11-18T16:46:34.160Z",
   "categories": [
     "Actions",
     "Forms",
@@ -79,7 +79,7 @@ export const componentRegistry: ComponentRegistry = {
     "web": {
       "name": "@qzlcorp/react",
       "version": "0.2.0-beta.0",
-      "componentCount": 49
+      "componentCount": 50
     },
     "native": {
       "name": "@qzlcorp/react-native",
@@ -180,6 +180,20 @@ export const componentRegistry: ComponentRegistry = {
               "required": false,
               "defaultValue": "false",
               "description": "Stretch the button to fill the width of its container.",
+              "documentedDefault": "false",
+              "allowedValues": [
+                false,
+                true
+              ],
+              "relatedTypes": []
+            },
+            {
+              "name": "loading",
+              "type": "boolean | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "false",
+              "description": "Disable the button and show a busy indicator while an operation is pending.",
               "documentedDefault": "false",
               "allowedValues": [
                 false,
@@ -646,6 +660,125 @@ export const componentRegistry: ComponentRegistry = {
               "required": false,
               "defaultValue": null,
               "description": "Style applied to the wrapper.",
+              "documentedDefault": null,
+              "allowedValues": [],
+              "relatedTypes": []
+            }
+          ],
+          "version": "0.2.0-beta.0"
+        }
+      }
+    },
+    {
+      "name": "FormField",
+      "slug": "form-field",
+      "category": "Forms",
+      "description": "Renders a labeled form field and gives its control linked accessibility attributes.",
+      "status": "beta",
+      "preview": true,
+      "examples": {
+        "web": "import { FormField, Input } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <FormField label=\"Example label\" control={<Input type=\"email\" />} />\n  );\n}",
+        "customization": {
+          "web": "import { FormField, Input } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <FormField label=\"Example label\" control={<Input type=\"email\" />} required={true} />\n  );\n}"
+        }
+      },
+      "platforms": {
+        "web": {
+          "platform": "web",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
+          "sourcePath": "packages/react/src/components/form-field.tsx",
+          "description": "Renders a labeled form field and gives its control linked accessibility attributes.",
+          "examples": [
+            "```tsx\n<FormField\n  label=\"Email\"\n  required\n  hint=\"Use your work address\"\n  error={emailError}\n  control={<Input type=\"email\" />}\n/>\n```"
+          ],
+          "propsType": "FormFieldProps",
+          "extends": [],
+          "props": [
+            {
+              "name": "label",
+              "type": "React.ReactNode",
+              "optional": false,
+              "required": true,
+              "defaultValue": null,
+              "description": "Visible label associated with the control.",
+              "documentedDefault": null,
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "control",
+              "type": "React.ReactElement<FormFieldControlProps, string | React.JSXElementConstructor<any>>",
+              "optional": false,
+              "required": true,
+              "defaultValue": null,
+              "description": "Control to associate with this field. The field supplies its ID and accessibility attributes.",
+              "documentedDefault": null,
+              "allowedValues": [],
+              "relatedTypes": [
+                {
+                  "name": "FormFieldControlProps",
+                  "definition": "export interface FormFieldControlProps {\n  /** Stable ID associated with the field label. */\n  id?: string;\n  /** Whether the control is required. */\n  required?: boolean;\n  /** IDs of the field hint and/or validation message. */\n  'aria-describedby'?: string;\n  /** Indicates an invalid value when an error message is present. */\n  'aria-invalid'?: React.AriaAttributes['aria-invalid'];\n}",
+                  "description": "Accessibility attributes supplied by {@link FormField} to its control.",
+                  "examples": [],
+                  "sourcePath": "packages/react/src/components/form-field.tsx"
+                }
+              ]
+            },
+            {
+              "name": "hint",
+              "type": "React.ReactNode",
+              "optional": true,
+              "required": false,
+              "defaultValue": null,
+              "description": "Optional supporting text associated with the control.",
+              "documentedDefault": null,
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "error",
+              "type": "React.ReactNode",
+              "optional": true,
+              "required": false,
+              "defaultValue": null,
+              "description": "Optional validation message associated with and announced by the control.",
+              "documentedDefault": null,
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "required",
+              "type": "boolean | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "false",
+              "description": "Mark the control as required.",
+              "documentedDefault": "false",
+              "allowedValues": [
+                false,
+                true
+              ],
+              "relatedTypes": []
+            },
+            {
+              "name": "controlId",
+              "type": "string | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": null,
+              "description": "Optional explicit control ID; otherwise a stable ID is generated.",
+              "documentedDefault": null,
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "className",
+              "type": "string | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": null,
+              "description": "Additional class name for the field wrapper.",
               "documentedDefault": null,
               "allowedValues": [],
               "relatedTypes": []
@@ -4752,7 +4885,7 @@ export const componentRegistry: ComponentRegistry = {
               "optional": true,
               "required": false,
               "defaultValue": "'below'",
-              "description": "Position of navigation controls. Custom navigation content is placed at the selected position.",
+              "description": "Position of navigation controls. Built-in overlay controls reserve space at the slide edges;\ncustom overlay controls should account for their own width.",
               "documentedDefault": "'below'",
               "allowedValues": [
                 "below",
@@ -4945,7 +5078,7 @@ export const componentRegistry: ComponentRegistry = {
               "optional": true,
               "required": false,
               "defaultValue": "'below'",
-              "description": "Position of navigation controls. Custom navigation content is placed at the selected position.",
+              "description": "Position of navigation controls. Built-in overlay controls reserve space at the slide edges;\ncustom overlay controls should account for their own width.",
               "documentedDefault": "'below'",
               "allowedValues": [
                 "below",
@@ -5688,7 +5821,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": [
                 {
                   "name": "TabItem",
-                  "definition": "export interface TabItem {\n  /** Value identifying this tab in controlled state. */\n  value: string;\n  /** Visible tab label. */\n  label: string;\n}",
+                  "definition": "export interface TabItem {\n  /** Value identifying this tab in controlled state. */\n  value: string;\n  /** Visible tab label; text content supplies the accessible name unless `ariaLabel` is set. */\n  label: React.ReactNode;\n  /** Accessible name for labels that do not contain readable text, such as icon-only labels. */\n  ariaLabel?: string;\n}",
                   "description": "Label and identifier for one tab button.",
                   "examples": [],
                   "sourcePath": "packages/react/src/components/tabs.tsx"

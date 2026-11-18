@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useId } from 'react';
 
 /** Props for {@link Tooltip}; children must be one React element that accepts `aria-describedby`. */

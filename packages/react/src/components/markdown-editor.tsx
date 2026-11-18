@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { mergeClasses, parseMarkdown } from '@qzlcorp/core';
 import type { MarkdownBlock } from '@qzlcorp/core';

@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { mergeClasses } from '@qzlcorp/core';
 
@@ -23,6 +25,11 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    * @default false
    */
   fullWidth?: boolean;
+  /**
+   * Disable the button and show a busy indicator while an operation is pending.
+   * @default false
+   */
+  loading?: boolean;
 }
 
 const base = 'qzl-button';
@@ -49,12 +56,28 @@ const variants: Record<ButtonVariant, string> = {
  * <Button variant="primary" onClick={save}>Save</Button>
  * ```
  */
-export function Button({ className, variant = 'primary', size = 'md', fullWidth = false, type = 'button', ...props }: ButtonProps) {
+export function Button({
+  className,
+  variant = 'primary',
+  size = 'md',
+  fullWidth = false,
+  loading = false,
+  disabled,
+  children,
+  type = 'button',
+  'aria-busy': ariaBusy,
+  ...props
+}: ButtonProps) {
   return (
     <button
       type={type}
+      disabled={disabled || loading}
+      aria-busy={loading ? true : ariaBusy}
       className={mergeClasses(base, sizes[size], variants[variant], fullWidth && 'qzl-button--full', className)}
       {...props}
-    />
+    >
+      {loading && <span className="qzl-spinner qzl-spinner--sm qzl-button__spinner" aria-hidden="true" />}
+      {children}
+    </button>
   );
 }

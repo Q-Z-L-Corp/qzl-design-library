@@ -1,11 +1,15 @@
+"use client";
+
 import React, { useId, useRef } from 'react';
 
 /** Label and identifier for one tab button. */
 export interface TabItem {
   /** Value identifying this tab in controlled state. */
   value: string;
-  /** Visible tab label. */
-  label: string;
+  /** Visible tab label; text content supplies the accessible name unless `ariaLabel` is set. */
+  label: React.ReactNode;
+  /** Accessible name for labels that do not contain readable text, such as icon-only labels. */
+  ariaLabel?: string;
 }
 
 /** Props for the controlled tab-list component {@link Tabs}. */
@@ -63,6 +67,7 @@ export function Tabs({ items, value, onValueChange, panelId }: TabsProps) {
             role="tab"
             aria-selected={active}
             aria-controls={panelId}
+            aria-label={item.ariaLabel}
             tabIndex={active ? 0 : -1}
             className={active ? 'qzl-tabs__tab qzl-tabs__tab--active' : 'qzl-tabs__tab'}
           >

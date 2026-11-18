@@ -1,5 +1,11 @@
 # @qzlcorp/tokens
 
+## Unreleased
+
+### Minor Changes
+
+- Allow typed CSS variable overrides when generating semantic theme variables.
+
 ## 0.2.0-beta.0
 
 ### Minor Changes

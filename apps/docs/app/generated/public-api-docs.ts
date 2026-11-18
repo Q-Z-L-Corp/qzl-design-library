@@ -38,8 +38,8 @@ export interface PublicApiDocumentation {
 
 export const publicApiDocumentation: PublicApiDocumentation = {
   "coverage": {
-    "total": 1737,
-    "documented": 1737,
+    "total": 1767,
+    "documented": 1767,
     "failures": []
   },
   "packages": [
@@ -511,7 +511,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "platform": "web",
           "name": "Button",
           "kind": "component",
-          "signature": "({ className, variant, size, fullWidth, type, ...props }: ButtonProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "({ className, variant, size, fullWidth, loading, disabled, children, type, \"aria-busy\": ariaBusy, ...props }: ButtonProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react/src/components/button.tsx",
           "description": "Renders a styled HTML button with variant, size, and width options. Its `type`\ndefaults to `button`.",
           "examples": [
@@ -573,6 +573,13 @@ export const publicApiDocumentation: PublicApiDocumentation = {
               "type": "boolean",
               "optional": true,
               "description": "Stretch the button to fill the width of its container.",
+              "callbackParameters": []
+            },
+            {
+              "name": "loading",
+              "type": "boolean",
+              "optional": true,
+              "description": "Disable the button and show a busy indicator while an operation is pending.",
               "callbackParameters": []
             }
           ],
@@ -956,6 +963,123 @@ export const publicApiDocumentation: PublicApiDocumentation = {
         {
           "packageName": "@qzlcorp/react",
           "platform": "web",
+          "name": "FormField",
+          "kind": "component",
+          "signature": "({ label, control, hint, error, required, controlId, className }: FormFieldProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/form-field.tsx",
+          "description": "Renders a labeled form field and gives its control linked accessibility attributes.",
+          "examples": [
+            "```tsx\n<FormField\n  label=\"Email\"\n  required\n  hint=\"Use your work address\"\n  error={emailError}\n  control={<Input type=\"email\" />}\n/>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzlcorp/react",
+          "platform": "web",
+          "name": "FormFieldControlProps",
+          "kind": "interface",
+          "signature": "interface FormFieldControlProps",
+          "sourcePath": "packages/react/src/components/form-field.tsx",
+          "description": "Accessibility attributes supplied by {@link FormField} to its control.",
+          "examples": [],
+          "members": [
+            {
+              "name": "id",
+              "type": "string",
+              "optional": true,
+              "description": "Stable ID associated with the field label.",
+              "callbackParameters": []
+            },
+            {
+              "name": "required",
+              "type": "boolean",
+              "optional": true,
+              "description": "Whether the control is required.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'aria-describedby'",
+              "type": "string",
+              "optional": true,
+              "description": "IDs of the field hint and/or validation message.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'aria-invalid'",
+              "type": "React.AriaAttributes['aria-invalid']",
+              "optional": true,
+              "description": "Indicates an invalid value when an error message is present.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzlcorp/react",
+          "platform": "web",
+          "name": "FormFieldProps",
+          "kind": "interface",
+          "signature": "interface FormFieldProps",
+          "sourcePath": "packages/react/src/components/form-field.tsx",
+          "description": "Props for {@link FormField}.",
+          "examples": [],
+          "members": [
+            {
+              "name": "label",
+              "type": "React.ReactNode",
+              "optional": false,
+              "description": "Visible label associated with the control.",
+              "callbackParameters": []
+            },
+            {
+              "name": "control",
+              "type": "React.ReactElement<FormFieldControlProps>",
+              "optional": false,
+              "description": "Control to associate with this field. The field supplies its ID and accessibility attributes.",
+              "callbackParameters": []
+            },
+            {
+              "name": "hint",
+              "type": "React.ReactNode",
+              "optional": true,
+              "description": "Optional supporting text associated with the control.",
+              "callbackParameters": []
+            },
+            {
+              "name": "error",
+              "type": "React.ReactNode",
+              "optional": true,
+              "description": "Optional validation message associated with and announced by the control.",
+              "callbackParameters": []
+            },
+            {
+              "name": "required",
+              "type": "boolean",
+              "optional": true,
+              "description": "Mark the control as required.",
+              "callbackParameters": []
+            },
+            {
+              "name": "controlId",
+              "type": "string",
+              "optional": true,
+              "description": "Optional explicit control ID; otherwise a stable ID is generated.",
+              "callbackParameters": []
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "optional": true,
+              "description": "Additional class name for the field wrapper.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzlcorp/react",
+          "platform": "web",
           "name": "LineChart",
           "kind": "component",
           "signature": "({ title, labels, series, formatValue, className, ...props }: LineChartProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
@@ -1231,9 +1355,16 @@ export const publicApiDocumentation: PublicApiDocumentation = {
             },
             {
               "name": "label",
-              "type": "string",
+              "type": "React.ReactNode",
               "optional": false,
-              "description": "Visible tab label.",
+              "description": "Visible tab label; text content supplies the accessible name unless `ariaLabel` is set.",
+              "callbackParameters": []
+            },
+            {
+              "name": "ariaLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Accessible name for labels that do not contain readable text, such as icon-only labels.",
               "callbackParameters": []
             }
           ],
@@ -2847,7 +2978,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
               "name": "navigationPlacement",
               "type": "CarouselNavigationPlacement",
               "optional": true,
-              "description": "Position of navigation controls. Custom navigation content is placed at the selected position.",
+              "description": "Position of navigation controls. Built-in overlay controls reserve space at the slide edges;\ncustom overlay controls should account for their own width.",
               "callbackParameters": []
             },
             {
@@ -6739,7 +6870,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
               "name": "navigationPlacement",
               "type": "CarouselNavigationPlacement",
               "optional": true,
-              "description": "Position of navigation controls. Custom navigation content is placed at the selected position.",
+              "description": "Position of navigation controls. Built-in overlay controls reserve space at the slide edges;\ncustom overlay controls should account for their own width.",
               "callbackParameters": []
             },
             {
@@ -7638,11 +7769,11 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "platform": "tokens",
           "name": "getThemeCssVariables",
           "kind": "function",
-          "signature": "(mode: ThemeName) => ThemeCssVariables",
+          "signature": "(mode: ThemeName, overrides?: Partial<ThemeCssVariables>) => ThemeCssVariables",
           "sourcePath": "packages/tokens/src/index.ts",
           "description": "Converts a semantic theme into CSS custom properties.",
           "examples": [
-            "```ts\nconst variables = getThemeCssVariables('dark');\n```"
+            "```ts\nconst variables = getThemeCssVariables('dark', { '--qzl-primary': '#123456' });\n```"
           ],
           "members": [],
           "parameters": [
@@ -7650,6 +7781,12 @@ export const publicApiDocumentation: PublicApiDocumentation = {
               "name": "mode",
               "type": "ThemeName",
               "description": "- Theme whose colors should be converted.",
+              "documented": true
+            },
+            {
+              "name": "overrides",
+              "type": "Partial<ThemeCssVariables>",
+              "description": "- Optional CSS variable values that take precedence over the theme.",
               "documented": true
             }
           ]

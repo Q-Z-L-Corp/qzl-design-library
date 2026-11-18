@@ -21,6 +21,7 @@ import {
   Dialog,
   DropdownMenu,
   FileUploadInput,
+  FormField,
   HelperText,
   Indicator,
   IconButton,
@@ -251,6 +252,8 @@ function WebPreview({ component, state, update }: {
       return <IconButton label="Search" variant={state.iconButtonVariant}><span aria-hidden="true">⌕</span></IconButton>;
     case 'Input':
       return <div className="component-preview-stack"><label htmlFor="component-example-input">Project name</label><Input id="component-example-input" placeholder="Name your project" disabled={state.disabled} error={state.error} /></div>;
+    case 'FormField':
+      return <FormField label="Email" required hint="Use your work address" error={state.error ? 'Enter a valid address.' : undefined} control={<Input type="email" placeholder="name@example.com" />} />;
     case 'LineChart':
       return <LineChart title="Visits and returning visits" labels={['Mon', 'Tue', 'Wed', 'Thu', 'Fri']} series={[{ label: 'Visits', values: [120, 156, 142, 174, 188] }, { label: 'Returning', values: [42, 48, 51, 56, 61] }]} />;
     case 'MarkdownEditor':

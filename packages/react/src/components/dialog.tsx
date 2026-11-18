@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useId, useRef } from 'react';
 import { IconButton } from './icon-button.js';
 import { mergeClasses } from '@qzlcorp/core';

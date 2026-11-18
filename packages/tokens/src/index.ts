@@ -259,13 +259,17 @@ export interface ThemeCssVariables {
 /**
  * Converts a semantic theme into CSS custom properties.
  * @param mode - Theme whose colors should be converted.
+ * @param overrides - Optional CSS variable values that take precedence over the theme.
  * @returns CSS custom properties for the selected theme.
  * @example
  * ```ts
- * const variables = getThemeCssVariables('dark');
+ * const variables = getThemeCssVariables('dark', { '--qzl-primary': '#123456' });
  * ```
  */
-export function getThemeCssVariables(mode: ThemeName): ThemeCssVariables {
+export function getThemeCssVariables(
+  mode: ThemeName,
+  overrides: Partial<ThemeCssVariables> = {}
+): ThemeCssVariables {
   const theme = themes[mode];
 
   return {
@@ -291,6 +295,7 @@ export function getThemeCssVariables(mode: ThemeName): ThemeCssVariables {
     '--qzl-warning-border': theme.warningBorder,
     '--qzl-danger': theme.danger,
     '--qzl-danger-subtle': theme.dangerSubtle,
-    '--qzl-danger-border': theme.dangerBorder
+    '--qzl-danger-border': theme.dangerBorder,
+    ...overrides
   };
 }
