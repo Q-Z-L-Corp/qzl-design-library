@@ -6,6 +6,12 @@
 
 - Allow typed CSS variable overrides when generating semantic theme variables.
 
+## 0.2.1
+
+### Patch Changes
+
+- e461a64: update README
+
 ## 0.2.0
 
 ### Minor Changes

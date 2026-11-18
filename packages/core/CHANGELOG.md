@@ -1,5 +1,11 @@
 # @qzlcorp/core
 
+## 0.2.1
+
+### Patch Changes
+
+- e461a64: update README
+
 ## 0.2.0
 
 No changes in this release.
