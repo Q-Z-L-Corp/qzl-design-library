@@ -1,5 +1,14 @@
 # @qzlcorp/react-native
 
+## 0.2.1
+
+### Patch Changes
+
+- e461a64: update README
+- Updated dependencies [e461a64]
+  - @qzlcorp/core@0.2.1
+  - @qzlcorp/tokens@0.2.1
+
 ## 0.2.0
 
 ### Patch Changes

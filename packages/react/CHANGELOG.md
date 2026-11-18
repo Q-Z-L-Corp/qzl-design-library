@@ -6,6 +6,15 @@
 
 - Add accessible `FormField`, a loading state for `Button`, rich ReactNode tab labels, and explicit Next.js client boundaries for interactive components.
 
+## 0.2.1
+
+### Patch Changes
+
+- e461a64: update README
+- Updated dependencies [e461a64]
+  - @qzlcorp/core@0.2.1
+  - @qzlcorp/tokens@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes
