@@ -1,5 +1,11 @@
 # @qzlcorp/core
 
+## 0.3.0
+
+### Minor Changes
+
+- 5f4e7b1: Align the shared core package with the coordinated 0.3.0 release.
+
 ## 0.2.1
 
 ### Patch Changes

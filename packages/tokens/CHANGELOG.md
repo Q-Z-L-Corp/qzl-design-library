@@ -6,6 +6,12 @@
 
 - Allow typed CSS variable overrides when generating semantic theme variables.
 
+## 0.3.0
+
+### Minor Changes
+
+- 5f4e7b1: Improve default semantic text contrast and add theme-specific danger foreground tokens, including a CSS variable for Web danger buttons.
+
 ## 0.2.1
 
 ### Patch Changes

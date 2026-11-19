@@ -7,6 +7,19 @@
 - Add accessible `FormField`, a loading state for `Button`, rich ReactNode tab labels, and explicit Next.js client boundaries for interactive components.
 - Add semantic `LinkButton` navigation and a featured `Card` variant.
 
+## 0.3.0
+
+### Minor Changes
+
+- 5f4e7b1: Add semantic LinkButton navigation, stable tab IDs, responsive DataTable states, a featured Card variant, configurable Carousel and Stepper labels, and optional StarRating clearing. Fix controlled Dialog close requests so they notify consumers only once, and use the theme-specific foreground for danger buttons.
+
+### Patch Changes
+
+- Updated dependencies [5f4e7b1]
+- Updated dependencies [5f4e7b1]
+  - @qzlcorp/core@0.3.0
+  - @qzlcorp/tokens@0.3.0
+
 ## 0.2.1
 
 ### Patch Changes

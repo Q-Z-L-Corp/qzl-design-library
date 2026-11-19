@@ -1,5 +1,18 @@
 # @qzlcorp/react-native
 
+## 0.3.0
+
+### Minor Changes
+
+- 5f4e7b1: Add configurable Carousel and Stepper labels, and use the theme-specific foreground for danger buttons.
+
+### Patch Changes
+
+- Updated dependencies [5f4e7b1]
+- Updated dependencies [5f4e7b1]
+  - @qzlcorp/core@0.3.0
+  - @qzlcorp/tokens@0.3.0
+
 ## 0.2.1
 
 ### Patch Changes
