@@ -75,7 +75,6 @@ type DocPage =
   | 'advanced'
   | 'catalog'
   | 'notifications'
-  | 'playground'
   | 'api-reference'
   | 'dashboard'
   | 'safety';
@@ -101,7 +100,7 @@ const navigation: { label: string; items: { id: DocPage; label: string }[] }[] =
     ]
   },
   { label: 'Patterns', items: [{ id: 'dashboard', label: 'Analytics dashboard' }, { id: 'safety', label: 'Safety preview' }] },
-  { label: 'Explore', items: [{ id: 'playground', label: 'Playground' }, { id: 'api-reference', label: 'Public API reference' }] }
+  { label: 'Explore', items: [{ id: 'api-reference', label: 'Public API reference' }] }
 ];
 
 const buttonVariants: ButtonVariant[] = ['primary', 'secondary', 'ghost', 'danger'];
@@ -301,8 +300,6 @@ export default function DocsApp() {
         return <CatalogExtensionsPage />;
       case 'notifications':
         return <NotificationsPage />;
-      case 'playground':
-        return <PlaygroundPage />;
       case 'api-reference':
         return <PublicApiDocumentationPage records={publicApiDocumentation.packages.flatMap((pkg) => pkg.publicApi)} query={search} />;
       case 'dashboard':
@@ -453,13 +450,6 @@ function OverviewPage({ onNavigate }: { onNavigate: (page: DocPage) => void }) {
           <h2>Components for both platforms</h2>
           <p>Web and React Native components with documented APIs and interactive Web previews.</p>
           <Button className="docs-overview-action" variant="ghost" size="sm" onClick={() => onNavigate('buttons')}>Browse components <span aria-hidden="true">→</span></Button>
-        </Card>
-        <Card className="docs-overview-card">
-          <span className="docs-overview-icon docs-overview-icon--play" aria-hidden="true">✳</span>
-          <Badge className="docs-overview-meta" variant="neutral">PLAYGROUND</Badge>
-          <h2>Learn by changing</h2>
-          <p>Experiment with live component options and see changes immediately.</p>
-          <Button className="docs-overview-action" variant="ghost" size="sm" onClick={() => onNavigate('playground')}>Open playground <span aria-hidden="true">→</span></Button>
         </Card>
       </section>
       <section className="docs-section docs-why">
@@ -975,31 +965,6 @@ function NotificationsPage() {
         </div>
       </PreviewSection>
       <section className="docs-section docs-guidance"><h2>Announcements</h2><p>Routine updates use a polite status announcement. Urgent errors use an assertive alert. Avoid announcing frequent, non-actionable updates.</p></section>
-    </>
-  );
-}
-
-function PlaygroundPage() {
-  const [label, setLabel] = useState('Create a workspace');
-  const [variant, setVariant] = useState<ButtonVariant>('primary');
-  const [radius, setRadius] = useState('12px');
-  const [showCard, setShowCard] = useState(true);
-  return (
-    <>
-      <PageTitle eyebrow="EXPLORE / PLAYGROUND" title="Playground" description="Change component props and see the preview update in real time." />
-      <div className="docs-playground">
-        <section className="docs-playground__controls">
-          <div className="docs-eyebrow">CONTROLS</div>
-          <label>Button label<Input value={label} onChange={(event) => setLabel(event.target.value)} /></label>
-          <label>Button variant<select value={variant} onChange={(event) => setVariant(event.target.value as ButtonVariant)}>{buttonVariants.map((item) => <option key={item}>{item}</option>)}</select></label>
-          <label>Surface radius<select value={radius} onChange={(event) => setRadius(event.target.value)}><option value="12px">Compact · 12px</option><option value="20px">Relaxed · 20px</option><option value="28px">Soft · 28px</option></select></label>
-          <label className="docs-control-check"><Checkbox checked={showCard} onChange={(event) => setShowCard(event.target.checked)} /> Show card surface</label>
-        </section>
-        <section className="docs-playground__canvas">
-          <div className="docs-preview__bar"><span>CANVAS</span><Badge variant="neutral">Live</Badge></div>
-          {showCard ? <Card className="docs-playground-card" style={{ borderRadius: radius }}><Badge variant="primary">GET STARTED</Badge><h2>Your next idea starts here.</h2><p>Use QZL Design to create clear, useful interfaces.</p><Button variant={variant}>{label || 'Button label'}</Button></Card> : <div className="docs-playground-card docs-playground-card--bare"><Badge variant="primary">GET STARTED</Badge><h2>Your next idea starts here.</h2><p>Card surface hidden.</p><Button variant={variant}>{label || 'Button label'}</Button></div>}
-        </section>
-      </div>
     </>
   );
 }
