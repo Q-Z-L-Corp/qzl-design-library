@@ -59,10 +59,10 @@ export const qzlTokens = {
       900: '#0b1320',
       950: '#070d17'
     },
-    success: '#12b981',
-    warning: '#f4b942',
-    danger: '#ef5b5b',
-    info: '#3b82f6'
+    success: '#087a4b',
+    warning: '#8a5a00',
+    danger: '#b42318',
+    info: '#1b61f2'
   },
   radius: {
     none: '0px',
@@ -156,18 +156,19 @@ export const themes = {
     text: '#0f172a',
     textMuted: '#4d5a6e',
     textSoft: '#68758a',
-    primary: '#2a7cff',
+    primary: '#1b61f2',
     primaryForeground: '#ffffff',
     primarySubtle: '#eef6ff',
     primaryBorder: '#bfdcff',
     accent: '#7a3ef0',
-    success: '#10b981',
+    success: '#087a4b',
     successSubtle: '#ecfdf5',
     successBorder: '#bbf7d0',
-    warning: '#f4b942',
+    warning: '#8a5a00',
     warningSubtle: '#fff7ed',
     warningBorder: '#fde68a',
-    danger: '#ef5b5b',
+    danger: '#b42318',
+    dangerForeground: '#ffffff',
     dangerSubtle: '#fef2f2',
     dangerBorder: '#fecaca'
   },
@@ -193,6 +194,7 @@ export const themes = {
     warningSubtle: '#3b3017',
     warningBorder: '#635023',
     danger: '#f87171',
+    dangerForeground: '#07121d',
     dangerSubtle: '#3c2227',
     dangerBorder: '#63333a'
   }
@@ -254,6 +256,8 @@ export interface ThemeCssVariables {
   '--qzl-danger-subtle': string;
   /** Danger status border color. */
   '--qzl-danger-border': string;
+  /** Text color intended for a danger-colored surface. */
+  '--qzl-danger-foreground': string;
 }
 
 /**
@@ -296,6 +300,7 @@ export function getThemeCssVariables(
     '--qzl-danger': theme.danger,
     '--qzl-danger-subtle': theme.dangerSubtle,
     '--qzl-danger-border': theme.dangerBorder,
+    '--qzl-danger-foreground': theme.dangerForeground,
     ...overrides
   };
 }

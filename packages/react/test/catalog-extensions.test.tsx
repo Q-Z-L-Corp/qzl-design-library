@@ -4,6 +4,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   BottomSheet,
   Carousel,
+  Dialog,
   Divider,
   FileUploadInput,
   HelperText,
@@ -55,6 +56,58 @@ describe('reference catalog extensions', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Remove tag' }));
     expect(onRemove).toHaveBeenCalledTimes(1);
     expect(screen.getByRole('heading', { name: 'Account settings', level: 2 })).toBeInTheDocument();
+  });
+
+  it('requests a controlled dialog close only once when its close button is pressed', () => {
+    const onOpenChange = vi.fn();
+    function ControlledDialog() {
+      const [open, setOpen] = React.useState(true);
+      return (
+        <Dialog
+          open={open}
+          onOpenChange={(nextOpen) => {
+            onOpenChange(nextOpen);
+            setOpen(nextOpen);
+          }}
+          title="Delete workspace"
+        >
+          Confirm deletion
+        </Dialog>
+      );
+    }
+
+    render(<ControlledDialog />);
+    fireEvent.click(screen.getByRole('button', { name: 'Close dialog' }));
+
+    expect(onOpenChange).toHaveBeenCalledTimes(1);
+    expect(onOpenChange).toHaveBeenCalledWith(false);
+  });
+
+  it('handles native dialog cancellation as a single controlled close request', () => {
+    const onOpenChange = vi.fn();
+    function ControlledDialog() {
+      const [open, setOpen] = React.useState(true);
+      return (
+        <Dialog
+          open={open}
+          onOpenChange={(nextOpen) => {
+            onOpenChange(nextOpen);
+            setOpen(nextOpen);
+          }}
+          title="Delete workspace"
+        >
+          Confirm deletion
+        </Dialog>
+      );
+    }
+
+    render(<ControlledDialog />);
+    const dialog = screen.getByRole('dialog', { name: 'Delete workspace' });
+    fireEvent.keyDown(dialog, { key: 'Escape' });
+    fireEvent(dialog, new Event('cancel', { cancelable: true }));
+
+    expect(onOpenChange).toHaveBeenCalledTimes(1);
+    expect(onOpenChange).toHaveBeenCalledWith(false);
   });
 
   it('changes carousel, pips, segmented selection, cards, and ratings', () => {

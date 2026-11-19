@@ -42,7 +42,7 @@ export function Button({
   const isDisabled = disabled || loading;
   const primary = variant === 'primary';
   const danger = variant === 'danger';
-  const foreground = primary ? colors.primaryForeground : danger ? '#ffffff' : variant === 'ghost' ? colors.primary : colors.text;
+  const foreground = primary ? colors.primaryForeground : danger ? colors.dangerForeground : variant === 'ghost' ? colors.primary : colors.text;
   const background = primary ? colors.primary : danger ? colors.danger : variant === 'ghost' ? 'transparent' : colors.surface;
 
   return (

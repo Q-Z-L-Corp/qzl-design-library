@@ -59,7 +59,7 @@ export function Dialog({ open, onOpenChange, title, description, className, chil
       aria-labelledby={titleId}
       aria-describedby={description ? descriptionId : undefined}
       onClose={(event) => {
-        onOpenChange(false);
+        if (open) onOpenChange(false);
         onClose?.(event);
       }}
       onCancel={(event) => {
@@ -68,10 +68,6 @@ export function Dialog({ open, onOpenChange, title, description, className, chil
         onCancel?.(event);
       }}
       onKeyDown={(event) => {
-        if (event.key === 'Escape' && open) {
-          event.preventDefault();
-          onOpenChange(false);
-        }
         onKeyDown?.(event);
       }}
       onClick={(event) => {

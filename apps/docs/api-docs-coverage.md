@@ -2,7 +2,7 @@
 
 Generated from the exported TypeScript APIs of `@qzlcorp/react`, `@qzlcorp/react-native`, `@qzlcorp/core`, and `@qzlcorp/tokens`.
 
-Coverage: 1847/1847 public API documentation checks pass.
+Coverage: 1848/1848 public API documentation checks pass.
 
 | Package | Public symbols | Components | Hooks | Utilities | Types | Constants |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |

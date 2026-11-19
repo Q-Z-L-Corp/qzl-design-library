@@ -49,7 +49,7 @@
 .qzl-button--secondary:hover:not(:disabled) { background: var(--qzl-surface-muted); }
 .qzl-button--ghost { color: var(--qzl-text); background: transparent; }
 .qzl-button--ghost:hover:not(:disabled) { background: var(--qzl-primary-subtle); }
-.qzl-button--danger { color: #fff; background: var(--qzl-danger); box-shadow: 0 8px 24px color-mix(in srgb, var(--qzl-danger) 20%, transparent); }
+.qzl-button--danger { color: var(--qzl-danger-foreground, #fff); background: var(--qzl-danger); box-shadow: 0 8px 24px color-mix(in srgb, var(--qzl-danger) 20%, transparent); }
 .qzl-button--danger:hover:not(:disabled) { filter: brightness(0.94); }
 .qzl-button__spinner { flex: 0 0 auto; border-color: currentColor; border-top-color: transparent; }
 

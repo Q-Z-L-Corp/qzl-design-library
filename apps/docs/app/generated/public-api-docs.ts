@@ -38,8 +38,8 @@ export interface PublicApiDocumentation {
 
 export const publicApiDocumentation: PublicApiDocumentation = {
   "coverage": {
-    "total": 1847,
-    "documented": 1847,
+    "total": 1848,
+    "documented": 1848,
     "failures": []
   },
   "packages": [
@@ -8269,6 +8269,13 @@ export const publicApiDocumentation: PublicApiDocumentation = {
               "type": "string",
               "optional": false,
               "description": "Danger status border color.",
+              "callbackParameters": []
+            },
+            {
+              "name": "'--qzl-danger-foreground'",
+              "type": "string",
+              "optional": false,
+              "description": "Text color intended for a danger-colored surface.",
               "callbackParameters": []
             }
           ],
