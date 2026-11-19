@@ -38,8 +38,8 @@ export interface PublicApiDocumentation {
 
 export const publicApiDocumentation: PublicApiDocumentation = {
   "coverage": {
-    "total": 1819,
-    "documented": 1819,
+    "total": 1847,
+    "documented": 1847,
     "failures": []
   },
   "packages": [
@@ -2622,12 +2622,12 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "platform": "web",
           "name": "Carousel",
           "kind": "component",
-          "signature": "({ slides, index, defaultIndex, label, onIndexChange, navigation, pagination, navigationPlacement, loop, renderNavigation, renderPagination, className, ...props }: CarouselProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "({ slides, index, defaultIndex, label, previousLabel, nextLabel, onIndexChange, navigation, pagination, navigationPlacement, loop, renderNavigation, renderPagination, className, ...props }: CarouselProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders one slide with configurable navigation and position indicators.",
           "examples": [
             "```tsx\n<Carousel slides={[<p key=\"1\">One</p>, <p key=\"2\">Two</p>]} />\n```",
-            "```tsx\n<Carousel\n  slides={slides}\n  navigation=\"arrows\"\n  navigationPlacement=\"overlay\"\n  pagination=\"progress\"\n  loop\n/>\n```",
+            "```tsx\n<Carousel\n  slides={slides}\n  navigation=\"arrows\"\n  navigationPlacement=\"overlay\"\n  pagination=\"progress\"\n  previousLabel=\"Back\"\n  nextLabel=\"Continue\"\n  loop\n/>\n```",
             "```tsx\n<Carousel\n  slides={[<p key=\"first\">First</p>, <p key=\"second\">Second</p>]}\n  renderNavigation={({ previous, next, canGoPrevious, canGoNext }) => (\n    <div>\n      <button type=\"button\" aria-label=\"Previous slide\" disabled={!canGoPrevious} onClick={previous}>Back</button>\n      <button type=\"button\" aria-label=\"Next slide\" disabled={!canGoNext} onClick={next}>Next</button>\n    </div>\n  )}\n  renderPagination={({ index, slideCount, goTo }) => (\n    <div role=\"group\" aria-label=\"Choose slide\">\n      {Array.from({ length: slideCount }, (_, slide) => (\n        <button key={slide} type=\"button\" aria-label={`Go to slide ${slide + 1}`} aria-current={index === slide ? 'true' : undefined} onClick={() => goTo(slide)}>\n          {slide + 1}\n        </button>\n      ))}\n    </div>\n  )}\n/>\n```"
           ],
           "members": [],
@@ -2666,11 +2666,11 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "platform": "web",
           "name": "StarRating",
           "kind": "component",
-          "signature": "({ value, onValueChange, max, label, className }: StarRatingProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "({ value, onValueChange, allowClear, max, label, className }: StarRatingProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders a static or selectable integer star rating.",
           "examples": [
-            "```tsx\n<StarRating value={rating} onValueChange={setRating} />\n```"
+            "```tsx\n<StarRating value={rating} onValueChange={setRating} allowClear />\n```"
           ],
           "members": [],
           "parameters": []
@@ -2694,11 +2694,11 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "platform": "web",
           "name": "Stepper",
           "kind": "component",
-          "signature": "({ steps, activeStep, onStepChange, label, className }: StepperProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "({ steps, activeStep, onStepChange, backLabel, continueLabel, label, className }: StepperProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
-          "description": "Renders a step progress list with Back and Continue controls.",
+          "description": "Renders a step progress list with customizable back and continue controls.",
           "examples": [
-            "```tsx\n<Stepper steps={steps} activeStep={step} onStepChange={setStep} />\n```"
+            "```tsx\n<Stepper\n  steps={steps}\n  activeStep={step}\n  onStepChange={setStep}\n  backLabel=\"Previous\"\n  continueLabel=\"Next\"\n/>\n```"
           ],
           "members": [],
           "parameters": []
@@ -3129,6 +3129,20 @@ export const publicApiDocumentation: PublicApiDocumentation = {
               "callbackParameters": []
             },
             {
+              "name": "previousLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Text for the built-in previous control; when supplied, also becomes its accessible name.\nIf omitted, the control keeps its default text and accessible name.",
+              "callbackParameters": []
+            },
+            {
+              "name": "nextLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Text for the built-in next control; when supplied, also becomes its accessible name.\nIf omitted, the control keeps its default text and accessible name.",
+              "callbackParameters": []
+            },
+            {
               "name": "onIndexChange",
               "type": "(index: number) => void",
               "optional": true,
@@ -3407,7 +3421,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
               "name": "onValueChange",
               "type": "(value: number) => void",
               "optional": true,
-              "description": "When provided, renders interactive star buttons and reports the chosen score.\nWhen omitted, renders the score as static stars.",
+              "description": "When provided, renders interactive star buttons and reports the chosen score.\nWhen omitted, renders the score as static stars.\nWhen `allowClear` is enabled, clearing reports `0`.",
               "callbackParameters": [
                 {
                   "name": "value",
@@ -3416,6 +3430,13 @@ export const publicApiDocumentation: PublicApiDocumentation = {
                   "documented": true
                 }
               ]
+            },
+            {
+              "name": "allowClear",
+              "type": "boolean",
+              "optional": true,
+              "description": "Show a clear control for an interactive rating above zero.",
+              "callbackParameters": []
             },
             {
               "name": "max",
@@ -3530,7 +3551,7 @@ export const publicApiDocumentation: PublicApiDocumentation = {
               "name": "onStepChange",
               "type": "(index: number) => void",
               "optional": false,
-              "description": "Called with the adjacent requested step when Back or Continue is activated.",
+              "description": "Called with the adjacent requested step when either navigation control is activated.",
               "callbackParameters": [
                 {
                   "name": "index",
@@ -3539,6 +3560,20 @@ export const publicApiDocumentation: PublicApiDocumentation = {
                   "documented": true
                 }
               ]
+            },
+            {
+              "name": "backLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Text for the back button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "continueLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Text for the continue button.",
+              "callbackParameters": []
             },
             {
               "name": "label",
@@ -6449,12 +6484,12 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "platform": "native",
           "name": "Carousel",
           "kind": "component",
-          "signature": "({ slides, index, defaultIndex, label, onIndexChange, navigation, pagination, navigationPlacement, loop, renderNavigation, renderPagination, theme, style }: CarouselProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "({ slides, index, defaultIndex, label, previousLabel, nextLabel, onIndexChange, navigation, pagination, navigationPlacement, loop, renderNavigation, renderPagination, theme, style }: CarouselProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
           "description": "Shows one slide with configurable React Native navigation and position indicators.",
           "examples": [
             "<Carousel slides={[<Text key=\"one\">First</Text>, <Text key=\"two\">Second</Text>]} />",
-            "<Carousel slides={slides} navigation=\"arrows\" pagination=\"progress\" loop />",
+            "<Carousel slides={slides} navigation=\"arrows\" pagination=\"progress\" previousLabel=\"Back\" nextLabel=\"Continue\" loop />",
             "```tsx\nimport { Carousel } from '@qzlcorp/react-native';\nimport { Pressable, Text, View } from 'react-native';\n\n<Carousel\n  slides={[<Text key=\"first\">First</Text>, <Text key=\"second\">Second</Text>]}\n  renderNavigation={({ previous, next, canGoPrevious, canGoNext }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Previous slide\" disabled={!canGoPrevious} onPress={previous}>\n        <Text>Back</Text>\n      </Pressable>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Next slide\" disabled={!canGoNext} onPress={next}>\n        <Text>Next</Text>\n      </Pressable>\n    </View>\n  )}\n  renderPagination={({ index, slideCount, goTo }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      {Array.from({ length: slideCount }, (_, slide) => (\n        <Pressable key={slide} accessibilityRole=\"button\" accessibilityLabel={`Go to slide ${slide + 1}`} accessibilityState={{ selected: index === slide }} onPress={() => goTo(slide)}>\n          <Text>{slide + 1}</Text>\n        </Pressable>\n      ))}\n    </View>\n  )}\n/>\n```"
           ],
           "members": [],
@@ -6521,11 +6556,11 @@ export const publicApiDocumentation: PublicApiDocumentation = {
           "platform": "native",
           "name": "Stepper",
           "kind": "component",
-          "signature": "({ steps, activeStep, onStepChange, label, theme, style }: StepperProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "({ steps, activeStep, onStepChange, label, backLabel, continueLabel, theme, style }: StepperProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
-          "description": "Combines a stepped progress display with React Native Back and Continue buttons.\nIts default label is `Setup steps`, with ` progress` appended for the progress list.",
+          "description": "Combines a stepped progress display with React Native buttons whose labels are customizable.\nIts default label is `Setup steps`, with ` progress` appended for the progress list.",
           "examples": [
-            "<Stepper steps={steps} activeStep={step} onStepChange={setStep} />"
+            "<Stepper steps={steps} activeStep={step} onStepChange={setStep} backLabel=\"Previous\" continueLabel=\"Next\" />"
           ],
           "members": [],
           "parameters": []
@@ -7021,6 +7056,20 @@ export const publicApiDocumentation: PublicApiDocumentation = {
               "callbackParameters": []
             },
             {
+              "name": "previousLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Text for the built-in previous control; when supplied, also becomes its accessible name.\nIf omitted, the control keeps its default text and accessible name.",
+              "callbackParameters": []
+            },
+            {
+              "name": "nextLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Text for the built-in next control; when supplied, also becomes its accessible name.\nIf omitted, the control keeps its default text and accessible name.",
+              "callbackParameters": []
+            },
+            {
               "name": "onIndexChange",
               "type": "(index: number) => void",
               "optional": true,
@@ -7454,10 +7503,24 @@ export const publicApiDocumentation: PublicApiDocumentation = {
               "callbackParameters": []
             },
             {
+              "name": "backLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Text for the back button.",
+              "callbackParameters": []
+            },
+            {
+              "name": "continueLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Text for the continue button.",
+              "callbackParameters": []
+            },
+            {
               "name": "onStepChange",
               "type": "(index: number) => void",
               "optional": false,
-              "description": "Called with the adjacent zero-based step index after Back or Continue is pressed.\nThe component disables those actions at the first and last steps.",
+              "description": "Called with the adjacent zero-based step index after either navigation control is pressed.\nThe component disables those actions at the first and last steps.",
               "callbackParameters": [
                 {
                   "name": "index",

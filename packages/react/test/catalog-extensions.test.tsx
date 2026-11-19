@@ -86,6 +86,22 @@ describe('reference catalog extensions', () => {
     expect(onRatingChange).toHaveBeenCalledWith(5);
   });
 
+  it('clears an interactive star rating to zero only when enabled', () => {
+    const onValueChange = vi.fn();
+    const { rerender } = render(<StarRating value={4} allowClear />);
+    expect(screen.queryByRole('button', { name: 'Clear rating' })).not.toBeInTheDocument();
+
+    rerender(<StarRating value={4} onValueChange={onValueChange} />);
+    expect(screen.queryByRole('button', { name: 'Clear rating' })).not.toBeInTheDocument();
+
+    rerender(<StarRating value={4} onValueChange={onValueChange} allowClear />);
+    fireEvent.click(screen.getByRole('button', { name: 'Clear rating' }));
+    expect(onValueChange).toHaveBeenCalledWith(0);
+
+    rerender(<StarRating value={0} onValueChange={onValueChange} allowClear />);
+    expect(screen.queryByRole('button', { name: 'Clear rating' })).not.toBeInTheDocument();
+  });
+
   it('configures carousel navigation, indicators, looping, and custom controls', () => {
     const { rerender, container } = render(
       <Carousel
@@ -139,6 +155,31 @@ describe('reference catalog extensions', () => {
     expect(container.querySelector('.qzl-carousel__overlay-controls')).toHaveClass('qzl-carousel__overlay-controls--text');
   });
 
+  it('uses custom labels for built-in carousel navigation text and accessible names', () => {
+    const { rerender } = render(
+      <Carousel
+        previousLabel="Back"
+        nextLabel="Continue"
+        slides={[<p key="one">Slide one</p>, <p key="two">Slide two</p>]}
+      />
+    );
+
+    expect(screen.getByRole('button', { name: 'Back' })).toHaveTextContent('Back');
+    expect(screen.getByRole('button', { name: 'Continue' })).toHaveTextContent('Continue');
+
+    rerender(
+      <Carousel
+        navigation="arrows"
+        previousLabel="Go back"
+        nextLabel="Go forward"
+        slides={[<p key="one">Slide one</p>, <p key="two">Slide two</p>]}
+      />
+    );
+
+    expect(screen.getByRole('button', { name: 'Go back' })).toHaveTextContent('‹');
+    expect(screen.getByRole('button', { name: 'Go forward' })).toHaveTextContent('›');
+  });
+
   it('rejects invalid custom slide indexes while keeping unavailable boundary actions safe', () => {
     let goTo: ((index: number) => void) | undefined;
     let previous: (() => void) | undefined;
@@ -180,6 +221,24 @@ describe('reference catalog extensions', () => {
     expect(screen.getByText('Details stay close to the control.')).toBeInTheDocument();
     expect(onFilesSelected).toHaveBeenCalledWith(expect.objectContaining({ 0: file, length: 1 }));
     expect(screen.getAllByRole('list', { name: 'Setup progress' })).toHaveLength(2);
+  });
+
+  it('uses custom labels for Stepper navigation controls', () => {
+    const onStepChange = vi.fn();
+    render(
+      <Stepper
+        steps={[{ label: 'Profile' }, { label: 'Security' }, { label: 'Review' }]}
+        activeStep={1}
+        onStepChange={onStepChange}
+        backLabel="Previous"
+        continueLabel="Next"
+      />
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Previous' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+    expect(onStepChange).toHaveBeenNthCalledWith(1, 0);
+    expect(onStepChange).toHaveBeenNthCalledWith(2, 2);
   });
 
   it('provides bottom and side sheets with accessible dialog semantics', () => {

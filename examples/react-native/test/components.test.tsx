@@ -348,6 +348,19 @@ describe('React Native components', () => {
     });
   });
 
+  it('uses custom labels for built-in carousel navigation text and accessible names', () => {
+    render(
+      <Carousel
+        previousLabel="Back"
+        nextLabel="Continue"
+        slides={[<Text key="one">Slide one</Text>, <Text key="two">Slide two</Text>]}
+      />
+    );
+
+    expect(screen.getByRole('button', { name: 'Back' })).toHaveTextContent('Back');
+    expect(screen.getByRole('button', { name: 'Continue' })).toHaveTextContent('Continue');
+  });
+
   it('uses custom carousel navigation and pagination renderers', () => {
     render(
       <Carousel
@@ -415,6 +428,24 @@ describe('React Native components', () => {
     expect(screen.getByText('Details stay close to the control.')).toBeOnTheScreen();
     expect(onFilesPress).toHaveBeenCalledTimes(1);
     expect(screen.getByText('report.pdf')).toBeOnTheScreen();
+  });
+
+  it('uses custom labels for Stepper navigation controls', () => {
+    const onStepChange = jest.fn();
+    render(
+      <Stepper
+        steps={[{ label: 'Profile' }, { label: 'Security' }, { label: 'Review' }]}
+        activeStep={1}
+        onStepChange={onStepChange}
+        backLabel="Previous"
+        continueLabel="Next"
+      />
+    );
+
+    fireEvent.press(screen.getByRole('button', { name: 'Previous' }));
+    fireEvent.press(screen.getByRole('button', { name: 'Next' }));
+    expect(onStepChange).toHaveBeenNthCalledWith(1, 0);
+    expect(onStepChange).toHaveBeenNthCalledWith(2, 2);
   });
 
   it('renders bottom and side sheets as dismissible native modals', () => {

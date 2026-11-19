@@ -280,6 +280,18 @@ export interface CarouselProps {
   /** Accessible label for the carousel container. @default 'Carousel' */
   label?: string;
   /**
+   * Text for the built-in previous control; when supplied, also becomes its accessible name.
+   * If omitted, the control keeps its default text and accessible name.
+   * @default 'Previous'
+   */
+  previousLabel?: string;
+  /**
+   * Text for the built-in next control; when supplied, also becomes its accessible name.
+   * If omitted, the control keeps its default text and accessible name.
+   * @default 'Next'
+   */
+  nextLabel?: string;
+  /**
    * Called with the requested zero-based slide index after navigation.
    * @param index The new slide index.
    */
@@ -331,7 +343,7 @@ export interface CarouselProps {
  * @example
  * <Carousel slides={[<Text key="one">First</Text>, <Text key="two">Second</Text>]} />
  * @example
- * <Carousel slides={slides} navigation="arrows" pagination="progress" loop />
+ * <Carousel slides={slides} navigation="arrows" pagination="progress" previousLabel="Back" nextLabel="Continue" loop />
  *
  * @example
  * ```tsx
@@ -367,6 +379,8 @@ export function Carousel({
   index,
   defaultIndex = 0,
   label = 'Carousel',
+  previousLabel,
+  nextLabel,
   onIndexChange,
   navigation = 'text',
   pagination = 'dots',
@@ -407,26 +421,28 @@ export function Carousel({
     },
     goTo: changeIndex
   };
+  const previousText = previousLabel ?? 'Previous';
+  const nextText = nextLabel ?? 'Next';
   const previousButton = (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel="Previous slide"
+      accessibilityLabel={previousLabel ?? 'Previous slide'}
       disabled={!controls.canGoPrevious}
       onPress={controls.previous}
       style={{ minHeight: 44, minWidth: navigation === 'arrows' ? 44 : undefined, alignItems: navigation === 'arrows' ? 'center' : undefined, justifyContent: 'center', paddingHorizontal: navigation === 'arrows' ? 0 : 10, opacity: controls.canGoPrevious ? 1 : 0.5 }}
     >
-      <Text style={{ color: colors.primary }}>{navigation === 'arrows' ? '‹' : 'Previous'}</Text>
+      <Text style={{ color: colors.primary }}>{navigation === 'arrows' ? '‹' : previousText}</Text>
     </Pressable>
   );
   const nextButton = (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel="Next slide"
+      accessibilityLabel={nextLabel ?? 'Next slide'}
       disabled={!controls.canGoNext}
       onPress={controls.next}
       style={{ minHeight: 44, minWidth: navigation === 'arrows' ? 44 : undefined, alignItems: navigation === 'arrows' ? 'center' : undefined, justifyContent: 'center', paddingHorizontal: navigation === 'arrows' ? 0 : 10, opacity: controls.canGoNext ? 1 : 0.5 }}
     >
-      <Text style={{ color: colors.primary }}>{navigation === 'arrows' ? '›' : 'Next'}</Text>
+      <Text style={{ color: colors.primary }}>{navigation === 'arrows' ? '›' : nextText}</Text>
     </Pressable>
   );
   const navigationContent = navigation === 'none'
@@ -689,8 +705,12 @@ export function SteppedProgressBar({ steps, activeStep, label = 'Progress', them
 export interface StepperProps extends SteppedProgressBarProps {
   /** Accessible label; the progress list appends ` progress`. @default 'Setup steps' */
   label?: string;
+  /** Text for the back button. @default 'Back' */
+  backLabel?: string;
+  /** Text for the continue button. @default 'Continue' */
+  continueLabel?: string;
   /**
-   * Called with the adjacent zero-based step index after Back or Continue is pressed.
+   * Called with the adjacent zero-based step index after either navigation control is pressed.
    * The component disables those actions at the first and last steps.
    * @param index Requested zero-based step index.
    */
@@ -698,13 +718,22 @@ export interface StepperProps extends SteppedProgressBarProps {
 }
 
 /**
- * Combines a stepped progress display with React Native Back and Continue buttons.
+ * Combines a stepped progress display with React Native buttons whose labels are customizable.
  * Its default label is `Setup steps`, with ` progress` appended for the progress list.
  *
  * @example
- * <Stepper steps={steps} activeStep={step} onStepChange={setStep} />
+ * <Stepper steps={steps} activeStep={step} onStepChange={setStep} backLabel="Previous" continueLabel="Next" />
  */
-export function Stepper({ steps, activeStep, onStepChange, label = 'Setup steps', theme = 'light', style }: StepperProps) {
+export function Stepper({
+  steps,
+  activeStep,
+  onStepChange,
+  label = 'Setup steps',
+  backLabel = 'Back',
+  continueLabel = 'Continue',
+  theme = 'light',
+  style
+}: StepperProps) {
   const colors = themes[theme];
   if (steps.length === 0 || !Number.isInteger(activeStep) || activeStep < 0 || activeStep >= steps.length) throw new RangeError('Stepper requires a valid active step.');
   return (
@@ -712,10 +741,10 @@ export function Stepper({ steps, activeStep, onStepChange, label = 'Setup steps'
       <SteppedProgressBar steps={steps} activeStep={activeStep} label={`${label} progress`} theme={theme} />
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 12 }}>
         <Pressable accessibilityRole="button" onPress={() => onStepChange(activeStep - 1)} disabled={activeStep === 0} style={{ minHeight: 44, justifyContent: 'center', paddingHorizontal: 12, opacity: activeStep === 0 ? 0.5 : 1 }}>
-          <Text style={{ color: colors.primary }}>Back</Text>
+          <Text style={{ color: colors.primary }}>{backLabel}</Text>
         </Pressable>
         <Pressable accessibilityRole="button" onPress={() => onStepChange(activeStep + 1)} disabled={activeStep === steps.length - 1} style={{ minHeight: 44, justifyContent: 'center', paddingHorizontal: 12, opacity: activeStep === steps.length - 1 ? 0.5 : 1 }}>
-          <Text style={{ color: colors.primary }}>Continue</Text>
+          <Text style={{ color: colors.primary }}>{continueLabel}</Text>
         </Pressable>
       </View>
     </View>

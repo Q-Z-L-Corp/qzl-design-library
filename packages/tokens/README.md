@@ -4,7 +4,7 @@ Shared design tokens and semantic light and dark theme values for QZL Design Lib
 
 Official documentation: [design.qz-l.com](https://design.qz-l.com).
 
-This package is published on npm.
+This package is published on npm in the [@qzlcorp organization](https://www.npmjs.com/org/qzlcorp).
 
 ```sh
 pnpm add @qzlcorp/tokens

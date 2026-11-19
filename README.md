@@ -56,7 +56,7 @@ Tests use Node's test runner for core and token utilities, Vitest and Testing Li
 
 ## Package use
 
-All four packages are published on npm. Install the latest release for your platform:
+All four packages are published on npm in the [@qzlcorp organization](https://www.npmjs.com/org/qzlcorp). Install the latest release for your platform:
 
 ```sh
 pnpm add @qzlcorp/react

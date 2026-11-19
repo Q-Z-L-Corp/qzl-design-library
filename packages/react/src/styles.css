@@ -486,6 +486,8 @@
 .qzl-select-card button:disabled { opacity: 0.5; cursor: not-allowed; }
 .qzl-star-rating { display: inline-flex; align-items: center; color: var(--qzl-warning); }
 .qzl-star-rating button { min-width: 36px; min-height: 40px; padding: 0; border: 0; color: inherit; background: transparent; font-size: 24px; cursor: pointer; }
+.qzl-star-rating .qzl-star-rating__clear { min-width: 0; margin-inline-start: 6px; padding: 0 8px; border: 1px solid var(--qzl-border); border-radius: 6px; color: var(--qzl-text-muted); font-size: 12px; }
+.qzl-star-rating .qzl-star-rating__clear:hover { color: var(--qzl-text); background: var(--qzl-surface-muted); }
 .qzl-stepped-progress { display: flex; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .qzl-stepped-progress li { display: grid; flex: 1; gap: 6px; color: var(--qzl-text-muted); font-size: 11px; }
 .qzl-stepped-progress li[data-state="current"] { color: var(--qzl-primary); font-weight: 650; }

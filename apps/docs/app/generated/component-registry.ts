@@ -63,7 +63,7 @@ export interface ComponentRegistry {
 }
 
 export const componentRegistry: ComponentRegistry = {
-  "generatedAt": "2026-11-19T10:13:35.568Z",
+  "generatedAt": "2026-11-19T10:45:43.401Z",
   "categories": [
     "Actions",
     "Forms",
@@ -1475,7 +1475,7 @@ export const componentRegistry: ComponentRegistry = {
       "name": "Stepper",
       "slug": "stepper",
       "category": "Forms",
-      "description": "Renders a step progress list with Back and Continue controls.",
+      "description": "Renders a step progress list with customizable back and continue controls.",
       "status": "beta",
       "preview": true,
       "examples": {
@@ -1492,9 +1492,9 @@ export const componentRegistry: ComponentRegistry = {
           "packageName": "@qzlcorp/react",
           "importPath": "@qzlcorp/react",
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
-          "description": "Renders a step progress list with Back and Continue controls.",
+          "description": "Renders a step progress list with customizable back and continue controls.",
           "examples": [
-            "```tsx\n<Stepper steps={steps} activeStep={step} onStepChange={setStep} />\n```"
+            "```tsx\n<Stepper\n  steps={steps}\n  activeStep={step}\n  onStepChange={setStep}\n  backLabel=\"Previous\"\n  continueLabel=\"Next\"\n/>\n```"
           ],
           "propsType": "StepperProps",
           "extends": [],
@@ -1535,8 +1535,30 @@ export const componentRegistry: ComponentRegistry = {
               "optional": false,
               "required": true,
               "defaultValue": null,
-              "description": "Called with the adjacent requested step when Back or Continue is activated.",
+              "description": "Called with the adjacent requested step when either navigation control is activated.",
               "documentedDefault": null,
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "backLabel",
+              "type": "string | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "'Back'",
+              "description": "Text for the back button.",
+              "documentedDefault": "'Back'",
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "continueLabel",
+              "type": "string | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "'Continue'",
+              "description": "Text for the continue button.",
+              "documentedDefault": "'Continue'",
               "allowedValues": [],
               "relatedTypes": []
             },
@@ -1570,9 +1592,9 @@ export const componentRegistry: ComponentRegistry = {
           "packageName": "@qzlcorp/react-native",
           "importPath": "@qzlcorp/react-native",
           "sourcePath": "packages/react-native/src/components/catalog-extensions.tsx",
-          "description": "Combines a stepped progress display with React Native Back and Continue buttons.\nIts default label is `Setup steps`, with ` progress` appended for the progress list.",
+          "description": "Combines a stepped progress display with React Native buttons whose labels are customizable.\nIts default label is `Setup steps`, with ` progress` appended for the progress list.",
           "examples": [
-            "<Stepper steps={steps} activeStep={step} onStepChange={setStep} />"
+            "<Stepper steps={steps} activeStep={step} onStepChange={setStep} backLabel=\"Previous\" continueLabel=\"Next\" />"
           ],
           "propsType": "StepperProps",
           "extends": [
@@ -1591,12 +1613,34 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             },
             {
+              "name": "backLabel",
+              "type": "string | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "'Back'",
+              "description": "Text for the back button.",
+              "documentedDefault": "'Back'",
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "continueLabel",
+              "type": "string | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "'Continue'",
+              "description": "Text for the continue button.",
+              "documentedDefault": "'Continue'",
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
               "name": "onStepChange",
               "type": "(index: number) => void",
               "optional": false,
               "required": true,
               "defaultValue": null,
-              "description": "Called with the adjacent zero-based step index after Back or Continue is pressed.\nThe component disables those actions at the first and last steps.",
+              "description": "Called with the adjacent zero-based step index after either navigation control is pressed.\nThe component disables those actions at the first and last steps.",
               "documentedDefault": null,
               "allowedValues": [],
               "relatedTypes": []
@@ -2469,7 +2513,7 @@ export const componentRegistry: ComponentRegistry = {
       "examples": {
         "web": "import { StarRating } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <StarRating value={4} />\n  );\n}",
         "customization": {
-          "web": "import { StarRating } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <StarRating value={4} className=\"custom-example\" />\n  );\n}",
+          "web": "import { StarRating } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <StarRating value={4} allowClear={true} />\n  );\n}",
           "native": "import { StarRating } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <StarRating value={4} theme=\"dark\" />\n  );\n}"
         },
         "native": "import { StarRating } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <StarRating value={4} />\n  );\n}"
@@ -2482,7 +2526,7 @@ export const componentRegistry: ComponentRegistry = {
           "sourcePath": "packages/react/src/components/catalog-extensions.tsx",
           "description": "Renders a static or selectable integer star rating.",
           "examples": [
-            "```tsx\n<StarRating value={rating} onValueChange={setRating} />\n```"
+            "```tsx\n<StarRating value={rating} onValueChange={setRating} allowClear />\n```"
           ],
           "propsType": "StarRatingProps",
           "extends": [],
@@ -2504,9 +2548,23 @@ export const componentRegistry: ComponentRegistry = {
               "optional": true,
               "required": false,
               "defaultValue": null,
-              "description": "When provided, renders interactive star buttons and reports the chosen score.\nWhen omitted, renders the score as static stars.",
+              "description": "When provided, renders interactive star buttons and reports the chosen score.\nWhen omitted, renders the score as static stars.\nWhen `allowClear` is enabled, clearing reports `0`.",
               "documentedDefault": null,
               "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "allowClear",
+              "type": "boolean | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "false",
+              "description": "Show a clear control for an interactive rating above zero.",
+              "documentedDefault": "false",
+              "allowedValues": [
+                false,
+                true
+              ],
               "relatedTypes": []
             },
             {
@@ -4907,7 +4965,7 @@ export const componentRegistry: ComponentRegistry = {
           "description": "Renders one slide with configurable navigation and position indicators.",
           "examples": [
             "```tsx\n<Carousel slides={[<p key=\"1\">One</p>, <p key=\"2\">Two</p>]} />\n```",
-            "```tsx\n<Carousel\n  slides={slides}\n  navigation=\"arrows\"\n  navigationPlacement=\"overlay\"\n  pagination=\"progress\"\n  loop\n/>\n```",
+            "```tsx\n<Carousel\n  slides={slides}\n  navigation=\"arrows\"\n  navigationPlacement=\"overlay\"\n  pagination=\"progress\"\n  previousLabel=\"Back\"\n  nextLabel=\"Continue\"\n  loop\n/>\n```",
             "```tsx\n<Carousel\n  slides={[<p key=\"first\">First</p>, <p key=\"second\">Second</p>]}\n  renderNavigation={({ previous, next, canGoPrevious, canGoNext }) => (\n    <div>\n      <button type=\"button\" aria-label=\"Previous slide\" disabled={!canGoPrevious} onClick={previous}>Back</button>\n      <button type=\"button\" aria-label=\"Next slide\" disabled={!canGoNext} onClick={next}>Next</button>\n    </div>\n  )}\n  renderPagination={({ index, slideCount, goTo }) => (\n    <div role=\"group\" aria-label=\"Choose slide\">\n      {Array.from({ length: slideCount }, (_, slide) => (\n        <button key={slide} type=\"button\" aria-label={`Go to slide ${slide + 1}`} aria-current={index === slide ? 'true' : undefined} onClick={() => goTo(slide)}>\n          {slide + 1}\n        </button>\n      ))}\n    </div>\n  )}\n/>\n```"
           ],
           "propsType": "CarouselProps",
@@ -4956,6 +5014,28 @@ export const componentRegistry: ComponentRegistry = {
               "defaultValue": "'Carousel'",
               "description": "Accessible name of the carousel region.",
               "documentedDefault": "'Carousel'",
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "previousLabel",
+              "type": "string | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": null,
+              "description": "Text for the built-in previous control; when supplied, also becomes its accessible name.\nIf omitted, the control keeps its default text and accessible name.",
+              "documentedDefault": "'Previous'",
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "nextLabel",
+              "type": "string | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": null,
+              "description": "Text for the built-in next control; when supplied, also becomes its accessible name.\nIf omitted, the control keeps its default text and accessible name.",
+              "documentedDefault": "'Next'",
               "allowedValues": [],
               "relatedTypes": []
             },
@@ -5102,7 +5182,7 @@ export const componentRegistry: ComponentRegistry = {
           "description": "Shows one slide with configurable React Native navigation and position indicators.",
           "examples": [
             "<Carousel slides={[<Text key=\"one\">First</Text>, <Text key=\"two\">Second</Text>]} />",
-            "<Carousel slides={slides} navigation=\"arrows\" pagination=\"progress\" loop />",
+            "<Carousel slides={slides} navigation=\"arrows\" pagination=\"progress\" previousLabel=\"Back\" nextLabel=\"Continue\" loop />",
             "```tsx\nimport { Carousel } from '@qzlcorp/react-native';\nimport { Pressable, Text, View } from 'react-native';\n\n<Carousel\n  slides={[<Text key=\"first\">First</Text>, <Text key=\"second\">Second</Text>]}\n  renderNavigation={({ previous, next, canGoPrevious, canGoNext }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Previous slide\" disabled={!canGoPrevious} onPress={previous}>\n        <Text>Back</Text>\n      </Pressable>\n      <Pressable accessibilityRole=\"button\" accessibilityLabel=\"Next slide\" disabled={!canGoNext} onPress={next}>\n        <Text>Next</Text>\n      </Pressable>\n    </View>\n  )}\n  renderPagination={({ index, slideCount, goTo }) => (\n    <View style={{ flexDirection: 'row', gap: 8 }}>\n      {Array.from({ length: slideCount }, (_, slide) => (\n        <Pressable key={slide} accessibilityRole=\"button\" accessibilityLabel={`Go to slide ${slide + 1}`} accessibilityState={{ selected: index === slide }} onPress={() => goTo(slide)}>\n          <Text>{slide + 1}</Text>\n        </Pressable>\n      ))}\n    </View>\n  )}\n/>\n```"
           ],
           "propsType": "CarouselProps",
@@ -5149,6 +5229,28 @@ export const componentRegistry: ComponentRegistry = {
               "defaultValue": "'Carousel'",
               "description": "Accessible label for the carousel container.",
               "documentedDefault": "'Carousel'",
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "previousLabel",
+              "type": "string | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": null,
+              "description": "Text for the built-in previous control; when supplied, also becomes its accessible name.\nIf omitted, the control keeps its default text and accessible name.",
+              "documentedDefault": "'Previous'",
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "nextLabel",
+              "type": "string | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": null,
+              "description": "Text for the built-in next control; when supplied, also becomes its accessible name.\nIf omitted, the control keeps its default text and accessible name.",
+              "documentedDefault": "'Next'",
               "allowedValues": [],
               "relatedTypes": []
             },

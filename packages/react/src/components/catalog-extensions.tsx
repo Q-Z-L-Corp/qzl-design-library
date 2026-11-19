@@ -270,6 +270,18 @@ export interface CarouselProps extends React.HTMLAttributes<HTMLElement> {
    */
   label?: string;
   /**
+   * Text for the built-in previous control; when supplied, also becomes its accessible name.
+   * If omitted, the control keeps its default text and accessible name.
+   * @default 'Previous'
+   */
+  previousLabel?: string;
+  /**
+   * Text for the built-in next control; when supplied, also becomes its accessible name.
+   * If omitted, the control keeps its default text and accessible name.
+   * @default 'Next'
+   */
+  nextLabel?: string;
+  /**
    * Called with the requested zero-based slide index.
    * @param index Index of the newly selected slide.
    */
@@ -325,6 +337,8 @@ export interface CarouselProps extends React.HTMLAttributes<HTMLElement> {
  *   navigation="arrows"
  *   navigationPlacement="overlay"
  *   pagination="progress"
+ *   previousLabel="Back"
+ *   nextLabel="Continue"
  *   loop
  * />
  * ```
@@ -355,6 +369,8 @@ export function Carousel({
   index,
   defaultIndex = 0,
   label = 'Carousel',
+  previousLabel,
+  nextLabel,
   onIndexChange,
   navigation = 'text',
   pagination = 'dots',
@@ -397,14 +413,16 @@ export function Carousel({
     },
     goTo: changeIndex
   };
+  const previousText = previousLabel ?? 'Previous';
+  const nextText = nextLabel ?? 'Next';
   const previousButton = (
-    <button type="button" className="qzl-carousel__navigation-button" onClick={controls.previous} disabled={!controls.canGoPrevious} aria-label="Previous slide">
-      {navigation === 'arrows' ? '‹' : 'Previous'}
+    <button type="button" className="qzl-carousel__navigation-button" onClick={controls.previous} disabled={!controls.canGoPrevious} aria-label={previousLabel ?? 'Previous slide'}>
+      {navigation === 'arrows' ? '‹' : previousText}
     </button>
   );
   const nextButton = (
-    <button type="button" className="qzl-carousel__navigation-button" onClick={controls.next} disabled={!controls.canGoNext} aria-label="Next slide">
-      {navigation === 'arrows' ? '›' : 'Next'}
+    <button type="button" className="qzl-carousel__navigation-button" onClick={controls.next} disabled={!controls.canGoNext} aria-label={nextLabel ?? 'Next slide'}>
+      {navigation === 'arrows' ? '›' : nextText}
     </button>
   );
   const navigationContent = navigation === 'none'
@@ -589,9 +607,15 @@ export interface StarRatingProps {
   /**
    * When provided, renders interactive star buttons and reports the chosen score.
    * When omitted, renders the score as static stars.
-   * @param value Selected score from 1 through `max`.
+   * When `allowClear` is enabled, clearing reports `0`.
+   * @param value Selected score from 1 through `max`, or `0` when cleared.
    */
   onValueChange?: (value: number) => void;
+  /**
+   * Show a clear control for an interactive rating above zero.
+   * @default false
+   */
+  allowClear?: boolean;
   /**
    * Number of stars in the scale; must be a positive integer.
    * @default 5
@@ -611,10 +635,10 @@ export interface StarRatingProps {
  *
  * @example
  * ```tsx
- * <StarRating value={rating} onValueChange={setRating} />
+ * <StarRating value={rating} onValueChange={setRating} allowClear />
  * ```
  */
-export function StarRating({ value, onValueChange, max = 5, label = 'Rating', className }: StarRatingProps) {
+export function StarRating({ value, onValueChange, allowClear = false, max = 5, label = 'Rating', className }: StarRatingProps) {
   if (!Number.isInteger(max) || max < 1) throw new RangeError('Star rating max must be a positive integer.');
   if (!Number.isInteger(value) || value < 0 || value > max) throw new RangeError('Star rating value must be within max.');
   return (
@@ -628,6 +652,16 @@ export function StarRating({ value, onValueChange, max = 5, label = 'Rating', cl
           </button>
         ) : <span key={score}>{star}</span>;
       })}
+      {onValueChange && allowClear && value > 0 && (
+        <button
+          type="button"
+          className="qzl-star-rating__clear"
+          aria-label="Clear rating"
+          onClick={() => onValueChange(0)}
+        >
+          Clear
+        </button>
+      )}
     </div>
   );
 }
@@ -684,10 +718,14 @@ export interface StepperProps {
   /** Zero-based current step index. */
   activeStep: number;
   /**
-   * Called with the adjacent requested step when Back or Continue is activated.
+   * Called with the adjacent requested step when either navigation control is activated.
    * @param index Requested zero-based step index.
    */
   onStepChange: (index: number) => void;
+  /** Text for the back button. @default 'Back' */
+  backLabel?: string;
+  /** Text for the continue button. @default 'Continue' */
+  continueLabel?: string;
   /**
    * Accessible name of the stepper navigation.
    * @default 'Setup steps'
@@ -698,14 +736,28 @@ export interface StepperProps {
 }
 
 /**
- * Renders a step progress list with Back and Continue controls.
+ * Renders a step progress list with customizable back and continue controls.
  *
  * @example
  * ```tsx
- * <Stepper steps={steps} activeStep={step} onStepChange={setStep} />
+ * <Stepper
+ *   steps={steps}
+ *   activeStep={step}
+ *   onStepChange={setStep}
+ *   backLabel="Previous"
+ *   continueLabel="Next"
+ * />
  * ```
  */
-export function Stepper({ steps, activeStep, onStepChange, label = 'Setup steps', className }: StepperProps) {
+export function Stepper({
+  steps,
+  activeStep,
+  onStepChange,
+  backLabel = 'Back',
+  continueLabel = 'Continue',
+  label = 'Setup steps',
+  className
+}: StepperProps) {
   if (steps.length === 0 || !Number.isInteger(activeStep) || activeStep < 0 || activeStep >= steps.length) {
     throw new RangeError('Stepper requires a valid active step.');
   }
@@ -713,8 +765,8 @@ export function Stepper({ steps, activeStep, onStepChange, label = 'Setup steps'
     <nav aria-label={label} className={mergeClasses('qzl-stepper', className)}>
       <SteppedProgressBar steps={steps} activeStep={activeStep} label={`${label} progress`} />
       <div className="qzl-stepper__controls">
-        <button type="button" onClick={() => onStepChange(activeStep - 1)} disabled={activeStep === 0}>Back</button>
-        <button type="button" onClick={() => onStepChange(activeStep + 1)} disabled={activeStep === steps.length - 1}>Continue</button>
+        <button type="button" onClick={() => onStepChange(activeStep - 1)} disabled={activeStep === 0}>{backLabel}</button>
+        <button type="button" onClick={() => onStepChange(activeStep + 1)} disabled={activeStep === steps.length - 1}>{continueLabel}</button>
       </div>
     </nav>
   );

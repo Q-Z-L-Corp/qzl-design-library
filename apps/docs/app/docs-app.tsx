@@ -475,7 +475,7 @@ function GettingStarted({ onCopy }: { onCopy: (value: string) => void }) {
   return (
     <>
       <PageTitle eyebrow="START HERE" title="Getting started" description="Choose a platform package, add its styles or peer dependencies, and build with shared design tokens and themes." />
-      <div className="docs-callout"><span>i</span><p><strong>Packages are not published yet.</strong> The commands below are for use after the first release. For local development, clone the repository and use its workspace commands.</p></div>
+      <div className="docs-callout"><span>i</span><p><strong>Published on npm.</strong> The Web, React Native, core, and tokens packages are available from the <a href="https://www.npmjs.com/org/qzlcorp">@qzlcorp npm organization</a>. Use the commands below to install a package; clone the repository only for local development or contributions.</p></div>
       <div className="docs-section">
         <h2>Install for Web</h2>
         <p>Install the React package in an application using React 18.3.1 or 19 with a matching React DOM version. Its supporting packages are installed as dependencies; add <code>@qzlcorp/tokens</code> directly only if your application imports token APIs.</p>
@@ -926,7 +926,7 @@ function CatalogExtensionsPage() {
               { value: 'team', title: 'Team', description: 'For collaboration' }
             ]}
           />
-          <StarRating label="Satisfaction" value={rating} onValueChange={setRating} />
+          <StarRating label="Satisfaction" value={rating} allowClear onValueChange={setRating} />
           <SteppedProgressBar label="Project setup progress" steps={steps} activeStep={activeStep} />
           <Stepper label="Setup steps" steps={steps} activeStep={activeStep} onStepChange={setActiveStep} />
         </div>

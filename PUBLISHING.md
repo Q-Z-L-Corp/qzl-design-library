@@ -1,6 +1,6 @@
 # Publishing
 
-The published packages are `@qzlcorp/react`, `@qzlcorp/react-native`, `@qzlcorp/core`, and `@qzlcorp/tokens`. All four are published at stable version `0.2.0`. Stable releases use npm's `latest` dist-tag; consumers can install packages without a prerelease tag.
+The published packages are `@qzlcorp/react`, `@qzlcorp/react-native`, `@qzlcorp/core`, and `@qzlcorp/tokens`. See the [@qzlcorp npm organization](https://www.npmjs.com/org/qzlcorp) for current package versions and availability. Stable releases use npm's `latest` dist-tag, so consumers can install them without a prerelease tag.
 
 ## Configure npm trusted publishing
 

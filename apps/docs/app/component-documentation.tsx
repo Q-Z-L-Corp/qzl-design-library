@@ -292,7 +292,7 @@ function WebPreview({ component, state, update }: {
     case 'Spinner':
       return <Spinner label="Saving changes" size={state.spinnerSize} />;
     case 'StarRating':
-      return <StarRating label="Satisfaction" value={state.rating} max={5} onValueChange={(value) => update('rating', value)} />;
+      return <StarRating label="Satisfaction" value={state.rating} max={5} allowClear onValueChange={(value) => update('rating', value)} />;
     case 'SteppedProgressBar':
       return <SteppedProgressBar label="Setup progress" steps={steps} activeStep={state.stepIndex} />;
     case 'Stepper':

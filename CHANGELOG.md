@@ -1,6 +1,6 @@
 # Changelog
 
-The latest stable release is `0.2.0`. Entries under Unreleased have not been published yet.
+The latest stable release is `0.2.1`. Entries under Unreleased describe changes not yet included in a published package.
 
 ## Unreleased
 

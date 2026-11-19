@@ -96,7 +96,7 @@ test('StarRating playground keeps its preview value within the declared maximum'
 
   assert.ok(Number.isInteger(initialRating));
   assert.ok(initialRating <= maxRating);
-  assert.match(source, /value=\{state\.rating\} max=\{5\} onValueChange=\{\(value\) => update\('rating', value\)\}/);
+  assert.match(source, /value=\{state\.rating\} max=\{5\} allowClear onValueChange=\{\(value\) => update\('rating', value\)\}/);
 });
 
 test('coverage report distinguishes generated API data from unverified guidance', async () => {

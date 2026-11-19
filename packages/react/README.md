@@ -4,7 +4,7 @@ Reusable React components for Web applications, with documented APIs and accessi
 
 Official documentation: [design.qz-l.com](https://design.qz-l.com).
 
-This package is published on npm. The install command below resolves the latest stable release.
+This package is published on npm in the [@qzlcorp organization](https://www.npmjs.com/org/qzlcorp). The install command below resolves the latest stable release.
 The host application must provide React and React DOM 18.3.1 or 19.
 
 ```sh
