@@ -17,6 +17,7 @@ const metadata = {
   Badge: ['Feedback', 'Show a short status, category, or count.'],
   Breadcrumbs: ['Navigation', 'Show the current location within a hierarchy.'],
   Button: ['Actions', 'Trigger an action with a clearly communicated priority.'],
+  LinkButton: ['Actions', 'Navigate to a destination with button styling.'],
   BottomSheet: ['Overlays', 'Present focused content from the bottom edge of the viewport.'],
   Carousel: ['Navigation', 'Browse a sequence of slides with configurable navigation and position indicators.'],
   Card: ['Layout', 'Group related content into a surface.'],
@@ -551,6 +552,7 @@ function getExampleValue(componentName, prop, platform) {
     if (name === 'getRowKey') return 'row => row.name';
     return '() => {}';
   }
+  if (name === 'href') return "'/example'";
   if (name === 'children') return null;
   if (name === 'control' && componentName === 'FormField') return '<Input type="email" />';
   if (name === 'label') return "'Example label'";
@@ -609,7 +611,7 @@ function getExampleBody(componentName, platform, props) {
     return '<Button>Focus or hover</Button>';
   }
   const needsChildren = new Set([
-    'Accordion', 'Alert', 'Badge', 'BottomSheet', 'Button', 'Card', 'Dialog', 'HelperText',
+    'Accordion', 'Alert', 'Badge', 'BottomSheet', 'Button', 'Card', 'Dialog', 'HelperText', 'LinkButton',
     'IconButton', 'Popover', 'SideSheet', 'Tag', 'Tooltip', 'Typography'
   ]);
   if (!needsChildren.has(componentName) && !props.some((prop) => prop.name === 'children' && prop.required)) return null;

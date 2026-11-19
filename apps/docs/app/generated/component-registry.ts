@@ -63,7 +63,7 @@ export interface ComponentRegistry {
 }
 
 export const componentRegistry: ComponentRegistry = {
-  "generatedAt": "2026-11-18T21:35:28.447Z",
+  "generatedAt": "2026-11-19T10:13:35.568Z",
   "categories": [
     "Actions",
     "Forms",
@@ -78,12 +78,12 @@ export const componentRegistry: ComponentRegistry = {
   "packages": {
     "web": {
       "name": "@qzlcorp/react",
-      "version": "0.2.0",
-      "componentCount": 50
+      "version": "0.2.1",
+      "componentCount": 51
     },
     "native": {
       "name": "@qzlcorp/react-native",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "componentCount": 48
     },
     "optionalNativeComponents": [
@@ -202,7 +202,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -311,7 +311,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -372,7 +372,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -451,7 +451,123 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
+        }
+      }
+    },
+    {
+      "name": "LinkButton",
+      "slug": "link-button",
+      "category": "Actions",
+      "description": "Renders a semantic HTML link with the visual treatment of a button.",
+      "status": "beta",
+      "preview": true,
+      "examples": {
+        "web": "import { LinkButton } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <LinkButton href=\"/example\">\n      Example content\n    </LinkButton>\n  );\n}",
+        "customization": {
+          "web": "import { LinkButton } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <LinkButton href=\"/example\" variant=\"secondary\">\n      Example content\n    </LinkButton>\n  );\n}"
+        }
+      },
+      "platforms": {
+        "web": {
+          "platform": "web",
+          "packageName": "@qzlcorp/react",
+          "importPath": "@qzlcorp/react",
+          "sourcePath": "packages/react/src/components/link-button.tsx",
+          "description": "Renders a semantic HTML link with the visual treatment of a button.",
+          "examples": [
+            "```tsx\n<LinkButton href=\"/projects\" variant=\"secondary\">View projects</LinkButton>\n```"
+          ],
+          "propsType": "LinkButtonProps",
+          "extends": [
+            "Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>"
+          ],
+          "props": [
+            {
+              "name": "href",
+              "type": "string",
+              "optional": false,
+              "required": true,
+              "defaultValue": null,
+              "description": "Destination for the link.",
+              "documentedDefault": null,
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "variant",
+              "type": "ButtonVariant | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "'primary'",
+              "description": "Visual treatment of the link.",
+              "documentedDefault": "'primary'",
+              "allowedValues": [
+                "primary",
+                "secondary",
+                "ghost",
+                "danger"
+              ],
+              "relatedTypes": [
+                {
+                  "name": "ButtonVariant",
+                  "definition": "export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';",
+                  "description": "Visual treatment applied to a {@link Button}.",
+                  "examples": [],
+                  "sourcePath": "packages/react/src/components/button.tsx"
+                }
+              ]
+            },
+            {
+              "name": "size",
+              "type": "ButtonSize | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "'md'",
+              "description": "Preset size of the link.",
+              "documentedDefault": "'md'",
+              "allowedValues": [
+                "sm",
+                "md",
+                "lg"
+              ],
+              "relatedTypes": [
+                {
+                  "name": "ButtonSize",
+                  "definition": "export type ButtonSize = 'sm' | 'md' | 'lg';",
+                  "description": "Supported button size presets.",
+                  "examples": [],
+                  "sourcePath": "packages/react/src/components/button.tsx"
+                }
+              ]
+            },
+            {
+              "name": "fullWidth",
+              "type": "boolean | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "false",
+              "description": "Stretch the link to fill the width of its container.",
+              "documentedDefault": "false",
+              "allowedValues": [
+                false,
+                true
+              ],
+              "relatedTypes": []
+            },
+            {
+              "name": "renderAs",
+              "type": "React.ElementType<any, keyof React.JSX.IntrinsicElements> | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "'a'",
+              "description": "Override the rendered element. Pass a Next.js `Link`, React Router `Link`,\nor any component that accepts `href`, `className`, and `children`.",
+              "documentedDefault": "'a'",
+              "allowedValues": [],
+              "relatedTypes": []
+            }
+          ],
+          "version": "0.2.1"
         }
       }
     },
@@ -567,7 +683,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -665,7 +781,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -784,7 +900,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -833,7 +949,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -898,7 +1014,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -947,7 +1063,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -1003,7 +1119,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -1052,7 +1168,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -1155,7 +1271,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -1234,7 +1350,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -1351,7 +1467,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -1447,7 +1563,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -1541,7 +1657,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -1590,7 +1706,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -1646,7 +1762,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -1695,7 +1811,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -1773,7 +1889,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -1871,7 +1987,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -1963,7 +2079,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -2059,7 +2175,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -2151,7 +2267,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -2247,7 +2363,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -2339,7 +2455,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -2427,7 +2543,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -2511,7 +2627,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -2571,7 +2687,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -2627,7 +2743,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -2678,7 +2794,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -2745,7 +2861,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -2797,7 +2913,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -2845,7 +2961,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -2916,7 +3032,7 @@ export const componentRegistry: ComponentRegistry = {
               ]
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -2992,7 +3108,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -3071,7 +3187,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -3155,7 +3271,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -3204,7 +3320,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -3258,7 +3374,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -3319,7 +3435,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -3385,7 +3501,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -3470,7 +3586,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -3551,7 +3667,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -3635,7 +3751,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -3724,7 +3840,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -3809,7 +3925,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -3912,7 +4028,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -3984,7 +4100,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -4063,7 +4179,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -4077,7 +4193,7 @@ export const componentRegistry: ComponentRegistry = {
       "examples": {
         "web": "import { Card } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Card>\n      Example content\n    </Card>\n  );\n}",
         "customization": {
-          "web": "import { Card } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Card elevated={false}>\n      Example content\n    </Card>\n  );\n}",
+          "web": "import { Card } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Card variant=\"featured\">\n      Example content\n    </Card>\n  );\n}",
           "native": "import { Card } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Card theme=\"dark\">\n      <Text>Example content</Text>\n    </Card>\n  );\n}"
         },
         "native": "import { Card } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Card>\n      <Text>Example content</Text>\n    </Card>\n  );\n}"
@@ -4090,13 +4206,35 @@ export const componentRegistry: ComponentRegistry = {
           "sourcePath": "packages/react/src/components/card.tsx",
           "description": "Renders a content container with optional elevated styling.",
           "examples": [
-            "```tsx\n<Card><h2>Account</h2><p>Profile settings</p></Card>\n```"
+            "```tsx\n<Card variant=\"featured\"><h2>Account</h2><p>Profile settings</p></Card>\n```"
           ],
           "propsType": "CardProps",
           "extends": [
             "React.HTMLAttributes<HTMLDivElement>"
           ],
           "props": [
+            {
+              "name": "variant",
+              "type": "CardVariant | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "'default'",
+              "description": "Visual treatment applied to the card.",
+              "documentedDefault": "'default'",
+              "allowedValues": [
+                "default",
+                "featured"
+              ],
+              "relatedTypes": [
+                {
+                  "name": "CardVariant",
+                  "definition": "export type CardVariant = 'default' | 'featured';",
+                  "description": "Visual treatment applied to a {@link Card}.",
+                  "examples": [],
+                  "sourcePath": "packages/react/src/components/card.tsx"
+                }
+              ]
+            },
             {
               "name": "elevated",
               "type": "boolean | undefined",
@@ -4112,7 +4250,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -4157,7 +4295,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -4220,7 +4358,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -4288,7 +4426,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -4362,7 +4500,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -4460,7 +4598,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -4474,7 +4612,7 @@ export const componentRegistry: ComponentRegistry = {
       "examples": {
         "web": "import { Typography } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Typography>\n      Example content\n    </Typography>\n  );\n}",
         "customization": {
-          "web": "import { Typography } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Typography variant=\"display\">\n      Example content\n    </Typography>\n  );\n}",
+          "web": "import { Typography } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <Typography variant=\"caption\">\n      Example content\n    </Typography>\n  );\n}",
           "native": "import { Typography } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Typography variant=\"display\">\n      <Text>Example content</Text>\n    </Typography>\n  );\n}"
         },
         "native": "import { Typography } from '@qzlcorp/react-native';\nimport { Text } from 'react-native';\n\nexport function Example() {\n  return (\n    <Typography>\n      <Text>Example content</Text>\n    </Typography>\n  );\n}"
@@ -4503,13 +4641,13 @@ export const componentRegistry: ComponentRegistry = {
               "description": "Visual text style preset; also selects a default heading or paragraph element unless `as` overrides it.",
               "documentedDefault": "'body'",
               "allowedValues": [
+                "body",
+                "caption",
                 "display",
                 "heading-1",
                 "heading-2",
                 "heading-3",
-                "body",
-                "body-small",
-                "caption"
+                "body-small"
               ],
               "relatedTypes": [
                 {
@@ -4548,7 +4686,7 @@ export const componentRegistry: ComponentRegistry = {
               ]
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -4606,7 +4744,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -4671,7 +4809,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -4741,7 +4879,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -4864,9 +5002,9 @@ export const componentRegistry: ComponentRegistry = {
               "description": "Built-in slide position indicator. `none` hides the indicator.\n`renderPagination` can replace the built-in indicator unless this is `none`.",
               "documentedDefault": "'dots'",
               "allowedValues": [
+                "progress",
                 "none",
                 "dots",
-                "progress",
                 "fraction"
               ],
               "relatedTypes": [
@@ -4954,7 +5092,7 @@ export const componentRegistry: ComponentRegistry = {
               ]
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -5172,7 +5310,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -5237,7 +5375,7 @@ export const componentRegistry: ComponentRegistry = {
               ]
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -5307,7 +5445,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -5372,7 +5510,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -5442,7 +5580,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -5521,7 +5659,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -5605,7 +5743,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -5693,7 +5831,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -5777,7 +5915,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -5821,7 +5959,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": [
                 {
                   "name": "TabItem",
-                  "definition": "export interface TabItem {\n  /** Value identifying this tab in controlled state. */\n  value: string;\n  /** Visible tab label; text content supplies the accessible name unless `ariaLabel` is set. */\n  label: React.ReactNode;\n  /** Accessible name for labels that do not contain readable text, such as icon-only labels. */\n  ariaLabel?: string;\n}",
+                  "definition": "export interface TabItem {\n  /** Value identifying this tab in controlled state. */\n  value: string;\n  /** Visible tab label; text content supplies the accessible name unless `ariaLabel` is set. */\n  label: React.ReactNode;\n  /** Accessible name for labels that do not contain readable text, such as icon-only labels. */\n  ariaLabel?: string;\n  /** Optional DOM id assigned to the tab button; auto-generated when omitted. */\n  id?: string;\n}",
                   "description": "Label and identifier for one tab button.",
                   "examples": [],
                   "sourcePath": "packages/react/src/components/tabs.tsx"
@@ -5860,9 +5998,31 @@ export const componentRegistry: ComponentRegistry = {
               "documentedDefault": null,
               "allowedValues": [],
               "relatedTypes": []
+            },
+            {
+              "name": "getTabId",
+              "type": "((value: string, id: string) => void) | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": null,
+              "description": "When provided, called during render for each tab with its value and DOM id.\nUse explicit `TabItem.id` values when panel markup needs to reference an id\ndirectly. This callback is useful for collecting generated ids in a ref.",
+              "documentedDefault": null,
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "tabListId",
+              "type": "string | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": null,
+              "description": "Optional id for the tablist element itself.",
+              "documentedDefault": null,
+              "allowedValues": [],
+              "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -5943,7 +6103,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -6045,7 +6205,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -6143,7 +6303,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -6247,7 +6407,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -6347,7 +6507,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -6424,7 +6584,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -6497,7 +6657,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -6599,7 +6759,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -6697,7 +6857,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -6752,7 +6912,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -6814,7 +6974,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -6915,7 +7075,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -7021,7 +7181,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -7152,7 +7312,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -7288,7 +7448,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -7302,7 +7462,7 @@ export const componentRegistry: ComponentRegistry = {
       "examples": {
         "web": "import { DataTable } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" />\n  );\n}",
         "customization": {
-          "web": "import { DataTable } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" className=\"custom-example\" />\n  );\n}",
+          "web": "import { DataTable } from '@qzlcorp/react';\nimport '@qzlcorp/react/styles.css';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" loading={true} />\n  );\n}",
           "native": "import { DataTable } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" theme=\"dark\" />\n  );\n}"
         },
         "native": "import { DataTable } from '@qzlcorp/react-native';\n\nexport function Example() {\n  return (\n    <DataTable columns={[{ key: 'name', header: 'Name', render: (row: { name: string }) => row.name, sortValue: (row: { name: string }) => row.name }]} rows={[{ name: 'Design system' }, { name: 'Component docs' }]} getRowKey={row => row.name} caption=\"Example records\" />\n  );\n}"
@@ -7334,7 +7494,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": [
                 {
                   "name": "DataTableColumn",
-                  "definition": "export interface DataTableColumn<Row> {\n  /** Stable identifier used for rendering and sort state. */\n  key: string;\n  /** Header content displayed for this column. */\n  header: React.ReactNode;\n  /**\n   * Produces a cell's content.\n   * @param row Data record for the current table row.\n   * @param index Position of this row in the rendered (possibly sorted) rows.\n   * @returns Content rendered in the cell.\n   */\n  render: (row: Row, index: number) => React.ReactNode;\n  /**\n   * Produces the sortable value for a row. Columns without this function are not interactive.\n   * @param row Data record whose sort key is requested.\n   * @returns String or number compared when sorting.\n   */\n  sortValue?: (row: Row) => string | number;\n}",
+                  "definition": "export interface DataTableColumn<Row> {\n  /** Stable identifier used for rendering and sort state. */\n  key: string;\n  /** Header content displayed for this column. */\n  header: React.ReactNode;\n  /**\n   * Produces a cell's content.\n   * @param row Data record for the current table row.\n   * @param index Position of this row in the rendered (possibly sorted) rows.\n   * @returns Content rendered in the cell.\n   */\n  render: (row: Row, index: number) => React.ReactNode;\n  /**\n   * Produces the sortable value for a row. Columns without this function are not interactive.\n   * @param row Data record whose sort key is requested.\n   * @returns String or number compared when sorting.\n   */\n  sortValue?: (row: Row) => string | number;\n  /** Label shown before the cell value on narrow viewports when the table is `responsive`. */\n  mobileLabel?: string;\n}",
                   "description": "Column definition used by the generic {@link DataTable}.",
                   "examples": [],
                   "sourcePath": "packages/react/src/components/data-table.tsx"
@@ -7384,9 +7544,48 @@ export const componentRegistry: ComponentRegistry = {
               "documentedDefault": "'No results found.'",
               "allowedValues": [],
               "relatedTypes": []
+            },
+            {
+              "name": "loading",
+              "type": "boolean | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "false",
+              "description": "Show skeleton loading rows instead of data.",
+              "documentedDefault": "false",
+              "allowedValues": [
+                false,
+                true
+              ],
+              "relatedTypes": []
+            },
+            {
+              "name": "loadingRowCount",
+              "type": "number | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "3",
+              "description": "Number of skeleton rows rendered while loading.",
+              "documentedDefault": "3",
+              "allowedValues": [],
+              "relatedTypes": []
+            },
+            {
+              "name": "responsive",
+              "type": "boolean | undefined",
+              "optional": true,
+              "required": false,
+              "defaultValue": "false",
+              "description": "Enable mobile-responsive stacking with per-cell labels.",
+              "documentedDefault": "false",
+              "allowedValues": [
+                false,
+                true
+              ],
+              "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -7489,7 +7688,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -7576,7 +7775,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -7668,7 +7867,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -7755,7 +7954,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -7847,7 +8046,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -7960,7 +8159,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -8078,7 +8277,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -8160,7 +8359,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "native": {
           "platform": "native",
@@ -8260,7 +8459,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         }
       }
     },
@@ -8328,7 +8527,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0"
+          "version": "0.2.1"
         },
         "nativeOptional": {
           "platform": "native",
@@ -8390,7 +8589,7 @@ export const componentRegistry: ComponentRegistry = {
               "relatedTypes": []
             }
           ],
-          "version": "0.2.0",
+          "version": "0.2.1",
           "dependencies": [
             "expo-camera"
           ]

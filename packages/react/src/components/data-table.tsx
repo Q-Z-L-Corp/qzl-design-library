@@ -22,6 +22,8 @@ export interface DataTableColumn<Row> {
    * @returns String or number compared when sorting.
    */
   sortValue?: (row: Row) => string | number;
+  /** Label shown before the cell value on narrow viewports when the table is `responsive`. */
+  mobileLabel?: string;
 }
 
 /** Props for a generic {@link DataTable}. */
@@ -44,6 +46,12 @@ export interface DataTableProps<Row> extends Omit<React.TableHTMLAttributes<HTML
    * @default 'No results found.'
    */
   emptyMessage?: React.ReactNode;
+  /** Show skeleton loading rows instead of data. @default false */
+  loading?: boolean;
+  /** Number of skeleton rows rendered while loading. @default 3 */
+  loadingRowCount?: number;
+  /** Enable mobile-responsive stacking with per-cell labels. @default false */
+  responsive?: boolean;
 }
 
 interface SortState {
@@ -65,6 +73,9 @@ export function DataTable<Row>({
   getRowKey,
   caption,
   emptyMessage = 'No results found.',
+  loading = false,
+  loadingRowCount = 3,
+  responsive = false,
   className,
   ...props
 }: DataTableProps<Row>) {
@@ -95,7 +106,11 @@ export function DataTable<Row>({
 
   return (
     <div className="qzl-data-table__scroll">
-      <table className={mergeClasses('qzl-data-table', className)} {...props}>
+      <table
+        {...props}
+        className={mergeClasses('qzl-data-table', responsive && 'qzl-data-table--responsive', className)}
+        aria-busy={loading ? 'true' : props['aria-busy']}
+      >
         <caption>{caption}</caption>
         <thead>
           <tr>
@@ -111,15 +126,36 @@ export function DataTable<Row>({
             })}
           </tr>
         </thead>
-        <tbody>
-          {sortedRows.length === 0 ? (
-            <tr><td colSpan={Math.max(columns.length, 1)}>{emptyMessage}</td></tr>
-          ) : sortedRows.map((row, rowIndex) => (
-            <tr key={getRowKey(row, rowIndex)}>
-              {columns.map((column) => <td key={column.key}>{column.render(row, rowIndex)}</td>)}
-            </tr>
-          ))}
-        </tbody>
+        {loading ? (
+          <tbody aria-label="Loading">
+            {Array.from({ length: loadingRowCount }, (_, rowIndex) => (
+              <tr key={rowIndex}>
+                {columns.map((column) => (
+                  <td key={column.key}>
+                    <div className="qzl-skeleton" aria-hidden="true" />
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        ) : (
+          <tbody>
+            {sortedRows.length === 0 ? (
+              <tr><td colSpan={Math.max(columns.length, 1)} className="qzl-data-table__empty">{emptyMessage}</td></tr>
+            ) : sortedRows.map((row, rowIndex) => (
+              <tr key={getRowKey(row, rowIndex)}>
+                {columns.map((column) => (
+                  <td key={column.key} data-mobile-label={column.mobileLabel}>
+                    {responsive && column.mobileLabel && (
+                      <span className="qzl-data-table__mobile-label">{column.mobileLabel}</span>
+                    )}
+                    {column.render(row, rowIndex)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        )}
       </table>
     </div>
   );

@@ -5,6 +5,7 @@
 ### Minor Changes
 
 - Add accessible `FormField`, a loading state for `Button`, rich ReactNode tab labels, and explicit Next.js client boundaries for interactive components.
+- Add semantic `LinkButton` navigation and a featured `Card` variant.
 
 ## 0.2.1
 

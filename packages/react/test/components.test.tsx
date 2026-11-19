@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { Accordion, Button, DataTable, FormField, Input, MarkdownEditor, Pagination, Progress, QrScanner, Tabs, Toast } from '../src/index';
+import { Accordion, Button, Card, DataTable, FormField, getButtonClassName, Input, LinkButton, MarkdownEditor, Pagination, Progress, QrScanner, Tabs, Toast } from '../src/index';
 
 describe('interactive components', () => {
   it('uses a non-submit button by default and respects disabled state', () => {
@@ -22,6 +22,50 @@ describe('interactive components', () => {
     expect(button).toBeDisabled();
     expect(button).toHaveAttribute('aria-busy', 'true');
     expect(button.querySelector('[aria-hidden="true"]')).toBeInTheDocument();
+  });
+
+  it('renders LinkButton as a semantic link with button styling', () => {
+    render(<LinkButton href="/projects" variant="secondary">View projects</LinkButton>);
+    const link = screen.getByRole('link', { name: 'View projects' });
+    expect(link).toHaveAttribute('href', '/projects');
+    expect(link).toHaveClass('qzl-button', 'qzl-button--secondary');
+  });
+
+  it('renders LinkButton with a custom router component via renderAs', () => {
+    function MockNextLink({ href, className, children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
+      return (
+        <a href={href} className={className} data-router="next-link" {...props}>
+          {children}
+        </a>
+      );
+    }
+    render(
+      <LinkButton href="/dashboard" renderAs={MockNextLink} variant="ghost" size="lg">
+        Dashboard
+      </LinkButton>
+    );
+    const link = screen.getByRole('link', { name: 'Dashboard' });
+    expect(link).toHaveAttribute('href', '/dashboard');
+    expect(link).toHaveAttribute('data-router', 'next-link');
+    expect(link).toHaveClass('qzl-button', 'qzl-button--ghost', 'qzl-button--lg');
+  });
+
+  it('exports getButtonClassName to generate class names for custom links', () => {
+    const className = getButtonClassName('nav-item', 'primary', 'sm', true);
+    expect(className).toContain('qzl-button');
+    expect(className).toContain('qzl-button--primary');
+    expect(className).toContain('qzl-button--sm');
+    expect(className).toContain('qzl-button--full');
+    expect(className).toContain('nav-item');
+  });
+
+  it('supports a featured Card without changing the elevated default', () => {
+    const { rerender } = render(<Card variant="featured" data-testid="featured-card" />);
+    expect(screen.getByTestId('featured-card')).toHaveClass('qzl-card--featured', 'qzl-card--elevated');
+
+    rerender(<Card variant="featured" elevated={false} data-testid="featured-card" />);
+    expect(screen.getByTestId('featured-card')).toHaveClass('qzl-card--featured');
+    expect(screen.getByTestId('featured-card')).not.toHaveClass('qzl-card--elevated');
   });
 
   it('links form labels, hints, and errors to the rendered control', () => {
@@ -134,5 +178,105 @@ describe('interactive components', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'Start camera scan' }));
     await waitFor(() => expect(onScanError).toHaveBeenCalledWith(expect.objectContaining({ message: 'Camera access is not available in this browser.' })));
+  });
+
+  it('exposes tab IDs so panels can reference them with aria-labelledby', () => {
+    const collected: Record<string, string> = {};
+    render(
+      <>
+        <Tabs
+          tabListId="main-tabs"
+          items={[
+            { value: 'a', label: 'Alpha', id: 'custom-tab-a' },
+            { value: 'b', label: 'Beta' }
+          ]}
+          value="a"
+          onValueChange={() => {}}
+          panelId="alpha-panel"
+          getTabId={(value, id) => { collected[value] = id; }}
+        />
+        <div id="alpha-panel" role="tabpanel" aria-labelledby="custom-tab-a">Alpha content</div>
+      </>
+    );
+    expect(screen.getByRole('tablist')).toHaveAttribute('id', 'main-tabs');
+    expect(collected['a']).toBe('custom-tab-a');
+    expect(collected['b']).toBeTruthy();
+    expect(collected['b']).not.toBe('custom-tab-a');
+
+    // Verify the id is actually on the DOM element and can be used with aria-labelledby
+    const tabA = screen.getByRole('tab', { name: 'Alpha' });
+    expect(tabA).toHaveAttribute('id', 'custom-tab-a');
+    expect(tabA).toHaveAttribute('aria-controls', 'alpha-panel');
+    expect(screen.getByRole('tabpanel', { name: 'Alpha' })).toHaveAttribute('aria-labelledby', tabA.id);
+
+    const tabB = screen.getByRole('tab', { name: 'Beta' });
+    expect(tabB).toHaveAttribute('id', collected['b']);
+  });
+
+  it('renders a data table loading skeleton state with aria-busy', () => {
+    const columns = [
+      { key: 'name', header: 'Name', render: (row: { name: string }) => row.name },
+      { key: 'role', header: 'Role', render: (row: { name: string }) => 'User' }
+    ];
+    const { container } = render(
+      <DataTable
+        caption="Loading users"
+        columns={columns}
+        rows={[]}
+        getRowKey={(_, i) => i}
+        aria-busy={false}
+        loading
+        loadingRowCount={3}
+      />
+    );
+    const table = screen.getByRole('table', { name: 'Loading users' });
+    expect(table).toHaveAttribute('aria-busy', 'true');
+    const loadingTbody = container.querySelector('tbody[aria-label="Loading"]');
+    expect(loadingTbody).toBeInTheDocument();
+    // 3 rows * 2 columns = 6 skeletons
+    const skeletons = loadingTbody?.querySelectorAll('.qzl-skeleton');
+    expect(skeletons).toHaveLength(6);
+  });
+
+  it('renders a data table empty state message when rows are empty', () => {
+    const columns = [
+      { key: 'name', header: 'Name', render: (row: { name: string }) => row.name }
+    ];
+    render(
+      <DataTable
+        caption="Empty users"
+        columns={columns}
+        rows={[]}
+        getRowKey={(_, i) => i}
+        emptyMessage="No team members currently registered."
+      />
+    );
+    expect(screen.getByText('No team members currently registered.')).toBeInTheDocument();
+    const cell = screen.getByText('No team members currently registered.').closest('td');
+    expect(cell).toHaveClass('qzl-data-table__empty');
+  });
+
+  it('renders responsive mobile labels on data table cells when configured', () => {
+    const columns = [
+      { key: 'title', header: 'Title', mobileLabel: 'Item Title', render: (row: { title: string; score: number }) => row.title },
+      { key: 'score', header: 'Score', mobileLabel: 'Points', render: (row: { title: string; score: number }) => row.score }
+    ];
+    const { container } = render(
+      <DataTable
+        caption="Leaderboard"
+        columns={columns}
+        rows={[{ title: 'Champion', score: 100 }]}
+        getRowKey={(row) => row.title}
+        responsive
+      />
+    );
+    const table = screen.getByRole('table', { name: 'Leaderboard' });
+    expect(table).toHaveClass('qzl-data-table--responsive');
+    const titleCell = container.querySelector('td[data-mobile-label="Item Title"]');
+    const scoreCell = container.querySelector('td[data-mobile-label="Points"]');
+    expect(titleCell).toBeInTheDocument();
+    expect(scoreCell).toBeInTheDocument();
+    expect(titleCell?.textContent).toContain('Item Title');
+    expect(scoreCell?.textContent).toContain('Points');
   });
 });

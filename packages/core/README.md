@@ -4,7 +4,7 @@ Shared helpers used by the QZL Design Library component packages.
 
 Official documentation: [design.qz-l.com](https://design.qz-l.com).
 
-This supporting package is published at stable version `0.2.0`. Application developers typically install `@qzlcorp/react` or `@qzlcorp/react-native` instead.
+This supporting package is published on npm. Application developers typically install `@qzlcorp/react` or `@qzlcorp/react-native` instead.
 
 ```sh
 pnpm add @qzlcorp/core

@@ -8,7 +8,7 @@ The catalog provides React Native counterparts for the 48 components also availa
 
 Data display includes `DataTable`, `MetricCard`, `BarChart`, `LineChart`, `AreaChart`, and `DonutChart`. The chart components use `react-native-svg` and retain readable labels and values alongside their visual marks.
 
-This package is published at stable version `0.2.0`. Your application must provide React 19 and React Native 0.78 or later.
+This package is published on npm. Your application must provide React 19 and React Native 0.78 or later.
 
 ```sh
 pnpm add @qzlcorp/react-native @react-native-community/slider react-native-svg

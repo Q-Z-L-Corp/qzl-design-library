@@ -6,6 +6,7 @@ Generated from the public package exports and TypeScript component prop declarat
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Button | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
 | IconButton | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
+| LinkButton | Yes | — | ✓ | ✓ | — | ✓ | ✓ | — | — | — |
 | FileUploadInput | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
 | FormField | Yes | — | ✓ | ✓ | — | ✓ | ✓ | — | — | — |
 | HelperText | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
@@ -55,6 +56,6 @@ Generated from the public package exports and TypeScript component prop declarat
 | MarkdownEditor | Yes | Yes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
 | QrScanner | Yes | Optional | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — |
 
-Total: 50 component records.
+Total: 51 component records.
 
 A dash means that coverage is not yet authored or verified; generated API data alone does not count as complete documentation.

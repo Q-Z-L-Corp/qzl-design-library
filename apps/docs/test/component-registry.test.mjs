@@ -8,9 +8,9 @@ const docsDirectory = path.resolve(path.dirname(fileURLToPath(import.meta.url)),
 const registry = JSON.parse(await readFile(path.join(docsDirectory, 'app/generated/component-registry.json'), 'utf8'));
 
 test('registry covers all public component exports and the optional Expo entry', () => {
-  assert.equal(registry.packages.web.componentCount, 50);
+  assert.equal(registry.packages.web.componentCount, 51);
   assert.equal(registry.packages.native.componentCount, 48);
-  assert.equal(registry.components.filter((component) => component.platforms.web).length, 50);
+  assert.equal(registry.components.filter((component) => component.platforms.web).length, 51);
   assert.equal(registry.components.filter((component) => component.platforms.native).length, 48);
   assert.deepEqual(registry.packages.optionalNativeComponents, [{ name: 'QrScanner', optionalDependencies: ['expo-camera'] }]);
   assert.ok(registry.components.find((component) => component.name === 'QrScanner').platforms.nativeOptional);
@@ -61,6 +61,10 @@ test('API extraction includes QZL-defined inherited props and literal unions', (
     .platforms.native.props.find((property) => property.name === 'style');
   assert.deepEqual(nativeButtonStyle.allowedValues, []);
   assert.deepEqual(nativeButtonStyle.relatedTypes, []);
+
+  const linkButton = registry.components.find((component) => component.name === 'LinkButton');
+  assert.ok(linkButton.platforms.web.props.find((property) => property.name === 'href').required);
+  assert.match(linkButton.examples.web, /<LinkButton href="\/example">/);
 });
 
 test('every advertised interactive preview has a component renderer', async () => {

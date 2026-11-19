@@ -324,7 +324,7 @@ export default function DocsApp() {
           <span className="docs-brand__text"><strong>QZL Design</strong><small>Design system</small></span>
         </button>
         <div className="docs-header__right">
-          <span className="docs-version">v0.2.0 · 50 Web · 48 React Native</span>
+          <span className="docs-version">v0.2.1 · 51 Web · 48 React Native</span>
           <button className="docs-theme-button" type="button" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`} aria-pressed={theme === 'dark'}>
             <span aria-hidden="true">{theme === 'light' ? '◐' : '☼'}</span><span>{theme === 'light' ? 'Dark' : 'Light'}</span>
           </button>
@@ -431,7 +431,7 @@ function OverviewPage({ onNavigate }: { onNavigate: (page: DocPage) => void }) {
           <Card className="docs-hero-card docs-hero-card--main">
             <div className="docs-mini-window"><span /><span /><span /><small>qzl.design</small></div>
             <div className="docs-mini-heading"><span>Component library</span><Badge variant="success">API documented</Badge></div>
-            <div className="docs-mini-stat"><strong>50</strong><span>Web components <b>48 React Native</b></span></div>
+            <div className="docs-mini-stat"><strong>51</strong><span>Web components <b>48 React Native</b></span></div>
             <div className="docs-mini-chart"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
             <div className="docs-mini-footer"><span>Shared foundations</span><span>Tokens · Themes</span></div>
           </Card>
@@ -439,28 +439,28 @@ function OverviewPage({ onNavigate }: { onNavigate: (page: DocPage) => void }) {
           <div className="docs-floating-tag docs-floating-tag--ai"><span>✦</span> Theme tokens</div>
         </div>
       </section>
-      <section className="docs-overview-grid">
-        <button className="docs-overview-card" onClick={() => onNavigate('colors')}>
+      <section className="docs-overview-grid" aria-label="Explore the design system">
+        <Card className="docs-overview-card">
           <span className="docs-overview-icon docs-overview-icon--colors" aria-hidden="true">◈</span>
-          <span className="docs-overview-meta">FOUNDATIONS</span>
-          <strong>Shared design foundations</strong>
+          <Badge className="docs-overview-meta" variant="neutral">FOUNDATIONS</Badge>
+          <h2>Shared design foundations</h2>
           <p>Color, type, spacing, shape, and motion values for consistent interfaces.</p>
-          <span className="docs-card-link">Explore foundations <b>→</b></span>
-        </button>
-        <button className="docs-overview-card" onClick={() => onNavigate('buttons')}>
+          <Button className="docs-overview-action" variant="ghost" size="sm" onClick={() => onNavigate('colors')}>Explore foundations <span aria-hidden="true">→</span></Button>
+        </Card>
+        <Card className="docs-overview-card" variant="featured">
           <span className="docs-overview-icon docs-overview-icon--components" aria-hidden="true">▦</span>
-          <span className="docs-overview-meta">COMPONENTS</span>
-          <strong>Components for both platforms</strong>
+          <Badge className="docs-overview-meta" variant="neutral">COMPONENTS</Badge>
+          <h2>Components for both platforms</h2>
           <p>Web and React Native components with documented APIs and interactive Web previews.</p>
-          <span className="docs-card-link">Browse components <b>→</b></span>
-        </button>
-        <button className="docs-overview-card" onClick={() => onNavigate('playground')}>
+          <Button className="docs-overview-action" variant="ghost" size="sm" onClick={() => onNavigate('buttons')}>Browse components <span aria-hidden="true">→</span></Button>
+        </Card>
+        <Card className="docs-overview-card">
           <span className="docs-overview-icon docs-overview-icon--play" aria-hidden="true">✳</span>
-          <span className="docs-overview-meta">PLAYGROUND</span>
-          <strong>Learn by changing</strong>
+          <Badge className="docs-overview-meta" variant="neutral">PLAYGROUND</Badge>
+          <h2>Learn by changing</h2>
           <p>Experiment with live component options and see changes immediately.</p>
-          <span className="docs-card-link">Open playground <b>→</b></span>
-        </button>
+          <Button className="docs-overview-action" variant="ghost" size="sm" onClick={() => onNavigate('playground')}>Open playground <span aria-hidden="true">→</span></Button>
+        </Card>
       </section>
       <section className="docs-section docs-why">
         <div><div className="docs-eyebrow">Design principles</div><h2>Clarity and user control.</h2></div>
@@ -506,7 +506,7 @@ function GettingStarted({ onCopy }: { onCopy: (value: string) => void }) {
       </div>
       <div className="docs-section docs-platform-table">
         <h2>Package map</h2>
-        <div className="docs-package-row"><strong>@qzlcorp/react</strong><span>50 Web components and the package stylesheet</span><Badge variant="success">Web</Badge></div>
+        <div className="docs-package-row"><strong>@qzlcorp/react</strong><span>51 Web components and the package stylesheet</span><Badge variant="success">Web</Badge></div>
         <div className="docs-package-row"><strong>@qzlcorp/react-native</strong><span>48 React Native components and an optional Expo QR scanner entry</span><Badge variant="success">React Native</Badge></div>
         <div className="docs-package-row"><strong>@qzlcorp/tokens</strong><span>Shared design tokens and light and dark theme values</span><Badge>Supporting package</Badge></div>
         <div className="docs-package-row"><strong>@qzlcorp/core</strong><span>Shared helpers used by the component packages</span><Badge>Supporting package</Badge></div>

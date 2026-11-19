@@ -10,6 +10,8 @@ export interface TabItem {
   label: React.ReactNode;
   /** Accessible name for labels that do not contain readable text, such as icon-only labels. */
   ariaLabel?: string;
+  /** Optional DOM id assigned to the tab button; auto-generated when omitted. */
+  id?: string;
 }
 
 /** Props for the controlled tab-list component {@link Tabs}. */
@@ -25,6 +27,21 @@ export interface TabsProps {
   onValueChange: (value: string) => void;
   /** ID of the associated tab panel, assigned to each tab's `aria-controls`. */
   panelId?: string;
+  /**
+   * When provided, called during render for each tab with its value and DOM id.
+   * Use explicit `TabItem.id` values when panel markup needs to reference an id
+   * directly. This callback is useful for collecting generated ids in a ref.
+   * @param value The tab item's value.
+   * @param id The DOM id assigned to the tab button.
+   * @example
+   * const tabIds = useRef<Record<string, string>>({});
+   * <Tabs items={tabs} value={active} onValueChange={setActive}
+   *   getTabId={(value, id) => { tabIds.current[value] = id; }} />
+   * <div role="tabpanel" aria-labelledby={tabIds.current[active]}>…</div>
+   */
+  getTabId?: (value: string, id: string) => void;
+  /** Optional id for the tablist element itself. */
+  tabListId?: string;
 }
 
 /**
@@ -35,7 +52,7 @@ export interface TabsProps {
  * <Tabs items={tabs} value={activeTab} onValueChange={setActiveTab} panelId="settings-panel" />
  * ```
  */
-export function Tabs({ items, value, onValueChange, panelId }: TabsProps) {
+export function Tabs({ items, value, onValueChange, panelId, getTabId, tabListId }: TabsProps) {
   const listId = useId();
   const listRef = useRef<HTMLDivElement>(null);
 
@@ -54,13 +71,15 @@ export function Tabs({ items, value, onValueChange, panelId }: TabsProps) {
   }
 
   return (
-    <div className="qzl-tabs" role="tablist" ref={listRef}>
+    <div className="qzl-tabs" role="tablist" ref={listRef} id={tabListId}>
       {items.map((item, index) => {
         const active = item.value === value;
+        const tabId = item.id ?? `${listId}-tab-${index}`;
+        getTabId?.(item.value, tabId);
         return (
           <button
             key={item.value}
-            id={`${listId}-tab-${index}`}
+            id={tabId}
             type="button"
             onClick={() => onValueChange(item.value)}
             onKeyDown={(event) => handleKeyDown(event, index)}

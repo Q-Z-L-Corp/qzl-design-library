@@ -26,6 +26,7 @@ import {
   Indicator,
   IconButton,
   Input,
+  LinkButton,
   LineChart,
   MetricCard,
   MarkdownEditor,
@@ -229,7 +230,7 @@ function WebPreview({ component, state, update }: {
     case 'Carousel':
       return <Carousel navigation={state.carouselNavigation} navigationPlacement={state.carouselPlacement} pagination={state.carouselPagination} loop={state.carouselLoop} slides={[<Card key="overview" className="component-slide"><strong>Overview</strong><span>Review your workspace.</span></Card>, <Card key="details" className="component-slide"><strong>Details</strong><span>Update your preferences.</span></Card>, <Card key="security" className="component-slide"><strong>Security</strong><span>Protect your account.</span></Card>]} />;
     case 'Card':
-      return <Card className="component-preview-card"><strong>Workspace settings</strong><p>Manage your account preferences.</p></Card>;
+      return <Card variant="featured" className="component-preview-card"><strong>Workspace settings</strong><p>Manage your account preferences.</p></Card>;
     case 'Checkbox':
       return <Checkbox checked={state.checked} onChange={(event) => update('checked', event.currentTarget.checked)} aria-label="Remember this choice" />;
     case 'DataTable':
@@ -256,6 +257,8 @@ function WebPreview({ component, state, update }: {
       return <FormField label="Email" required hint="Use your work address" error={state.error ? 'Enter a valid address.' : undefined} control={<Input type="email" placeholder="name@example.com" />} />;
     case 'LineChart':
       return <LineChart title="Visits and returning visits" labels={['Mon', 'Tue', 'Wed', 'Thu', 'Fri']} series={[{ label: 'Visits', values: [120, 156, 142, 174, 188] }, { label: 'Returning', values: [42, 48, 51, 56, 61] }]} />;
+    case 'LinkButton':
+      return <LinkButton href="#overview">Browse components</LinkButton>;
     case 'MarkdownEditor':
       return <MarkdownEditor label="Release notes" value="# Improvements\n\n- Faster setup" onValueChange={() => {}} preview />;
     case 'MetricCard':

@@ -1,7 +1,7 @@
 {
   "coverage": {
-    "total": 1767,
-    "documented": 1767,
+    "total": 1819,
+    "documented": 1819,
     "failures": []
   },
   "packages": [
@@ -550,14 +550,127 @@
         {
           "packageName": "@qzlcorp/react",
           "platform": "web",
+          "name": "getButtonClassName",
+          "kind": "function",
+          "signature": "(className: string | undefined, variant: ButtonVariant | undefined, size: ButtonSize | undefined, fullWidth: boolean) => string",
+          "sourcePath": "packages/react/src/components/button-styles.ts",
+          "description": "Computes the composite CSS class string for button and link button elements.",
+          "examples": [
+            "```tsx\nconst className = getButtonClassName('custom-link', 'primary', 'md', false);\n```"
+          ],
+          "members": [],
+          "parameters": [
+            {
+              "name": "className",
+              "type": "string | undefined",
+              "description": "Optional additional class name to merge.",
+              "documented": true
+            },
+            {
+              "name": "variant",
+              "type": "ButtonVariant | undefined",
+              "description": "Visual treatment applied to the button.",
+              "documented": true
+            },
+            {
+              "name": "size",
+              "type": "ButtonSize | undefined",
+              "description": "Preset size of the button.",
+              "documented": true
+            },
+            {
+              "name": "fullWidth",
+              "type": "boolean",
+              "description": "Whether the button stretches to fill the container width.",
+              "documented": true
+            }
+          ]
+        },
+        {
+          "packageName": "@qzlcorp/react",
+          "platform": "web",
+          "name": "LinkButton",
+          "kind": "component",
+          "signature": "({ className, variant, size, fullWidth, renderAs: Component, ...props }: LinkButtonProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "sourcePath": "packages/react/src/components/link-button.tsx",
+          "description": "Renders a semantic HTML link with the visual treatment of a button.",
+          "examples": [
+            "```tsx\n<LinkButton href=\"/projects\" variant=\"secondary\">View projects</LinkButton>\n```"
+          ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzlcorp/react",
+          "platform": "web",
+          "name": "LinkButtonProps",
+          "kind": "interface",
+          "signature": "interface LinkButtonProps",
+          "sourcePath": "packages/react/src/components/link-button.tsx",
+          "description": "Props for {@link LinkButton}, in addition to HTML anchor attributes.",
+          "examples": [],
+          "members": [
+            {
+              "name": "href",
+              "type": "string",
+              "optional": false,
+              "description": "Destination for the link.",
+              "callbackParameters": []
+            },
+            {
+              "name": "variant",
+              "type": "ButtonVariant",
+              "optional": true,
+              "description": "Visual treatment of the link.",
+              "callbackParameters": []
+            },
+            {
+              "name": "size",
+              "type": "ButtonSize",
+              "optional": true,
+              "description": "Preset size of the link.",
+              "callbackParameters": []
+            },
+            {
+              "name": "fullWidth",
+              "type": "boolean",
+              "optional": true,
+              "description": "Stretch the link to fill the width of its container.",
+              "callbackParameters": []
+            },
+            {
+              "name": "renderAs",
+              "type": "React.ElementType",
+              "optional": true,
+              "description": "Override the rendered element. Pass a Next.js `Link`, React Router `Link`,\nor any component that accepts `href`, `className`, and `children`.",
+              "callbackParameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzlcorp/react",
+          "platform": "web",
           "name": "Card",
           "kind": "component",
-          "signature": "({ className, elevated, ...props }: CardProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "({ className, variant, elevated, ...props }: CardProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react/src/components/card.tsx",
           "description": "Renders a content container with optional elevated styling.",
           "examples": [
-            "```tsx\n<Card><h2>Account</h2><p>Profile settings</p></Card>\n```"
+            "```tsx\n<Card variant=\"featured\"><h2>Account</h2><p>Profile settings</p></Card>\n```"
           ],
+          "members": [],
+          "parameters": []
+        },
+        {
+          "packageName": "@qzlcorp/react",
+          "platform": "web",
+          "name": "CardVariant",
+          "kind": "type",
+          "signature": "'default' | 'featured'",
+          "sourcePath": "packages/react/src/components/card.tsx",
+          "description": "Visual treatment applied to a {@link Card}.",
+          "examples": [],
           "members": [],
           "parameters": []
         },
@@ -571,6 +684,13 @@
           "description": "Props for {@link Card}, in addition to div attributes.",
           "examples": [],
           "members": [
+            {
+              "name": "variant",
+              "type": "CardVariant",
+              "optional": true,
+              "description": "Visual treatment applied to the card.",
+              "callbackParameters": []
+            },
             {
               "name": "elevated",
               "type": "boolean",
@@ -586,7 +706,7 @@
           "platform": "web",
           "name": "DataTable",
           "kind": "component",
-          "signature": "<Row>({ columns, rows, getRowKey, caption, emptyMessage, className, ...props }: DataTableProps<Row>) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "<Row>({ columns, rows, getRowKey, caption, emptyMessage, loading, loadingRowCount, responsive, className, ...props }: DataTableProps<Row>) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react/src/components/data-table.tsx",
           "description": "Renders a table with optional client-side sorting for columns that define `sortValue`.",
           "examples": [
@@ -652,6 +772,13 @@
                   "documented": true
                 }
               ]
+            },
+            {
+              "name": "mobileLabel",
+              "type": "string",
+              "optional": true,
+              "description": "Label shown before the cell value on narrow viewports when the table is `responsive`.",
+              "callbackParameters": []
             }
           ],
           "parameters": []
@@ -712,6 +839,27 @@
               "type": "React.ReactNode",
               "optional": true,
               "description": "Cell content shown when `rows` is empty.",
+              "callbackParameters": []
+            },
+            {
+              "name": "loading",
+              "type": "boolean",
+              "optional": true,
+              "description": "Show skeleton loading rows instead of data.",
+              "callbackParameters": []
+            },
+            {
+              "name": "loadingRowCount",
+              "type": "number",
+              "optional": true,
+              "description": "Number of skeleton rows rendered while loading.",
+              "callbackParameters": []
+            },
+            {
+              "name": "responsive",
+              "type": "boolean",
+              "optional": true,
+              "description": "Enable mobile-responsive stacking with per-cell labels.",
               "callbackParameters": []
             }
           ],
@@ -1289,7 +1437,7 @@
           "platform": "web",
           "name": "Tabs",
           "kind": "component",
-          "signature": "({ items, value, onValueChange, panelId }: TabsProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
+          "signature": "({ items, value, onValueChange, panelId, getTabId, tabListId }: TabsProps) => import(\"/Users/qingyirongrong/Work/qzl-design-library/node_modules/.pnpm/@types+react@19.2.0/node_modules/@types/react/jsx-runtime\").JSX.Element",
           "sourcePath": "packages/react/src/components/tabs.tsx",
           "description": "Renders an accessible, controlled tab list with arrow, Home, and End navigation.",
           "examples": [
@@ -1327,6 +1475,13 @@
               "type": "string",
               "optional": true,
               "description": "Accessible name for labels that do not contain readable text, such as icon-only labels.",
+              "callbackParameters": []
+            },
+            {
+              "name": "id",
+              "type": "string",
+              "optional": true,
+              "description": "Optional DOM id assigned to the tab button; auto-generated when omitted.",
               "callbackParameters": []
             }
           ],
@@ -1375,6 +1530,33 @@
               "type": "string",
               "optional": true,
               "description": "ID of the associated tab panel, assigned to each tab's `aria-controls`.",
+              "callbackParameters": []
+            },
+            {
+              "name": "getTabId",
+              "type": "(value: string, id: string) => void",
+              "optional": true,
+              "description": "When provided, called during render for each tab with its value and DOM id.\nUse explicit `TabItem.id` values when panel markup needs to reference an id\ndirectly. This callback is useful for collecting generated ids in a ref.",
+              "callbackParameters": [
+                {
+                  "name": "value",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                },
+                {
+                  "name": "id",
+                  "type": "string",
+                  "description": "",
+                  "documented": true
+                }
+              ]
+            },
+            {
+              "name": "tabListId",
+              "type": "string",
+              "optional": true,
+              "description": "Optional id for the tablist element itself.",
               "callbackParameters": []
             }
           ],

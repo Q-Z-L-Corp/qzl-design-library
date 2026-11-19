@@ -8,7 +8,7 @@ Official documentation: [design.qz-l.com](https://design.qz-l.com).
 
 - `packages/tokens` — cross-platform design tokens and light/dark themes
 - `packages/core` — platform-neutral helpers and safe Markdown block parsing
-- `packages/react` — 50 Web components and `@qzlcorp/react/styles.css`
+- `packages/react` — 51 Web components and `@qzlcorp/react/styles.css`
 - `packages/react-native` — 48 corresponding React Native components
 - `apps/docs` — interactive documentation and component playground
 - `examples/react-native` — Expo example for iOS and Android
@@ -56,7 +56,7 @@ Tests use Node's test runner for core and token utilities, Vitest and Testing Li
 
 ## Package use
 
-All four packages are published on npm at stable version `0.2.0`. Install the latest release for your platform:
+All four packages are published on npm. Install the latest release for your platform:
 
 ```sh
 pnpm add @qzlcorp/react

@@ -4,6 +4,8 @@ export * from './components/avatar.js';
 export * from './components/bar-chart.js';
 export * from './components/breadcrumbs.js';
 export * from './components/button.js';
+export * from './components/button-styles.js';
+export * from './components/link-button.js';
 export * from './components/card.js';
 export * from './components/data-table.js';
 export * from './components/donut-chart.js';
